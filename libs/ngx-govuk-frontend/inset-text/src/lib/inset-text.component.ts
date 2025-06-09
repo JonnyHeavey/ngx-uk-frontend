@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { InsetTextDirective } from '@ngx-uk-frontend/core/inset-text';
 
 /**
  * This component implements the GOV.UK Design System inset text component.
@@ -10,5 +11,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   selector: 'ngx-govuk-inset-text',
   templateUrl: './inset-text.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
 })
-export class GovUKInsetTextComponent {}
+export class GovUKInsetTextComponent extends InsetTextDirective {}

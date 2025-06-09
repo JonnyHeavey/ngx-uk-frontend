@@ -18,12 +18,16 @@
       "@ngx-uk-frontend/core": ["libs/core/src/index.ts"],
       "@ngx-uk-frontend/core/button": ["libs/core/button/src/index.ts"],
       "@ngx-uk-frontend/core/details": ["libs/core/details/src/index.ts"],
+      "@ngx-uk-frontend/core/inset-text": ["libs/core/inset-text/src/index.ts"],
       "ngx-govscot-frontend": ["libs/ngx-govscot-frontend/src/index.ts"],
       "ngx-govscot-frontend/button": [
         "libs/ngx-govscot-frontend/button/src/index.ts"
       ],
       "ngx-govscot-frontend/details": [
         "libs/ngx-govscot-frontend/details/src/index.ts"
+      ],
+      "ngx-govscot-frontend/inset-text": [
+        "libs/ngx-govscot-frontend/inset-text/src/index.ts"
       ],
       "ngx-govuk-frontend": ["libs/ngx-govuk-frontend/src/index.ts"],
       "ngx-govuk-frontend/accordion": [
