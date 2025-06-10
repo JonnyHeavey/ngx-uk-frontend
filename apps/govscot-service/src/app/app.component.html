@@ -1,151 +1,284 @@
-<h1>Scottish Government Design System - Component Examples</h1>
+<!-- Skip Link for Accessibility -->
+<ngx-govscot-skip-link href="#main-content">
+  Skip to main content
+</ngx-govscot-skip-link>
 
-<h2>Warning Text Examples</h2>
+<!-- Phase Banner -->
+<ngx-govscot-phase-banner phase="beta">
+  This is a new service. Your <a href="/feedback">feedback</a> will help us to
+  improve it.
+</ngx-govscot-phase-banner>
 
-<h3>Registration Deadline Warning</h3>
-<ngx-govscot-warning-text>
-  You must register for Corporation Tax within 3 months of starting business.
-  You could be fined if you do not register in time.
-</ngx-govscot-warning-text>
+<main id="main-content">
+  <h1>Scottish Government Design System - Component Examples</h1>
 
-<h3>Payment Deadline Warning</h3>
-<ngx-govscot-warning-text>
-  Corporation Tax is due 9 months and 1 day after the end of your accounting
-  period. Late payment results in interest charges.
-</ngx-govscot-warning-text>
+  <h2>Phase Banner Example</h2>
 
-<h3>Legal Requirement Warning</h3>
-<ngx-govscot-warning-text>
-  It's a legal requirement to keep proper business records for at least 6 years.
-  You could face penalties if you don't.
-</ngx-govscot-warning-text>
+  <div class="example-section">
+    <h3>Beta Phase Banner</h3>
+    <p>
+      The phase banner above shows this service is in beta phase and being
+      improved.
+    </p>
 
-<h3>Emergency Contact Warning</h3>
-<ngx-govscot-warning-text>
-  If you suspect tax fraud or evasion, call the HMRC fraud hotline on 0800 788
-  887 or report it online immediately.
-</ngx-govscot-warning-text>
+    <h4>Alpha Phase Example</h4>
+    <ngx-govscot-phase-banner phase="alpha">
+      This is a new Corporation Tax service. Your
+      <a href="/alpha-feedback">feedback</a> will help us to improve it.
+    </ngx-govscot-phase-banner>
+  </div>
 
-<h2>Accordion Examples</h2>
+  <h2>Button Examples</h2>
 
-<h3>Basic Accordion Example</h3>
-<ngx-govscot-accordion id="example-accordion" [initialExpanded]="['section-1']">
-  <ngx-govscot-accordion-item
-    itemId="section-1"
-    heading="Understanding the tax"
+  <div class="example-section">
+    <h3>Primary Actions</h3>
+    <p>Use primary buttons for the main action on a page.</p>
+    <ngx-govscot-button
+      color="primary"
+      size="default"
+      (click)="onStartApplication()"
+    >
+      Start your Corporation Tax application
+    </ngx-govscot-button>
+
+    <h3>Secondary Actions</h3>
+    <p>Use secondary buttons for less important actions.</p>
+    <ngx-govscot-button
+      color="secondary"
+      size="default"
+      (click)="onSaveProgress()"
+    >
+      Save and continue later
+    </ngx-govscot-button>
+
+    <h3>Cancel Actions</h3>
+    <p>Use cancel buttons for destructive or cancellation actions.</p>
+    <ngx-govscot-button
+      color="cancel"
+      size="default"
+      (click)="onCancelApplication()"
+    >
+      Cancel application
+    </ngx-govscot-button>
+  </div>
+
+  <h2>Warning Text Examples</h2>
+
+  <div class="example-section">
+    <h3>Registration Deadline Warning</h3>
+    <ngx-govscot-warning-text>
+      You must register for Corporation Tax within 3 months of starting
+      business. You could be fined if you do not register in time.
+    </ngx-govscot-warning-text>
+  </div>
+
+  <div class="example-section">
+    <h3>Payment Deadline Warning</h3>
+    <ngx-govscot-warning-text>
+      Corporation Tax is due 9 months and 1 day after the end of your accounting
+      period. Late payment results in interest charges.
+    </ngx-govscot-warning-text>
+  </div>
+
+  <div class="example-section">
+    <h3>Legal Requirement Warning</h3>
+    <ngx-govscot-warning-text>
+      It's a legal requirement to keep proper business records for at least 6
+      years. You could face penalties if you don't.
+    </ngx-govscot-warning-text>
+  </div>
+
+  <div class="example-section">
+    <h3>Emergency Contact Warning</h3>
+    <ngx-govscot-warning-text>
+      If you suspect tax fraud or evasion, call the HMRC fraud hotline on 0800
+      788 887 or report it online immediately.
+    </ngx-govscot-warning-text>
+  </div>
+
+  <h2>Accordion Examples</h2>
+
+  <h3>Basic Accordion Example</h3>
+  <ngx-govscot-accordion
+    id="example-accordion"
+    [initialExpanded]="['section-1']"
   >
-    <p>
-      Corporation Tax is charged on the 'chargeable profits' of limited
-      companies, members' clubs, societies, associations, co-operatives and
-      other unincorporated bodies.
-    </p>
-    <p>
-      The rate of Corporation Tax depends on the amount of profit your company
-      makes and when your accounting period ends.
-    </p>
-  </ngx-govscot-accordion-item>
+    <ngx-govscot-accordion-item
+      itemId="section-1"
+      heading="Understanding the tax"
+    >
+      <p>
+        Corporation Tax is charged on the 'chargeable profits' of limited
+        companies, members' clubs, societies, associations, co-operatives and
+        other unincorporated bodies.
+      </p>
+      <p>
+        The rate of Corporation Tax depends on the amount of profit your company
+        makes and when your accounting period ends.
+      </p>
 
-  <ngx-govscot-accordion-item
-    itemId="section-2"
-    heading="Who must pay"
-    summary="Companies, clubs and societies"
-  >
-    <p>
-      You must pay Corporation Tax if your company or organisation is based in
-      the UK or has an office or branch here.
-    </p>
-    <ul>
-      <li>limited companies</li>
-      <li>foreign companies with a UK branch or office</li>
-      <li>clubs, societies, associations and other unincorporated bodies</li>
-      <li>co-operatives</li>
-    </ul>
-  </ngx-govscot-accordion-item>
+      <ngx-govscot-button-group>
+        <ngx-govscot-button color="primary" size="small">
+          Calculate your tax
+        </ngx-govscot-button>
+        <ngx-govscot-button color="link" size="small">
+          Read full guidance
+        </ngx-govscot-button>
+      </ngx-govscot-button-group>
+    </ngx-govscot-accordion-item>
 
-  <ngx-govscot-accordion-item itemId="section-3" heading="When to register">
-    <p>
-      You must tell HM Revenue and Customs (HMRC) when you start doing business
-      as a limited company - this is usually when you:
-    </p>
-    <ul>
-      <li>sell goods or services</li>
-      <li>buy business stock or equipment</li>
-      <li>take on employees</li>
-      <li>rent or buy business premises</li>
-    </ul>
-    <p>
-      You have 3 months from when you start doing business to tell HMRC. You
-      could be fined if you do not register in time.
-    </p>
-  </ngx-govscot-accordion-item>
+    <ngx-govscot-accordion-item
+      itemId="section-2"
+      heading="Who must pay"
+      summary="Companies, clubs and societies"
+    >
+      <p>
+        You must pay Corporation Tax if your company or organisation is based in
+        the UK or has an office or branch here.
+      </p>
+      <ul>
+        <li>limited companies</li>
+        <li>foreign companies with a UK branch or office</li>
+        <li>clubs, societies, associations and other unincorporated bodies</li>
+        <li>co-operatives</li>
+      </ul>
 
-  <ngx-govscot-accordion-item
-    itemId="section-4"
-    heading="How to register"
-    summary="Online registration process"
-  >
-    <p>
-      You can register your company for Corporation Tax online using the
-      Government Gateway.
-    </p>
-    <h3>What you'll need</h3>
-    <ul>
-      <li>your company registration number</li>
-      <li>the date you started doing business</li>
-      <li>your contact details</li>
-      <li>details of your business activities</li>
-    </ul>
-    <p>
-      Registration usually takes up to 10 working days, but it can take longer
-      during busy periods.
-    </p>
-  </ngx-govscot-accordion-item>
-</ngx-govscot-accordion>
+      <ngx-govscot-button color="secondary" size="small">
+        Check if you need to register
+      </ngx-govscot-button>
+    </ngx-govscot-accordion-item>
 
-<h2>Additional Examples</h2>
+    <ngx-govscot-accordion-item itemId="section-3" heading="When to register">
+      <p>
+        You must tell HM Revenue and Customs (HMRC) when you start doing
+        business as a limited company - this is usually when you:
+      </p>
+      <ul>
+        <li>sell goods or services</li>
+        <li>buy business stock or equipment</li>
+        <li>take on employees</li>
+        <li>rent or buy business premises</li>
+      </ul>
+      <p>
+        You have 3 months from when you start doing business to tell HMRC. You
+        could be fined if you do not register in time.
+      </p>
 
-<ngx-govscot-details summary="This is a test"
-  >GOVSCOT DETAILS</ngx-govscot-details
->
+      <ngx-govscot-warning-text>
+        Missing the 3-month deadline can result in penalties of up to £3,000.
+      </ngx-govscot-warning-text>
 
-<h3>Accordion with All Sections Collapsed Initially</h3>
-<ngx-govscot-accordion id="collapsed-accordion">
-  <ngx-govscot-accordion-item
-    itemId="help-1"
-    heading="Getting help and support"
-  >
-    <p>
-      If you need help with your Corporation Tax registration or have questions
-      about your obligations, you can:
-    </p>
-    <ul>
-      <li>call the HMRC helpline on 0300 200 3410</li>
-      <li>visit the GOV.UK website for guidance</li>
-      <li>speak to a qualified accountant or tax adviser</li>
-    </ul>
-  </ngx-govscot-accordion-item>
+      <ngx-govscot-button color="primary" size="small">
+        Register now
+      </ngx-govscot-button>
+    </ngx-govscot-accordion-item>
 
-  <ngx-govscot-accordion-item
-    itemId="help-2"
-    heading="Important deadlines"
-    summary="Key dates to remember"
-  >
-    <p>Make sure you're aware of these important Corporation Tax deadlines:</p>
-    <ul>
-      <li>
-        <strong>Registration:</strong> Within 3 months of starting business
-      </li>
-      <li>
-        <strong>Filing return:</strong> 12 months after the end of your
-        accounting period
-      </li>
-      <li>
-        <strong>Paying tax:</strong> 9 months and 1 day after the end of your
-        accounting period
-      </li>
-    </ul>
-    <p>Missing these deadlines can result in penalties and interest charges.</p>
-  </ngx-govscot-accordion-item>
-</ngx-govscot-accordion>
+    <ngx-govscot-accordion-item
+      itemId="section-4"
+      heading="How to register"
+      summary="Online registration process"
+    >
+      <p>
+        You can register your company for Corporation Tax online using the
+        Government Gateway.
+      </p>
+      <h4>What you'll need</h4>
+      <ul>
+        <li>your company registration number</li>
+        <li>the date you started doing business</li>
+        <li>your contact details</li>
+        <li>details of your business activities</li>
+      </ul>
+      <p>
+        Registration usually takes up to 10 working days, but it can take longer
+        during busy periods.
+      </p>
+
+      <ngx-govscot-button-group>
+        <ngx-govscot-button color="primary">
+          Start registration
+        </ngx-govscot-button>
+        <ngx-govscot-button color="link">
+          Get help with registration
+        </ngx-govscot-button>
+      </ngx-govscot-button-group>
+    </ngx-govscot-accordion-item>
+  </ngx-govscot-accordion>
+
+  <h2>Additional Examples</h2>
+
+  <ngx-govscot-details summary="This is a test">
+    GOVSCOT DETAILS
+  </ngx-govscot-details>
+
+  <h3>Accordion with All Sections Collapsed Initially</h3>
+  <ngx-govscot-accordion id="collapsed-accordion">
+    <ngx-govscot-accordion-item
+      itemId="help-1"
+      heading="Getting help and support"
+    >
+      <p>
+        If you need help with your Corporation Tax registration or have
+        questions about your obligations, you can:
+      </p>
+      <ul>
+        <li>call the HMRC helpline on 0300 200 3410</li>
+        <li>visit the GOV.UK website for guidance</li>
+        <li>speak to a qualified accountant or tax adviser</li>
+      </ul>
+
+      <ngx-govscot-button-group>
+        <ngx-govscot-button
+          color="secondary"
+          iconName="phone"
+          iconPosition="left"
+        >
+          Call helpline
+        </ngx-govscot-button>
+        <ngx-govscot-button
+          color="link"
+          iconName="external"
+          iconPosition="right"
+        >
+          Visit GOV.UK
+        </ngx-govscot-button>
+      </ngx-govscot-button-group>
+    </ngx-govscot-accordion-item>
+
+    <ngx-govscot-accordion-item
+      itemId="help-2"
+      heading="Important deadlines"
+      summary="Key dates to remember"
+    >
+      <p>
+        Make sure you're aware of these important Corporation Tax deadlines:
+      </p>
+      <ul>
+        <li>
+          <strong>Registration:</strong> Within 3 months of starting business
+        </li>
+        <li>
+          <strong>Filing return:</strong> 12 months after the end of your
+          accounting period
+        </li>
+        <li>
+          <strong>Paying tax:</strong> 9 months and 1 day after the end of your
+          accounting period
+        </li>
+      </ul>
+      <p>
+        Missing these deadlines can result in penalties and interest charges.
+      </p>
+
+      <ngx-govscot-button
+        color="primary"
+        iconName="calendar"
+        iconPosition="left"
+      >
+        Set up deadline reminders
+      </ngx-govscot-button>
+    </ngx-govscot-accordion-item>
+  </ngx-govscot-accordion>
+</main>
 
 <router-outlet></router-outlet>
