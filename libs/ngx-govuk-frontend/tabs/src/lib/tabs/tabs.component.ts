@@ -3,9 +3,8 @@ import {
   ChangeDetectionStrategy,
   Component,
   contentChildren,
-  input,
-  model,
 } from '@angular/core';
+import { TabDirective, TabsDirective } from '@ngx-uk-frontend/core/tabs';
 import { GovUKTabComponent } from '../tab/tab.component';
 
 /**
@@ -19,24 +18,17 @@ import { GovUKTabComponent } from '../tab/tab.component';
   imports: [NgTemplateOutlet],
   templateUrl: './tabs.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
 })
-export class GovUKTabsComponent {
-  /** The title for the tabs component. This input is required. */
-  readonly title = input.required<string>();
-
-  /** Collection of tab components that are children of this tabs component. */
-  readonly tabs = contentChildren(GovUKTabComponent);
-
-  /** Two-way binding model for the currently active tab index. Defaults to 0 (first tab). */
-  readonly activeTab = model(0);
+export class GovUKTabsComponent extends TabsDirective {
+  /** Collection of GOV.UK tab components that are children of this tabs component. */
+  private readonly tabComponents = contentChildren(GovUKTabComponent);
 
   /**
-   * Selects a tab at the specified index.
-   * @param index The index of the tab to select
-   * @param event The event that triggered the selection
+   * Implementation of the abstract getTabs method.
+   * Returns the collection of tab components as TabDirective instances.
    */
-  selectTab(index: number, event: Event): void {
-    event.preventDefault();
-    this.activeTab.set(index);
+  protected getTabs(): readonly TabDirective[] {
+    return this.tabComponents();
   }
 }

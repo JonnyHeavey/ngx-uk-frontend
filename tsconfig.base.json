@@ -21,6 +21,7 @@
       "@ngx-uk-frontend/core/button": ["libs/core/button/src/index.ts"],
       "@ngx-uk-frontend/core/details": ["libs/core/details/src/index.ts"],
       "@ngx-uk-frontend/core/phase-banner": ["libs/core/phase-banner/src/index.ts"],
+      "@ngx-uk-frontend/core/tabs": ["libs/core/tabs/src/index.ts"],
       "ngx-govscot-frontend": ["libs/ngx-govscot-frontend/src/index.ts"],
       "ngx-govscot-frontend/accordion": [
         "libs/ngx-govscot-frontend/accordion/src/index.ts"
@@ -42,6 +43,9 @@
       ],
       "ngx-govscot-frontend/skip-link": [
         "libs/ngx-govscot-frontend/skip-link/src/index.ts"
+      ],
+      "ngx-govscot-frontend/tabs": [
+        "libs/ngx-govscot-frontend/tabs/src/index.ts"
       ],
       "ngx-govscot-frontend/warning-text": [
         "libs/ngx-govscot-frontend/warning-text/src/index.ts"

@@ -1,10 +1,5 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  input,
-  TemplateRef,
-  viewChild,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { TabDirective } from '@ngx-uk-frontend/core/tabs';
 
 /**
  * This component implements a single tab panel in the GOV.UK Design System tabs component.
@@ -17,13 +12,4 @@ import {
   templateUrl: './tab.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class GovUKTabComponent {
-  /** The unique identifier for the tab. This input is required. */
-  readonly id = input.required<string>();
-
-  /** The text displayed in the tab. This input is required. */
-  readonly title = input.required<string>();
-
-  /** Reference to the template containing the tab's content. */
-  readonly tabContent = viewChild.required<TemplateRef<unknown>>('tabContent');
-}
+export class GovUKTabComponent extends TabDirective {}

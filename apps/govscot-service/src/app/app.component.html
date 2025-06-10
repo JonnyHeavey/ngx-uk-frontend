@@ -115,6 +115,185 @@
     </ngx-govscot-breadcrumbs>
   </div>
 
+  <h2>Tabs Examples</h2>
+
+  <div class="example-section">
+    <h3>Corporation Tax Information</h3>
+    <p>
+      Tabs organize related content into distinct sections for easier
+      navigation:
+    </p>
+    <ngx-govscot-tabs title="Corporation Tax Guide">
+      <ngx-govscot-tab id="overview" title="Overview">
+        <h4>What is Corporation Tax?</h4>
+        <p>
+          Corporation Tax is charged on the 'chargeable profits' of limited
+          companies, members' clubs, societies, associations, co-operatives and
+          other unincorporated bodies.
+        </p>
+        <p>
+          The rate of Corporation Tax depends on the amount of profit your
+          company makes and when your accounting period ends.
+        </p>
+        <h5>Current rates</h5>
+        <ul>
+          <li>19% for companies with profits up to £250,000</li>
+          <li>25% for companies with profits over £250,000</li>
+        </ul>
+      </ngx-govscot-tab>
+      <ngx-govscot-tab id="registration" title="Registration">
+        <h4>Who must register?</h4>
+        <p>
+          You must register for Corporation Tax if your company or organisation
+          is based in the UK or has an office or branch here.
+        </p>
+        <p>This includes:</p>
+        <ul>
+          <li>Limited companies</li>
+          <li>Foreign companies with a UK branch or office</li>
+          <li>
+            Clubs, societies, associations and other unincorporated bodies
+          </li>
+          <li>Co-operatives</li>
+        </ul>
+        <h5>Registration deadline</h5>
+        <p>
+          You must register within 3 months of starting to do business. You
+          could be fined if you do not register in time.
+        </p>
+      </ngx-govscot-tab>
+      <ngx-govscot-tab id="deadlines" title="Important deadlines">
+        <h4>Key dates to remember</h4>
+        <p>
+          Make sure you're aware of these important Corporation Tax deadlines:
+        </p>
+        <dl>
+          <dt><strong>Registration</strong></dt>
+          <dd>Within 3 months of starting business</dd>
+          <dt><strong>Filing return</strong></dt>
+          <dd>12 months after the end of your accounting period</dd>
+          <dt><strong>Paying tax</strong></dt>
+          <dd>9 months and 1 day after the end of your accounting period</dd>
+        </dl>
+        <p>
+          Missing these deadlines can result in penalties and interest charges.
+        </p>
+      </ngx-govscot-tab>
+    </ngx-govscot-tabs>
+  </div>
+
+  <div class="example-section">
+    <h3>Business Support Information</h3>
+    <p>
+      Example with different types of content including tables and structured
+      information:
+    </p>
+    <ngx-govscot-tabs title="Business Support">
+      <ngx-govscot-tab id="grants" title="Available grants">
+        <h4>Funding opportunities</h4>
+        <p>
+          Several grant schemes are available to support Scottish businesses:
+        </p>
+
+        <h5>Start-up grants</h5>
+        <table style="width: 100%; border-collapse: collapse; margin: 1em 0">
+          <thead>
+            <tr style="background: #f8f8f8">
+              <th
+                style="border: 1px solid #ccc; padding: 8px; text-align: left"
+              >
+                Grant name
+              </th>
+              <th
+                style="border: 1px solid #ccc; padding: 8px; text-align: left"
+              >
+                Amount
+              </th>
+              <th
+                style="border: 1px solid #ccc; padding: 8px; text-align: left"
+              >
+                Eligibility
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="border: 1px solid #ccc; padding: 8px">
+                Business Gateway Start-up Grant
+              </td>
+              <td style="border: 1px solid #ccc; padding: 8px">Up to £2,000</td>
+              <td style="border: 1px solid #ccc; padding: 8px">
+                New businesses under 12 months
+              </td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #ccc; padding: 8px">
+                Innovation Grant
+              </td>
+              <td style="border: 1px solid #ccc; padding: 8px">
+                Up to £10,000
+              </td>
+              <td style="border: 1px solid #ccc; padding: 8px">
+                Technology-focused startups
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          <strong>Note:</strong> Grant availability and criteria may change.
+          Check the latest information before applying.
+        </p>
+      </ngx-govscot-tab>
+      <ngx-govscot-tab id="advice" title="Business advice">
+        <h4>Get expert guidance</h4>
+        <p>Free business advice is available from various sources:</p>
+
+        <div
+          style="
+            border: 1px solid #ccc;
+            padding: 1em;
+            margin: 1em 0;
+            background: #f9f9f9;
+          "
+        >
+          <h5>Business Gateway</h5>
+          <p>Scotland's national business support service offering:</p>
+          <ul>
+            <li>One-to-one advice sessions</li>
+            <li>Market research support</li>
+            <li>Financial planning guidance</li>
+            <li>Digital skills training</li>
+          </ul>
+          <p>
+            <strong>Contact:</strong> 0300 013 4753 or visit your local Business
+            Gateway office.
+          </p>
+        </div>
+
+        <div
+          style="
+            border: 1px solid #ccc;
+            padding: 1em;
+            margin: 1em 0;
+            background: #f9f9f9;
+          "
+        >
+          <h5>HMRC Business Support</h5>
+          <p>Tax and compliance guidance including:</p>
+          <ul>
+            <li>VAT registration support</li>
+            <li>PAYE setup assistance</li>
+            <li>Corporation Tax guidance</li>
+          </ul>
+          <p>
+            <strong>Contact:</strong> 0300 200 3410 for new business enquiries.
+          </p>
+        </div>
+      </ngx-govscot-tab>
+    </ngx-govscot-tabs>
+  </div>
+
   <h2>Button Examples</h2>
 
   <div class="example-section">
@@ -366,6 +545,177 @@
       </ngx-govscot-button>
     </ngx-govscot-accordion-item>
   </ngx-govscot-accordion>
+
+  <h2>Tabs Examples</h2>
+
+  <h3>Corporation Tax Information</h3>
+  <ngx-govscot-tabs title="Corporation Tax Guide">
+    <ngx-govscot-tab id="overview" title="Overview">
+      <h4>What is Corporation Tax?</h4>
+      <p>
+        Corporation Tax is charged on the 'chargeable profits' of limited
+        companies, members' clubs, societies, associations, co-operatives and
+        other unincorporated bodies.
+      </p>
+      <p>
+        The rate of Corporation Tax depends on the amount of profit your company
+        makes and when your accounting period ends.
+      </p>
+
+      <ngx-govscot-button-group>
+        <ngx-govscot-button color="primary" size="small">
+          Calculate your tax
+        </ngx-govscot-button>
+        <ngx-govscot-button color="link" size="small">
+          Read full guidance
+        </ngx-govscot-button>
+      </ngx-govscot-button-group>
+    </ngx-govscot-tab>
+
+    <ngx-govscot-tab id="registration" title="Registration">
+      <h4>Who must register?</h4>
+      <p>
+        You must register for Corporation Tax if your company or organisation is
+        based in the UK or has an office or branch here.
+      </p>
+      <ul>
+        <li>Limited companies</li>
+        <li>Foreign companies with a UK branch or office</li>
+        <li>Clubs, societies, associations and other unincorporated bodies</li>
+        <li>Co-operatives</li>
+      </ul>
+
+      <ngx-govscot-warning-text>
+        You must register within 3 months of starting business. You could be
+        fined if you do not register in time.
+      </ngx-govscot-warning-text>
+
+      <ngx-govscot-button color="primary">
+        Register for Corporation Tax
+      </ngx-govscot-button>
+    </ngx-govscot-tab>
+
+    <ngx-govscot-tab id="deadlines" title="Deadlines">
+      <h4>Important dates</h4>
+      <p>
+        Make sure you're aware of these important Corporation Tax deadlines:
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Deadline</th>
+            <th>Time limit</th>
+            <th>Penalty for missing</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Registration</td>
+            <td>Within 3 months of starting business</td>
+            <td>Up to £3,000 fine</td>
+          </tr>
+          <tr>
+            <td>Filing return</td>
+            <td>12 months after the end of your accounting period</td>
+            <td>£100 to £3,000 penalty</td>
+          </tr>
+          <tr>
+            <td>Paying tax</td>
+            <td>9 months and 1 day after the end of your accounting period</td>
+            <td>Interest charges</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <ngx-govscot-button-group>
+        <ngx-govscot-button
+          color="primary"
+          iconName="calendar"
+          iconPosition="left"
+        >
+          Set up deadline reminders
+        </ngx-govscot-button>
+        <ngx-govscot-button color="secondary">
+          Calculate payment date
+        </ngx-govscot-button>
+      </ngx-govscot-button-group>
+    </ngx-govscot-tab>
+  </ngx-govscot-tabs>
+
+  <h3>Business Support</h3>
+  <ngx-govscot-tabs title="Business Support Services">
+    <ngx-govscot-tab id="grants" title="Grants and Funding">
+      <h4>Available grants</h4>
+      <p>
+        Various grants and funding options are available to help Scottish
+        businesses grow and develop.
+      </p>
+
+      <div style="background: #f8f8f8; padding: 1rem; margin: 1rem 0">
+        <h5>Small Business Boost Grant</h5>
+        <p>
+          Up to £5,000 for small businesses to purchase equipment or training.
+        </p>
+        <ngx-govscot-button color="link" size="small">
+          Check eligibility
+        </ngx-govscot-button>
+      </div>
+
+      <div style="background: #f8f8f8; padding: 1rem; margin: 1rem 0">
+        <h5>Innovation Fund</h5>
+        <p>
+          Funding for businesses developing innovative products or services.
+        </p>
+        <ngx-govscot-button color="link" size="small">
+          Apply now
+        </ngx-govscot-button>
+      </div>
+
+      <ngx-govscot-button color="primary"> View all grants </ngx-govscot-button>
+    </ngx-govscot-tab>
+
+    <ngx-govscot-tab id="advice" title="Business Advice">
+      <h4>Get expert support</h4>
+      <p>Access free business advice and support from qualified advisors.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Type</th>
+            <th>Cost</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Business Gateway</td>
+            <td>General business advice</td>
+            <td>Free</td>
+          </tr>
+          <tr>
+            <td>Specialist advice</td>
+            <td>Sector-specific guidance</td>
+            <td>Free initial consultation</td>
+          </tr>
+          <tr>
+            <td>Growth workshops</td>
+            <td>Skills development</td>
+            <td>Free for eligible businesses</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <ngx-govscot-button-group>
+        <ngx-govscot-button color="primary">
+          Book free consultation
+        </ngx-govscot-button>
+        <ngx-govscot-button color="secondary">
+          Find local advisor
+        </ngx-govscot-button>
+      </ngx-govscot-button-group>
+    </ngx-govscot-tab>
+  </ngx-govscot-tabs>
 </main>
 
 <router-outlet></router-outlet>

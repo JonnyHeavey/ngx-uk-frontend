@@ -15,6 +15,10 @@ import {
 import { GovScotDetailsComponent } from 'ngx-govscot-frontend/details';
 import { GovScotPhaseBannerComponent } from 'ngx-govscot-frontend/phase-banner';
 import { GovScotSkipLinkComponent } from 'ngx-govscot-frontend/skip-link';
+import {
+  GovScotTabComponent,
+  GovScotTabsComponent,
+} from 'ngx-govscot-frontend/tabs';
 import { GovScotWarningTextComponent } from 'ngx-govscot-frontend/warning-text';
 
 @Component({
@@ -29,6 +33,8 @@ import { GovScotWarningTextComponent } from 'ngx-govscot-frontend/warning-text';
     GovScotButtonGroupComponent,
     GovScotPhaseBannerComponent,
     GovScotSkipLinkComponent,
+    GovScotTabComponent,
+    GovScotTabsComponent,
     GovScotWarningTextComponent,
   ],
   selector: 'ngx-govscot-frontend-root',
