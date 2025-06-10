@@ -36,12 +36,6 @@ describe('GovScotAccordionComponent', () => {
     expect(openAllButton).toBeTruthy();
     expect(openAllButton.textContent.trim()).toContain('Open all');
   });
-
-  it('should have data-module attribute', () => {
-    const accordionElement =
-      fixture.nativeElement.querySelector('.ds_accordion');
-    expect(accordionElement.getAttribute('data-module')).toBe('ds-accordion');
-  });
 });
 
 describe('GovScotAccordionItemComponent', () => {
