@@ -32,6 +32,9 @@
       "ngx-govscot-frontend/inset-text": [
         "libs/ngx-govscot-frontend/inset-text/src/index.ts"
       ],
+      "ngx-govscot-frontend/warning-text": [
+        "libs/ngx-govscot-frontend/warning-text/src/index.ts"
+      ],
       "ngx-govuk-frontend": ["libs/ngx-govuk-frontend/src/index.ts"],
       "ngx-govuk-frontend/accordion": [
         "libs/ngx-govuk-frontend/accordion/src/index.ts"
