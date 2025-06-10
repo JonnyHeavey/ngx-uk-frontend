@@ -1,0 +1,41 @@
+<div class="ds_accordion js-initialised">
+  <button
+    type="button"
+    class="ds_link ds_accordion__open-all js-open-all"
+    (click)="toggleAll()"
+  >
+    {{ allExpanded() ? 'Close all' : 'Open all' }}
+    <span class="visually-hidden">sections</span>
+  </button>
+
+  @for (item of items(); track item.itemId()) {
+    <div class="ds_accordion-item">
+      <input
+        type="checkbox"
+        class="visually-hidden ds_accordion-item__control"
+        [id]="id() + '-' + item.itemId()"
+        [attr.aria-labelledby]="id() + '-' + item.itemId() + '-heading'"
+        [checked]="isExpanded(item.itemId())"
+        (change)="onCheckboxChange(item.itemId())"
+      />
+      <div class="ds_accordion-item__header">
+        <h2
+          [id]="id() + '-' + item.itemId() + '-heading'"
+          class="ds_accordion-item__title"
+        >
+          {{ item.heading() }}
+        </h2>
+        <span aria-hidden="true" class="ds_accordion-item__indicator"></span>
+        <label
+          class="ds_accordion-item__label"
+          [for]="id() + '-' + item.itemId()"
+        >
+          <span class="visually-hidden">Show this section</span>
+        </label>
+      </div>
+      <div class="ds_accordion-item__body">
+        <ng-container [ngTemplateOutlet]="item.content()"></ng-container>
+      </div>
+    </div>
+  }
+</div>

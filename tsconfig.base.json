@@ -16,10 +16,14 @@
     "baseUrl": ".",
     "paths": {
       "@ngx-uk-frontend/core": ["libs/core/src/index.ts"],
+      "@ngx-uk-frontend/core/accordion": ["libs/core/accordion/src/index.ts"],
       "@ngx-uk-frontend/core/button": ["libs/core/button/src/index.ts"],
       "@ngx-uk-frontend/core/details": ["libs/core/details/src/index.ts"],
       "@ngx-uk-frontend/core/inset-text": ["libs/core/inset-text/src/index.ts"],
       "ngx-govscot-frontend": ["libs/ngx-govscot-frontend/src/index.ts"],
+      "ngx-govscot-frontend/accordion": [
+        "libs/ngx-govscot-frontend/accordion/src/index.ts"
+      ],
       "ngx-govscot-frontend/button": [
         "libs/ngx-govscot-frontend/button/src/index.ts"
       ],

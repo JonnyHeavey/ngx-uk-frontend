@@ -289,7 +289,7 @@
     "components": [
         {
             "name": "GovUKAccordionComponent",
-            "id": "component-GovUKAccordionComponent-69ef5edcc521c148a1206103c016b18a52ba3fd3a9dbabe81b6438952fddb6f14f669aa18d33d62ce5a5b8a96c0391135fff081db6c81d1386267f7b7f760d8e",
+            "id": "component-GovUKAccordionComponent-828fe7dedeb2e0f8117bc91c7bd73a2492d501ca232e068d530b5a64258ecb7d5be681ef6844ab3490b85a4a27f836db4d9083ba120c450528d05b1d7ef6bb98",
             "file": "libs/ngx-govuk-frontend/accordion/src/lib/accordion/accordion.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -309,85 +309,9 @@
                     "name": "CdkAccordion"
                 }
             ],
-            "inputsClass": [
-                {
-                    "name": "id",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "<p>The unique identifier for the accordion. This input is required.</p>\n",
-                    "line": 29,
-                    "rawdescription": "\nThe unique identifier for the accordion. This input is required.",
-                    "modifierKind": [
-                        148
-                    ],
-                    "required": true
-                }
-            ],
+            "inputsClass": [],
             "outputsClass": [],
             "propertiesClass": [
-                {
-                    "name": "allExpanded",
-                    "defaultValue": "computed(() => {\r\n    const allItems = this.items();\r\n    const expandedItems = this.expandedItems();\r\n    return (\r\n      allItems.length > 0 &&\r\n      allItems.every((item) => expandedItems.includes(item.itemId()))\r\n    );\r\n  })",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "<p>Computed property that determines if all accordion items are currently expanded.\nReturns true only if there are items and all of them are expanded.</p>\n",
-                    "line": 50,
-                    "rawdescription": "\n\nComputed property that determines if all accordion items are currently expanded.\nReturns true only if there are items and all of them are expanded.\n",
-                    "modifierKind": [
-                        148
-                    ]
-                },
-                {
-                    "name": "expandedItems",
-                    "defaultValue": "model<string[]>([])",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "<p>Two-way binding model for the currently expanded accordion items.\nContains an array of item IDs that are expanded.</p>\n",
-                    "line": 41,
-                    "rawdescription": "\n\nTwo-way binding model for the currently expanded accordion items.\nContains an array of item IDs that are expanded.\n",
-                    "modifierKind": [
-                        148
-                    ]
-                },
-                {
-                    "name": "id",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "<p>The unique identifier for the accordion. This input is required.</p>\n",
-                    "line": 29,
-                    "rawdescription": "\nThe unique identifier for the accordion. This input is required.",
-                    "modifierKind": [
-                        148
-                    ],
-                    "required": true
-                },
-                {
-                    "name": "initialExpanded",
-                    "defaultValue": "input<string[]>([])",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "<p>IDs of accordion items that should be expanded when the accordion first renders.\nDefaults to an empty array (all items collapsed).</p>\n",
-                    "line": 35,
-                    "rawdescription": "\n\nIDs of accordion items that should be expanded when the accordion first renders.\nDefaults to an empty array (all items collapsed).\n",
-                    "modifierKind": [
-                        148
-                    ]
-                },
                 {
                     "name": "items",
                     "defaultValue": "contentChildren(GovUKAccordionItemComponent)",
@@ -397,7 +321,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "<p>Collection of accordion item components that are children of this accordion.</p>\n",
-                    "line": 44,
+                    "line": 30,
                     "rawdescription": "\nCollection of accordion item components that are children of this accordion.",
                     "modifierKind": [
                         148
@@ -406,117 +330,19 @@
             ],
             "methodsClass": [
                 {
-                    "name": "isExpanded",
-                    "args": [
-                        {
-                            "name": "itemId",
-                            "type": "string",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
-                    ],
-                    "optional": false,
-                    "returnType": "boolean",
-                    "typeParameters": [],
-                    "line": 75,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\n\nChecks if a specific accordion item is expanded.\n",
-                    "description": "<p>Checks if a specific accordion item is expanded.</p>\n",
-                    "jsdoctags": [
-                        {
-                            "name": {
-                                "pos": 2333,
-                                "end": 2339,
-                                "kind": 80,
-                                "id": 0,
-                                "flags": 16842752,
-                                "transformFlags": 0,
-                                "escapedText": "itemId"
-                            },
-                            "type": "string",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "pos": 2327,
-                                "end": 2332,
-                                "kind": 80,
-                                "id": 0,
-                                "flags": 16842752,
-                                "transformFlags": 0,
-                                "escapedText": "param"
-                            },
-                            "comment": "<p>The ID of the accordion item to check</p>\n"
-                        },
-                        {
-                            "tagName": {
-                                "pos": 2385,
-                                "end": 2392,
-                                "kind": 80,
-                                "id": 0,
-                                "flags": 16842752,
-                                "transformFlags": 0,
-                                "escapedText": "returns"
-                            },
-                            "comment": "<p>True if the item is expanded, false otherwise</p>\n"
-                        }
-                    ]
-                },
-                {
-                    "name": "toggleAll",
+                    "name": "getItems",
                     "args": [],
                     "optional": false,
-                    "returnType": "void",
+                    "returnType": "AccordionItemDirective[]",
                     "typeParameters": [],
-                    "line": 102,
+                    "line": 36,
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "rawdescription": "\n\nToggles all accordion items between expanded and collapsed states.\nIf all items are currently expanded, collapses all items.\nIf any items are collapsed, expands all items.\n",
-                    "description": "<p>Toggles all accordion items between expanded and collapsed states.\nIf all items are currently expanded, collapses all items.\nIf any items are collapsed, expands all items.</p>\n"
-                },
-                {
-                    "name": "toggleItem",
-                    "args": [
-                        {
-                            "name": "itemId",
-                            "type": "string",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
-                    ],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 84,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\n\nToggles the expanded state of a specific accordion item.\nIf the item is collapsed, it will be expanded, and vice versa.\n",
-                    "description": "<p>Toggles the expanded state of a specific accordion item.\nIf the item is collapsed, it will be expanded, and vice versa.</p>\n",
-                    "jsdoctags": [
-                        {
-                            "name": {
-                                "pos": 2697,
-                                "end": 2703,
-                                "kind": 80,
-                                "id": 0,
-                                "flags": 16842752,
-                                "transformFlags": 0,
-                                "escapedText": "itemId"
-                            },
-                            "type": "string",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "pos": 2691,
-                                "end": 2696,
-                                "kind": 80,
-                                "id": 0,
-                                "flags": 16842752,
-                                "transformFlags": 0,
-                                "escapedText": "param"
-                            },
-                            "comment": "<p>The ID of the accordion item to toggle</p>\n"
-                        }
+                    "rawdescription": "\n\nImplementation of the abstract getItems method.\nReturns the accordion items for use by the base directive.\n",
+                    "description": "<p>Implementation of the abstract getItems method.\nReturns the accordion items for use by the base directive.</p>\n",
+                    "modifierKind": [
+                        124,
+                        164
                     ]
                 }
             ],
@@ -524,7 +350,7 @@
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
-            "standalone": false,
+            "standalone": true,
             "imports": [
                 {
                     "name": "NgTemplateOutlet"
@@ -533,24 +359,18 @@
             "description": "<p>This component implements the GOV.UK Design System accordion component.\nIt allows users to show and hide sections of related content on a page.</p>\n<p>See <a href=\"https://design-system.service.gov.uk/components/accordion/\">https://design-system.service.gov.uk/components/accordion/</a></p>\n",
             "rawdescription": "\n\nThis component implements the GOV.UK Design System accordion component.\nIt allows users to show and hide sections of related content on a page.\n\nSee https://design-system.service.gov.uk/components/accordion/\n",
             "type": "component",
-            "sourceCode": "import { CdkAccordion } from '@angular/cdk/accordion';\r\nimport { NgTemplateOutlet } from '@angular/common';\r\nimport {\r\n  ChangeDetectionStrategy,\r\n  Component,\r\n  computed,\r\n  contentChildren,\r\n  effect,\r\n  input,\r\n  model,\r\n} from '@angular/core';\r\nimport { GovUKAccordionItemComponent } from '../accordion-item/accordion-item.component';\r\n\r\n/**\r\n * This component implements the GOV.UK Design System accordion component.\r\n * It allows users to show and hide sections of related content on a page.\r\n *\r\n * @see https://design-system.service.gov.uk/components/accordion/\r\n */\r\n@Component({\r\n  imports: [NgTemplateOutlet],\r\n  selector: 'ngx-govuk-accordion',\r\n  templateUrl: './accordion.component.html',\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n  hostDirectives: [CdkAccordion],\r\n})\r\nexport class GovUKAccordionComponent {\r\n  /** The unique identifier for the accordion. This input is required. */\r\n  readonly id = input.required<string>();\r\n\r\n  /**\r\n   * IDs of accordion items that should be expanded when the accordion first renders.\r\n   * Defaults to an empty array (all items collapsed).\r\n   */\r\n  readonly initialExpanded = input<string[]>([]);\r\n\r\n  /**\r\n   * Two-way binding model for the currently expanded accordion items.\r\n   * Contains an array of item IDs that are expanded.\r\n   */\r\n  readonly expandedItems = model<string[]>([]);\r\n\r\n  /** Collection of accordion item components that are children of this accordion. */\r\n  readonly items = contentChildren(GovUKAccordionItemComponent);\r\n\r\n  /**\r\n   * Computed property that determines if all accordion items are currently expanded.\r\n   * Returns true only if there are items and all of them are expanded.\r\n   */\r\n  readonly allExpanded = computed(() => {\r\n    const allItems = this.items();\r\n    const expandedItems = this.expandedItems();\r\n    return (\r\n      allItems.length > 0 &&\r\n      allItems.every((item) => expandedItems.includes(item.itemId()))\r\n    );\r\n  });\r\n\r\n  constructor() {\r\n    effect(() => {\r\n      const initialExpandedItems = this.expandedItems();\r\n      const initialExpanded = this.initialExpanded();\r\n\r\n      if (initialExpandedItems.length === 0 && initialExpanded.length > 0) {\r\n        this.expandedItems.set([...initialExpanded]);\r\n      }\r\n    });\r\n  }\r\n\r\n  /**\r\n   * Checks if a specific accordion item is expanded.\r\n   * @param itemId The ID of the accordion item to check\r\n   * @returns True if the item is expanded, false otherwise\r\n   */\r\n  isExpanded(itemId: string): boolean {\r\n    return this.expandedItems().includes(itemId);\r\n  }\r\n\r\n  /**\r\n   * Toggles the expanded state of a specific accordion item.\r\n   * If the item is collapsed, it will be expanded, and vice versa.\r\n   * @param itemId The ID of the accordion item to toggle\r\n   */\r\n  toggleItem(itemId: string): void {\r\n    const currentExpanded = this.expandedItems();\r\n    const index = currentExpanded.indexOf(itemId);\r\n\r\n    if (index === -1) {\r\n      this.expandedItems.set([...currentExpanded, itemId]);\r\n    } else {\r\n      const newExpanded = [...currentExpanded];\r\n      newExpanded.splice(index, 1);\r\n      this.expandedItems.set(newExpanded);\r\n    }\r\n  }\r\n\r\n  /**\r\n   * Toggles all accordion items between expanded and collapsed states.\r\n   * If all items are currently expanded, collapses all items.\r\n   * If any items are collapsed, expands all items.\r\n   */\r\n  toggleAll(): void {\r\n    if (this.allExpanded()) {\r\n      this.expandedItems.set([]);\r\n    } else {\r\n      this.expandedItems.set(this.items().map((item) => item.itemId()));\r\n    }\r\n  }\r\n}\r\n",
+            "sourceCode": "import { CdkAccordion } from '@angular/cdk/accordion';\nimport { NgTemplateOutlet } from '@angular/common';\nimport {\n  ChangeDetectionStrategy,\n  Component,\n  contentChildren,\n} from '@angular/core';\nimport {\n  AccordionDirective,\n  AccordionItemDirective,\n} from '@ngx-uk-frontend/core/accordion';\nimport { GovUKAccordionItemComponent } from '../accordion-item/accordion-item.component';\n\n/**\n * This component implements the GOV.UK Design System accordion component.\n * It allows users to show and hide sections of related content on a page.\n *\n * @see https://design-system.service.gov.uk/components/accordion/\n */\n@Component({\n  imports: [NgTemplateOutlet],\n  selector: 'ngx-govuk-accordion',\n  templateUrl: './accordion.component.html',\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  hostDirectives: [CdkAccordion],\n  standalone: true,\n})\nexport class GovUKAccordionComponent extends AccordionDirective {\n  /** Collection of accordion item components that are children of this accordion. */\n  readonly items = contentChildren(GovUKAccordionItemComponent);\n\n  /**\n   * Implementation of the abstract getItems method.\n   * Returns the accordion items for use by the base directive.\n   */\n  protected override getItems(): readonly AccordionItemDirective[] {\n    return this.items();\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 57
-            },
-            "extends": [],
+            "extends": [
+                "AccordionDirective"
+            ],
             "templateData": "<div class=\"govuk-accordion\" [attr.id]=\"id()\">\n  <div class=\"govuk-accordion__controls\">\n    <button\n      type=\"button\"\n      class=\"govuk-accordion__show-all\"\n      [attr.aria-expanded]=\"allExpanded()\"\n      (click)=\"toggleAll()\"\n    >\n      <span\n        class=\"govuk-accordion-nav__chevron\"\n        [class.govuk-accordion-nav__chevron--down]=\"!allExpanded()\"\n      ></span>\n      <span class=\"govuk-accordion__show-all-text\">\n        {{ allExpanded() ? 'Hide all sections' : 'Show all sections' }}\n      </span>\n    </button>\n  </div>\n  @for (item of items(); track item.itemId()) {\n    <div\n      class=\"govuk-accordion__section\"\n      [class.govuk-accordion__section--expanded]=\"isExpanded(item.itemId())\"\n    >\n      <div class=\"govuk-accordion__section-header\">\n        <h2 class=\"govuk-accordion__section-heading\">\n          <button\n            type=\"button\"\n            class=\"govuk-accordion__section-button\"\n            [attr.aria-expanded]=\"isExpanded(item.itemId())\"\n            [attr.aria-controls]=\"id() + '-content-' + item.itemId()\"\n            [attr.aria-label]=\"\n              item.heading() +\n              (item.summary() ? ', ' + item.summary() + ', ' : ', ') +\n              (isExpanded(item.itemId()) ? 'Hide' : 'Show') +\n              ' this section'\n            \"\n            (click)=\"toggleItem(item.itemId())\"\n          >\n            <span\n              class=\"govuk-accordion__section-heading-text\"\n              [attr.id]=\"id() + '-heading-' + item.itemId()\"\n            >\n              <span class=\"govuk-accordion__section-heading-text-focus\">\n                {{ item.heading() }}\n              </span>\n            </span>\n\n            @if (item.summary()) {\n              <span\n                class=\"govuk-visually-hidden govuk-accordion__section-heading-divider\"\n                >,\n              </span>\n              <span\n                class=\"govuk-accordion__section-summary govuk-body\"\n                [attr.id]=\"id() + '-summary-' + item.itemId()\"\n              >\n                <span class=\"govuk-accordion__section-summary-focus\">\n                  {{ item.summary() }}\n                </span>\n              </span>\n            }\n\n            <span\n              class=\"govuk-visually-hidden govuk-accordion__section-heading-divider\"\n              >,\n            </span>\n            <span class=\"govuk-accordion__section-toggle\" data-nosnippet=\"\">\n              <span class=\"govuk-accordion__section-toggle-focus\">\n                <span\n                  class=\"govuk-accordion-nav__chevron\"\n                  [class.govuk-accordion-nav__chevron--down]=\"\n                    !isExpanded(item.itemId())\n                  \"\n                ></span>\n                <span class=\"govuk-accordion__section-toggle-text\">{{\n                  isExpanded(item.itemId()) ? 'Hide' : 'Show'\n                }}</span>\n              </span>\n            </span>\n          </button>\n        </h2>\n      </div>\n      <div\n        [attr.id]=\"id() + '-content-' + item.itemId()\"\n        class=\"govuk-accordion__section-content\"\n        [attr.aria-labelledby]=\"id() + '-heading-' + item.itemId()\"\n        [hidden]=\"!isExpanded(item.itemId())\"\n      >\n        <ng-container [ngTemplateOutlet]=\"item.content()\"></ng-container>\n      </div>\n    </div>\n  }\n</div>\n"
         },
         {
             "name": "GovUKAccordionItemComponent",
-            "id": "component-GovUKAccordionItemComponent-c7bde0f515f7c7e7129d5f8c4192f9055f8508d6440a51561875ac8886ad3de2e951da84c86f0df71c72a8a823345d605e16d882b844b420737f91bc5e1ea78e",
+            "id": "component-GovUKAccordionItemComponent-11758934e8003c344ad1213ff6fdcfc9353ff98698074d0a779f5284b69fcffcb4b001fca1f37cf257c6b96fdcd5ff8d9eae94c8ae64081b137684e3297e56c2",
             "file": "libs/ngx-govuk-frontend/accordion/src/lib/accordion-item/accordion-item.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -566,53 +386,7 @@
             ],
             "viewProviders": [],
             "hostDirectives": [],
-            "inputsClass": [
-                {
-                    "name": "heading",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "<p>The text displayed in the accordion item heading. This input is required.</p>\n",
-                    "line": 26,
-                    "rawdescription": "\nThe text displayed in the accordion item heading. This input is required.",
-                    "modifierKind": [
-                        148
-                    ],
-                    "required": true
-                },
-                {
-                    "name": "itemId",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "<p>The unique identifier for the accordion item. This input is required.</p>\n",
-                    "line": 23,
-                    "rawdescription": "\nThe unique identifier for the accordion item. This input is required.",
-                    "modifierKind": [
-                        148
-                    ],
-                    "required": true
-                },
-                {
-                    "name": "summary",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "<p>Optional summary text displayed below the heading.</p>\n",
-                    "line": 29,
-                    "rawdescription": "\nOptional summary text displayed below the heading.",
-                    "modifierKind": [
-                        148
-                    ],
-                    "required": false
-                }
-            ],
+            "inputsClass": [],
             "outputsClass": [],
             "propertiesClass": [
                 {
@@ -624,71 +398,11 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "<p>Reference to the template containing the accordion item&#39;s content.</p>\n",
-                    "line": 35,
+                    "line": 23,
                     "rawdescription": "\nReference to the template containing the accordion item's content.",
                     "modifierKind": [
                         148
                     ]
-                },
-                {
-                    "name": "expanded",
-                    "defaultValue": "input(false, { transform: booleanAttribute })",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "<p>Whether the accordion item is expanded. Defaults to false.</p>\n",
-                    "line": 32,
-                    "rawdescription": "\nWhether the accordion item is expanded. Defaults to false.",
-                    "modifierKind": [
-                        148
-                    ]
-                },
-                {
-                    "name": "heading",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "<p>The text displayed in the accordion item heading. This input is required.</p>\n",
-                    "line": 26,
-                    "rawdescription": "\nThe text displayed in the accordion item heading. This input is required.",
-                    "modifierKind": [
-                        148
-                    ],
-                    "required": true
-                },
-                {
-                    "name": "itemId",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "<p>The unique identifier for the accordion item. This input is required.</p>\n",
-                    "line": 23,
-                    "rawdescription": "\nThe unique identifier for the accordion item. This input is required.",
-                    "modifierKind": [
-                        148
-                    ],
-                    "required": true
-                },
-                {
-                    "name": "summary",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "<p>Optional summary text displayed below the heading.</p>\n",
-                    "line": 29,
-                    "rawdescription": "\nOptional summary text displayed below the heading.",
-                    "modifierKind": [
-                        148
-                    ],
-                    "required": false
                 }
             ],
             "methodsClass": [],
@@ -696,16 +410,18 @@
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
-            "standalone": false,
+            "standalone": true,
             "imports": [],
             "description": "<p>This component implements a section in the GOV.UK Design System accordion component.\nIt contains the heading, optional summary, and content for an accordion section.</p>\n<p>See <a href=\"https://design-system.service.gov.uk/components/accordion/\">https://design-system.service.gov.uk/components/accordion/</a></p>\n",
             "rawdescription": "\n\nThis component implements a section in the GOV.UK Design System accordion component.\nIt contains the heading, optional summary, and content for an accordion section.\n\nSee https://design-system.service.gov.uk/components/accordion/\n",
             "type": "component",
-            "sourceCode": "import {\r\n  booleanAttribute,\r\n  ChangeDetectionStrategy,\r\n  Component,\r\n  input,\r\n  TemplateRef,\r\n  viewChild,\r\n} from '@angular/core';\r\n\r\n/**\r\n * This component implements a section in the GOV.UK Design System accordion component.\r\n * It contains the heading, optional summary, and content for an accordion section.\r\n *\r\n * @see https://design-system.service.gov.uk/components/accordion/\r\n */\r\n@Component({\r\n  selector: 'ngx-govuk-accordion-item',\r\n  templateUrl: './accordion-item.component.html',\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n})\r\nexport class GovUKAccordionItemComponent {\r\n  /** The unique identifier for the accordion item. This input is required. */\r\n  readonly itemId = input.required<string>();\r\n\r\n  /** The text displayed in the accordion item heading. This input is required. */\r\n  readonly heading = input.required<string>();\r\n\r\n  /** Optional summary text displayed below the heading. */\r\n  readonly summary = input<string>();\r\n\r\n  /** Whether the accordion item is expanded. Defaults to false. */\r\n  readonly expanded = input(false, { transform: booleanAttribute });\r\n\r\n  /** Reference to the template containing the accordion item's content. */\r\n  readonly content = viewChild.required<TemplateRef<unknown>>('content');\r\n}\r\n",
+            "sourceCode": "import {\r\n  ChangeDetectionStrategy,\r\n  Component,\r\n  TemplateRef,\r\n  viewChild,\r\n} from '@angular/core';\r\nimport { AccordionItemDirective } from '@ngx-uk-frontend/core/accordion';\r\n\r\n/**\r\n * This component implements a section in the GOV.UK Design System accordion component.\r\n * It contains the heading, optional summary, and content for an accordion section.\r\n *\r\n * @see https://design-system.service.gov.uk/components/accordion/\r\n */\r\n@Component({\r\n  selector: 'ngx-govuk-accordion-item',\r\n  templateUrl: './accordion-item.component.html',\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n  standalone: true,\r\n})\r\nexport class GovUKAccordionItemComponent extends AccordionItemDirective {\r\n  /** Reference to the template containing the accordion item's content. */\r\n  readonly content = viewChild.required<TemplateRef<unknown>>('content');\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
-            "extends": [],
+            "extends": [
+                "AccordionItemDirective"
+            ],
             "templateData": "<ng-template #content>\n  <ng-content />\n</ng-template>\n"
         },
         {
@@ -839,7 +555,7 @@
         },
         {
             "name": "GovUKButtonComponent",
-            "id": "component-GovUKButtonComponent-5db40ab881f7e57570771eba8c742f7a073807ec1e306f38a33c39f11c19b4ba6485214417a8c6431991c8f483d10cfc50dfe77c0af0625a7eac1108c133a0f3",
+            "id": "component-GovUKButtonComponent-54d13e3e3f58120b60e455eed48d05769a7f018a4d4dd252bd3d068d0c90f1fe4f03e4b839574e62e15064e888dbd780895526e6fedc783cd7b28f0699066728",
             "file": "libs/ngx-govuk-frontend/button/src/lib/button/button.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -867,23 +583,8 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "<p>The color variant of the button. Defaults to &#39;primary&#39;.\nCan be &#39;primary&#39;, &#39;secondary&#39;, &#39;warning&#39;, or &#39;inverse&#39;.</p>\n",
-                    "line": 46,
+                    "line": 44,
                     "rawdescription": "\n\nThe color variant of the button. Defaults to 'primary'.\nCan be 'primary', 'secondary', 'warning', or 'inverse'.\n",
-                    "modifierKind": [
-                        148
-                    ]
-                },
-                {
-                    "name": "disabled",
-                    "defaultValue": "input(false, { transform: booleanAttribute })",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "<p>Whether the button is disabled. Defaults to false.</p>\n",
-                    "line": 37,
-                    "rawdescription": "\nWhether the button is disabled. Defaults to false.",
                     "modifierKind": [
                         148
                     ]
@@ -897,7 +598,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "<p>Whether to show the start icon (forward arrow). Defaults to false.</p>\n",
-                    "line": 40,
+                    "line": 38,
                     "rawdescription": "\nWhether to show the start icon (forward arrow). Defaults to false.",
                     "modifierKind": [
                         148
@@ -918,11 +619,13 @@
             "description": "<p>This component implements the GOV.UK Design System button component.\nIt allows users to take actions, submit forms, or navigate to a new page.</p>\n<p>See <a href=\"https://design-system.service.gov.uk/components/button/\">https://design-system.service.gov.uk/components/button/</a></p>\n",
             "rawdescription": "\n\nThis component implements the GOV.UK Design System button component.\nIt allows users to take actions, submit forms, or navigate to a new page.\n\nSee https://design-system.service.gov.uk/components/button/\n",
             "type": "component",
-            "sourceCode": "import { NgClass } from '@angular/common';\r\nimport {\r\n  booleanAttribute,\r\n  ChangeDetectionStrategy,\r\n  Component,\r\n  input,\r\n} from '@angular/core';\r\n\r\n/**\r\n * The color type for GovUK buttons\r\n * @typedef {('primary'|'secondary'|'warning'|'inverse')} GovUKButtonColorType\r\n * - 'primary' - Default blue button\r\n * - 'secondary' - Grey button for secondary actions\r\n * - 'warning' - Red warning button\r\n * - 'inverse' - White button on dark background\r\n */\r\nexport type GovUKButtonColorType =\r\n  | 'primary'\r\n  | 'secondary'\r\n  | 'warning'\r\n  | 'inverse';\r\n\r\n/**\r\n * This component implements the GOV.UK Design System button component.\r\n * It allows users to take actions, submit forms, or navigate to a new page.\r\n *\r\n * @see https://design-system.service.gov.uk/components/button/\r\n */\r\n@Component({\r\n  selector: 'ngx-govuk-button',\r\n  imports: [NgClass],\r\n  templateUrl: './button.component.html',\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n})\r\nexport class GovUKButtonComponent {\r\n  /** Whether the button is disabled. Defaults to false. */\r\n  readonly disabled = input(false, { transform: booleanAttribute });\r\n\r\n  /** Whether to show the start icon (forward arrow). Defaults to false. */\r\n  readonly start = input(false, { transform: booleanAttribute });\r\n\r\n  /**\r\n   * The color variant of the button. Defaults to 'primary'.\r\n   * Can be 'primary', 'secondary', 'warning', or 'inverse'.\r\n   */\r\n  readonly color = input<GovUKButtonColorType>('primary');\r\n}\r\n",
+            "sourceCode": "import { NgClass } from '@angular/common';\r\nimport {\r\n  booleanAttribute,\r\n  ChangeDetectionStrategy,\r\n  Component,\r\n  input,\r\n} from '@angular/core';\r\nimport { ButtonDirective } from '@ngx-uk-frontend/core/button';\r\n\r\n/**\r\n * The color type for GovUK buttons\r\n * @typedef {('primary'|'secondary'|'warning'|'inverse')} GovUKButtonColorType\r\n * - 'primary' - Default blue button\r\n * - 'secondary' - Grey button for secondary actions\r\n * - 'warning' - Red warning button\r\n * - 'inverse' - White button on dark background\r\n */\r\nexport type GovUKButtonColorType =\r\n  | 'primary'\r\n  | 'secondary'\r\n  | 'warning'\r\n  | 'inverse';\r\n\r\n/**\r\n * This component implements the GOV.UK Design System button component.\r\n * It allows users to take actions, submit forms, or navigate to a new page.\r\n *\r\n * @see https://design-system.service.gov.uk/components/button/\r\n */\r\n@Component({\r\n  selector: 'ngx-govuk-button',\r\n  imports: [NgClass],\r\n  templateUrl: './button.component.html',\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n})\r\nexport class GovUKButtonComponent extends ButtonDirective {\r\n  /** Whether to show the start icon (forward arrow). Defaults to false. */\r\n  readonly start = input(false, { transform: booleanAttribute });\r\n\r\n  /**\r\n   * The color variant of the button. Defaults to 'primary'.\r\n   * Can be 'primary', 'secondary', 'warning', or 'inverse'.\r\n   */\r\n  readonly color = input<GovUKButtonColorType>('primary');\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
-            "extends": [],
+            "extends": [
+                "ButtonDirective"
+            ],
             "templateData": "<button\n  class=\"govuk-button\"\n  [ngClass]=\"{\n    'govuk-button--secondary': color() === 'secondary',\n    'govuk-button--warning': color() === 'warning',\n    'govuk-button--inverse': color() === 'inverse',\n  }\"\n  [disabled]=\"disabled()\"\n>\n  <ng-content></ng-content>\n  @if (start()) {\n    <svg\n      class=\"govuk-button__start-icon\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n      width=\"17.5\"\n      height=\"19\"\n      viewBox=\"0 0 33 40\"\n      aria-hidden=\"true\"\n      focusable=\"false\"\n    >\n      <path fill=\"currentColor\" d=\"M0 0h13l20 20-20 20H0l20-20z\" />\n    </svg>\n  }\n</button>\n"
         },
         {
@@ -1723,7 +1426,7 @@
         },
         {
             "name": "GovUKDetailsComponent",
-            "id": "component-GovUKDetailsComponent-615801edbe3fb44ef6378d25c9d6061d2fbc692d6f9ff226c1b4e849366547413f19e43925075a2208670c7db9120b669de9f7d85497ed85ca4d447241317fa4",
+            "id": "component-GovUKDetailsComponent-09fa80dd151b161243de2321d32733f68b9581cc7fb430191444988341436a1c6d49dc822d456b10ad78449db05be1457c87ddb6f73f1c320344ffc90242857c",
             "file": "libs/ngx-govuk-frontend/details/src/lib/details.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -1739,41 +1442,9 @@
             ],
             "viewProviders": [],
             "hostDirectives": [],
-            "inputsClass": [
-                {
-                    "name": "summary",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "<p>The text shown in the details summary element. This input is required.</p>\n",
-                    "line": 16,
-                    "rawdescription": "\nThe text shown in the details summary element. This input is required.",
-                    "modifierKind": [
-                        148
-                    ],
-                    "required": true
-                }
-            ],
+            "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [
-                {
-                    "name": "summary",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "<p>The text shown in the details summary element. This input is required.</p>\n",
-                    "line": 16,
-                    "rawdescription": "\nThe text shown in the details summary element. This input is required.",
-                    "modifierKind": [
-                        148
-                    ],
-                    "required": true
-                }
-            ],
+            "propertiesClass": [],
             "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
@@ -1784,16 +1455,18 @@
             "description": "<p>This component implements the GOV.UK Design System details component.\nIt makes a page easier to scan by letting users reveal more detailed information only if they need it.</p>\n<p>See <a href=\"https://design-system.service.gov.uk/components/details/\">https://design-system.service.gov.uk/components/details/</a></p>\n",
             "rawdescription": "\n\nThis component implements the GOV.UK Design System details component.\nIt makes a page easier to scan by letting users reveal more detailed information only if they need it.\n\nSee https://design-system.service.gov.uk/components/details/\n",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, input } from '@angular/core';\r\n\r\n/**\r\n * This component implements the GOV.UK Design System details component.\r\n * It makes a page easier to scan by letting users reveal more detailed information only if they need it.\r\n *\r\n * @see https://design-system.service.gov.uk/components/details/\r\n */\r\n@Component({\r\n  selector: 'ngx-govuk-details',\r\n  templateUrl: './details.component.html',\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n})\r\nexport class GovUKDetailsComponent {\r\n  /** The text shown in the details summary element. This input is required. */\r\n  readonly summary = input.required<string>();\r\n}\r\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component } from '@angular/core';\r\nimport { DetailsDirective } from '@ngx-uk-frontend/core/details';\r\n\r\n/**\r\n * This component implements the GOV.UK Design System details component.\r\n * It makes a page easier to scan by letting users reveal more detailed information only if they need it.\r\n *\r\n * @see https://design-system.service.gov.uk/components/details/\r\n */\r\n@Component({\r\n  selector: 'ngx-govuk-details',\r\n  templateUrl: './details.component.html',\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n})\r\nexport class GovUKDetailsComponent extends DetailsDirective {}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
-            "extends": [],
+            "extends": [
+                "DetailsDirective"
+            ],
             "templateData": "<details class=\"govuk-details\">\n  <summary class=\"govuk-details__summary\">\n    <span class=\"govuk-details__summary-text\">{{ summary() }}</span>\n  </summary>\n  <div class=\"govuk-details__text\">\n    <ng-content></ng-content>\n  </div>\n</details>\n"
         },
         {
             "name": "GovUKErrorSummaryComponent",
-            "id": "component-GovUKErrorSummaryComponent-d6cb5568b153a175af0368d015d98ce8a5bc5bf8eb4a7e32010223cf5aa35b5585759342569be932b16dcaf9a10b63b1527b0c872fb46630607583c876acbb7a",
+            "id": "component-GovUKErrorSummaryComponent-d40635910661d05cabd5cabc5414c6bd3564fb49e75bb281aa68c240bd7bbfb3b27b2c3a0ceaf7f915b6d840d0c1c28400a0e7bcf93b6eab9bb4bd307081509f",
             "file": "libs/ngx-govuk-frontend/error-summary/src/lib/error-summary.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -1821,7 +1494,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "<p>Query for all error summary item directives using signal-based query\nThis allows the component to iterate through the child error items</p>\n",
-                    "line": 50,
+                    "line": 41,
                     "rawdescription": "\n\nQuery for all error summary item directives using signal-based query\nThis allows the component to iterate through the child error items\n",
                     "modifierKind": [
                         148
@@ -1836,7 +1509,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "<p>Text to use for the heading of the error summary block</p>\n",
-                    "line": 55,
+                    "line": 46,
                     "rawdescription": "\n\nText to use for the heading of the error summary block\n",
                     "modifierKind": [
                         148
@@ -1854,10 +1527,10 @@
                     "name": "RouterLink"
                 }
             ],
-            "description": "<p>Component for displaying a GOV.UK error summary</p>\n<p>Use this component at the top of a page to summarise any errors a user has made.\nWhen a user makes an error, you should show both an error summary and an error message\nnext to each answer that contains an error.</p>\n<p>This component implements the GOV.UK Design System error summary component.\nIt helps users understand what went wrong and how to fix it.</p>\n<p>See <a href=\"https://design-system.service.gov.uk/components/error-summary/\">https://design-system.service.gov.uk/components/error-summary/</a></p>\n<h2>Router Configuration</h2>\n<p>The component uses Angular Router&#39;s fragment navigation for scrolling to error elements.\nYou must enable anchor scrolling in your application&#39;s router configuration for proper\nscrolling behavior when users click on error links.</p>\n<p>Configure your router using one of these methods:</p>\n<b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-typescript\">// Option 1: Using RouterModule (NgModule approach)\nRouterModule.forRoot(routes, { anchorScrolling: &#39;enabled&#39; })\n\n// Option 2: Using Standalone API\nprovideRouter(routes, withInMemoryScrolling({ anchorScrolling: &#39;enabled&#39; }))</code></pre></div>",
-            "rawdescription": "\n\nComponent for displaying a GOV.UK error summary\n\nUse this component at the top of a page to summarise any errors a user has made.\nWhen a user makes an error, you should show both an error summary and an error message\nnext to each answer that contains an error.\n\nThis component implements the GOV.UK Design System error summary component.\nIt helps users understand what went wrong and how to fix it.\n\nSee https://design-system.service.gov.uk/components/error-summary/\n\n## Router Configuration\n\nThe component uses Angular Router's fragment navigation for scrolling to error elements.\nYou must enable anchor scrolling in your application's router configuration for proper\nscrolling behavior when users click on error links.\n\nConfigure your router using one of these methods:\n```typescript\n// Option 1: Using RouterModule (NgModule approach)\nRouterModule.forRoot(routes, { anchorScrolling: 'enabled' })\n\n// Option 2: Using Standalone API\nprovideRouter(routes, withInMemoryScrolling({ anchorScrolling: 'enabled' }))\n```\n",
+            "description": "<p>Component for displaying a GOV.UK error summary</p>\n<p>Use this component at the top of a page to summarise any errors a user has made.\nWhen a user makes an error, you should show both an error summary and an error message\nnext to each answer that contains an error.</p>\n<p>This component implements the GOV.UK Design System error summary component.\nIt helps users understand what went wrong and how to fix it.</p>\n<p>See <a href=\"https://design-system.service.gov.uk/components/error-summary/\">https://design-system.service.gov.uk/components/error-summary/</a></p>\n<h2>Router Configuration</h2>\n<p>The component uses Angular Router&#39;s fragment navigation for scrolling to error elements.\nYou must enable anchor scrolling in your application&#39;s router configuration for proper\nscrolling behavior when users click on error links.</p>\n",
+            "rawdescription": "\n\nComponent for displaying a GOV.UK error summary\n\nUse this component at the top of a page to summarise any errors a user has made.\nWhen a user makes an error, you should show both an error summary and an error message\nnext to each answer that contains an error.\n\nThis component implements the GOV.UK Design System error summary component.\nIt helps users understand what went wrong and how to fix it.\n\nSee https://design-system.service.gov.uk/components/error-summary/\n\n## Router Configuration\n\nThe component uses Angular Router's fragment navigation for scrolling to error elements.\nYou must enable anchor scrolling in your application's router configuration for proper\nscrolling behavior when users click on error links.\n",
             "type": "component",
-            "sourceCode": "import {\r\n  afterNextRender,\r\n  ChangeDetectionStrategy,\r\n  Component,\r\n  contentChildren,\r\n  ElementRef,\r\n  input,\r\n} from '@angular/core';\r\nimport { RouterLink } from '@angular/router';\r\nimport { GovUKErrorSummaryItemDirective } from './error-summary-item.directive';\r\n\r\n/**\r\n * Component for displaying a GOV.UK error summary\r\n *\r\n * Use this component at the top of a page to summarise any errors a user has made.\r\n * When a user makes an error, you should show both an error summary and an error message\r\n * next to each answer that contains an error.\r\n *\r\n * This component implements the GOV.UK Design System error summary component.\r\n * It helps users understand what went wrong and how to fix it.\r\n *\r\n * @see https://design-system.service.gov.uk/components/error-summary/\r\n *\r\n * ## Router Configuration\r\n *\r\n * The component uses Angular Router's fragment navigation for scrolling to error elements.\r\n * You must enable anchor scrolling in your application's router configuration for proper\r\n * scrolling behavior when users click on error links.\r\n *\r\n * Configure your router using one of these methods:\r\n * ```typescript\r\n * // Option 1: Using RouterModule (NgModule approach)\r\n * RouterModule.forRoot(routes, { anchorScrolling: 'enabled' })\r\n *\r\n * // Option 2: Using Standalone API\r\n * provideRouter(routes, withInMemoryScrolling({ anchorScrolling: 'enabled' }))\r\n * ```\r\n */\r\n@Component({\r\n  selector: 'ngx-govuk-error-summary',\r\n  templateUrl: './error-summary.component.html',\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n  imports: [RouterLink],\r\n})\r\nexport class GovUKErrorSummaryComponent {\r\n  /**\r\n   * Query for all error summary item directives using signal-based query\r\n   * This allows the component to iterate through the child error items\r\n   */\r\n  readonly errorItems = contentChildren(GovUKErrorSummaryItemDirective);\r\n\r\n  /**\r\n   * Text to use for the heading of the error summary block\r\n   */\r\n  readonly title = input<string>('There is a problem');\r\n\r\n  constructor(private elementRef: ElementRef) {\r\n    // Focus on the error summary when it's rendered\r\n    afterNextRender(() => {\r\n      const element = this.elementRef.nativeElement as HTMLElement;\r\n      element.focus();\r\n    });\r\n  }\r\n}\r\n",
+            "sourceCode": "import {\r\n  afterNextRender,\r\n  ChangeDetectionStrategy,\r\n  Component,\r\n  contentChildren,\r\n  ElementRef,\r\n  input,\r\n} from '@angular/core';\r\nimport { RouterLink } from '@angular/router';\r\nimport { GovUKErrorSummaryItemDirective } from './error-summary-item.directive';\r\n\r\n/**\r\n * Component for displaying a GOV.UK error summary\r\n *\r\n * Use this component at the top of a page to summarise any errors a user has made.\r\n * When a user makes an error, you should show both an error summary and an error message\r\n * next to each answer that contains an error.\r\n *\r\n * This component implements the GOV.UK Design System error summary component.\r\n * It helps users understand what went wrong and how to fix it.\r\n *\r\n * @see https://design-system.service.gov.uk/components/error-summary/\r\n *\r\n * ## Router Configuration\r\n *\r\n * The component uses Angular Router's fragment navigation for scrolling to error elements.\r\n * You must enable anchor scrolling in your application's router configuration for proper\r\n * scrolling behavior when users click on error links.\r\n */\r\n@Component({\r\n  selector: 'ngx-govuk-error-summary',\r\n  templateUrl: './error-summary.component.html',\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n  imports: [RouterLink],\r\n})\r\nexport class GovUKErrorSummaryComponent {\r\n  /**\r\n   * Query for all error summary item directives using signal-based query\r\n   * This allows the component to iterate through the child error items\r\n   */\r\n  readonly errorItems = contentChildren(GovUKErrorSummaryItemDirective);\r\n\r\n  /**\r\n   * Text to use for the heading of the error summary block\r\n   */\r\n  readonly title = input<string>('There is a problem');\r\n\r\n  constructor(private elementRef: ElementRef) {\r\n    // Focus on the error summary when it's rendered\r\n    afterNextRender(() => {\r\n      const element = this.elementRef.nativeElement as HTMLElement;\r\n      element.focus();\r\n    });\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -1874,7 +1547,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 55,
+                "line": 46,
                 "jsdoctags": [
                     {
                         "name": "elementRef",
@@ -2965,7 +2638,7 @@
         },
         {
             "name": "GovUKInsetTextComponent",
-            "id": "component-GovUKInsetTextComponent-a93d8a937911a49af609189f03db32eff4c4b4836261f24f1d91e6ef52a7dd8a4a0de08d1c6938cc4417fdf0e458fb2e50db318cf3a577c9a5aa9a3e9592e609",
+            "id": "component-GovUKInsetTextComponent-05f5cee1cab70ba75680871b461c735a6d4c1528dad9a6da9edd9c76f34eed09110f0c3b438d003e498da3104a08c3fd0e7f8df21043d7d1f2c203f83ae193d0",
             "file": "libs/ngx-govuk-frontend/inset-text/src/lib/inset-text.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -2989,16 +2662,18 @@
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
-            "standalone": false,
+            "standalone": true,
             "imports": [],
             "description": "<p>This component implements the GOV.UK Design System inset text component.\nIt distinguishes a block of text from the surrounding content.</p>\n<p>See <a href=\"https://design-system.service.gov.uk/components/inset-text/\">https://design-system.service.gov.uk/components/inset-text/</a></p>\n",
             "rawdescription": "\n\nThis component implements the GOV.UK Design System inset text component.\nIt distinguishes a block of text from the surrounding content.\n\nSee https://design-system.service.gov.uk/components/inset-text/\n",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component } from '@angular/core';\r\n\r\n/**\r\n * This component implements the GOV.UK Design System inset text component.\r\n * It distinguishes a block of text from the surrounding content.\r\n *\r\n * @see https://design-system.service.gov.uk/components/inset-text/\r\n */\r\n@Component({\r\n  selector: 'ngx-govuk-inset-text',\r\n  templateUrl: './inset-text.component.html',\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n})\r\nexport class GovUKInsetTextComponent {}\r\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component } from '@angular/core';\r\nimport { InsetTextDirective } from '@ngx-uk-frontend/core/inset-text';\r\n\r\n/**\r\n * This component implements the GOV.UK Design System inset text component.\r\n * It distinguishes a block of text from the surrounding content.\r\n *\r\n * @see https://design-system.service.gov.uk/components/inset-text/\r\n */\r\n@Component({\r\n  selector: 'ngx-govuk-inset-text',\r\n  templateUrl: './inset-text.component.html',\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n  standalone: true,\r\n})\r\nexport class GovUKInsetTextComponent extends InsetTextDirective {}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
-            "extends": [],
+            "extends": [
+                "InsetTextDirective"
+            ],
             "templateData": "<div class=\"govuk-inset-text\">\n  <ng-content></ng-content>\n</div>\n"
         },
         {
@@ -3834,7 +3509,7 @@
         },
         {
             "name": "GovUKRadioGroupComponent",
-            "id": "component-GovUKRadioGroupComponent-0052f65864b0ce68db4c051167fcc567f95af2ed2a4ec98f849a43d1c7a4447c998b0479e4d86d3a110b0115b7c0ceb3976045c6267ec98d1286795824e01012",
+            "id": "component-GovUKRadioGroupComponent-6dbc66a5795c021d9d496593c8edbb54a6b2500d1ffb8a89fd09e09025e48b19896211c0e8d6337928571363aa4daf251b239e92a624322d0e9a5c4cd658d02c",
             "file": "libs/ngx-govuk-frontend/radio/src/lib/radio-group.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -3865,8 +3540,9 @@
                     "type": "",
                     "indexKey": "",
                     "optional": false,
-                    "description": "",
-                    "line": 27,
+                    "description": "<p>When true, displays the radio buttons in a horizontal layout.\nDefault is a vertical stack layout.</p>\n",
+                    "line": 54,
+                    "rawdescription": "\n\nWhen true, displays the radio buttons in a horizontal layout.\nDefault is a vertical stack layout.\n",
                     "modifierKind": [
                         148
                     ]
@@ -3879,8 +3555,9 @@
                     "type": "",
                     "indexKey": "",
                     "optional": false,
-                    "description": "",
-                    "line": 23,
+                    "description": "<p>Reference to the Angular form control.\nAllows the component to read and write values to the form.</p>\n",
+                    "line": 36,
+                    "rawdescription": "\n\nReference to the Angular form control.\nAllows the component to read and write values to the form.\n",
                     "modifierKind": [
                         148
                     ]
@@ -3893,8 +3570,9 @@
                     "type": "",
                     "indexKey": "",
                     "optional": false,
-                    "description": "",
-                    "line": 24,
+                    "description": "<p>Query for all radio option directives using signal-based query.\nThis allows the component to iterate through the child radio options.</p>\n",
+                    "line": 42,
+                    "rawdescription": "\n\nQuery for all radio option directives using signal-based query.\nThis allows the component to iterate through the child radio options.\n",
                     "modifierKind": [
                         148
                     ]
@@ -3907,8 +3585,9 @@
                     "type": "",
                     "indexKey": "",
                     "optional": false,
-                    "description": "",
-                    "line": 26,
+                    "description": "<p>When true, displays the radio buttons in a smaller size.\nThis is useful for less important options or when space is limited.</p>\n",
+                    "line": 48,
+                    "rawdescription": "\n\nWhen true, displays the radio buttons in a smaller size.\nThis is useful for less important options or when space is limited.\n",
                     "modifierKind": [
                         148
                     ]
@@ -3928,18 +3607,35 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 29,
+                    "line": 62,
                     "deprecated": false,
                     "deprecationMessage": "",
+                    "rawdescription": "\n\nSets the selected value of the radio group.\nOnly updates the form control if the value has changed.\n\n",
+                    "description": "<p>Sets the selected value of the radio group.\nOnly updates the form control if the value has changed.</p>\n",
                     "jsdoctags": [
                         {
-                            "name": "value",
+                            "name": {
+                                "pos": 1879,
+                                "end": 1884,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "value"
+                            },
                             "type": "string",
                             "deprecated": false,
                             "deprecationMessage": "",
                             "tagName": {
-                                "text": "param"
-                            }
+                                "pos": 1873,
+                                "end": 1878,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "param"
+                            },
+                            "comment": "<p>The value to set for the radio group</p>\n"
                         }
                     ]
                 }
@@ -3955,10 +3651,10 @@
                     "type": "module"
                 }
             ],
-            "description": "",
-            "rawdescription": "\n",
+            "description": "<p>Component for rendering a GOV.UK Design System radio button group.</p>\n<p>Radio buttons let users select a single option from a list.\nThis component implements the GOV.UK Design System radio button component,\nhandling form integration and accessibility requirements.</p>\n<p>See <a href=\"https://design-system.service.gov.uk/components/radios/\">https://design-system.service.gov.uk/components/radios/</a></p>\n",
+            "rawdescription": "\n\nComponent for rendering a GOV.UK Design System radio button group.\n\nRadio buttons let users select a single option from a list.\nThis component implements the GOV.UK Design System radio button component,\nhandling form integration and accessibility requirements.\n\nSee https://design-system.service.gov.uk/components/radios/\n",
             "type": "component",
-            "sourceCode": "import {\n  booleanAttribute,\n  ChangeDetectionStrategy,\n  Component,\n  contentChildren,\n  input,\n} from '@angular/core';\nimport { ReactiveFormsModule } from '@angular/forms';\nimport {\n  injectNgControl,\n  ValueAccessorDirective,\n} from 'ngx-govuk-frontend/form-utils';\nimport { GovUKRadioOptionDirective } from './radio-option.directive';\n\n@Component({\n    selector: 'ngx-govuk-radio-group',\n    imports: [ReactiveFormsModule],\n    templateUrl: './radio-group.component.html',\n    changeDetection: ChangeDetectionStrategy.OnPush,\n    hostDirectives: [ValueAccessorDirective]\n})\nexport class GovUKRadioGroupComponent {\n  readonly ngControl = injectNgControl();\n  readonly options = contentChildren(GovUKRadioOptionDirective);\n\n  readonly small = input(false, { transform: booleanAttribute });\n  readonly inline = input(false, { transform: booleanAttribute });\n\n  setValue(value: string) {\n    if (this.ngControl.control.value !== value) {\n      this.ngControl.control.setValue(value);\n    }\n  }\n}\n",
+            "sourceCode": "import {\n  booleanAttribute,\n  ChangeDetectionStrategy,\n  Component,\n  contentChildren,\n  input,\n} from '@angular/core';\nimport { ReactiveFormsModule } from '@angular/forms';\nimport {\n  injectNgControl,\n  ValueAccessorDirective,\n} from 'ngx-govuk-frontend/form-utils';\nimport { GovUKRadioOptionDirective } from './radio-option.directive';\n\n/**\n * Component for rendering a GOV.UK Design System radio button group.\n *\n * Radio buttons let users select a single option from a list.\n * This component implements the GOV.UK Design System radio button component,\n * handling form integration and accessibility requirements.\n *\n * @see https://design-system.service.gov.uk/components/radios/\n */\n@Component({\n  selector: 'ngx-govuk-radio-group',\n  imports: [ReactiveFormsModule],\n  templateUrl: './radio-group.component.html',\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  hostDirectives: [ValueAccessorDirective],\n})\nexport class GovUKRadioGroupComponent {\n  /**\n   * Reference to the Angular form control.\n   * Allows the component to read and write values to the form.\n   */\n  readonly ngControl = injectNgControl();\n\n  /**\n   * Query for all radio option directives using signal-based query.\n   * This allows the component to iterate through the child radio options.\n   */\n  readonly options = contentChildren(GovUKRadioOptionDirective);\n\n  /**\n   * When true, displays the radio buttons in a smaller size.\n   * This is useful for less important options or when space is limited.\n   */\n  readonly small = input(false, { transform: booleanAttribute });\n\n  /**\n   * When true, displays the radio buttons in a horizontal layout.\n   * Default is a vertical stack layout.\n   */\n  readonly inline = input(false, { transform: booleanAttribute });\n\n  /**\n   * Sets the selected value of the radio group.\n   * Only updates the form control if the value has changed.\n   *\n   * @param value The value to set for the radio group\n   */\n  setValue(value: string) {\n    if (this.ngControl.control.value !== value) {\n      this.ngControl.control.setValue(value);\n    }\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -5323,7 +5019,7 @@
         },
         {
             "name": "GovUKTaskListComponent",
-            "id": "component-GovUKTaskListComponent-2c1d0b02d79229fe5af2481a5f34e66f83469f0fe310944ed7f7d9979bb9f266d3e6271d20b6eb67bfd55a2359558d5b7002c7f72e187df64c4a50c3f6e71066",
+            "id": "component-GovUKTaskListComponent-588f21d6577e05544de804669089454a0fa1604100e3cbdae1000766c7e50d8ed9445000602d5f9a92fcf8319e09b3cfd613dd040fc09dc078c7993de5ad82c4",
             "file": "libs/ngx-govuk-frontend/task-list/src/lib/task-list.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -5375,10 +5071,10 @@
                     "name": "RouterLink"
                 }
             ],
-            "description": "<p>Component for displaying a GOV.UK task list.</p>\n<p>A task list helps users understand:</p>\n<ul>\n<li>the tasks they need to complete</li>\n<li>the order they need to complete tasks in</li>\n<li>when they have completed a task</li>\n</ul>\n<p>This component implements the GOV.UK Design System task list pattern.</p>\n<p>See <a href=\"https://design-system.service.gov.uk/patterns/task-list/\">https://design-system.service.gov.uk/patterns/task-list/</a></p>\n",
-            "rawdescription": "\n\nComponent for displaying a GOV.UK task list.\n\nA task list helps users understand:\n- the tasks they need to complete\n- the order they need to complete tasks in\n- when they have completed a task\n\nThis component implements the GOV.UK Design System task list pattern.\n\nSee https://design-system.service.gov.uk/patterns/task-list/\n",
+            "description": "<p>Component for displaying a GOV.UK task list.</p>\n<p>A task list helps users understand:</p>\n<ul>\n<li>the tasks they need to complete</li>\n<li>the order they need to complete tasks in</li>\n<li>when they have completed a task</li>\n</ul>\n<p>This component implements the GOV.UK Design System task list pattern.</p>\n<p>See <a href=\"https://design-system.service.gov.uk/components/task-list/\">https://design-system.service.gov.uk/components/task-list/</a></p>\n",
+            "rawdescription": "\n\nComponent for displaying a GOV.UK task list.\n\nA task list helps users understand:\n- the tasks they need to complete\n- the order they need to complete tasks in\n- when they have completed a task\n\nThis component implements the GOV.UK Design System task list pattern.\n\nSee https://design-system.service.gov.uk/components/task-list/\n",
             "type": "component",
-            "sourceCode": "import {\r\n  ChangeDetectionStrategy,\r\n  Component,\r\n  contentChildren,\r\n} from '@angular/core';\r\nimport { RouterLink } from '@angular/router';\r\nimport { GovUKTagComponent } from 'ngx-govuk-frontend/tag';\r\nimport { GovUKTaskListItemDirective } from './task-list-item.directive';\r\n\r\n/**\r\n * Component for displaying a GOV.UK task list.\r\n *\r\n * A task list helps users understand:\r\n * - the tasks they need to complete\r\n * - the order they need to complete tasks in\r\n * - when they have completed a task\r\n *\r\n * This component implements the GOV.UK Design System task list pattern.\r\n *\r\n * @see https://design-system.service.gov.uk/patterns/task-list/\r\n */\r\n@Component({\r\n  selector: 'ngx-govuk-task-list',\r\n  templateUrl: './task-list.component.html',\r\n  imports: [GovUKTagComponent, RouterLink],\r\n  styles: [\r\n    `\r\n      a {\r\n        cursor: pointer;\r\n      }\r\n    `,\r\n  ],\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n})\r\nexport class GovUKTaskListComponent {\r\n  /**\r\n   * Query for all task list item directives using signal-based query.\r\n   * This allows the component to iterate through the child task list items.\r\n   */\r\n  readonly taskItems = contentChildren(GovUKTaskListItemDirective);\r\n}\r\n",
+            "sourceCode": "import {\r\n  ChangeDetectionStrategy,\r\n  Component,\r\n  contentChildren,\r\n} from '@angular/core';\r\nimport { RouterLink } from '@angular/router';\r\nimport { GovUKTagComponent } from 'ngx-govuk-frontend/tag';\r\nimport { GovUKTaskListItemDirective } from './task-list-item.directive';\r\n\r\n/**\r\n * Component for displaying a GOV.UK task list.\r\n *\r\n * A task list helps users understand:\r\n * - the tasks they need to complete\r\n * - the order they need to complete tasks in\r\n * - when they have completed a task\r\n *\r\n * This component implements the GOV.UK Design System task list pattern.\r\n *\r\n * @see https://design-system.service.gov.uk/components/task-list/\r\n */\r\n@Component({\r\n  selector: 'ngx-govuk-task-list',\r\n  templateUrl: './task-list.component.html',\r\n  imports: [GovUKTagComponent, RouterLink],\r\n  styles: [\r\n    `\r\n      a {\r\n        cursor: pointer;\r\n      }\r\n    `,\r\n  ],\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n})\r\nexport class GovUKTaskListComponent {\r\n  /**\r\n   * Query for all task list item directives using signal-based query.\r\n   * This allows the component to iterate through the child task list items.\r\n   */\r\n  readonly taskItems = contentChildren(GovUKTaskListItemDirective);\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "\n      a {\n        cursor: pointer;\n      }\n    \n",
@@ -6952,7 +6648,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "StoryFn<GovUKSelectComponent>",
-                "defaultValue": "(args) => ({\n  props: { ...args, form: new FormGroup({ input: new FormControl(false) }) },\n  template: `<form [formGroup]=\"form\">\n      <ngx-govuk-select\n        formControlName=\"input\"\n         ${argsToTemplate(args)}\n      ></ngx-govuk-radio-group>\n    </form>`,\n})"
+                "defaultValue": "(args) => ({\n  props: { ...args, form: new FormGroup({ input: new FormControl(false) }) },\n  template: `<form [formGroup]=\"form\">\n      <ngx-govuk-select\n        formControlName=\"input\"\n         ${argsToTemplate(args)}\n      ></ngx-govuk-select>\n    </form>`,\n})"
             },
             {
                 "name": "Template",
@@ -9046,7 +8742,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "StoryFn<GovUKSelectComponent>",
-                    "defaultValue": "(args) => ({\n  props: { ...args, form: new FormGroup({ input: new FormControl(false) }) },\n  template: `<form [formGroup]=\"form\">\n      <ngx-govuk-select\n        formControlName=\"input\"\n         ${argsToTemplate(args)}\n      ></ngx-govuk-radio-group>\n    </form>`,\n})"
+                    "defaultValue": "(args) => ({\n  props: { ...args, form: new FormGroup({ input: new FormControl(false) }) },\n  template: `<form [formGroup]=\"form\">\n      <ngx-govuk-select\n        formControlName=\"input\"\n         ${argsToTemplate(args)}\n      ></ngx-govuk-select>\n    </form>`,\n})"
                 }
             ],
             "libs/ngx-govuk-frontend/service-navigation/src/lib/navigation.component.stories.ts": [
@@ -9986,7 +9682,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 17,
+        "count": 18,
         "status": "low",
         "files": [
             {
@@ -10015,7 +9711,7 @@
                 "linktype": "component",
                 "name": "GovUKAccordionItemComponent",
                 "coveragePercent": 100,
-                "coverageCount": "9/9",
+                "coverageCount": "2/2",
                 "status": "very-good"
             },
             {
@@ -10073,8 +9769,8 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "GovUKAccordionComponent",
-                "coveragePercent": 90,
-                "coverageCount": "10/11",
+                "coveragePercent": 100,
+                "coverageCount": "3/3",
                 "status": "very-good"
             },
             {
@@ -10370,7 +10066,7 @@
                 "linktype": "component",
                 "name": "GovUKButtonComponent",
                 "coveragePercent": 100,
-                "coverageCount": "4/4",
+                "coverageCount": "3/3",
                 "status": "very-good"
             },
             {
@@ -10634,7 +10330,7 @@
                 "linktype": "component",
                 "name": "GovUKDetailsComponent",
                 "coveragePercent": 100,
-                "coverageCount": "3/3",
+                "coverageCount": "1/1",
                 "status": "very-good"
             },
             {
@@ -11503,9 +11199,9 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "GovUKRadioGroupComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/6",
-                "status": "low"
+                "coveragePercent": 100,
+                "coverageCount": "6/6",
+                "status": "very-good"
             },
             {
                 "filePath": "libs/ngx-govuk-frontend/radio/src/lib/radio-option.directive.ts",

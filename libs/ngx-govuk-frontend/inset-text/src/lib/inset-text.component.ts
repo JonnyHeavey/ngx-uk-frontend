@@ -11,6 +11,5 @@ import { InsetTextDirective } from '@ngx-uk-frontend/core/inset-text';
   selector: 'ngx-govuk-inset-text',
   templateUrl: './inset-text.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: true,
 })
 export class GovUKInsetTextComponent extends InsetTextDirective {}
