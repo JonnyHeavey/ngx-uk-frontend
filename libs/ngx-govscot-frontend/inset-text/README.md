@@ -1,33 +1,39 @@
-# Inset Text (Scottish Government Design System)
+# Scottish Government Design System Inset Text Component
 
-This component implements the Scottish Government Design System inset text component. It is used to highlight a block of text from the content that surrounds it, for example, a quote or something added to the main content.
+This component implements the Scottish Government Design System inset text component for Angular applications. It distinguishes a block of text from the surrounding content using distinctive styling.
+
+## Installation
+
+```bash
+npm install ngx-govscot-frontend
+```
 
 ## Usage
 
+Import the component in your Angular application:
+
 ```typescript
 import { GovScotInsetTextComponent } from 'ngx-govscot-frontend/inset-text';
-
-@Component({
-  template: ` <ngx-govscot-inset-text> You may be able to <a href="#">apply for free school meals</a> at the same time as you apply for the clothing grant. </ngx-govscot-inset-text> `,
-  imports: [GovScotInsetTextComponent],
-})
-export class MyComponent {}
 ```
 
-## Design System Reference
+Use it in your templates:
 
-This component is based on the [Scottish Government Design System inset text component](https://designsystem.gov.scot/components/inset-text).
+```html
+<ngx-govscot-inset-text> It can take up to 8 weeks to register a lasting power of attorney if there are no mistakes in the application. </ngx-govscot-inset-text>
+```
 
 ## Implementation
 
-This component extends the core `InsetTextDirective` from `@ngx-uk-frontend/core/inset-text`, providing a Scottish Government Design System-specific implementation with the appropriate CSS classes:
+This component provides a Scottish Government Design System-specific implementation with the appropriate CSS classes:
 
-- `.ds_inset-text` - Main container
-- `.ds_inset-text__text` - Text content wrapper
+- `ds_inset-text` - Main container class
+- `ds_inset-text__text` - Text content class
 
-## Features
+## Design System Reference
 
-- Fully accessible
-- Supports content projection with `ng-content`
-- Follows Scottish Government Design System guidelines
-- Extends shared core functionality
+For more information about the Scottish Government Design System inset text component, visit:
+https://designsystem.gov.scot/components/inset-text
+
+## Accessibility
+
+The component follows Scottish Government Design System accessibility guidelines and provides appropriate semantic markup for screen readers and other assistive technologies.
