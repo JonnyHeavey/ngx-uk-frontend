@@ -5,6 +5,10 @@ import {
   GovScotAccordionItemComponent,
 } from 'ngx-govscot-frontend/accordion';
 import {
+  GovScotBreadcrumbDirective,
+  GovScotBreadcrumbsComponent,
+} from 'ngx-govscot-frontend/breadcrumbs';
+import {
   GovScotButtonComponent,
   GovScotButtonGroupComponent,
 } from 'ngx-govscot-frontend/button';
@@ -19,6 +23,8 @@ import { GovScotWarningTextComponent } from 'ngx-govscot-frontend/warning-text';
     GovScotDetailsComponent,
     GovScotAccordionComponent,
     GovScotAccordionItemComponent,
+    GovScotBreadcrumbDirective,
+    GovScotBreadcrumbsComponent,
     GovScotButtonComponent,
     GovScotButtonGroupComponent,
     GovScotPhaseBannerComponent,

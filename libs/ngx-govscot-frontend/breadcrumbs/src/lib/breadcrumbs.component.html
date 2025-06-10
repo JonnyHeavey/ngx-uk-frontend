@@ -1,0 +1,18 @@
+<nav aria-label="Breadcrumb">
+  <ol class="ds_breadcrumbs">
+    @for (item of items(); track $index) {
+      <li
+        class="ds_breadcrumbs__item"
+        [attr.aria-current]="item.current() ? 'page' : null"
+      >
+        @if (item.link() && !item.current()) {
+          <a class="ds_breadcrumbs__link" [routerLink]="item.link()">
+            {{ item.label() }}
+          </a>
+        } @else {
+          {{ item.label() }}
+        }
+      </li>
+    }
+  </ol>
+</nav>

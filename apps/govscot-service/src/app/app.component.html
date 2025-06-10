@@ -9,6 +9,23 @@
   improve it.
 </ngx-govscot-phase-banner>
 
+<!-- Breadcrumbs -->
+<ngx-govscot-breadcrumbs>
+  <ngx-govscot-breadcrumb label="Home" link="/"></ngx-govscot-breadcrumb>
+  <ngx-govscot-breadcrumb
+    label="Taxes and benefits"
+    link="/taxes"
+  ></ngx-govscot-breadcrumb>
+  <ngx-govscot-breadcrumb
+    label="Corporation Tax"
+    link="/taxes/corporation"
+  ></ngx-govscot-breadcrumb>
+  <ngx-govscot-breadcrumb
+    label="Component examples"
+    [current]="true"
+  ></ngx-govscot-breadcrumb>
+</ngx-govscot-breadcrumbs>
+
 <main id="main-content">
   <h1>Scottish Government Design System - Component Examples</h1>
 
@@ -26,6 +43,76 @@
       This is a new Corporation Tax service. Your
       <a href="/alpha-feedback">feedback</a> will help us to improve it.
     </ngx-govscot-phase-banner>
+  </div>
+
+  <h2>Breadcrumbs Examples</h2>
+
+  <div class="example-section">
+    <h3>Default Breadcrumbs with Current Page</h3>
+    <p>
+      The breadcrumbs above show the current page location. Here's another
+      example:
+    </p>
+    <ngx-govscot-breadcrumbs>
+      <ngx-govscot-breadcrumb label="Home" link="/"></ngx-govscot-breadcrumb>
+      <ngx-govscot-breadcrumb
+        label="Justice and the law"
+        link="/justice"
+      ></ngx-govscot-breadcrumb>
+      <ngx-govscot-breadcrumb
+        label="Your rights and the law"
+        link="/justice/rights"
+      ></ngx-govscot-breadcrumb>
+      <ngx-govscot-breadcrumb
+        label="Data sharing of personal information"
+        [current]="true"
+      ></ngx-govscot-breadcrumb>
+    </ngx-govscot-breadcrumbs>
+  </div>
+
+  <div class="example-section">
+    <h3>Breadcrumbs Without Current Page</h3>
+    <p>
+      You can omit the current page if there are issues with repetition or long
+      titles:
+    </p>
+    <ngx-govscot-breadcrumbs>
+      <ngx-govscot-breadcrumb label="Home" link="/"></ngx-govscot-breadcrumb>
+      <ngx-govscot-breadcrumb
+        label="Environment, farming and marine"
+        link="/environment"
+      ></ngx-govscot-breadcrumb>
+      <ngx-govscot-breadcrumb
+        label="Environment and countryside protection"
+        link="/environment/countryside"
+      ></ngx-govscot-breadcrumb>
+    </ngx-govscot-breadcrumbs>
+  </div>
+
+  <div class="example-section">
+    <h3>Corporation Tax Service Navigation</h3>
+    <p>
+      Example showing breadcrumbs for navigating through a Corporation Tax
+      service:
+    </p>
+    <ngx-govscot-breadcrumbs>
+      <ngx-govscot-breadcrumb
+        label="Home"
+        [link]="['/']"
+      ></ngx-govscot-breadcrumb>
+      <ngx-govscot-breadcrumb
+        label="Business and economy"
+        [link]="['/business']"
+      ></ngx-govscot-breadcrumb>
+      <ngx-govscot-breadcrumb
+        label="Corporation Tax"
+        [link]="['/business', 'corporation-tax']"
+      ></ngx-govscot-breadcrumb>
+      <ngx-govscot-breadcrumb
+        label="Register your company"
+        [current]="true"
+      ></ngx-govscot-breadcrumb>
+    </ngx-govscot-breadcrumbs>
   </div>
 
   <h2>Button Examples</h2>
