@@ -32,6 +32,9 @@
       "ngx-govscot-frontend/inset-text": [
         "libs/ngx-govscot-frontend/inset-text/src/index.ts"
       ],
+      "ngx-govscot-frontend/skip-link": [
+        "libs/ngx-govscot-frontend/skip-link/src/index.ts"
+      ],
       "ngx-govscot-frontend/warning-text": [
         "libs/ngx-govscot-frontend/warning-text/src/index.ts"
       ],
