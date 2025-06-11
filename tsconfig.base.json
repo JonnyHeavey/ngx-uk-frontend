@@ -22,6 +22,9 @@
       ],
       "@ngx-uk-frontend/core/button": ["libs/core/button/src/index.ts"],
       "@ngx-uk-frontend/core/details": ["libs/core/details/src/index.ts"],
+      "@ngx-uk-frontend/core/notification-panel": [
+        "libs/core/notification-panel/src/index.ts"
+      ],
       "@ngx-uk-frontend/core/phase-banner": [
         "libs/core/phase-banner/src/index.ts"
       ],
@@ -41,6 +44,9 @@
       ],
       "ngx-govscot-frontend/inset-text": [
         "libs/ngx-govscot-frontend/inset-text/src/index.ts"
+      ],
+      "ngx-govscot-frontend/notification-panel": [
+        "libs/ngx-govscot-frontend/notification-panel/src/index.ts"
       ],
       "ngx-govscot-frontend/phase-banner": [
         "libs/ngx-govscot-frontend/phase-banner/src/index.ts"

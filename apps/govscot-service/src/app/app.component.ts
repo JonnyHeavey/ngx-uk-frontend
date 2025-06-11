@@ -13,6 +13,7 @@ import {
   GovScotButtonGroupComponent,
 } from 'ngx-govscot-frontend/button';
 import { GovScotDetailsComponent } from 'ngx-govscot-frontend/details';
+import { GovScotNotificationPanelComponent } from 'ngx-govscot-frontend/notification-panel';
 import { GovScotPhaseBannerComponent } from 'ngx-govscot-frontend/phase-banner';
 import { GovScotSkipLinkComponent } from 'ngx-govscot-frontend/skip-link';
 import { GovScotStatusTagComponent } from 'ngx-govscot-frontend/status-tag';
@@ -32,6 +33,7 @@ import { GovScotWarningTextComponent } from 'ngx-govscot-frontend/warning-text';
     GovScotBreadcrumbsComponent,
     GovScotButtonComponent,
     GovScotButtonGroupComponent,
+    GovScotNotificationPanelComponent,
     GovScotPhaseBannerComponent,
     GovScotSkipLinkComponent,
     GovScotStatusTagComponent,
