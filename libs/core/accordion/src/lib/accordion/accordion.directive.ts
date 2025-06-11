@@ -23,6 +23,12 @@ export abstract class AccordionDirective {
   readonly expandedItems = model<string[]>([]);
 
   /**
+   * Flag to track if the initial expansion has been applied to prevent
+   * re-expanding items when users collapse all items.
+   */
+  private initialExpansionApplied = false;
+
+  /**
    * Abstract method that concrete components must implement to provide their items.
    * This allows the base directive to work with different component types.
    */
@@ -46,8 +52,14 @@ export abstract class AccordionDirective {
       const initialExpandedItems = this.expandedItems();
       const initialExpanded = this.initialExpanded();
 
-      if (initialExpandedItems.length === 0 && initialExpanded.length > 0) {
+      // Only apply initial expansion once, when the component first initializes
+      if (
+        !this.initialExpansionApplied &&
+        initialExpandedItems.length === 0 &&
+        initialExpanded.length > 0
+      ) {
         this.expandedItems.set([...initialExpanded]);
+        this.initialExpansionApplied = true;
       }
     });
   }
