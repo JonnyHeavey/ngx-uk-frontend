@@ -716,6 +716,333 @@
       </ngx-govscot-button-group>
     </ngx-govscot-tab>
   </ngx-govscot-tabs>
+
+  <h2>Status Tag Examples</h2>
+
+  <div class="example-section">
+    <h3>All Color Variants</h3>
+    <p>
+      Status tags are available in multiple colors to convey different meanings:
+    </p>
+    <div
+      style="
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        align-items: center;
+        margin: 1rem 0;
+      "
+    >
+      <ngx-govscot-status-tag color="grey">Not started</ngx-govscot-status-tag>
+      <ngx-govscot-status-tag color="green">Complete</ngx-govscot-status-tag>
+      <ngx-govscot-status-tag color="teal">Information</ngx-govscot-status-tag>
+      <ngx-govscot-status-tag color="blue">In progress</ngx-govscot-status-tag>
+      <ngx-govscot-status-tag color="purple">Priority</ngx-govscot-status-tag>
+      <ngx-govscot-status-tag color="pink">Featured</ngx-govscot-status-tag>
+      <ngx-govscot-status-tag color="red">Failed</ngx-govscot-status-tag>
+      <ngx-govscot-status-tag color="orange">Pending</ngx-govscot-status-tag>
+      <ngx-govscot-status-tag color="yellow"
+        >Under review</ngx-govscot-status-tag
+      >
+    </div>
+  </div>
+
+  <div class="example-section">
+    <h3>Corporation Tax Task List</h3>
+    <p>Track your progress through the Corporation Tax registration process:</p>
+    <div style="border: 1px solid #ccc; border-radius: 4px; max-width: 600px">
+      <div
+        style="
+          padding: 1rem;
+          border-bottom: 1px solid #eee;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <span>1. Check if you need to register</span>
+        <ngx-govscot-status-tag color="green">Complete</ngx-govscot-status-tag>
+      </div>
+      <div
+        style="
+          padding: 1rem;
+          border-bottom: 1px solid #eee;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <span>2. Gather required documents</span>
+        <ngx-govscot-status-tag color="blue"
+          >In progress</ngx-govscot-status-tag
+        >
+      </div>
+      <div
+        style="
+          padding: 1rem;
+          border-bottom: 1px solid #eee;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <span>3. Submit registration form</span>
+        <ngx-govscot-status-tag color="grey"
+          >Not started</ngx-govscot-status-tag
+        >
+      </div>
+      <div
+        style="
+          padding: 1rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <span>4. Set up payment method</span>
+        <ngx-govscot-status-tag color="grey"
+          >Not started</ngx-govscot-status-tag
+        >
+      </div>
+    </div>
+  </div>
+
+  <div class="example-section">
+    <h3>Application Status Table</h3>
+    <p>Monitor the status of your business applications:</p>
+    <table
+      style="
+        width: 100%;
+        max-width: 800px;
+        border-collapse: collapse;
+        border: 1px solid #ccc;
+      "
+    >
+      <thead>
+        <tr style="background-color: #f5f5f5">
+          <th
+            style="
+              padding: 0.75rem;
+              text-align: left;
+              border-bottom: 1px solid #ccc;
+            "
+          >
+            Application
+          </th>
+          <th
+            style="
+              padding: 0.75rem;
+              text-align: left;
+              border-bottom: 1px solid #ccc;
+            "
+          >
+            Reference
+          </th>
+          <th
+            style="
+              padding: 0.75rem;
+              text-align: left;
+              border-bottom: 1px solid #ccc;
+            "
+          >
+            Status
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding: 0.75rem; border-bottom: 1px solid #eee">
+            Corporation Tax Registration
+          </td>
+          <td style="padding: 0.75rem; border-bottom: 1px solid #eee">
+            CTR-2024-001
+          </td>
+          <td style="padding: 0.75rem; border-bottom: 1px solid #eee">
+            <ngx-govscot-status-tag color="green"
+              >Approved</ngx-govscot-status-tag
+            >
+          </td>
+        </tr>
+        <tr>
+          <td style="padding: 0.75rem; border-bottom: 1px solid #eee">
+            VAT Registration
+          </td>
+          <td style="padding: 0.75rem; border-bottom: 1px solid #eee">
+            VAT-2024-005
+          </td>
+          <td style="padding: 0.75rem; border-bottom: 1px solid #eee">
+            <ngx-govscot-status-tag color="orange"
+              >Under review</ngx-govscot-status-tag
+            >
+          </td>
+        </tr>
+        <tr>
+          <td style="padding: 0.75rem; border-bottom: 1px solid #eee">
+            Business Rate Relief
+          </td>
+          <td style="padding: 0.75rem; border-bottom: 1px solid #eee">
+            BRR-2024-003
+          </td>
+          <td style="padding: 0.75rem; border-bottom: 1px solid #eee">
+            <ngx-govscot-status-tag color="red"
+              >Rejected</ngx-govscot-status-tag
+            >
+          </td>
+        </tr>
+        <tr>
+          <td style="padding: 0.75rem">Export Licence</td>
+          <td style="padding: 0.75rem">EXP-2024-012</td>
+          <td style="padding: 0.75rem">
+            <ngx-govscot-status-tag color="yellow"
+              >Awaiting documents</ngx-govscot-status-tag
+            >
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="example-section">
+    <h3>Service Status Dashboard</h3>
+    <p>Check the current status of government services:</p>
+    <div style="display: grid; gap: 1rem; max-width: 600px">
+      <div
+        style="
+          padding: 1rem;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <div>
+          <strong>Corporation Tax Portal</strong>
+          <p style="margin: 0.25rem 0 0 0; color: #666; font-size: 0.9rem">
+            Online tax filing and payments
+          </p>
+        </div>
+        <ngx-govscot-status-tag color="green"
+          >Operational</ngx-govscot-status-tag
+        >
+      </div>
+      <div
+        style="
+          padding: 1rem;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <div>
+          <strong>PAYE System</strong>
+          <p style="margin: 0.25rem 0 0 0; color: #666; font-size: 0.9rem">
+            Employee tax and National Insurance
+          </p>
+        </div>
+        <ngx-govscot-status-tag color="orange"
+          >Scheduled maintenance</ngx-govscot-status-tag
+        >
+      </div>
+      <div
+        style="
+          padding: 1rem;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <div>
+          <strong>VAT Services</strong>
+          <p style="margin: 0.25rem 0 0 0; color: #666; font-size: 0.9rem">
+            VAT registration and returns
+          </p>
+        </div>
+        <ngx-govscot-status-tag color="red"
+          >Service outage</ngx-govscot-status-tag
+        >
+      </div>
+      <div
+        style="
+          padding: 1rem;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <div>
+          <strong>Business Gateway</strong>
+          <p style="margin: 0.25rem 0 0 0; color: #666; font-size: 0.9rem">
+            Business support and advice
+          </p>
+        </div>
+        <ngx-govscot-status-tag color="green"
+          >Operational</ngx-govscot-status-tag
+        >
+      </div>
+    </div>
+  </div>
+
+  <div class="example-section">
+    <h3>Priority Classification</h3>
+    <p>Use status tags to indicate priority levels in work queues:</p>
+    <div style="display: grid; gap: 0.5rem; max-width: 400px">
+      <div
+        style="
+          padding: 0.75rem;
+          border: 1px solid #eee;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <span>System security update</span>
+        <ngx-govscot-status-tag color="red">Urgent</ngx-govscot-status-tag>
+      </div>
+      <div
+        style="
+          padding: 0.75rem;
+          border: 1px solid #eee;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <span>Database optimization</span>
+        <ngx-govscot-status-tag color="orange">High</ngx-govscot-status-tag>
+      </div>
+      <div
+        style="
+          padding: 0.75rem;
+          border: 1px solid #eee;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <span>User interface enhancement</span>
+        <ngx-govscot-status-tag color="blue">Medium</ngx-govscot-status-tag>
+      </div>
+      <div
+        style="
+          padding: 0.75rem;
+          border: 1px solid #eee;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <span>Documentation update</span>
+        <ngx-govscot-status-tag color="grey">Low</ngx-govscot-status-tag>
+      </div>
+    </div>
+  </div>
 </main>
 
 <router-outlet></router-outlet>
