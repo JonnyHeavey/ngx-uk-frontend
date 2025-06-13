@@ -1,0 +1,17 @@
+<ng-template #actionTemplate>
+  @if (routerLink()) {
+    <a class="ds_link" [routerLink]="routerLink()">
+      <ng-content />
+      @if (visuallyHiddenText()) {
+        <span class="ds_visually-hidden"> {{ visuallyHiddenText() }}</span>
+      }
+    </a>
+  } @else {
+    <a class="ds_link" [href]="href()">
+      <ng-content />
+      @if (visuallyHiddenText()) {
+        <span class="ds_visually-hidden"> {{ visuallyHiddenText() }}</span>
+      }
+    </a>
+  }
+</ng-template>

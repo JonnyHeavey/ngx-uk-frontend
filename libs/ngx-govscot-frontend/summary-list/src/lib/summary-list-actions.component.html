@@ -1,0 +1,13 @@
+@if (actions().length === 1) {
+  @for (action of actions(); track action) {
+    <ng-template [ngTemplateOutlet]="action.actionTemplate()" />
+  }
+} @else if (actions().length > 1) {
+  <ul class="ds_summary-list__actions-list">
+    @for (action of actions(); track action) {
+      <li class="ds_summary-list__actions-list-item">
+        <ng-template [ngTemplateOutlet]="action.actionTemplate()" />
+      </li>
+    }
+  </ul>
+}

@@ -1131,6 +1131,203 @@
       <p>The appeal process typically takes 12-16 weeks.</p>
     </ngx-govscot-notification-panel>
   </div>
+
+  <h2>Summary List Examples</h2>
+
+  <div class="example-section">
+    <h3>Basic Summary List</h3>
+    <p>
+      Summary lists display a user's answers and allow them to change their
+      responses:
+    </p>
+    <ngx-govscot-summary-list>
+      <ngx-govscot-summary-list-item key="Name" value="Jane Smith">
+        <ngx-govscot-summary-list-actions>
+          <ngx-govscot-summary-list-action href="/change-name">
+            Change
+          </ngx-govscot-summary-list-action>
+        </ngx-govscot-summary-list-actions>
+      </ngx-govscot-summary-list-item>
+      <ngx-govscot-summary-list-item key="Date of birth" value="13 April 2001">
+        <ngx-govscot-summary-list-actions>
+          <ngx-govscot-summary-list-action href="/change-dob">
+            Change
+          </ngx-govscot-summary-list-action>
+        </ngx-govscot-summary-list-actions>
+      </ngx-govscot-summary-list-item>
+      <ngx-govscot-summary-list-item key="Address">
+        <ng-template ngxGovScotSummaryListValue>
+          Scottish Government<br />
+          St Andrew's House<br />
+          Regent Road<br />
+          Edinburgh<br />
+          EH1 3DG
+        </ng-template>
+        <ngx-govscot-summary-list-actions>
+          <ngx-govscot-summary-list-action href="/change-address">
+            Change
+          </ngx-govscot-summary-list-action>
+        </ngx-govscot-summary-list-actions>
+      </ngx-govscot-summary-list-item>
+      <ngx-govscot-summary-list-item key="Contact details">
+        <ng-template ngxGovScotSummaryListValue>
+          <ul class="ds_no-bullets">
+            <li>email&#64;gov.scot</li>
+            <li>0123 456 7000</li>
+          </ul>
+        </ng-template>
+        <ngx-govscot-summary-list-actions>
+          <ngx-govscot-summary-list-action href="/add-contact">
+            Add
+          </ngx-govscot-summary-list-action>
+          <ngx-govscot-summary-list-action href="/change-contact">
+            Change
+          </ngx-govscot-summary-list-action>
+        </ngx-govscot-summary-list-actions>
+      </ngx-govscot-summary-list-item>
+    </ngx-govscot-summary-list>
+  </div>
+
+  <div class="example-section">
+    <h3>Summary List Without Borders</h3>
+    <p>
+      When no actions are provided, you can remove borders for a cleaner look:
+    </p>
+    <ngx-govscot-summary-list [noBorder]="true">
+      <ngx-govscot-summary-list-item
+        key="Have you had the grant 3 times or more since 1 May 2022?"
+        value="No"
+      />
+      <ngx-govscot-summary-list-item
+        key="Which council area do you live in?"
+        value="City of Edinburgh"
+      />
+      <ngx-govscot-summary-list-item key="Do you work?" value="Yes" />
+      <ngx-govscot-summary-list-item
+        key="Will you lose earnings because you need to self-isolate?"
+        value="Yes"
+      />
+      <ngx-govscot-summary-list-item
+        key="Have you tested positive for Covid?"
+        value="No - I need a PCR test or to rebook a PCR test"
+      />
+    </ngx-govscot-summary-list>
+  </div>
+
+  <div class="example-section">
+    <h3>Summary Cards</h3>
+    <p>
+      Use summary cards when you have multiple groups of related information:
+    </p>
+
+    <ngx-govscot-summary-list-card title="Joe Bloggs">
+      <ngx-govscot-summary-list-card-actions>
+        <ngx-govscot-summary-list-action href="/change-joe">
+          Change
+        </ngx-govscot-summary-list-action>
+        <ngx-govscot-summary-list-action href="/delete-joe">
+          Delete
+        </ngx-govscot-summary-list-action>
+      </ngx-govscot-summary-list-card-actions>
+      <ngx-govscot-summary-list>
+        <ngx-govscot-summary-list-item
+          key="Phone number"
+          value="01234 567 890"
+        />
+        <ngx-govscot-summary-list-item key="Address">
+          <ng-template ngxGovScotSummaryListValue>
+            Victoria Quay<br />
+            Edinburgh<br />
+            EH6 6QQ
+          </ng-template>
+        </ngx-govscot-summary-list-item>
+      </ngx-govscot-summary-list>
+    </ngx-govscot-summary-list-card>
+
+    <br />
+
+    <ngx-govscot-summary-list-card title="Mary Smith">
+      <ngx-govscot-summary-list-card-actions>
+        <ngx-govscot-summary-list-action href="/change-mary">
+          Change
+        </ngx-govscot-summary-list-action>
+        <ngx-govscot-summary-list-action href="/delete-mary">
+          Delete
+        </ngx-govscot-summary-list-action>
+      </ngx-govscot-summary-list-card-actions>
+      <ngx-govscot-summary-list>
+        <ngx-govscot-summary-list-item
+          key="Phone number"
+          value="01234 098 765"
+        />
+        <ngx-govscot-summary-list-item key="Address">
+          <ng-template ngxGovScotSummaryListValue>
+            St. Andrew's House<br />
+            Regent Road<br />
+            Edinburgh<br />
+            EH1 3DG
+          </ng-template>
+        </ngx-govscot-summary-list-item>
+      </ngx-govscot-summary-list>
+    </ngx-govscot-summary-list-card>
+  </div>
+
+  <div class="example-section">
+    <h3>Corporation Tax Application Summary</h3>
+    <p>
+      Example showing how summary lists can be used in a tax application
+      process:
+    </p>
+    <ngx-govscot-summary-list>
+      <ngx-govscot-summary-list-item key="Company name" value="ABC Limited">
+        <ngx-govscot-summary-list-actions>
+          <ngx-govscot-summary-list-action href="/change-company-name">
+            Change
+          </ngx-govscot-summary-list-action>
+        </ngx-govscot-summary-list-actions>
+      </ngx-govscot-summary-list-item>
+      <ngx-govscot-summary-list-item
+        key="Company registration number"
+        value="12345678"
+      >
+        <ngx-govscot-summary-list-actions>
+          <ngx-govscot-summary-list-action href="/change-company-number">
+            Change
+          </ngx-govscot-summary-list-action>
+        </ngx-govscot-summary-list-actions>
+      </ngx-govscot-summary-list-item>
+      <ngx-govscot-summary-list-item
+        key="Accounting period start"
+        value="1 April 2024"
+      >
+        <ngx-govscot-summary-list-actions>
+          <ngx-govscot-summary-list-action href="/change-accounting-start">
+            Change
+          </ngx-govscot-summary-list-action>
+        </ngx-govscot-summary-list-actions>
+      </ngx-govscot-summary-list-item>
+      <ngx-govscot-summary-list-item
+        key="Accounting period end"
+        value="31 March 2025"
+      >
+        <ngx-govscot-summary-list-actions>
+          <ngx-govscot-summary-list-action href="/change-accounting-end">
+            Change
+          </ngx-govscot-summary-list-action>
+        </ngx-govscot-summary-list-actions>
+      </ngx-govscot-summary-list-item>
+      <ngx-govscot-summary-list-item
+        key="Expected annual turnover"
+        value="£500,000"
+      >
+        <ngx-govscot-summary-list-actions>
+          <ngx-govscot-summary-list-action href="/change-turnover">
+            Change
+          </ngx-govscot-summary-list-action>
+        </ngx-govscot-summary-list-actions>
+      </ngx-govscot-summary-list-item>
+    </ngx-govscot-summary-list>
+  </div>
 </main>
 
 <router-outlet></router-outlet>

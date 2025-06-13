@@ -18,6 +18,15 @@ import { GovScotPhaseBannerComponent } from 'ngx-govscot-frontend/phase-banner';
 import { GovScotSkipLinkComponent } from 'ngx-govscot-frontend/skip-link';
 import { GovScotStatusTagComponent } from 'ngx-govscot-frontend/status-tag';
 import {
+  GovScotSummaryListActionComponent,
+  GovScotSummaryListActionsComponent,
+  GovScotSummaryListCardActionsComponent,
+  GovScotSummaryListCardComponent,
+  GovScotSummaryListComponent,
+  GovScotSummaryListItemComponent,
+  GovScotSummaryListValueDirective,
+} from 'ngx-govscot-frontend/summary-list';
+import {
   GovScotTabComponent,
   GovScotTabsComponent,
 } from 'ngx-govscot-frontend/tabs';
@@ -37,6 +46,13 @@ import { GovScotWarningTextComponent } from 'ngx-govscot-frontend/warning-text';
     GovScotPhaseBannerComponent,
     GovScotSkipLinkComponent,
     GovScotStatusTagComponent,
+    GovScotSummaryListComponent,
+    GovScotSummaryListItemComponent,
+    GovScotSummaryListActionsComponent,
+    GovScotSummaryListActionComponent,
+    GovScotSummaryListValueDirective,
+    GovScotSummaryListCardComponent,
+    GovScotSummaryListCardActionsComponent,
     GovScotTabComponent,
     GovScotTabsComponent,
     GovScotWarningTextComponent,
