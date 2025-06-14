@@ -22,6 +22,7 @@
       ],
       "@ngx-uk-frontend/core/button": ["libs/core/button/src/index.ts"],
       "@ngx-uk-frontend/core/details": ["libs/core/details/src/index.ts"],
+      "@ngx-uk-frontend/core/form-utils": ["libs/core/form-utils/src/index.ts"],
       "@ngx-uk-frontend/core/notification-panel": [
         "libs/core/notification-panel/src/index.ts"
       ],
@@ -33,6 +34,7 @@
         "libs/core/summary-list/src/index.ts"
       ],
       "@ngx-uk-frontend/core/tabs": ["libs/core/tabs/src/index.ts"],
+      "@ngx-uk-frontend/core/text-input": ["libs/core/text-input/src/index.ts"],
       "ngx-govscot-frontend": ["libs/ngx-govscot-frontend/src/index.ts"],
       "ngx-govscot-frontend/accordion": [
         "libs/ngx-govscot-frontend/accordion/src/index.ts"
@@ -69,6 +71,9 @@
       ],
       "ngx-govscot-frontend/tabs": [
         "libs/ngx-govscot-frontend/tabs/src/index.ts"
+      ],
+      "ngx-govscot-frontend/text-input": [
+        "libs/ngx-govscot-frontend/text-input/src/index.ts"
       ],
       "ngx-govscot-frontend/warning-text": [
         "libs/ngx-govscot-frontend/warning-text/src/index.ts"

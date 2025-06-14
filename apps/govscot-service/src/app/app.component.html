@@ -1329,6 +1329,184 @@
     </ngx-govscot-summary-list>
   </div>
 
+  <h2>Text Input Examples</h2>
+
+  <div class="example-section">
+    <h3>Basic Text Input</h3>
+    <p>Simple text input for collecting user information:</p>
+    <div class="ds_form-group">
+      <label class="ds_label" for="company-name">Company name</label>
+      <ngx-govscot-text-input
+        [formControl]="companyNameControl"
+        inputId="company-name"
+      />
+    </div>
+  </div>
+
+  <div class="example-section">
+    <h3>Text Input with Hint</h3>
+    <p>Text input with helpful hint text:</p>
+    <div class="ds_form-group">
+      <label class="ds_label" for="email-address">Email address</label>
+      <div class="ds_hint-text">
+        We'll use this to send you updates about your application
+      </div>
+      <ngx-govscot-text-input
+        [formControl]="emailControl"
+        type="email"
+        inputId="email-address"
+      />
+    </div>
+  </div>
+
+  <div class="example-section">
+    <h3>Fixed Width Inputs</h3>
+    <p>Different fixed width options for specific content types:</p>
+
+    <div class="ds_form-group">
+      <label class="ds_label" for="postcode">Postcode</label>
+      <ngx-govscot-text-input
+        [formControl]="postcodeControl"
+        [fixedWidth]="10"
+        inputId="postcode"
+      />
+    </div>
+
+    <div class="ds_form-group">
+      <label class="ds_label" for="phone">Phone number</label>
+      <ngx-govscot-text-input
+        [formControl]="phoneControl"
+        type="tel"
+        [fixedWidth]="20"
+        inputId="phone"
+      />
+    </div>
+
+    <div class="ds_form-group">
+      <label class="ds_label" for="year">Year</label>
+      <ngx-govscot-text-input
+        [formControl]="yearControl"
+        [fixedWidth]="4"
+        inputId="year"
+      />
+    </div>
+  </div>
+
+  <div class="example-section">
+    <h3>Fluid Width Inputs</h3>
+    <p>Responsive width inputs that adapt to container size:</p>
+
+    <div class="ds_form-group">
+      <label class="ds_label" for="address-1">Address line 1</label>
+      <ngx-govscot-text-input
+        [formControl]="address1Control"
+        width="two-thirds"
+        inputId="address-1"
+      />
+    </div>
+
+    <div class="ds_form-group">
+      <label class="ds_label" for="address-2">Address line 2 (optional)</label>
+      <ngx-govscot-text-input
+        [formControl]="address2Control"
+        width="one-half"
+        inputId="address-2"
+      />
+    </div>
+
+    <div class="ds_form-group">
+      <label class="ds_label" for="city">City</label>
+      <ngx-govscot-text-input
+        [formControl]="cityControl"
+        width="one-third"
+        inputId="city"
+      />
+    </div>
+  </div>
+
+  <div class="example-section">
+    <h3>Currency Input</h3>
+    <p>Special currency input with symbol that cannot be deleted:</p>
+
+    <div class="ds_form-group">
+      <label class="ds_label" for="price-gbp">Price per month (GBP)</label>
+      <ngx-govscot-text-input
+        [formControl]="priceGbpControl"
+        [currency]="true"
+        currencySymbol="£"
+        [fixedWidth]="4"
+        inputId="price-gbp"
+      />
+    </div>
+
+    <div class="ds_form-group">
+      <label class="ds_label" for="price-usd">Price per month (USD)</label>
+      <ngx-govscot-text-input
+        [formControl]="priceUsdControl"
+        [currency]="true"
+        currencySymbol="$"
+        [fixedWidth]="4"
+        inputId="price-usd"
+      />
+    </div>
+  </div>
+
+  <div class="example-section">
+    <h3>Search Input with Button</h3>
+    <p>Text input with associated search button:</p>
+
+    <div class="ds_form-group">
+      <label class="ds_label" for="search">Search documents</label>
+      <ngx-govscot-text-input
+        [formControl]="searchControl"
+        [hasButton]="true"
+        buttonText="Search"
+        buttonIcon="search"
+        [fixedWidth]="20"
+        inputId="search"
+      />
+    </div>
+  </div>
+
+  <div class="example-section">
+    <h3>Inline Date Inputs</h3>
+    <p>Multiple related inputs displayed inline:</p>
+
+    <fieldset>
+      <legend>What is your date of birth?</legend>
+      <div class="ds_hint-text">For example, 31 3 1980</div>
+
+      <div class="ds_field-group ds_field-group--inline">
+        <div>
+          <label class="ds_label" for="day">Day</label>
+          <ngx-govscot-text-input
+            [formControl]="dayControl"
+            [fixedWidth]="2"
+            inputId="day"
+          />
+        </div>
+
+        <div>
+          <label class="ds_label" for="month">Month</label>
+          <ngx-govscot-text-input
+            [formControl]="monthControl"
+            [fixedWidth]="2"
+            inputId="month"
+          />
+        </div>
+
+        <div>
+          <label class="ds_label" for="year-birth">Year</label>
+          <ngx-govscot-text-input
+            [formControl]="yearBirthControl"
+            [fixedWidth]="4"
+            inputId="year-birth"
+          />
+        </div>
+      </div>
+    </fieldset>
+  </div>
+
   <h2>Pagination Examples</h2>
 
   <div class="example-section">

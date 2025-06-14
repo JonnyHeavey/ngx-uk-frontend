@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import {
   GovScotAccordionComponent,
@@ -31,11 +32,13 @@ import {
   GovScotTabComponent,
   GovScotTabsComponent,
 } from 'ngx-govscot-frontend/tabs';
+import { GovScotTextInputComponent } from 'ngx-govscot-frontend/text-input';
 import { GovScotWarningTextComponent } from 'ngx-govscot-frontend/warning-text';
 
 @Component({
   imports: [
     RouterModule,
+    ReactiveFormsModule,
     GovScotDetailsComponent,
     GovScotAccordionComponent,
     GovScotAccordionItemComponent,
@@ -57,6 +60,7 @@ import { GovScotWarningTextComponent } from 'ngx-govscot-frontend/warning-text';
     GovScotSummaryListCardActionsComponent,
     GovScotTabComponent,
     GovScotTabsComponent,
+    GovScotTextInputComponent,
     GovScotWarningTextComponent,
   ],
   selector: 'ngx-govscot-frontend-root',
@@ -68,6 +72,22 @@ export class AppComponent {
 
   // Make Math available in template
   Math = Math;
+
+  // Text input form controls
+  companyNameControl = new FormControl('');
+  emailControl = new FormControl('');
+  postcodeControl = new FormControl('');
+  phoneControl = new FormControl('');
+  yearControl = new FormControl('');
+  address1Control = new FormControl('');
+  address2Control = new FormControl('');
+  cityControl = new FormControl('');
+  priceGbpControl = new FormControl('');
+  priceUsdControl = new FormControl('');
+  searchControl = new FormControl('');
+  dayControl = new FormControl('');
+  monthControl = new FormControl('');
+  yearBirthControl = new FormControl('');
 
   // Pagination state
   searchResults = {
