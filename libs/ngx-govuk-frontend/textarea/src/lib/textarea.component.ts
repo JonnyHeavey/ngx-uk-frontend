@@ -13,9 +13,9 @@ import {
 } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TextareaDirective } from '@ngx-uk-frontend/core/textarea';
 import {
   GovUKCommonFormInputDirective,
-  injectNgControl,
   inputCommonInputs,
   ValueAccessorDirective,
 } from 'ngx-govuk-frontend/form-utils';
@@ -36,13 +36,14 @@ import {
     { directive: GovUKCommonFormInputDirective, inputs: inputCommonInputs },
   ],
 })
-export class GovUKTextareaComponent implements OnInit {
-  readonly ngControl = injectNgControl();
-  readonly commonFormInput = inject(GovUKCommonFormInputDirective);
-
+export class GovUKTextareaComponent
+  extends TextareaDirective
+  implements OnInit
+{
   private readonly destroyRef = inject(DestroyRef);
 
-  readonly rows = input(2);
+  // Override rows with Gov UK default
+  override readonly rows = input(2);
   readonly maxLength = input<number | null>(null);
   readonly showCharacterCount = input(false, { transform: booleanAttribute });
 

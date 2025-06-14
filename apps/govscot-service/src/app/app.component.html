@@ -1507,6 +1507,109 @@
     </fieldset>
   </div>
 
+  <h2>Textarea Examples</h2>
+
+  <div class="example-section">
+    <h3>Basic Textarea</h3>
+    <p>A simple textarea for multi-line text input:</p>
+
+    <div class="ds_form-group">
+      <label class="ds_label" for="description">Description</label>
+      <div class="ds_hint-text">
+        Provide a brief description of your enquiry
+      </div>
+      <ngx-govscot-textarea
+        [formControl]="descriptionControl"
+        [rows]="3"
+        placeholder="Enter your description here"
+        inputId="description"
+      />
+    </div>
+  </div>
+
+  <div class="example-section">
+    <h3>Large Textarea</h3>
+    <p>A larger textarea for detailed feedback or comments:</p>
+
+    <div class="ds_form-group">
+      <label class="ds_label" for="feedback">Detailed feedback</label>
+      <div class="ds_hint-text">
+        Please provide detailed feedback about your experience with this service
+      </div>
+      <ngx-govscot-textarea
+        [formControl]="feedbackControl"
+        [rows]="8"
+        placeholder="Enter your detailed feedback here..."
+        inputId="feedback"
+      />
+    </div>
+  </div>
+
+  <div class="example-section">
+    <h3>Textarea with Character Limit</h3>
+    <p>Textarea with maximum character limit:</p>
+
+    <div class="ds_form-group">
+      <label class="ds_label" for="comments">Additional comments</label>
+      <div class="ds_hint-text">
+        Maximum 500 characters. Please keep your comments concise.
+      </div>
+      <ngx-govscot-textarea
+        [formControl]="commentsControl"
+        [rows]="4"
+        [maxlength]="500"
+        placeholder="Enter additional comments (max 500 characters)"
+        inputId="comments"
+      />
+    </div>
+  </div>
+
+  <div class="example-section">
+    <h3>Contact Form Message</h3>
+    <p>Textarea for contact form messages with proper accessibility:</p>
+
+    <div class="ds_form-group">
+      <label class="ds_label" for="message">Your message</label>
+      <div class="ds_hint-text">
+        Please describe your enquiry in detail. Do not include personal
+        information like National Insurance numbers or bank details.
+      </div>
+      <ngx-govscot-textarea
+        [formControl]="messageControl"
+        [rows]="6"
+        [maxlength]="2000"
+        [spellcheck]="true"
+        autocapitalize="sentences"
+        placeholder="Enter your message here..."
+        inputId="message"
+      />
+    </div>
+  </div>
+
+  <div class="example-section">
+    <h3>Corporation Tax Application - Business Description</h3>
+    <p>Example textarea for Corporation Tax business description:</p>
+
+    <div class="ds_form-group">
+      <label class="ds_label" for="business-description">
+        Describe your business activities
+      </label>
+      <div class="ds_hint-text">
+        Provide a clear description of what your company does. This helps us
+        process your Corporation Tax application.
+      </div>
+      <ngx-govscot-textarea
+        [formControl]="descriptionControl"
+        [rows]="5"
+        [maxlength]="1000"
+        placeholder="Describe your main business activities, products, or services..."
+        inputId="business-description"
+        [spellcheck]="true"
+        autocapitalize="sentences"
+      />
+    </div>
+  </div>
+
   <h2>Pagination Examples</h2>
 
   <div class="example-section">

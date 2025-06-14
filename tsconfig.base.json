@@ -35,6 +35,7 @@
       ],
       "@ngx-uk-frontend/core/tabs": ["libs/core/tabs/src/index.ts"],
       "@ngx-uk-frontend/core/text-input": ["libs/core/text-input/src/index.ts"],
+      "@ngx-uk-frontend/core/textarea": ["libs/core/textarea/src/index.ts"],
       "ngx-govscot-frontend": ["libs/ngx-govscot-frontend/src/index.ts"],
       "ngx-govscot-frontend/accordion": [
         "libs/ngx-govscot-frontend/accordion/src/index.ts"
@@ -74,6 +75,9 @@
       ],
       "ngx-govscot-frontend/text-input": [
         "libs/ngx-govscot-frontend/text-input/src/index.ts"
+      ],
+      "ngx-govscot-frontend/textarea": [
+        "libs/ngx-govscot-frontend/textarea/src/index.ts"
       ],
       "ngx-govscot-frontend/warning-text": [
         "libs/ngx-govscot-frontend/warning-text/src/index.ts"

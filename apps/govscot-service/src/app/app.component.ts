@@ -33,6 +33,7 @@ import {
   GovScotTabsComponent,
 } from 'ngx-govscot-frontend/tabs';
 import { GovScotTextInputComponent } from 'ngx-govscot-frontend/text-input';
+import { GovScotTextareaComponent } from 'ngx-govscot-frontend/textarea';
 import { GovScotWarningTextComponent } from 'ngx-govscot-frontend/warning-text';
 
 @Component({
@@ -61,6 +62,7 @@ import { GovScotWarningTextComponent } from 'ngx-govscot-frontend/warning-text';
     GovScotTabComponent,
     GovScotTabsComponent,
     GovScotTextInputComponent,
+    GovScotTextareaComponent,
     GovScotWarningTextComponent,
   ],
   selector: 'ngx-govscot-frontend-root',
@@ -88,6 +90,12 @@ export class AppComponent {
   dayControl = new FormControl('');
   monthControl = new FormControl('');
   yearBirthControl = new FormControl('');
+
+  // Textarea form controls
+  descriptionControl = new FormControl('');
+  commentsControl = new FormControl('');
+  feedbackControl = new FormControl('');
+  messageControl = new FormControl('');
 
   // Pagination state
   searchResults = {

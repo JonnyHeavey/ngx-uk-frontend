@@ -7,11 +7,25 @@
       [ngClass]="commonFormInput.extraClasses()"
       [formControl]="ngControl.control"
       [attr.id]="commonFormInput.inputId() ? commonFormInput.inputId() : null"
-      [attr.autocomplete]="
-        commonFormInput.autocomplete() ? commonFormInput.autocomplete() : null
-      "
       [attr.rows]="rows()"
-      [attr.maxlength]="maxLength()"
+      [attr.cols]="cols() ? cols() : null"
+      [attr.wrap]="wrap() ? wrap() : null"
+      [attr.placeholder]="placeholder() ? placeholder() : null"
+      [attr.maxlength]="
+        maxLength() ? maxLength() : maxlength() ? maxlength() : null
+      "
+      [attr.minlength]="minlength() ? minlength() : null"
+      [attr.readonly]="readonly() ? '' : null"
+      [attr.disabled]="disabled() ? '' : null"
+      [attr.autocomplete]="
+        autocomplete()
+          ? autocomplete()
+          : commonFormInput.autocomplete()
+            ? commonFormInput.autocomplete()
+            : null
+      "
+      [attr.spellcheck]="spellcheck() !== undefined ? spellcheck() : null"
+      [attr.autocapitalize]="autocapitalize() ? autocapitalize() : null"
       [attr.aria-describedby]="
         showCharacterCount() && commonFormInput.inputId()
           ? commonFormInput.inputId() + '-info'
