@@ -1328,6 +1328,107 @@
       </ngx-govscot-summary-list-item>
     </ngx-govscot-summary-list>
   </div>
+
+  <h2>Pagination Examples</h2>
+
+  <div class="example-section">
+    <h3>Search Results Pagination</h3>
+    <p>
+      Pagination for search results showing 247 total items with 20 items per
+      page:
+    </p>
+    <ngx-govscot-pagination
+      [itemCount]="searchResults.total"
+      [itemsPerPage]="searchResults.itemsPerPage"
+      [currentPage]="searchResults.currentPage"
+      (pageChange)="onSearchPageChange($event)"
+      (previousClick)="onSearchPreviousClick()"
+      (nextClick)="onSearchNextClick()"
+    />
+    <p class="example-info">
+      <strong>Current page:</strong> {{ searchResults.currentPage }} of
+      {{ searchTotalPages }}
+      <br />
+      <strong>Showing items:</strong> {{ searchStartItem }} -
+      {{ searchEndItem }} of {{ searchResults.total }}
+    </p>
+  </div>
+
+  <div class="example-section">
+    <h3>Document Archive Pagination</h3>
+    <p>
+      Pagination for a large document archive with 1,543 documents, showing 25
+      per page:
+    </p>
+    <ngx-govscot-pagination
+      [itemCount]="documentArchive.total"
+      [itemsPerPage]="documentArchive.itemsPerPage"
+      [currentPage]="documentArchive.currentPage"
+      (pageChange)="onArchivePageChange($event)"
+      (previousClick)="onArchivePreviousClick()"
+      (nextClick)="onArchiveNextClick()"
+    />
+    <p class="example-info">
+      <strong>Current page:</strong> {{ documentArchive.currentPage }} of
+      {{ archiveTotalPages }}
+      <br />
+      <strong>Showing documents:</strong> {{ archiveStartItem }} -
+      {{ archiveEndItem }} of {{ documentArchive.total }}
+    </p>
+  </div>
+
+  <div class="example-section">
+    <h3>Few Pages Example</h3>
+    <p>
+      When there are only a few pages (7 or fewer), all page numbers are shown:
+    </p>
+    <ngx-govscot-pagination
+      [itemCount]="50"
+      [itemsPerPage]="10"
+      [currentPage]="3"
+    />
+  </div>
+
+  <div class="example-section">
+    <h3>Single Page Example</h3>
+    <p>When there's only one page of content, only the page number is shown:</p>
+    <ngx-govscot-pagination
+      [itemCount]="8"
+      [itemsPerPage]="10"
+      [currentPage]="1"
+    />
+  </div>
+
+  <div class="example-section">
+    <h3>Custom Labels (Gaelic)</h3>
+    <p>Pagination with custom labels in Scottish Gaelic:</p>
+    <ngx-govscot-pagination
+      [itemCount]="200"
+      [itemsPerPage]="20"
+      [currentPage]="5"
+      previousTitle="Roimhe"
+      nextTitle="Air adhart"
+    />
+  </div>
+
+  <div class="example-section">
+    <h3>Corporation Tax Records Pagination</h3>
+    <p>
+      Example showing pagination for Corporation Tax records in a government
+      service:
+    </p>
+    <ngx-govscot-pagination
+      [itemCount]="892"
+      [itemsPerPage]="15"
+      [currentPage]="12"
+      previousTitle="Previous records"
+      nextTitle="Next records"
+    />
+    <p class="example-info">
+      This example shows how pagination can be used in a Corporation Tax service
+      to navigate through large sets of tax records or applications.
+    </p>
+  </div>
 </main>
 
 <router-outlet></router-outlet>

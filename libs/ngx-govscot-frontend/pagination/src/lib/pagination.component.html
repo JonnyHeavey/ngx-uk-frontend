@@ -1,0 +1,65 @@
+<nav class="ds_pagination" aria-label="Search result pages">
+  <ul class="ds_pagination__list">
+    @if (hasPreviousPage()) {
+      <li class="ds_pagination__item">
+        <a
+          aria-label="Previous page"
+          class="ds_pagination__link ds_pagination__link--text ds_pagination__link--icon"
+          href="javascript:void(0)"
+          (click)="$event.preventDefault(); previousClick.emit()"
+        >
+          <svg class="ds_icon" aria-hidden="true" role="img">
+            <use href="/assets/images/icons/icons.stack.svg#chevron_left"></use>
+          </svg>
+          <span class="ds_pagination__link-label">{{ previousTitle() }}</span>
+        </a>
+      </li>
+    }
+
+    @let items = computedItems();
+    @if (items && items.length > 0) {
+      @for (item of items; track item.id) {
+        <li
+          class="ds_pagination__item"
+          [attr.aria-hidden]="item.ellipsis ? 'true' : null"
+        >
+          @if (!item.ellipsis) {
+            <a
+              [attr.aria-label]="item.current ? null : 'Page ' + item.number"
+              [attr.aria-current]="item.current ? 'page' : null"
+              [class]="
+                'ds_pagination__link' + (item.current ? ' ds_current' : '')
+              "
+              href="javascript:void(0)"
+              (click)="$event.preventDefault(); onPageClick(item)"
+            >
+              <span class="ds_pagination__link-label">{{ item.number }}</span>
+            </a>
+          } @else {
+            <span class="ds_pagination__link ds_pagination__link--ellipsis"
+              >&hellip;</span
+            >
+          }
+        </li>
+      }
+    }
+
+    @if (hasNextPage()) {
+      <li class="ds_pagination__item">
+        <a
+          aria-label="Next page"
+          class="ds_pagination__link ds_pagination__link--text ds_pagination__link--icon"
+          href="javascript:void(0)"
+          (click)="$event.preventDefault(); nextClick.emit()"
+        >
+          <span class="ds_pagination__link-label">{{ nextTitle() }}</span>
+          <svg class="ds_icon" aria-hidden="true" role="img">
+            <use
+              href="/assets/images/icons/icons.stack.svg#chevron_right"
+            ></use>
+          </svg>
+        </a>
+      </li>
+    }
+  </ul>
+</nav>

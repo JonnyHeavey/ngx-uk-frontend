@@ -25,6 +25,7 @@
       "@ngx-uk-frontend/core/notification-panel": [
         "libs/core/notification-panel/src/index.ts"
       ],
+      "@ngx-uk-frontend/core/pagination": ["libs/core/pagination/src/index.ts"],
       "@ngx-uk-frontend/core/phase-banner": [
         "libs/core/phase-banner/src/index.ts"
       ],
@@ -50,6 +51,9 @@
       ],
       "ngx-govscot-frontend/notification-panel": [
         "libs/ngx-govscot-frontend/notification-panel/src/index.ts"
+      ],
+      "ngx-govscot-frontend/pagination": [
+        "libs/ngx-govscot-frontend/pagination/src/index.ts"
       ],
       "ngx-govscot-frontend/phase-banner": [
         "libs/ngx-govscot-frontend/phase-banner/src/index.ts"

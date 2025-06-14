@@ -14,6 +14,7 @@ import {
 } from 'ngx-govscot-frontend/button';
 import { GovScotDetailsComponent } from 'ngx-govscot-frontend/details';
 import { GovScotNotificationPanelComponent } from 'ngx-govscot-frontend/notification-panel';
+import { GovScotPaginationComponent } from 'ngx-govscot-frontend/pagination';
 import { GovScotPhaseBannerComponent } from 'ngx-govscot-frontend/phase-banner';
 import { GovScotSkipLinkComponent } from 'ngx-govscot-frontend/skip-link';
 import { GovScotStatusTagComponent } from 'ngx-govscot-frontend/status-tag';
@@ -43,6 +44,7 @@ import { GovScotWarningTextComponent } from 'ngx-govscot-frontend/warning-text';
     GovScotButtonComponent,
     GovScotButtonGroupComponent,
     GovScotNotificationPanelComponent,
+    GovScotPaginationComponent,
     GovScotPhaseBannerComponent,
     GovScotSkipLinkComponent,
     GovScotStatusTagComponent,
@@ -63,6 +65,22 @@ import { GovScotWarningTextComponent } from 'ngx-govscot-frontend/warning-text';
 })
 export class AppComponent {
   title = 'govscot-service';
+
+  // Make Math available in template
+  Math = Math;
+
+  // Pagination state
+  searchResults = {
+    total: 247,
+    currentPage: 1,
+    itemsPerPage: 20,
+  };
+
+  documentArchive = {
+    total: 1543,
+    currentPage: 15,
+    itemsPerPage: 25,
+  };
 
   // Example methods for button interactions
   onStartApplication() {
@@ -97,5 +115,99 @@ export class AppComponent {
   onSubmitApplication() {
     console.log('Submitting Corporation Tax application...');
     // Validate and submit form
+  }
+
+  // Pagination event handlers
+  onSearchPageChange(page: number) {
+    console.log(`Navigating to search results page ${page}`);
+    this.searchResults.currentPage = page;
+    // Perform search with new page
+  }
+
+  onSearchPreviousClick() {
+    if (this.searchResults.currentPage > 1) {
+      this.searchResults.currentPage--;
+      console.log(
+        `Previous: Now on search page ${this.searchResults.currentPage}`,
+      );
+    }
+  }
+
+  onSearchNextClick() {
+    const totalPages = Math.ceil(
+      this.searchResults.total / this.searchResults.itemsPerPage,
+    );
+    if (this.searchResults.currentPage < totalPages) {
+      this.searchResults.currentPage++;
+      console.log(`Next: Now on search page ${this.searchResults.currentPage}`);
+    }
+  }
+
+  onArchivePageChange(page: number) {
+    console.log(`Navigating to archive page ${page}`);
+    this.documentArchive.currentPage = page;
+    // Load archive data for new page
+  }
+
+  onArchivePreviousClick() {
+    if (this.documentArchive.currentPage > 1) {
+      this.documentArchive.currentPage--;
+      console.log(
+        `Previous: Now on archive page ${this.documentArchive.currentPage}`,
+      );
+    }
+  }
+
+  onArchiveNextClick() {
+    const totalPages = Math.ceil(
+      this.documentArchive.total / this.documentArchive.itemsPerPage,
+    );
+    if (this.documentArchive.currentPage < totalPages) {
+      this.documentArchive.currentPage++;
+      console.log(
+        `Next: Now on archive page ${this.documentArchive.currentPage}`,
+      );
+    }
+  }
+
+  // Computed properties for template
+  get searchTotalPages() {
+    return Math.ceil(
+      this.searchResults.total / this.searchResults.itemsPerPage,
+    );
+  }
+
+  get searchStartItem() {
+    return (
+      (this.searchResults.currentPage - 1) * this.searchResults.itemsPerPage + 1
+    );
+  }
+
+  get searchEndItem() {
+    return Math.min(
+      this.searchResults.currentPage * this.searchResults.itemsPerPage,
+      this.searchResults.total,
+    );
+  }
+
+  get archiveTotalPages() {
+    return Math.ceil(
+      this.documentArchive.total / this.documentArchive.itemsPerPage,
+    );
+  }
+
+  get archiveStartItem() {
+    return (
+      (this.documentArchive.currentPage - 1) *
+        this.documentArchive.itemsPerPage +
+      1
+    );
+  }
+
+  get archiveEndItem() {
+    return Math.min(
+      this.documentArchive.currentPage * this.documentArchive.itemsPerPage,
+      this.documentArchive.total,
+    );
   }
 }
