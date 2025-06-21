@@ -17,13 +17,14 @@
     "paths": {
       "@ngx-uk-frontend/core": ["libs/core/src/index.ts"],
       "@ngx-uk-frontend/core/accordion": ["libs/core/accordion/src/index.ts"],
-      "@ngx-uk-frontend/core/checkbox": ["libs/core/checkbox/src/index.ts"],
-      "@ngx-uk-frontend/core/radio": ["libs/core/radio/src/index.ts"],
-      "@ngx-uk-frontend/core/select": ["libs/core/select/src/index.ts"],
       "@ngx-uk-frontend/core/breadcrumbs": [
         "libs/core/breadcrumbs/src/index.ts"
       ],
       "@ngx-uk-frontend/core/button": ["libs/core/button/src/index.ts"],
+      "@ngx-uk-frontend/core/checkbox": ["libs/core/checkbox/src/index.ts"],
+      "@ngx-uk-frontend/core/form-group": [
+        "libs/core/form-group/src/index.ts"
+      ],
       "@ngx-uk-frontend/core/details": ["libs/core/details/src/index.ts"],
       "@ngx-uk-frontend/core/form-utils": ["libs/core/form-utils/src/index.ts"],
       "@ngx-uk-frontend/core/notification-panel": [
@@ -33,6 +34,8 @@
       "@ngx-uk-frontend/core/phase-banner": [
         "libs/core/phase-banner/src/index.ts"
       ],
+      "@ngx-uk-frontend/core/radio": ["libs/core/radio/src/index.ts"],
+      "@ngx-uk-frontend/core/select": ["libs/core/select/src/index.ts"],
       "@ngx-uk-frontend/core/summary-list": [
         "libs/core/summary-list/src/index.ts"
       ],
@@ -52,12 +55,6 @@
       "ngx-govscot-frontend/checkbox": [
         "libs/ngx-govscot-frontend/checkbox/src/index.ts"
       ],
-      "ngx-govscot-frontend/radio": [
-        "libs/ngx-govscot-frontend/radio/src/index.ts"
-      ],
-      "ngx-govscot-frontend/select": [
-        "libs/ngx-govscot-frontend/select/src/index.ts"
-      ],
       "ngx-govscot-frontend/details": [
         "libs/ngx-govscot-frontend/details/src/index.ts"
       ],
@@ -72,6 +69,15 @@
       ],
       "ngx-govscot-frontend/phase-banner": [
         "libs/ngx-govscot-frontend/phase-banner/src/index.ts"
+      ],
+      "ngx-govscot-frontend/question": [
+        "libs/ngx-govscot-frontend/question/src/index.ts"
+      ],
+      "ngx-govscot-frontend/radio": [
+        "libs/ngx-govscot-frontend/radio/src/index.ts"
+      ],
+      "ngx-govscot-frontend/select": [
+        "libs/ngx-govscot-frontend/select/src/index.ts"
       ],
       "ngx-govscot-frontend/skip-link": [
         "libs/ngx-govscot-frontend/skip-link/src/index.ts"

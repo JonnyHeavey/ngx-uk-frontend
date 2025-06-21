@@ -18,6 +18,7 @@ import { GovScotDetailsComponent } from 'ngx-govscot-frontend/details';
 import { GovScotNotificationPanelComponent } from 'ngx-govscot-frontend/notification-panel';
 import { GovScotPaginationComponent } from 'ngx-govscot-frontend/pagination';
 import { GovScotPhaseBannerComponent } from 'ngx-govscot-frontend/phase-banner';
+import { GovScotQuestionComponent } from 'ngx-govscot-frontend/question';
 import {
   GovScotRadioGroupComponent,
   GovScotRadioOptionDirective,
@@ -57,6 +58,7 @@ import { GovScotWarningTextComponent } from 'ngx-govscot-frontend/warning-text';
     GovScotNotificationPanelComponent,
     GovScotPaginationComponent,
     GovScotPhaseBannerComponent,
+    GovScotQuestionComponent,
     GovScotSkipLinkComponent,
     GovScotStatusTagComponent,
     GovScotSummaryListComponent,

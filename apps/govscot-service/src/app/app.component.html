@@ -29,6 +29,89 @@
 <main id="main-content">
   <h1>Scottish Government Design System - Component Examples</h1>
 
+  <h2>Question Component Examples</h2>
+
+  <div class="example-section">
+    <h3>Basic Question</h3>
+    <p>A simple question with a label and form field:</p>
+    <ngx-govscot-question label="What is your name?" labelFor="name-input">
+      <input
+        type="text"
+        id="name-input"
+        name="name"
+        class="ds_input ds_input--fixed-20"
+      />
+    </ngx-govscot-question>
+  </div>
+
+  <div class="example-section">
+    <h3>Question with Hint Text</h3>
+    <p>A question that includes helpful hint text:</p>
+    <ngx-govscot-question
+      label="What is your National Insurance number?"
+      labelFor="ni-input"
+      hint="For example, QQ123456A"
+    >
+      <input
+        type="text"
+        id="ni-input"
+        name="ni-number"
+        class="ds_input ds_input--fixed-10"
+      />
+    </ngx-govscot-question>
+  </div>
+
+  <div class="example-section">
+    <h3>Question with Error Message</h3>
+    <p>A question showing an error state:</p>
+    <ngx-govscot-question
+      label="What is your email address?"
+      labelFor="email-input"
+      errorMessage="Enter a valid email address"
+    >
+      <input
+        type="email"
+        id="email-input"
+        name="email"
+        class="ds_input ds_input--error"
+        aria-invalid="true"
+      />
+    </ngx-govscot-question>
+  </div>
+
+  <div class="example-section">
+    <h3>Question as Page Title</h3>
+    <p>A question styled as a page title for single-question pages:</p>
+    <ngx-govscot-question
+      label="Are you a British citizen?"
+      labelFor="citizenship-input"
+      isPageTitle="true"
+    >
+      <div class="ds_field-group">
+        <div class="ds_radio">
+          <input
+            class="ds_radio__input"
+            id="citizenship-yes"
+            type="radio"
+            name="citizenship"
+            value="yes"
+          />
+          <label class="ds_radio__label" for="citizenship-yes">Yes</label>
+        </div>
+        <div class="ds_radio">
+          <input
+            class="ds_radio__input"
+            id="citizenship-no"
+            type="radio"
+            name="citizenship"
+            value="no"
+          />
+          <label class="ds_radio__label" for="citizenship-no">No</label>
+        </div>
+      </div>
+    </ngx-govscot-question>
+  </div>
+
   <h2>Phase Banner Example</h2>
 
   <div class="example-section">

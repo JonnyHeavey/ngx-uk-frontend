@@ -1,9 +1,5 @@
-import {
-  booleanAttribute,
-  ChangeDetectionStrategy,
-  Component,
-  input,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { FormGroupDirective } from '@ngx-uk-frontend/core/form-group';
 
 /**
  * This component implements the GOV.UK Design System form group wrapper.
@@ -14,11 +10,4 @@ import {
   templateUrl: './form-group.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class GovUKFormGroupComponent {
-  readonly label = input<string>();
-  readonly labelFor = input<string>();
-
-  readonly errorMessage = input<string>();
-  readonly hint = input<string>();
-  readonly isPageTitle = input(false, { transform: booleanAttribute });
-}
+export class GovUKFormGroupComponent extends FormGroupDirective {}
