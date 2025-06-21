@@ -6,6 +6,7 @@ import {
   computed,
   input,
 } from '@angular/core';
+import { TableDirective } from '@ngx-uk-frontend/core/table';
 
 export type GovUKTableColumn = {
   header: string;
@@ -27,15 +28,12 @@ export type GovUKTableColumn = {
   templateUrl: './table.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class GovUKTableComponent {
+export class GovUKTableComponent extends TableDirective {
   /** The columns configuration for the table. This input is required. */
   readonly columns = input.required<GovUKTableColumn[]>();
 
   /** The data to display in the table. This input is required. */
   readonly dataSource = input.required<unknown[]>();
-
-  /** Optional caption for the table to describe its contents. */
-  readonly caption = input<string>();
 
   /** Whether to use a smaller font size for the table. Defaults to false. */
   readonly small = input(false, { transform: booleanAttribute });

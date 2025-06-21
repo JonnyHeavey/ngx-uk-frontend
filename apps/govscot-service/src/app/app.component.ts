@@ -35,6 +35,7 @@ import {
   GovScotSummaryListItemComponent,
   GovScotSummaryListValueDirective,
 } from 'ngx-govscot-frontend/summary-list';
+import { GovScotTableComponent } from 'ngx-govscot-frontend/table';
 import {
   GovScotTabComponent,
   GovScotTabsComponent,
@@ -68,6 +69,7 @@ import { GovScotWarningTextComponent } from 'ngx-govscot-frontend/warning-text';
     GovScotSummaryListValueDirective,
     GovScotSummaryListCardComponent,
     GovScotSummaryListCardActionsComponent,
+    GovScotTableComponent,
     GovScotTabComponent,
     GovScotTabsComponent,
     GovScotTextInputComponent,

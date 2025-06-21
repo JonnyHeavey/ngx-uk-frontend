@@ -1412,6 +1412,193 @@
     </ngx-govscot-summary-list>
   </div>
 
+  <h2>Table Examples</h2>
+
+  <div class="example-section">
+    <h3>Basic Table</h3>
+    <p>A simple table displaying public holidays:</p>
+    <ngx-govscot-table caption="Public holidays in 2020">
+      <thead>
+        <tr>
+          <th scope="col">Date</th>
+          <th scope="col">Day</th>
+          <th scope="col">Holiday</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>10 April</td>
+          <td>Friday</td>
+          <td>Good Friday</td>
+        </tr>
+        <tr>
+          <td>8 May</td>
+          <td>Friday</td>
+          <td>Early May Bank Holiday</td>
+        </tr>
+        <tr>
+          <td>25 May</td>
+          <td>Monday</td>
+          <td>Spring Bank Holiday</td>
+        </tr>
+        <tr>
+          <td>3 August</td>
+          <td>Monday</td>
+          <td>Summer Bank Holiday</td>
+        </tr>
+      </tbody>
+    </ngx-govscot-table>
+  </div>
+
+  <div class="example-section">
+    <h3>Scrolling Table (Mobile)</h3>
+    <p>
+      A table that scrolls horizontally on small screens with the first column
+      sticky:
+    </p>
+    <ngx-govscot-table
+      caption="Corporation Tax rates by company size"
+      smallScreenBehavior="scrolling"
+    >
+      <thead>
+        <tr>
+          <th scope="col">Company Size</th>
+          <th scope="col">Annual Profit</th>
+          <th scope="col">Tax Rate</th>
+          <th scope="col">Marginal Relief</th>
+          <th scope="col">Effective Rate</th>
+          <th scope="col">Example Tax Due</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Small</td>
+          <td align="right">£50,000</td>
+          <td align="right">19%</td>
+          <td align="right">N/A</td>
+          <td align="right">19%</td>
+          <td align="right">£9,500</td>
+        </tr>
+        <tr>
+          <td>Medium</td>
+          <td align="right">£150,000</td>
+          <td align="right">19%</td>
+          <td align="right">N/A</td>
+          <td align="right">19%</td>
+          <td align="right">£28,500</td>
+        </tr>
+        <tr>
+          <td>Large</td>
+          <td align="right">£300,000</td>
+          <td align="right">25%</td>
+          <td align="right">Yes</td>
+          <td align="right">21.25%</td>
+          <td align="right">£63,750</td>
+        </tr>
+        <tr>
+          <td>Very Large</td>
+          <td align="right">£500,000</td>
+          <td align="right">25%</td>
+          <td align="right">N/A</td>
+          <td align="right">25%</td>
+          <td align="right">£125,000</td>
+        </tr>
+      </tbody>
+    </ngx-govscot-table>
+  </div>
+
+  <div class="example-section">
+    <h3>Boxes Table (Mobile)</h3>
+    <p>A table that collapses into individual boxes on small screens:</p>
+    <ngx-govscot-table
+      caption="Corporation Tax deadlines by business type"
+      smallScreenBehavior="boxes"
+    >
+      <thead>
+        <tr>
+          <th scope="col">Business Type</th>
+          <th scope="col">Registration Deadline</th>
+          <th scope="col">Return Filing</th>
+          <th scope="col">Payment Due</th>
+          <th scope="col">Late Filing Penalty</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Limited Company</td>
+          <td>3 months from start</td>
+          <td>12 months after period end</td>
+          <td>9 months 1 day after period end</td>
+          <td>£100 minimum</td>
+        </tr>
+        <tr>
+          <td>Dormant Company</td>
+          <td>3 months from start</td>
+          <td>12 months after period end</td>
+          <td>No payment required</td>
+          <td>£100 minimum</td>
+        </tr>
+        <tr>
+          <td>Close Company</td>
+          <td>3 months from start</td>
+          <td>12 months after period end</td>
+          <td>9 months 1 day after period end</td>
+          <td>£100 minimum</td>
+        </tr>
+        <tr>
+          <td>Investment Company</td>
+          <td>3 months from start</td>
+          <td>12 months after period end</td>
+          <td>9 months 1 day after period end</td>
+          <td>£100 minimum</td>
+        </tr>
+      </tbody>
+    </ngx-govscot-table>
+  </div>
+
+  <div class="example-section">
+    <h3>Table Without Caption</h3>
+    <p>A simple table without a caption for less formal data:</p>
+    <ngx-govscot-table>
+      <thead>
+        <tr>
+          <th scope="col">Service</th>
+          <th scope="col">Status</th>
+          <th scope="col">Last Updated</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Corporation Tax Online</td>
+          <td>
+            <ngx-govscot-status-tag status="success"
+              >Available</ngx-govscot-status-tag
+            >
+          </td>
+          <td>2 minutes ago</td>
+        </tr>
+        <tr>
+          <td>VAT Registration</td>
+          <td>
+            <ngx-govscot-status-tag status="warning"
+              >Limited</ngx-govscot-status-tag
+            >
+          </td>
+          <td>15 minutes ago</td>
+        </tr>
+        <tr>
+          <td>PAYE Services</td>
+          <td>
+            <ngx-govscot-status-tag status="error"
+              >Unavailable</ngx-govscot-status-tag
+            >
+          </td>
+          <td>1 hour ago</td>
+        </tr>
+      </tbody>
+    </ngx-govscot-table>
+  </div>
+
   <h2>Text Input Examples</h2>
 
   <div class="example-section">
