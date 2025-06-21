@@ -47,6 +47,5 @@ storybook-static
 .env
 
 .cursor/mcp.json
-.cursor/rules/nx-rules.mdc
-.cursor/rules/codegen-refactor.mdc
+.cursor/rules/*
 .github/instructions/nx.instructions.md
