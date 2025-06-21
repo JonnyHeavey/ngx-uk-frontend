@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import { GovScotErrorSummaryItemDirective } from './error-summary-item.directive';
 import { GovScotErrorSummaryComponent } from './error-summary.component';
 
@@ -19,7 +20,11 @@ describe('GovScotErrorSummaryComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [GovScotErrorSummaryComponent, GovScotErrorSummaryItemDirective],
+      imports: [
+        RouterTestingModule,
+        GovScotErrorSummaryComponent,
+        GovScotErrorSummaryItemDirective,
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(GovScotErrorSummaryComponent);
