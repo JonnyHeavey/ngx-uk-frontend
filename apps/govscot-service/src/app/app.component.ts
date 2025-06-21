@@ -14,6 +14,7 @@ import {
   GovScotButtonGroupComponent,
 } from 'ngx-govscot-frontend/button';
 import { GovScotCheckboxComponent } from 'ngx-govscot-frontend/checkbox';
+import { GovScotConfirmationMessageComponent } from 'ngx-govscot-frontend/confirmation-message';
 import { GovScotDetailsComponent } from 'ngx-govscot-frontend/details';
 import {
   GovScotErrorSummaryComponent,
@@ -60,6 +61,7 @@ import { GovScotWarningTextComponent } from 'ngx-govscot-frontend/warning-text';
     GovScotButtonComponent,
     GovScotButtonGroupComponent,
     GovScotCheckboxComponent,
+    GovScotConfirmationMessageComponent,
     GovScotNotificationPanelComponent,
     GovScotPaginationComponent,
     GovScotPhaseBannerComponent,

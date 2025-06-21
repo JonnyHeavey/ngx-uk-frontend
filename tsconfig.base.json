@@ -23,7 +23,9 @@
       "@ngx-uk-frontend/core/button": ["libs/core/button/src/index.ts"],
       "@ngx-uk-frontend/core/checkbox": ["libs/core/checkbox/src/index.ts"],
       "@ngx-uk-frontend/core/details": ["libs/core/details/src/index.ts"],
-      "@ngx-uk-frontend/core/error-summary": ["libs/core/error-summary/src/index.ts"],
+      "@ngx-uk-frontend/core/error-summary": [
+        "libs/core/error-summary/src/index.ts"
+      ],
       "@ngx-uk-frontend/core/form-group": ["libs/core/form-group/src/index.ts"],
       "@ngx-uk-frontend/core/form-utils": ["libs/core/form-utils/src/index.ts"],
       "@ngx-uk-frontend/core/notification-panel": [
@@ -54,6 +56,9 @@
       ],
       "ngx-govscot-frontend/checkbox": [
         "libs/ngx-govscot-frontend/checkbox/src/index.ts"
+      ],
+      "ngx-govscot-frontend/confirmation-message": [
+        "libs/ngx-govscot-frontend/confirmation-message/src/index.ts"
       ],
       "ngx-govscot-frontend/details": [
         "libs/ngx-govscot-frontend/details/src/index.ts"

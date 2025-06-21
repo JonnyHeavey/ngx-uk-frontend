@@ -1,0 +1,17 @@
+<div class="ds_confirmation-message" aria-live="polite">
+  <svg
+    class="ds_confirmation-message__icon ds_icon ds_icon--24"
+    aria-hidden="true"
+    role="img"
+  >
+    <use href="/assets/images/icons/icons.stack.svg#check_circle"></use>
+  </svg>
+  <h3 class="ds_confirmation-message__title">
+    {{ title() }}
+  </h3>
+  @if (body()) {
+    <div class="ds_confirmation-message__body">
+      <p>{{ body() }}</p>
+    </div>
+  }
+</div>

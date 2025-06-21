@@ -112,6 +112,56 @@
     </ngx-govscot-question>
   </div>
 
+  <h2>Confirmation Message Examples</h2>
+
+  <div class="example-section">
+    <h3>Basic Confirmation Message</h3>
+    <p>A simple confirmation message with just a title:</p>
+    <ngx-govscot-confirmation-message title="Landlord added successfully" />
+  </div>
+
+  <div class="example-section">
+    <h3>Confirmation Message with Body Text</h3>
+    <p>A confirmation message with additional information:</p>
+    <ngx-govscot-confirmation-message
+      title="Application saved"
+      body="You have successfully saved your application. You can continue editing it later."
+    />
+  </div>
+
+  <div class="example-section">
+    <h3>Form Interaction Example</h3>
+    <p>
+      Example showing how a confirmation message appears after completing an
+      action on a form:
+    </p>
+    <ngx-govscot-confirmation-message
+      title="Information updated"
+      body="You have successfully updated your contact details."
+    />
+
+    <form class="ds_form">
+      <div class="ds_form__content">
+        <ngx-govscot-question
+          label="What is your phone number?"
+          labelFor="phone-input"
+        >
+          <input
+            type="tel"
+            id="phone-input"
+            name="phone"
+            class="ds_input ds_input--fixed-20"
+            value="0131 123 4567"
+          />
+        </ngx-govscot-question>
+
+        <button type="submit" class="ds_button ds_button--primary">
+          Update phone number
+        </button>
+      </div>
+    </form>
+  </div>
+
   <h2>Error Summary Examples</h2>
 
   <div class="example-section">
