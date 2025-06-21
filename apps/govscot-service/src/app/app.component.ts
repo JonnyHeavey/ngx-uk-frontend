@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import {
   GovScotAccordionComponent,
@@ -13,10 +13,16 @@ import {
   GovScotButtonComponent,
   GovScotButtonGroupComponent,
 } from 'ngx-govscot-frontend/button';
+import { GovScotCheckboxComponent } from 'ngx-govscot-frontend/checkbox';
 import { GovScotDetailsComponent } from 'ngx-govscot-frontend/details';
 import { GovScotNotificationPanelComponent } from 'ngx-govscot-frontend/notification-panel';
 import { GovScotPaginationComponent } from 'ngx-govscot-frontend/pagination';
 import { GovScotPhaseBannerComponent } from 'ngx-govscot-frontend/phase-banner';
+import {
+  GovScotRadioGroupComponent,
+  GovScotRadioOptionDirective,
+} from 'ngx-govscot-frontend/radio';
+import { GovScotSelectComponent } from 'ngx-govscot-frontend/select';
 import { GovScotSkipLinkComponent } from 'ngx-govscot-frontend/skip-link';
 import { GovScotStatusTagComponent } from 'ngx-govscot-frontend/status-tag';
 import {
@@ -47,6 +53,7 @@ import { GovScotWarningTextComponent } from 'ngx-govscot-frontend/warning-text';
     GovScotBreadcrumbsComponent,
     GovScotButtonComponent,
     GovScotButtonGroupComponent,
+    GovScotCheckboxComponent,
     GovScotNotificationPanelComponent,
     GovScotPaginationComponent,
     GovScotPhaseBannerComponent,
@@ -64,6 +71,9 @@ import { GovScotWarningTextComponent } from 'ngx-govscot-frontend/warning-text';
     GovScotTextInputComponent,
     GovScotTextareaComponent,
     GovScotWarningTextComponent,
+    GovScotRadioGroupComponent,
+    GovScotRadioOptionDirective,
+    GovScotSelectComponent,
   ],
   selector: 'ngx-govscot-frontend-root',
   templateUrl: './app.component.html',
@@ -96,6 +106,100 @@ export class AppComponent {
   commentsControl = new FormControl('');
   feedbackControl = new FormControl('');
   messageControl = new FormControl('');
+
+  // Checkbox form controls
+  termsControl = new FormControl(false);
+  wasteControl1 = new FormControl(false);
+  wasteControl2 = new FormControl(false);
+  wasteControl3 = new FormControl(false);
+  requiredCheckboxControl = new FormControl(false, Validators.requiredTrue);
+  emailUpdatesControl = new FormControl(false);
+  smsUpdatesControl = new FormControl(false);
+  postalUpdatesControl = new FormControl(false);
+  ctRegisterControl = new FormControl(false);
+  ctReturnControl = new FormControl(false);
+  ctPaymentControl = new FormControl(false);
+
+  // Radio form controls
+  businessTypeControl = new FormControl('');
+  contactMethodControl = new FormControl('');
+  experienceControl = new FormControl('');
+  supportControl = new FormControl('');
+
+  // Select form controls
+  countryControl = new FormControl('');
+  industryControl = new FormControl('');
+  companyYearControl = new FormControl('');
+  priorityControl = new FormControl('');
+
+  // Select options data
+  countryOptions = [
+    { value: '', label: 'Please select a country' },
+    { value: 'scotland', label: 'Scotland' },
+    { value: 'england', label: 'England' },
+    { value: 'wales', label: 'Wales' },
+    { value: 'northern-ireland', label: 'Northern Ireland' },
+    { value: 'republic-of-ireland', label: 'Republic of Ireland' },
+    { value: 'other', label: 'Other' },
+  ];
+
+  industryOptions = [
+    { value: '', label: 'Select your industry' },
+    { value: 'agriculture', label: 'Agriculture, forestry and fishing' },
+    { value: 'mining', label: 'Mining and quarrying' },
+    { value: 'manufacturing', label: 'Manufacturing' },
+    {
+      value: 'utilities',
+      label: 'Electricity, gas, steam and air conditioning supply',
+    },
+    { value: 'construction', label: 'Construction' },
+    { value: 'retail', label: 'Wholesale and retail trade' },
+    { value: 'transport', label: 'Transportation and storage' },
+    {
+      value: 'accommodation',
+      label: 'Accommodation and food service activities',
+    },
+    { value: 'information', label: 'Information and communication' },
+    { value: 'financial', label: 'Financial and insurance activities' },
+    { value: 'real-estate', label: 'Real estate activities' },
+    {
+      value: 'professional',
+      label: 'Professional, scientific and technical activities',
+    },
+    {
+      value: 'administrative',
+      label: 'Administrative and support service activities',
+    },
+    { value: 'public', label: 'Public administration and defence' },
+    { value: 'education', label: 'Education' },
+    { value: 'health', label: 'Human health and social work activities' },
+    { value: 'arts', label: 'Arts, entertainment and recreation' },
+    { value: 'other-services', label: 'Other service activities' },
+  ];
+
+  companyYearOptions = [
+    { value: '', label: 'Select accounting period end' },
+    { value: '31-march', label: '31 March' },
+    { value: '30-april', label: '30 April' },
+    { value: '31-may', label: '31 May' },
+    { value: '30-june', label: '30 June' },
+    { value: '31-july', label: '31 July' },
+    { value: '31-august', label: '31 August' },
+    { value: '30-september', label: '30 September' },
+    { value: '31-october', label: '31 October' },
+    { value: '30-november', label: '30 November' },
+    { value: '31-december', label: '31 December' },
+    { value: '31-january', label: '31 January' },
+    { value: '28-february', label: '28 February' },
+  ];
+
+  priorityOptions = [
+    { value: '', label: 'Select priority level' },
+    { value: 'low', label: 'Low - General enquiry' },
+    { value: 'medium', label: 'Medium - Requires response within 5 days' },
+    { value: 'high', label: 'High - Requires response within 2 days' },
+    { value: 'urgent', label: 'Urgent - Requires immediate response' },
+  ];
 
   // Pagination state
   searchResults = {

@@ -1,8 +1,8 @@
 import { NgClass } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CommonFormInputDirective } from '@ngx-uk-frontend/core/form-utils';
 import {
-  GovUKCommonFormInputDirective,
   ValueAccessorDirective,
   injectNgControl,
   inputCommonInputs,
@@ -21,7 +21,7 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
   hostDirectives: [
     ValueAccessorDirective,
-    { directive: GovUKCommonFormInputDirective, inputs: inputCommonInputs },
+    { directive: CommonFormInputDirective, inputs: inputCommonInputs },
   ],
 })
 export class GovUKFileUploadComponent {
@@ -29,5 +29,5 @@ export class GovUKFileUploadComponent {
   readonly ngControl = injectNgControl();
 
   /** Reference to the common form input directive that provides shared functionality. */
-  readonly commonFormInput = inject(GovUKCommonFormInputDirective);
+  readonly commonFormInput = inject(CommonFormInputDirective);
 }

@@ -13,9 +13,9 @@ import {
 } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CommonFormInputDirective } from '@ngx-uk-frontend/core/form-utils';
 import { TextareaDirective } from '@ngx-uk-frontend/core/textarea';
 import {
-  GovUKCommonFormInputDirective,
   inputCommonInputs,
   ValueAccessorDirective,
 } from 'ngx-govuk-frontend/form-utils';
@@ -33,7 +33,7 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
   hostDirectives: [
     ValueAccessorDirective,
-    { directive: GovUKCommonFormInputDirective, inputs: inputCommonInputs },
+    { directive: CommonFormInputDirective, inputs: inputCommonInputs },
   ],
 })
 export class GovUKTextareaComponent

@@ -120,33 +120,82 @@ describe('GovScotStatusTagComponent', () => {
   });
 
   describe('Real-world usage scenarios', () => {
-    it('should work for different color and text combinations', () => {
-      const testCases = [
-        { color: 'green' as const, text: 'Complete' },
-        { color: 'blue' as const, text: 'In progress' },
-        { color: 'grey' as const, text: 'Not started' },
-        { color: 'red' as const, text: 'Failed' },
-      ];
+    it('should work with green color and Complete text', () => {
+      @Component({
+        selector: 'ngx-govscot-test-wrapper-green',
+        template: `
+          <ngx-govscot-status-tag color="green">
+            Complete
+          </ngx-govscot-status-tag>
+        `,
+        imports: [GovScotStatusTagComponent],
+      })
+      class TestWrapperComponent {}
 
-      testCases.forEach(({ color, text }) => {
-        @Component({
-          selector: 'ngx-govscot-test-wrapper',
-          template: `<ngx-govscot-status-tag [color]="color"
-            >${text}</ngx-govscot-status-tag
-          >`,
-          imports: [GovScotStatusTagComponent],
-        })
-        class TestWrapperComponent {
-          color = color;
-        }
+      const wrapperFixture = TestBed.createComponent(TestWrapperComponent);
+      wrapperFixture.detectChanges();
 
-        const wrapperFixture = TestBed.createComponent(TestWrapperComponent);
-        wrapperFixture.detectChanges();
+      const element = wrapperFixture.nativeElement.querySelector('span');
+      expect(element.textContent?.trim()).toBe('Complete');
+      expect(element.classList.contains('ds_tag--green')).toBe(true);
+    });
 
-        const element = wrapperFixture.nativeElement.querySelector('span');
-        expect(element.textContent?.trim()).toBe(text);
-        expect(element.classList.contains(`ds_tag--${color}`)).toBe(true);
-      });
+    it('should work with blue color and In progress text', () => {
+      @Component({
+        selector: 'ngx-govscot-test-wrapper-blue',
+        template: `
+          <ngx-govscot-status-tag color="blue">
+            In progress
+          </ngx-govscot-status-tag>
+        `,
+        imports: [GovScotStatusTagComponent],
+      })
+      class TestWrapperComponent {}
+
+      const wrapperFixture = TestBed.createComponent(TestWrapperComponent);
+      wrapperFixture.detectChanges();
+
+      const element = wrapperFixture.nativeElement.querySelector('span');
+      expect(element.textContent?.trim()).toBe('In progress');
+      expect(element.classList.contains('ds_tag--blue')).toBe(true);
+    });
+
+    it('should work with grey color and Not started text', () => {
+      @Component({
+        selector: 'ngx-govscot-test-wrapper-grey',
+        template: `
+          <ngx-govscot-status-tag color="grey">
+            Not started
+          </ngx-govscot-status-tag>
+        `,
+        imports: [GovScotStatusTagComponent],
+      })
+      class TestWrapperComponent {}
+
+      const wrapperFixture = TestBed.createComponent(TestWrapperComponent);
+      wrapperFixture.detectChanges();
+
+      const element = wrapperFixture.nativeElement.querySelector('span');
+      expect(element.textContent?.trim()).toBe('Not started');
+      expect(element.classList.contains('ds_tag--grey')).toBe(true);
+    });
+
+    it('should work with red color and Failed text', () => {
+      @Component({
+        selector: 'ngx-govscot-test-wrapper-red',
+        template: `
+          <ngx-govscot-status-tag color="red"> Failed </ngx-govscot-status-tag>
+        `,
+        imports: [GovScotStatusTagComponent],
+      })
+      class TestWrapperComponent {}
+
+      const wrapperFixture = TestBed.createComponent(TestWrapperComponent);
+      wrapperFixture.detectChanges();
+
+      const element = wrapperFixture.nativeElement.querySelector('span');
+      expect(element.textContent?.trim()).toBe('Failed');
+      expect(element.classList.contains('ds_tag--red')).toBe(true);
     });
   });
 });

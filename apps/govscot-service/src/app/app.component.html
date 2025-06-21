@@ -1610,6 +1610,409 @@
     </div>
   </div>
 
+  <h2>Checkbox Examples</h2>
+
+  <div class="example-section">
+    <h3>Single Checkbox</h3>
+    <p>A single checkbox for accepting terms and conditions:</p>
+
+    <div class="ds_form-group">
+      <div class="ds_checkboxes">
+        <ngx-govscot-checkbox
+          [formControl]="termsControl"
+          inputId="terms"
+          label="I accept the terms and conditions"
+          hint="You must accept to continue with your application"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="example-section">
+    <h3>Multiple Checkbox Options</h3>
+    <p>Multiple checkboxes for selecting waste types:</p>
+
+    <div class="ds_form-group">
+      <fieldset class="ds_fieldset">
+        <legend class="ds_legend">
+          Which types of waste do you transport?
+        </legend>
+        <div class="ds_hint-text">Select all that apply</div>
+        <div class="ds_checkboxes">
+          <ngx-govscot-checkbox
+            [formControl]="wasteControl1"
+            inputId="waste-1"
+            label="Waste from animal carcasses"
+          />
+          <ngx-govscot-checkbox
+            [formControl]="wasteControl2"
+            inputId="waste-2"
+            label="Waste from mines or quarries"
+          />
+          <ngx-govscot-checkbox
+            [formControl]="wasteControl3"
+            inputId="waste-3"
+            label="Farm or agricultural waste"
+          />
+        </div>
+      </fieldset>
+    </div>
+  </div>
+
+  <div class="example-section">
+    <h3>Checkbox with Error State</h3>
+    <p>A required checkbox showing error state when not selected:</p>
+
+    <div
+      class="ds_form-group"
+      [class.ds_form-group--error]="
+        requiredCheckboxControl.touched && requiredCheckboxControl.errors
+      "
+    >
+      @if (requiredCheckboxControl.touched && requiredCheckboxControl.errors) {
+        <div class="ds_error-message">
+          <strong>Error:</strong> You must accept the privacy policy to continue
+        </div>
+      }
+      <div class="ds_checkboxes">
+        <ngx-govscot-checkbox
+          [formControl]="requiredCheckboxControl"
+          inputId="privacy-policy"
+          label="I accept the privacy policy"
+          hint="Required to process your application"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="example-section">
+    <h3>Marketing Preferences</h3>
+    <p>Checkboxes for marketing communication preferences:</p>
+
+    <div class="ds_form-group">
+      <fieldset class="ds_fieldset">
+        <legend class="ds_legend">How would you like to hear from us?</legend>
+        <div class="ds_hint-text">
+          Select all that apply. You can change these preferences later.
+        </div>
+        <div class="ds_checkboxes">
+          <ngx-govscot-checkbox
+            [formControl]="emailUpdatesControl"
+            inputId="email-updates"
+            label="Email updates"
+            hint="Important updates about your application and services"
+          />
+          <ngx-govscot-checkbox
+            [formControl]="smsUpdatesControl"
+            inputId="sms-updates"
+            label="Text message updates"
+            hint="Urgent notifications and reminders"
+          />
+          <ngx-govscot-checkbox
+            [formControl]="postalUpdatesControl"
+            inputId="postal-updates"
+            label="Postal updates"
+            hint="Annual reports and service information"
+          />
+        </div>
+      </fieldset>
+    </div>
+  </div>
+
+  <div class="example-section">
+    <h3>Corporation Tax Checkboxes</h3>
+    <p>Example checkboxes for Corporation Tax service:</p>
+
+    <div class="ds_form-group">
+      <fieldset class="ds_fieldset">
+        <legend class="ds_legend">
+          Which corporation tax services do you need?
+        </legend>
+        <div class="ds_hint-text">Select all that apply to your business</div>
+        <div class="ds_checkboxes">
+          <ngx-govscot-checkbox
+            [formControl]="ctRegisterControl"
+            inputId="ct-register"
+            label="Register for Corporation Tax"
+            hint="For new companies starting business in Scotland"
+          />
+          <ngx-govscot-checkbox
+            [formControl]="ctReturnControl"
+            inputId="ct-return"
+            label="File Corporation Tax return"
+            hint="Submit your annual Corporation Tax return"
+          />
+          <ngx-govscot-checkbox
+            [formControl]="ctPaymentControl"
+            inputId="ct-payment"
+            label="Make Corporation Tax payment"
+            hint="Pay your Corporation Tax liability"
+          />
+        </div>
+      </fieldset>
+    </div>
+  </div>
+
+  <h2>Radio Examples</h2>
+
+  <div class="example-section">
+    <h3>Business Type Selection</h3>
+    <p>Radio buttons for selecting business type:</p>
+
+    <div class="ds_form-group">
+      <fieldset class="ds_fieldset">
+        <legend class="ds_legend">
+          What type of business are you registering?
+        </legend>
+        <div class="ds_hint-text">Select one option</div>
+        <ngx-govscot-radio-group [formControl]="businessTypeControl">
+          <ngx-govscot-radio-option
+            value="limited-company"
+            label="Limited company"
+            hint="A company that's legally separate from the people who run it"
+          />
+          <ngx-govscot-radio-option
+            value="sole-trader"
+            label="Sole trader"
+            hint="You run your own business as an individual"
+          />
+          <ngx-govscot-radio-option
+            value="partnership"
+            label="Partnership"
+            hint="A business owned by 2 or more people"
+          />
+          <ngx-govscot-radio-option
+            value="limited-partnership"
+            label="Limited partnership"
+            hint="A partnership with some partners having limited liability"
+          />
+        </ngx-govscot-radio-group>
+      </fieldset>
+    </div>
+  </div>
+
+  <div class="example-section">
+    <h3>Contact Method Preference</h3>
+    <p>Radio buttons with divider option:</p>
+
+    <div class="ds_form-group">
+      <fieldset class="ds_fieldset">
+        <legend class="ds_legend">How would you like us to contact you?</legend>
+        <ngx-govscot-radio-group [formControl]="contactMethodControl">
+          <ngx-govscot-radio-option
+            value="email"
+            label="Email"
+            hint="We'll send updates to your email address"
+          />
+          <ngx-govscot-radio-option
+            value="phone"
+            label="Phone"
+            hint="We'll call you during business hours"
+          />
+          <ngx-govscot-radio-option
+            value="post"
+            label="Post"
+            hint="We'll send letters to your registered address"
+          />
+          <ngx-govscot-radio-option
+            value="none"
+            label="Do not contact me"
+            hint="You will not receive any updates"
+            [isDivided]="true"
+          />
+        </ngx-govscot-radio-group>
+      </fieldset>
+    </div>
+  </div>
+
+  <div class="example-section">
+    <h3>Experience Level</h3>
+    <p>Simple radio button selection for experience:</p>
+
+    <div class="ds_form-group">
+      <fieldset class="ds_fieldset">
+        <legend class="ds_legend">
+          How familiar are you with Corporation Tax?
+        </legend>
+        <ngx-govscot-radio-group [formControl]="experienceControl">
+          <ngx-govscot-radio-option value="new" label="This is my first time" />
+          <ngx-govscot-radio-option
+            value="some"
+            label="I have some experience"
+          />
+          <ngx-govscot-radio-option
+            value="experienced"
+            label="I'm very experienced"
+          />
+        </ngx-govscot-radio-group>
+      </fieldset>
+    </div>
+  </div>
+
+  <div class="example-section">
+    <h3>Support Requirements</h3>
+    <p>Radio buttons for support needs with detailed hints:</p>
+
+    <div class="ds_form-group">
+      <fieldset class="ds_fieldset">
+        <legend class="ds_legend">
+          Do you need additional support with your application?
+        </legend>
+        <div class="ds_hint-text">
+          This helps us provide the right level of assistance
+        </div>
+        <ngx-govscot-radio-group [formControl]="supportControl">
+          <ngx-govscot-radio-option
+            value="no-support"
+            label="No, I can complete this myself"
+            hint="You're confident using online services"
+          />
+          <ngx-govscot-radio-option
+            value="some-support"
+            label="Yes, I need some help"
+            hint="You might need guidance with some sections"
+          />
+          <ngx-govscot-radio-option
+            value="full-support"
+            label="Yes, I need full support"
+            hint="You'd like someone to help you through the entire process"
+          />
+          <ngx-govscot-radio-option
+            value="phone-support"
+            label="I prefer to complete this over the phone"
+            hint="We can take your details over the phone instead"
+            [isDivided]="true"
+          />
+        </ngx-govscot-radio-group>
+      </fieldset>
+    </div>
+  </div>
+
+  <h2>Select Examples</h2>
+
+  <div class="example-section">
+    <h3>Country Selection</h3>
+    <p>A select dropdown for choosing a country:</p>
+
+    <div class="ds_form-group">
+      <label class="ds_label" for="country-select">Country</label>
+      <div class="ds_hint-text">
+        Select the country where your business is based
+      </div>
+      <ngx-govscot-select
+        [formControl]="countryControl"
+        [options]="countryOptions"
+        inputId="country-select"
+      />
+    </div>
+  </div>
+
+  <div class="example-section">
+    <h3>Industry Classification</h3>
+    <p>A select dropdown with many options for industry classification:</p>
+
+    <div class="ds_form-group">
+      <label class="ds_label" for="industry-select">Industry sector</label>
+      <div class="ds_hint-text">
+        Choose the sector that best describes your business activity
+      </div>
+      <ngx-govscot-select
+        [formControl]="industryControl"
+        [options]="industryOptions"
+        inputId="industry-select"
+      />
+    </div>
+  </div>
+
+  <div class="example-section">
+    <h3>Accounting Period End</h3>
+    <p>Select dropdown for choosing accounting period end date:</p>
+
+    <div class="ds_form-group">
+      <label class="ds_label" for="year-end-select"
+        >Accounting period end</label
+      >
+      <div class="ds_hint-text">
+        When does your company's accounting period end?
+      </div>
+      <ngx-govscot-select
+        [formControl]="companyYearControl"
+        [options]="companyYearOptions"
+        inputId="year-end-select"
+      />
+    </div>
+  </div>
+
+  <div class="example-section">
+    <h3>Priority Level with Error State</h3>
+    <p>Select dropdown showing error state when required field is empty:</p>
+
+    <div
+      class="ds_form-group"
+      [class.ds_form-group--error]="
+        priorityControl.touched && !priorityControl.value
+      "
+    >
+      <label class="ds_label" for="priority-select">
+        Priority level
+        <span class="ds_required">*</span>
+      </label>
+      <div class="ds_hint-text">How urgent is your enquiry?</div>
+      @if (priorityControl.touched && !priorityControl.value) {
+        <div class="ds_error-message">
+          <strong>Error:</strong> Please select a priority level
+        </div>
+      }
+      <ngx-govscot-select
+        [formControl]="priorityControl"
+        [options]="priorityOptions"
+        inputId="priority-select"
+      />
+    </div>
+  </div>
+
+  <div class="example-section">
+    <h3>Corporation Tax Service Selection</h3>
+    <p>
+      Example showing how select components can be used in a Corporation Tax
+      service:
+    </p>
+
+    <div class="ds_form-group">
+      <fieldset class="ds_fieldset">
+        <legend class="ds_legend">Corporation Tax Service Request</legend>
+        <div class="ds_hint-text">Tell us about your business and enquiry</div>
+
+        <div style="margin-bottom: 1.5rem">
+          <label class="ds_label" for="ct-country">Business location</label>
+          <ngx-govscot-select
+            [formControl]="countryControl"
+            [options]="countryOptions"
+            inputId="ct-country"
+          />
+        </div>
+
+        <div style="margin-bottom: 1.5rem">
+          <label class="ds_label" for="ct-industry">Business sector</label>
+          <ngx-govscot-select
+            [formControl]="industryControl"
+            [options]="industryOptions"
+            inputId="ct-industry"
+          />
+        </div>
+
+        <div>
+          <label class="ds_label" for="ct-priority">Enquiry priority</label>
+          <ngx-govscot-select
+            [formControl]="priorityControl"
+            [options]="priorityOptions"
+            inputId="ct-priority"
+          />
+        </div>
+      </fieldset>
+    </div>
+  </div>
+
   <h2>Pagination Examples</h2>
 
   <div class="example-section">

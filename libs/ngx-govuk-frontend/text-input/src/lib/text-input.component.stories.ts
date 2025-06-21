@@ -4,6 +4,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { CommonFormInputDirective } from '@ngx-uk-frontend/core/form-utils';
 import {
   argsToTemplate,
   moduleMetadata,
@@ -12,7 +13,6 @@ import {
   type StoryObj,
 } from '@storybook/angular';
 import { GovUKFormGroupComponent } from 'ngx-govuk-frontend/form-group';
-import { GovUKCommonFormInputDirective } from 'ngx-govuk-frontend/form-utils';
 import { GovUKTextInputComponent } from './text-input.component';
 
 const meta: Meta<GovUKTextInputComponent> = {
@@ -26,7 +26,7 @@ const meta: Meta<GovUKTextInputComponent> = {
 };
 
 export default meta;
-type Story = StoryObj<GovUKCommonFormInputDirective & GovUKTextInputComponent>;
+type Story = StoryObj<CommonFormInputDirective & GovUKTextInputComponent>;
 
 const Template: StoryFn<GovUKTextInputComponent> = (args) => ({
   props: { ...args, form: new FormGroup({ input: new FormControl('') }) },

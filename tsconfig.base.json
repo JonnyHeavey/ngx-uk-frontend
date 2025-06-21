@@ -17,6 +17,9 @@
     "paths": {
       "@ngx-uk-frontend/core": ["libs/core/src/index.ts"],
       "@ngx-uk-frontend/core/accordion": ["libs/core/accordion/src/index.ts"],
+      "@ngx-uk-frontend/core/checkbox": ["libs/core/checkbox/src/index.ts"],
+      "@ngx-uk-frontend/core/radio": ["libs/core/radio/src/index.ts"],
+      "@ngx-uk-frontend/core/select": ["libs/core/select/src/index.ts"],
       "@ngx-uk-frontend/core/breadcrumbs": [
         "libs/core/breadcrumbs/src/index.ts"
       ],
@@ -45,6 +48,15 @@
       ],
       "ngx-govscot-frontend/button": [
         "libs/ngx-govscot-frontend/button/src/index.ts"
+      ],
+      "ngx-govscot-frontend/checkbox": [
+        "libs/ngx-govscot-frontend/checkbox/src/index.ts"
+      ],
+      "ngx-govscot-frontend/radio": [
+        "libs/ngx-govscot-frontend/radio/src/index.ts"
+      ],
+      "ngx-govscot-frontend/select": [
+        "libs/ngx-govscot-frontend/select/src/index.ts"
       ],
       "ngx-govscot-frontend/details": [
         "libs/ngx-govscot-frontend/details/src/index.ts"

@@ -6,8 +6,8 @@ import {
   signal,
 } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CommonFormInputDirective } from '@ngx-uk-frontend/core/form-utils';
 import {
-  GovUKCommonFormInputDirective,
   ValueAccessorDirective,
   injectNgControl,
   inputCommonInputs,
@@ -26,12 +26,12 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
   hostDirectives: [
     ValueAccessorDirective,
-    { directive: GovUKCommonFormInputDirective, inputs: inputCommonInputs },
+    { directive: CommonFormInputDirective, inputs: inputCommonInputs },
   ],
 })
 export class GovUKPasswordInputComponent {
   readonly ngControl = injectNgControl();
-  readonly commonFormInput = inject(GovUKCommonFormInputDirective);
+  readonly commonFormInput = inject(CommonFormInputDirective);
 
   readonly isVisible = signal(false);
 

@@ -1,0 +1,20 @@
+<div class="ds_checkbox" (click)="toggle()">
+  <input
+    type="checkbox"
+    class="ds_checkbox__input"
+    [class.ds_checkbox__input--error]="ngControl.touched && ngControl.errors"
+    [ngClass]="commonFormInput.extraClasses()"
+    [formControl]="ngControl.control"
+    [checked]="ngControl.control.value"
+    [attr.id]="inputId()"
+    [attr.name]="inputId()"
+    [attr.disabled]="disabled() ? '' : null"
+    [attr.aria-describedby]="hint() ? inputId() + '_hint' : null"
+  />
+  <label class="ds_checkbox__label" [attr.for]="inputId()" (click)="toggle()">
+    {{ label() }}
+  </label>
+  @if (hint()) {
+    <p class="ds_hint-text" [attr.id]="inputId() + '_hint'">{{ hint() }}</p>
+  }
+</div>
