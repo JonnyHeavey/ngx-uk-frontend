@@ -11,9 +11,7 @@
       [attr.cols]="cols() ? cols() : null"
       [attr.wrap]="wrap() ? wrap() : null"
       [attr.placeholder]="placeholder() ? placeholder() : null"
-      [attr.maxlength]="
-        maxLength() ? maxLength() : maxlength() ? maxlength() : null
-      "
+      [attr.maxlength]="maxlength() || null"
       [attr.minlength]="minlength() ? minlength() : null"
       [attr.readonly]="readonly() ? '' : null"
       [attr.disabled]="disabled() ? '' : null"
@@ -34,7 +32,7 @@
     ></textarea>
   </div>
 
-  @if (showCharacterCount() && maxLength()) {
+  @if (showCharacterCount() && maxlength()) {
     <div
       [attr.id]="
         commonFormInput.inputId() ? commonFormInput.inputId() + '-info' : null

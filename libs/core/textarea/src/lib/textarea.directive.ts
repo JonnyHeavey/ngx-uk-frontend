@@ -23,7 +23,7 @@ export class TextareaDirective {
   readonly commonFormInput = inject(CommonFormInputDirective);
 
   // Basic textarea configuration
-  readonly rows = input<number>(3);
+  readonly rows = input<number>(2);
   readonly cols = input<number>();
   readonly wrap = input<'hard' | 'soft'>();
 

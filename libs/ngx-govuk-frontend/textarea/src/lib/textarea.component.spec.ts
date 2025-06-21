@@ -14,7 +14,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
         [autocomplete]="autocomplete"
         [extraClasses]="extraClasses"
         [rows]="rows"
-        [maxLength]="maxLength"
+        [maxlength]="maxlength"
         [showCharacterCount]="showCharacterCount"
       ></ngx-govuk-textarea>
     </form>
@@ -26,7 +26,7 @@ class TestHostComponent {
   autocomplete = 'off';
   extraClasses = '';
   rows = 2;
-  maxLength: number | null = null;
+  maxlength: number | null = null;
   showCharacterCount = false;
   form: FormGroup;
   component = viewChild.required(GovUKTextareaComponent);
@@ -118,8 +118,8 @@ describe('GovUKTextareaComponent', () => {
     expect(textareaElement.getAttribute('rows')).toBe('5');
   });
 
-  it('should render maxlength attribute in DOM when maxLength is set', () => {
-    hostComponent.maxLength = 100;
+  it('should render maxlength attribute in DOM when maxlength is set', () => {
+    hostComponent.maxlength = 100;
     fixture.detectChanges();
 
     const textareaElement =
@@ -173,10 +173,10 @@ describe('GovUKTextareaComponent', () => {
       expect(characterCountMessage).toBeNull();
     });
 
-    it('should show character count when showCharacterCount is true and maxLength is set', () => {
+    it('should show character count when showCharacterCount is true and maxlength is set', () => {
       TestBed.runInInjectionContext(() => {
         hostComponent.showCharacterCount = true;
-        hostComponent.maxLength = 100;
+        hostComponent.maxlength = 100;
         fixture.detectChanges();
 
         const characterCountMessage = fixture.nativeElement.querySelector(
@@ -192,7 +192,7 @@ describe('GovUKTextareaComponent', () => {
     it('should update character count when text is entered', () => {
       TestBed.runInInjectionContext(() => {
         hostComponent.showCharacterCount = true;
-        hostComponent.maxLength = 100;
+        hostComponent.maxlength = 100;
         const control = hostComponent.form.get('testTextarea');
         control?.setValue('This is a test');
         fixture.detectChanges();
@@ -203,10 +203,10 @@ describe('GovUKTextareaComponent', () => {
       });
     });
 
-    it('should show "too many" message when text exceeds maxLength', () => {
+    it('should show "too many" message when text exceeds maxlength', () => {
       TestBed.runInInjectionContext(() => {
         hostComponent.showCharacterCount = true;
-        hostComponent.maxLength = 10;
+        hostComponent.maxlength = 10;
         const control = hostComponent.form.get('testTextarea');
         control?.setValue('This is a test that is too long');
         fixture.detectChanges();
@@ -240,7 +240,7 @@ describe('GovUKTextareaComponent', () => {
 
     it('should set aria-describedby attribute when showCharacterCount is true', () => {
       hostComponent.showCharacterCount = true;
-      hostComponent.maxLength = 100;
+      hostComponent.maxlength = 100;
       fixture.detectChanges();
 
       const textareaElement =
@@ -253,7 +253,7 @@ describe('GovUKTextareaComponent', () => {
     it('should handle singular form correctly when one character remaining', () => {
       TestBed.runInInjectionContext(() => {
         hostComponent.showCharacterCount = true;
-        hostComponent.maxLength = 10;
+        hostComponent.maxlength = 10;
         const control = hostComponent.form.get('testTextarea');
         control?.setValue('Nine char');
         fixture.detectChanges();
@@ -267,7 +267,7 @@ describe('GovUKTextareaComponent', () => {
     it('should handle singular form correctly when one character too many', () => {
       TestBed.runInInjectionContext(() => {
         hostComponent.showCharacterCount = true;
-        hostComponent.maxLength = 10;
+        hostComponent.maxlength = 10;
         const control = hostComponent.form.get('testTextarea');
         control?.setValue('Eleven char');
         fixture.detectChanges();
@@ -280,7 +280,7 @@ describe('GovUKTextareaComponent', () => {
 
     it('should have aria-live attribute set to polite on character count message', () => {
       hostComponent.showCharacterCount = true;
-      hostComponent.maxLength = 100;
+      hostComponent.maxlength = 100;
       fixture.detectChanges();
 
       const characterCountMessage = fixture.nativeElement.querySelector(
@@ -291,7 +291,7 @@ describe('GovUKTextareaComponent', () => {
 
     it('should have correct ID on character count message', () => {
       hostComponent.showCharacterCount = true;
-      hostComponent.maxLength = 100;
+      hostComponent.maxlength = 100;
       fixture.detectChanges();
 
       const characterCountMessage = fixture.nativeElement.querySelector(

@@ -42,21 +42,24 @@ export class GovUKTextareaComponent
 {
   private readonly destroyRef = inject(DestroyRef);
 
-  // Override rows with Gov UK default
-  override readonly rows = input(2);
-  readonly maxLength = input<number | null>(null);
   readonly showCharacterCount = input(false, { transform: booleanAttribute });
 
   private readonly currentLength: WritableSignal<number> = signal(0);
   private readonly remainingCharacters = computed(() => {
-    const maxLength = this.maxLength();
-    return maxLength === null ? null : maxLength - this.currentLength();
+    const maxlength = this.maxlength();
+    return maxlength === null || maxlength === undefined
+      ? null
+      : maxlength - this.currentLength();
   });
 
   readonly characterCountMessage = computed(() => {
     const remaining = this.remainingCharacters();
 
-    if (this.maxLength() === null || remaining === null) {
+    if (
+      this.maxlength() === null ||
+      this.maxlength() === undefined ||
+      remaining === null
+    ) {
       return null;
     }
 

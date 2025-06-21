@@ -117,6 +117,10 @@ export class AppComponent {
   feedbackControl = new FormControl('');
   messageControl = new FormControl('');
 
+  // Character count textarea form controls
+  basicCharCountControl = new FormControl('');
+  businessActivitiesControl = new FormControl('');
+
   // Checkbox form controls
   termsControl = new FormControl(false);
   wasteControl1 = new FormControl(false);

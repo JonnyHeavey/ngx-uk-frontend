@@ -1983,6 +1983,53 @@
     </div>
   </div>
 
+  <h2>Textarea with Character Count Examples</h2>
+
+  <div class="example-section">
+    <h3>Basic Character Count</h3>
+    <p>Textarea with character count showing remaining characters:</p>
+
+    <div class="ds_form-group">
+      <label class="ds_label" for="basic-char-count">Brief description</label>
+      <div class="ds_hint-text">
+        Provide a brief description of your enquiry
+      </div>
+      <ngx-govscot-textarea
+        [formControl]="basicCharCountControl"
+        [rows]="3"
+        [maxlength]="200"
+        [showCharacterCount]="true"
+        placeholder="Enter your description here"
+        inputId="basic-char-count"
+      />
+    </div>
+  </div>
+
+  <div class="example-section">
+    <h3>Corporation Tax - Business Activities (Character Count)</h3>
+    <p>Example with character count for Corporation Tax business activities:</p>
+
+    <div class="ds_form-group">
+      <label class="ds_label" for="business-activities-char">
+        Describe your business activities
+      </label>
+      <div class="ds_hint-text">
+        Provide a clear description of what your company does. This helps us
+        process your Corporation Tax application.
+      </div>
+      <ngx-govscot-textarea
+        [formControl]="businessActivitiesControl"
+        [rows]="5"
+        [maxlength]="500"
+        [showCharacterCount]="true"
+        placeholder="Describe your main business activities, products, or services..."
+        inputId="business-activities-char"
+        [spellcheck]="true"
+        autocapitalize="sentences"
+      />
+    </div>
+  </div>
+
   <h2>Checkbox Examples</h2>
 
   <div class="example-section">
