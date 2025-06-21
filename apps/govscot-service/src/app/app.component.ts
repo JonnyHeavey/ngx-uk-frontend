@@ -15,6 +15,10 @@ import {
 } from 'ngx-govscot-frontend/button';
 import { GovScotCheckboxComponent } from 'ngx-govscot-frontend/checkbox';
 import { GovScotDetailsComponent } from 'ngx-govscot-frontend/details';
+import {
+  GovScotErrorSummaryComponent,
+  GovScotErrorSummaryItemDirective,
+} from 'ngx-govscot-frontend/error-summary';
 import { GovScotNotificationPanelComponent } from 'ngx-govscot-frontend/notification-panel';
 import { GovScotPaginationComponent } from 'ngx-govscot-frontend/pagination';
 import { GovScotPhaseBannerComponent } from 'ngx-govscot-frontend/phase-banner';
@@ -78,6 +82,8 @@ import { GovScotWarningTextComponent } from 'ngx-govscot-frontend/warning-text';
     GovScotRadioGroupComponent,
     GovScotRadioOptionDirective,
     GovScotSelectComponent,
+    GovScotErrorSummaryComponent,
+    GovScotErrorSummaryItemDirective,
   ],
   selector: 'ngx-govscot-frontend-root',
   templateUrl: './app.component.html',

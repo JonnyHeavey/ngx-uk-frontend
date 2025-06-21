@@ -112,6 +112,109 @@
     </ngx-govscot-question>
   </div>
 
+  <h2>Error Summary Examples</h2>
+
+  <div class="example-section">
+    <h3>Single Error</h3>
+    <p>An error summary with a single error:</p>
+    <ngx-govscot-error-summary>
+      <ngx-govscot-error-summary-item
+        text="Enter your full name"
+        targetId="full-name-input"
+      />
+    </ngx-govscot-error-summary>
+  </div>
+
+  <div class="example-section">
+    <h3>Multiple Errors</h3>
+    <p>An error summary with multiple errors:</p>
+    <ngx-govscot-error-summary>
+      <ngx-govscot-error-summary-item
+        text="Are you a British citizen? Select one of the options"
+        targetId="answer-1"
+      />
+      <ngx-govscot-error-summary-item
+        text="How much is the first rent payment? Enter an amount"
+        targetId="unique-id"
+      />
+      <ngx-govscot-error-summary-item
+        text="When will your tenant make the first payment? Enter a date"
+        targetId="start-date"
+      />
+      <ngx-govscot-error-summary-item
+        text="The first payment covers rent from the start date of the tenancy until: Enter a date"
+        targetId="end-date"
+      />
+    </ngx-govscot-error-summary>
+  </div>
+
+  <div class="example-section">
+    <h3>Custom Title</h3>
+    <p>An error summary with a custom title:</p>
+    <ngx-govscot-error-summary title="Please fix the following errors">
+      <ngx-govscot-error-summary-item
+        text="Enter your full name"
+        targetId="full-name"
+      />
+      <ngx-govscot-error-summary-item
+        text="Select an option"
+        targetId="option-1"
+      />
+    </ngx-govscot-error-summary>
+  </div>
+
+  <div class="example-section">
+    <h3>Form with Error Summary</h3>
+    <p>Example showing how the error summary appears at the top of a form:</p>
+    <ngx-govscot-error-summary>
+      <ngx-govscot-error-summary-item
+        text="Enter your full name"
+        targetId="form-name-input"
+      />
+      <ngx-govscot-error-summary-item
+        text="Enter a valid email address"
+        targetId="form-email-input"
+      />
+    </ngx-govscot-error-summary>
+
+    <form class="ds_form">
+      <div class="ds_form__content">
+        <ngx-govscot-question
+          label="What is your full name?"
+          labelFor="form-name-input"
+          errorMessage="Enter your full name"
+        >
+          <input
+            type="text"
+            id="form-name-input"
+            name="form-name"
+            class="ds_input ds_input--error"
+            aria-invalid="true"
+          />
+        </ngx-govscot-question>
+
+        <ngx-govscot-question
+          label="What is your email address?"
+          labelFor="form-email-input"
+          errorMessage="Enter a valid email address"
+        >
+          <input
+            type="email"
+            id="form-email-input"
+            name="form-email"
+            class="ds_input ds_input--error"
+            aria-invalid="true"
+            value="invalid-email"
+          />
+        </ngx-govscot-question>
+      </div>
+
+      <div class="ds_form__actions">
+        <button class="ds_button" type="submit">Continue</button>
+      </div>
+    </form>
+  </div>
+
   <h2>Phase Banner Example</h2>
 
   <div class="example-section">
