@@ -162,6 +162,44 @@
     </form>
   </div>
 
+  <h2>Cookie Banner Examples</h2>
+
+  <div class="example-section">
+    <h3>Basic Cookie Banner</h3>
+    <p>A standard cookie banner with default text and options:</p>
+    <ngx-govscot-cookie-banner
+      (acceptAll)="onAcceptAllCookies()"
+      (essentialOnly)="onAcceptEssentialCookies()"
+      (viewPreferences)="onViewCookiePreferences()"
+    />
+  </div>
+
+  <div class="example-section">
+    <h3>Cookie Banner with Custom Text</h3>
+    <p>A cookie banner with customized text content:</p>
+    <ngx-govscot-cookie-banner
+      text="We use cookies to make our website work better for you."
+      description="You can choose to accept all cookies or only the essential ones needed for the site to function."
+      acceptAllText="Accept all"
+      essentialOnlyText="Essential only"
+      preferencesText="Cookie settings"
+      (acceptAll)="onAcceptAllCookies()"
+      (essentialOnly)="onAcceptEssentialCookies()"
+      (viewPreferences)="onViewCookiePreferences()"
+    />
+  </div>
+
+  <div class="example-section">
+    <h3>Cookie Confirmation Message</h3>
+    <p>The confirmation message shown after user makes a choice:</p>
+    <ngx-govscot-cookie-banner
+      [showConfirmation]="true"
+      confirmationText="Thank you for your cookie preferences. You can update them anytime."
+      (changeSettings)="onChangeCookieSettings()"
+      (closeConfirmation)="onCloseCookieConfirmation()"
+    />
+  </div>
+
   <h2>Error Summary Examples</h2>
 
   <div class="example-section">

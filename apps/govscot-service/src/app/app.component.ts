@@ -15,6 +15,7 @@ import {
 } from 'ngx-govscot-frontend/button';
 import { GovScotCheckboxComponent } from 'ngx-govscot-frontend/checkbox';
 import { GovScotConfirmationMessageComponent } from 'ngx-govscot-frontend/confirmation-message';
+import { GovScotCookieBannerComponent } from 'ngx-govscot-frontend/cookie-banner';
 import { GovScotDetailsComponent } from 'ngx-govscot-frontend/details';
 import {
   GovScotErrorSummaryComponent,
@@ -62,6 +63,7 @@ import { GovScotWarningTextComponent } from 'ngx-govscot-frontend/warning-text';
     GovScotButtonGroupComponent,
     GovScotCheckboxComponent,
     GovScotConfirmationMessageComponent,
+    GovScotCookieBannerComponent,
     GovScotNotificationPanelComponent,
     GovScotPaginationComponent,
     GovScotPhaseBannerComponent,
@@ -357,5 +359,31 @@ export class AppComponent {
       this.documentArchive.currentPage * this.documentArchive.itemsPerPage,
       this.documentArchive.total,
     );
+  }
+
+  // Cookie banner event handlers
+  onAcceptAllCookies() {
+    console.log('User accepted all cookies');
+    // Set cookies and update preferences
+  }
+
+  onAcceptEssentialCookies() {
+    console.log('User accepted essential cookies only');
+    // Set only essential cookies
+  }
+
+  onViewCookiePreferences() {
+    console.log('User wants to view cookie preferences');
+    // Navigate to cookie preferences page
+  }
+
+  onChangeCookieSettings() {
+    console.log('User wants to change cookie settings');
+    // Navigate to cookie settings page
+  }
+
+  onCloseCookieConfirmation() {
+    console.log('User closed cookie confirmation message');
+    // Hide the confirmation message
   }
 }

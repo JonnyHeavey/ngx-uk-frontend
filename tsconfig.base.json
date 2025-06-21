@@ -60,6 +60,9 @@
       "ngx-govscot-frontend/confirmation-message": [
         "libs/ngx-govscot-frontend/confirmation-message/src/index.ts"
       ],
+      "ngx-govscot-frontend/cookie-banner": [
+        "libs/ngx-govscot-frontend/cookie-banner/src/index.ts"
+      ],
       "ngx-govscot-frontend/details": [
         "libs/ngx-govscot-frontend/details/src/index.ts"
       ],
