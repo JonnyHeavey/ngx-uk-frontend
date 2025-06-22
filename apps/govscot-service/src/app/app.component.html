@@ -397,6 +397,128 @@
       </p>
     </div>
 
+    <h2>Page Header Examples</h2>
+
+    <div class="example-section">
+      <h3>Basic Page Header</h3>
+      <p>A simple page header with just a title:</p>
+      <div style="border: 1px solid #ddd; padding: 20px; margin-bottom: 20px">
+        <ngx-govscot-page-header
+          title="Apply for or renew a disabled parking permit"
+        >
+        </ngx-govscot-page-header>
+      </div>
+    </div>
+
+    <div class="example-section">
+      <h3>Page Header with Content Label</h3>
+      <p>A page header with a content type label above the title:</p>
+      <div style="border: 1px solid #ddd; padding: 20px; margin-bottom: 20px">
+        <ngx-govscot-page-header
+          label="Guide"
+          title="Apply for or renew a disabled parking permit"
+        >
+        </ngx-govscot-page-header>
+      </div>
+    </div>
+
+    <div class="example-section">
+      <h3>Page Header with Metadata</h3>
+      <p>A page header with metadata information below the title:</p>
+      <div style="border: 1px solid #ddd; padding: 20px; margin-bottom: 20px">
+        <ngx-govscot-page-header
+          label="Guide"
+          title="Apply for or renew a disabled parking permit"
+          [metadata]="pageHeaderMetadata"
+        >
+        </ngx-govscot-page-header>
+      </div>
+    </div>
+
+    <div class="example-section">
+      <h3>News Article Page Header</h3>
+      <p>A page header styled for a news article:</p>
+      <div style="border: 1px solid #ddd; padding: 20px; margin-bottom: 20px">
+        <ngx-govscot-page-header
+          label="News"
+          title="First Minister announces investment in renewable energy"
+          [metadata]="newsMetadata"
+        >
+        </ngx-govscot-page-header>
+      </div>
+    </div>
+
+    <div class="example-section">
+      <h3>Service Page Header</h3>
+      <p>A page header for a government service:</p>
+      <div style="border: 1px solid #ddd; padding: 20px; margin-bottom: 20px">
+        <ngx-govscot-page-header
+          label="Service"
+          title="Register for Corporation Tax"
+          [metadata]="serviceMetadata"
+        >
+        </ngx-govscot-page-header>
+      </div>
+    </div>
+
+    <div class="example-section">
+      <h3>Policy Document Page Header</h3>
+      <p>A page header for a policy document with longer title:</p>
+      <div style="border: 1px solid #ddd; padding: 20px; margin-bottom: 20px">
+        <ngx-govscot-page-header
+          label="Policy"
+          title="Scotland's comprehensive strategy for sustainable development and environmental protection in the 21st century"
+          [metadata]="[
+            { key: 'Published', value: '1 January 2024' },
+            { key: 'Document type', value: 'Policy paper' },
+            { key: 'Department', value: 'Environment and Climate Change' },
+          ]"
+        >
+        </ngx-govscot-page-header>
+      </div>
+    </div>
+
+    <div class="example-section">
+      <h3>Article Page Header</h3>
+      <p>A page header for an informational article:</p>
+      <div style="border: 1px solid #ddd; padding: 20px; margin-bottom: 20px">
+        <ngx-govscot-page-header
+          label="Article"
+          title="Understanding your rights as a tenant in Scotland"
+          [metadata]="[
+            { key: 'Last updated', value: '15 March 2024' },
+            { key: 'Reading time', value: '8 minutes' },
+            { key: 'Category', value: 'Housing' },
+          ]"
+        >
+        </ngx-govscot-page-header>
+      </div>
+    </div>
+
+    <div class="example-section">
+      <h3>Contact Page Header</h3>
+      <p>A minimal page header for a contact page:</p>
+      <div style="border: 1px solid #ddd; padding: 20px; margin-bottom: 20px">
+        <ngx-govscot-page-header title="Contact us"> </ngx-govscot-page-header>
+      </div>
+    </div>
+
+    <div class="example-section">
+      <h3>Page Header Usage Notes</h3>
+      <p>Page headers are essential for content pages as they:</p>
+      <ul>
+        <li>Tell users what the page is about</li>
+        <li>Provide proper document structure with H1 headings</li>
+        <li>Help with SEO and search engine ranking</li>
+        <li>Include relevant metadata like publication dates</li>
+        <li>Support accessibility with semantic markup</li>
+      </ul>
+      <p>
+        The content title should be descriptive and concise (search engines
+        generally only use the first 60 characters).
+      </p>
+    </div>
+
     <h2>Feature Header Examples</h2>
 
     <div class="example-section">

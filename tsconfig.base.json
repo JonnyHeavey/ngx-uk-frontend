@@ -84,6 +84,9 @@
       "ngx-govscot-frontend/notification-panel": [
         "libs/ngx-govscot-frontend/notification-panel/src/index.ts"
       ],
+      "ngx-govscot-frontend/page-header": [
+        "libs/ngx-govscot-frontend/page-header/src/index.ts"
+      ],
       "ngx-govscot-frontend/pagination": [
         "libs/ngx-govscot-frontend/pagination/src/index.ts"
       ],

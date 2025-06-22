@@ -25,6 +25,7 @@ import { GovScotFeatureHeaderComponent } from 'ngx-govscot-frontend/feature-head
 import { GovScotFileDownloadComponent } from 'ngx-govscot-frontend/file-download';
 import { GovScotNotificationBannerComponent } from 'ngx-govscot-frontend/notification-banner';
 import { GovScotNotificationPanelComponent } from 'ngx-govscot-frontend/notification-panel';
+import { GovScotPageHeaderComponent } from 'ngx-govscot-frontend/page-header';
 import { GovScotPaginationComponent } from 'ngx-govscot-frontend/pagination';
 import { GovScotPhaseBannerComponent } from 'ngx-govscot-frontend/phase-banner';
 import { GovScotQuestionComponent } from 'ngx-govscot-frontend/question';
@@ -71,6 +72,7 @@ import { GovScotWarningTextComponent } from 'ngx-govscot-frontend/warning-text';
     GovScotFileDownloadComponent,
     GovScotNotificationBannerComponent,
     GovScotNotificationPanelComponent,
+    GovScotPageHeaderComponent,
     GovScotPaginationComponent,
     GovScotPhaseBannerComponent,
     GovScotQuestionComponent,
@@ -161,6 +163,22 @@ export class AppComponent {
   showCloseableNotification = true;
   showIconNotification = true;
   showReversedNotification = true;
+
+  // Page header examples data
+  pageHeaderMetadata = [
+    { key: 'Last updated', value: '8 November 2016' },
+    { key: 'Published', value: '1 January 2016' },
+  ];
+
+  newsMetadata = [
+    { key: 'Published', value: '10 April 2024' },
+    { key: 'Author', value: 'Scottish Government Press Office' },
+  ];
+
+  serviceMetadata = [
+    { key: 'Service type', value: 'Online application' },
+    { key: 'Processing time', value: '10 working days' },
+  ];
 
   // Select options data
   countryOptions = [

@@ -1,0 +1,18 @@
+<header class="ds_page-header" [class]="classes()">
+  @if (label()) {
+    <span class="ds_page-header__label ds_content-label">{{ label() }}</span>
+  }
+
+  <h1 class="ds_page-header__title">{{ title() }}</h1>
+
+  @if (metadata() && metadata()!.length > 0) {
+    <dl class="ds_page-header__metadata ds_metadata">
+      @for (item of metadata()!; track item.key) {
+        <div class="ds_metadata__item">
+          <dt class="ds_metadata__key">{{ item.key }}</dt>
+          <dd class="ds_metadata__value">{{ item.value }}</dd>
+        </div>
+      }
+    </dl>
+  }
+</header>
