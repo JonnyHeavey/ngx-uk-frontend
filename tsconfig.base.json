@@ -78,6 +78,9 @@
       "ngx-govscot-frontend/inset-text": [
         "libs/ngx-govscot-frontend/inset-text/src/index.ts"
       ],
+      "ngx-govscot-frontend/notification-banner": [
+        "libs/ngx-govscot-frontend/notification-banner/src/index.ts"
+      ],
       "ngx-govscot-frontend/notification-panel": [
         "libs/ngx-govscot-frontend/notification-panel/src/index.ts"
       ],

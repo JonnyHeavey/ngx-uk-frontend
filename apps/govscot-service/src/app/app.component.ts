@@ -23,6 +23,7 @@ import {
 } from 'ngx-govscot-frontend/error-summary';
 import { GovScotFeatureHeaderComponent } from 'ngx-govscot-frontend/feature-header';
 import { GovScotFileDownloadComponent } from 'ngx-govscot-frontend/file-download';
+import { GovScotNotificationBannerComponent } from 'ngx-govscot-frontend/notification-banner';
 import { GovScotNotificationPanelComponent } from 'ngx-govscot-frontend/notification-panel';
 import { GovScotPaginationComponent } from 'ngx-govscot-frontend/pagination';
 import { GovScotPhaseBannerComponent } from 'ngx-govscot-frontend/phase-banner';
@@ -68,6 +69,7 @@ import { GovScotWarningTextComponent } from 'ngx-govscot-frontend/warning-text';
     GovScotCookieBannerComponent,
     GovScotFeatureHeaderComponent,
     GovScotFileDownloadComponent,
+    GovScotNotificationBannerComponent,
     GovScotNotificationPanelComponent,
     GovScotPaginationComponent,
     GovScotPhaseBannerComponent,
@@ -153,6 +155,12 @@ export class AppComponent {
   industryControl = new FormControl('');
   companyYearControl = new FormControl('');
   priorityControl = new FormControl('');
+
+  // Notification banner state
+  showBasicNotification = true;
+  showCloseableNotification = true;
+  showIconNotification = true;
+  showReversedNotification = true;
 
   // Select options data
   countryOptions = [
@@ -389,5 +397,26 @@ export class AppComponent {
   onCloseCookieConfirmation() {
     console.log('User closed cookie confirmation message');
     // Hide the confirmation message
+  }
+
+  // Notification banner event handlers
+  onCloseBasicNotification() {
+    console.log('User closed basic notification banner');
+    this.showBasicNotification = false;
+  }
+
+  onCloseCloseableNotification() {
+    console.log('User closed closeable notification banner');
+    this.showCloseableNotification = false;
+  }
+
+  onCloseIconNotification() {
+    console.log('User closed icon notification banner');
+    this.showIconNotification = false;
+  }
+
+  onCloseReversedNotification() {
+    console.log('User closed reversed notification banner');
+    this.showReversedNotification = false;
   }
 }

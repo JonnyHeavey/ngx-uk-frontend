@@ -1,522 +1,1152 @@
-<!-- Skip Link for Accessibility -->
-<ngx-govscot-skip-link href="#main-content">
-  Skip to main content
-</ngx-govscot-skip-link>
+<div class="js-initialised">
+  <!-- Skip Link for Accessibility -->
+  <ngx-govscot-skip-link href="#main-content">
+    Skip to main content
+  </ngx-govscot-skip-link>
 
-<!-- Phase Banner -->
-<ngx-govscot-phase-banner phase="beta">
-  This is a new service. Your <a href="/feedback">feedback</a> will help us to
-  improve it.
-</ngx-govscot-phase-banner>
+  <!-- Phase Banner -->
+  <ngx-govscot-phase-banner phase="beta">
+    This is a new service. Your <a href="/feedback">feedback</a> will help us to
+    improve it.
+  </ngx-govscot-phase-banner>
 
-<!-- Breadcrumbs -->
-<ngx-govscot-breadcrumbs>
-  <ngx-govscot-breadcrumb label="Home" link="/"></ngx-govscot-breadcrumb>
-  <ngx-govscot-breadcrumb
-    label="Taxes and benefits"
-    link="/taxes"
-  ></ngx-govscot-breadcrumb>
-  <ngx-govscot-breadcrumb
-    label="Corporation Tax"
-    link="/taxes/corporation"
-  ></ngx-govscot-breadcrumb>
-  <ngx-govscot-breadcrumb
-    label="Component examples"
-    [current]="true"
-  ></ngx-govscot-breadcrumb>
-</ngx-govscot-breadcrumbs>
+  <!-- Notification Banner Examples -->
+  @if (showBasicNotification) {
+    <ngx-govscot-notification-banner
+      text="We need to tell you about <a href='#'>something important</a>"
+      (closed)="onCloseBasicNotification()"
+    />
+  }
 
-<main id="main-content">
-  <h1>Scottish Government Design System - Component Examples</h1>
+  @if (showCloseableNotification) {
+    <ngx-govscot-notification-banner
+      text="This notification has a close button. You can dismiss it by clicking the X."
+      [showClose]="true"
+      (closed)="onCloseCloseableNotification()"
+    />
+  }
 
-  <h2>Question Component Examples</h2>
+  @if (showIconNotification) {
+    <ngx-govscot-notification-banner
+      text="This notification includes an icon to draw attention."
+      [showIcon]="true"
+      icon="info"
+      [showClose]="true"
+      (closed)="onCloseIconNotification()"
+    />
+  }
 
-  <div class="example-section">
-    <h3>Basic Question</h3>
-    <p>A simple question with a label and form field:</p>
-    <ngx-govscot-question label="What is your name?" labelFor="name-input">
-      <input
-        type="text"
-        id="name-input"
-        name="name"
-        class="ds_input ds_input--fixed-20"
-      />
-    </ngx-govscot-question>
-  </div>
+  @if (showReversedNotification) {
+    <ngx-govscot-notification-banner
+      text="This is a reversed notification banner with different styling."
+      [reversed]="true"
+      [showClose]="true"
+      (closed)="onCloseReversedNotification()"
+    />
+  }
 
-  <div class="example-section">
-    <h3>Question with Hint Text</h3>
-    <p>A question that includes helpful hint text:</p>
-    <ngx-govscot-question
-      label="What is your National Insurance number?"
-      labelFor="ni-input"
-      hint="For example, QQ123456A"
-    >
-      <input
-        type="text"
-        id="ni-input"
-        name="ni-number"
-        class="ds_input ds_input--fixed-10"
-      />
-    </ngx-govscot-question>
-  </div>
+  <!-- Breadcrumbs -->
+  <ngx-govscot-breadcrumbs>
+    <ngx-govscot-breadcrumb label="Home" link="/"></ngx-govscot-breadcrumb>
+    <ngx-govscot-breadcrumb
+      label="Taxes and benefits"
+      link="/taxes"
+    ></ngx-govscot-breadcrumb>
+    <ngx-govscot-breadcrumb
+      label="Corporation Tax"
+      link="/taxes/corporation"
+    ></ngx-govscot-breadcrumb>
+    <ngx-govscot-breadcrumb
+      label="Component examples"
+      [current]="true"
+    ></ngx-govscot-breadcrumb>
+  </ngx-govscot-breadcrumbs>
 
-  <div class="example-section">
-    <h3>Question with Error Message</h3>
-    <p>A question showing an error state:</p>
-    <ngx-govscot-question
-      label="What is your email address?"
-      labelFor="email-input"
-      errorMessage="Enter a valid email address"
-    >
-      <input
-        type="email"
-        id="email-input"
-        name="email"
-        class="ds_input ds_input--error"
-        aria-invalid="true"
-      />
-    </ngx-govscot-question>
-  </div>
+  <main id="main-content">
+    <h1>Scottish Government Design System - Component Examples</h1>
 
-  <div class="example-section">
-    <h3>Question as Page Title</h3>
-    <p>A question styled as a page title for single-question pages:</p>
-    <ngx-govscot-question
-      label="Are you a British citizen?"
-      labelFor="citizenship-input"
-      isPageTitle="true"
-    >
-      <div class="ds_field-group">
-        <div class="ds_radio">
-          <input
-            class="ds_radio__input"
-            id="citizenship-yes"
-            type="radio"
-            name="citizenship"
-            value="yes"
-          />
-          <label class="ds_radio__label" for="citizenship-yes">Yes</label>
+    <h2>Question Component Examples</h2>
+
+    <div class="example-section">
+      <h3>Basic Question</h3>
+      <p>A simple question with a label and form field:</p>
+      <ngx-govscot-question label="What is your name?" labelFor="name-input">
+        <input
+          type="text"
+          id="name-input"
+          name="name"
+          class="ds_input ds_input--fixed-20"
+        />
+      </ngx-govscot-question>
+    </div>
+
+    <div class="example-section">
+      <h3>Question with Hint Text</h3>
+      <p>A question that includes helpful hint text:</p>
+      <ngx-govscot-question
+        label="What is your National Insurance number?"
+        labelFor="ni-input"
+        hint="For example, QQ123456A"
+      >
+        <input
+          type="text"
+          id="ni-input"
+          name="ni-number"
+          class="ds_input ds_input--fixed-10"
+        />
+      </ngx-govscot-question>
+    </div>
+
+    <div class="example-section">
+      <h3>Question with Error Message</h3>
+      <p>A question showing an error state:</p>
+      <ngx-govscot-question
+        label="What is your email address?"
+        labelFor="email-input"
+        errorMessage="Enter a valid email address"
+      >
+        <input
+          type="email"
+          id="email-input"
+          name="email"
+          class="ds_input ds_input--error"
+          aria-invalid="true"
+        />
+      </ngx-govscot-question>
+    </div>
+
+    <div class="example-section">
+      <h3>Question as Page Title</h3>
+      <p>A question styled as a page title for single-question pages:</p>
+      <ngx-govscot-question
+        label="Are you a British citizen?"
+        labelFor="citizenship-input"
+        isPageTitle="true"
+      >
+        <div class="ds_field-group">
+          <div class="ds_radio">
+            <input
+              class="ds_radio__input"
+              id="citizenship-yes"
+              type="radio"
+              name="citizenship"
+              value="yes"
+            />
+            <label class="ds_radio__label" for="citizenship-yes">Yes</label>
+          </div>
+          <div class="ds_radio">
+            <input
+              class="ds_radio__input"
+              id="citizenship-no"
+              type="radio"
+              name="citizenship"
+              value="no"
+            />
+            <label class="ds_radio__label" for="citizenship-no">No</label>
+          </div>
         </div>
-        <div class="ds_radio">
-          <input
-            class="ds_radio__input"
-            id="citizenship-no"
-            type="radio"
-            name="citizenship"
-            value="no"
-          />
-          <label class="ds_radio__label" for="citizenship-no">No</label>
+      </ngx-govscot-question>
+    </div>
+
+    <h2>Confirmation Message Examples</h2>
+
+    <div class="example-section">
+      <h3>Basic Confirmation Message</h3>
+      <p>A simple confirmation message with just a title:</p>
+      <ngx-govscot-confirmation-message title="Landlord added successfully" />
+    </div>
+
+    <div class="example-section">
+      <h3>Confirmation Message with Body Text</h3>
+      <p>A confirmation message with additional information:</p>
+      <ngx-govscot-confirmation-message
+        title="Application saved"
+        body="You have successfully saved your application. You can continue editing it later."
+      />
+    </div>
+
+    <div class="example-section">
+      <h3>Form Interaction Example</h3>
+      <p>
+        Example showing how a confirmation message appears after completing an
+        action on a form:
+      </p>
+      <ngx-govscot-confirmation-message
+        title="Information updated"
+        body="You have successfully updated your contact details."
+      />
+
+      <form class="ds_form">
+        <div class="ds_form__content">
+          <ngx-govscot-question
+            label="What is your phone number?"
+            labelFor="phone-input"
+          >
+            <input
+              type="tel"
+              id="phone-input"
+              name="phone"
+              class="ds_input ds_input--fixed-20"
+              value="0131 123 4567"
+            />
+          </ngx-govscot-question>
+
+          <button type="submit" class="ds_button ds_button--primary">
+            Update phone number
+          </button>
         </div>
+      </form>
+    </div>
+
+    <h2>Cookie Banner Examples</h2>
+
+    <div class="example-section">
+      <h3>Basic Cookie Banner</h3>
+      <p>A standard cookie banner with default text and options:</p>
+      <ngx-govscot-cookie-banner
+        (acceptAll)="onAcceptAllCookies()"
+        (essentialOnly)="onAcceptEssentialCookies()"
+        (viewPreferences)="onViewCookiePreferences()"
+      />
+    </div>
+
+    <div class="example-section">
+      <h3>Cookie Banner with Custom Text</h3>
+      <p>A cookie banner with customized text content:</p>
+      <ngx-govscot-cookie-banner
+        text="We use cookies to make our website work better for you."
+        description="You can choose to accept all cookies or only the essential ones needed for the site to function."
+        acceptAllText="Accept all"
+        essentialOnlyText="Essential only"
+        preferencesText="Cookie settings"
+        (acceptAll)="onAcceptAllCookies()"
+        (essentialOnly)="onAcceptEssentialCookies()"
+        (viewPreferences)="onViewCookiePreferences()"
+      />
+    </div>
+
+    <div class="example-section">
+      <h3>Cookie Confirmation Message</h3>
+      <p>The confirmation message shown after user makes a choice:</p>
+      <ngx-govscot-cookie-banner
+        [showConfirmation]="true"
+        confirmationText="Thank you for your cookie preferences. You can update them anytime."
+        (changeSettings)="onChangeCookieSettings()"
+        (closeConfirmation)="onCloseCookieConfirmation()"
+      />
+    </div>
+
+    <h2>Notification Banner Examples</h2>
+
+    <div class="example-section">
+      <h3>Basic Notification Banner</h3>
+      <p>
+        A simple notification banner with text content and optional HTML links:
+      </p>
+      <div style="border: 1px solid #ddd; padding: 20px; margin-bottom: 20px">
+        <ngx-govscot-notification-banner
+          text="We need to tell you about <a href='#'>something important</a>. This is a basic notification banner."
+        />
       </div>
-    </ngx-govscot-question>
-  </div>
+    </div>
 
-  <h2>Confirmation Message Examples</h2>
-
-  <div class="example-section">
-    <h3>Basic Confirmation Message</h3>
-    <p>A simple confirmation message with just a title:</p>
-    <ngx-govscot-confirmation-message title="Landlord added successfully" />
-  </div>
-
-  <div class="example-section">
-    <h3>Confirmation Message with Body Text</h3>
-    <p>A confirmation message with additional information:</p>
-    <ngx-govscot-confirmation-message
-      title="Application saved"
-      body="You have successfully saved your application. You can continue editing it later."
-    />
-  </div>
-
-  <div class="example-section">
-    <h3>Form Interaction Example</h3>
-    <p>
-      Example showing how a confirmation message appears after completing an
-      action on a form:
-    </p>
-    <ngx-govscot-confirmation-message
-      title="Information updated"
-      body="You have successfully updated your contact details."
-    />
-
-    <form class="ds_form">
-      <div class="ds_form__content">
-        <ngx-govscot-question
-          label="What is your phone number?"
-          labelFor="phone-input"
-        >
-          <input
-            type="tel"
-            id="phone-input"
-            name="phone"
-            class="ds_input ds_input--fixed-20"
-            value="0131 123 4567"
+    <div class="example-section">
+      <h3>Notification Banner with Close Button</h3>
+      <p>A notification banner that users can dismiss:</p>
+      <div style="border: 1px solid #ddd; padding: 20px; margin-bottom: 20px">
+        @if (showCloseableNotification) {
+          <ngx-govscot-notification-banner
+            text="This notification has a close button. You can dismiss it by clicking the X."
+            [showClose]="true"
+            (closed)="onCloseCloseableNotification()"
           />
-        </ngx-govscot-question>
-
-        <button type="submit" class="ds_button ds_button--primary">
-          Update phone number
-        </button>
+        } @else {
+          <p>
+            <em
+              >Notification was closed.
+              <button
+                type="button"
+                class="ds_button ds_button--secondary ds_button--small"
+                (click)="showCloseableNotification = true"
+              >
+                Show again
+              </button></em
+            >
+          </p>
+        }
       </div>
-    </form>
-  </div>
+    </div>
 
-  <h2>Cookie Banner Examples</h2>
-
-  <div class="example-section">
-    <h3>Basic Cookie Banner</h3>
-    <p>A standard cookie banner with default text and options:</p>
-    <ngx-govscot-cookie-banner
-      (acceptAll)="onAcceptAllCookies()"
-      (essentialOnly)="onAcceptEssentialCookies()"
-      (viewPreferences)="onViewCookiePreferences()"
-    />
-  </div>
-
-  <div class="example-section">
-    <h3>Cookie Banner with Custom Text</h3>
-    <p>A cookie banner with customized text content:</p>
-    <ngx-govscot-cookie-banner
-      text="We use cookies to make our website work better for you."
-      description="You can choose to accept all cookies or only the essential ones needed for the site to function."
-      acceptAllText="Accept all"
-      essentialOnlyText="Essential only"
-      preferencesText="Cookie settings"
-      (acceptAll)="onAcceptAllCookies()"
-      (essentialOnly)="onAcceptEssentialCookies()"
-      (viewPreferences)="onViewCookiePreferences()"
-    />
-  </div>
-
-  <div class="example-section">
-    <h3>Cookie Confirmation Message</h3>
-    <p>The confirmation message shown after user makes a choice:</p>
-    <ngx-govscot-cookie-banner
-      [showConfirmation]="true"
-      confirmationText="Thank you for your cookie preferences. You can update them anytime."
-      (changeSettings)="onChangeCookieSettings()"
-      (closeConfirmation)="onCloseCookieConfirmation()"
-    />
-  </div>
-
-  <h2>Feature Header Examples</h2>
-
-  <div class="example-section">
-    <h3>Basic Feature Header</h3>
-    <p>A simple feature header with title and content:</p>
-    <ngx-govscot-feature-header
-      title="Design standards"
-      content="The patterns included here have been developed for use by government, public sector and third sector non-commercial organisations in Scotland."
-    />
-  </div>
-
-  <div class="example-section">
-    <h3>Feature Header with Image</h3>
-    <p>A feature header including an image:</p>
-    <ngx-govscot-feature-header
-      title="Scottish agriculture"
-      content="Ensuring a thriving agriculture sector for Scotland's farmers, crofters and growers."
-      imageSrc="https://placehold.co/400x300/0065bd/ffffff?text=Scottish+Agriculture"
-      imageAlt="Scottish agriculture illustration"
-      [imageWidth]="400"
-      [imageHeight]="300"
-    />
-  </div>
-
-  <div class="example-section">
-    <h3>Feature Header with Colored Background</h3>
-    <p>A feature header with a tertiary background color:</p>
-    <ngx-govscot-feature-header
-      title="Environmental initiatives"
-      content="Working together to protect Scotland's natural environment for future generations."
-      background="tertiary"
-      imageSrc="https://placehold.co/400x300/4d7c0f/ffffff?text=Environment"
-      imageAlt="Environmental initiatives"
-      [imageWidth]="400"
-      [imageHeight]="300"
-    />
-  </div>
-
-  <div class="example-section">
-    <h3>Full Width Feature Header</h3>
-    <p>A feature header that spans the full width with brand background:</p>
-    <ngx-govscot-feature-header
-      title="Innovation Scotland"
-      content="Supporting businesses and entrepreneurs to drive innovation and economic growth across Scotland."
-      background="brand"
-      [fullWidth]="true"
-      imageSrc="https://placehold.co/400x300/002d54/ffffff?text=Innovation"
-      imageAlt="Innovation Scotland"
-      [imageWidth]="400"
-      [imageHeight]="300"
-    />
-  </div>
-
-  <div class="example-section">
-    <h3>Wide Text Feature Header</h3>
-    <p>
-      A feature header with wide text layout (text takes 2/3, image takes 1/3):
-    </p>
-    <ngx-govscot-feature-header
-      title="Public services transformation"
-      content="Modernizing public services to better serve the people of Scotland through digital innovation, improved accessibility, and user-centered design. Our commitment is to make government services more efficient, transparent, and responsive to citizen needs."
-      [wideText]="true"
-      imageSrc="https://placehold.co/300x300/5b21b6/ffffff?text=Digital+Services"
-      imageAlt="Digital services transformation"
-      [imageWidth]="300"
-      [imageHeight]="300"
-    />
-  </div>
-
-  <div class="example-section">
-    <h3>Top Aligned Feature Header</h3>
-    <p>A feature header with top-aligned content:</p>
-    <ngx-govscot-feature-header
-      title="Community engagement"
-      content="Building stronger communities through active participation and collaboration."
-      [topAligned]="true"
-      imageSrc="https://placehold.co/400x200/dc2626/ffffff?text=Community"
-      imageAlt="Community engagement"
-      [imageWidth]="400"
-      [imageHeight]="200"
-    />
-  </div>
-
-  <div class="example-section">
-    <h3>Feature Header with Aspect Ratio</h3>
-    <p>A feature header using aspect box for consistent image sizing:</p>
-    <ngx-govscot-feature-header
-      title="Healthcare excellence"
-      content="Delivering world-class healthcare services across Scotland."
-      background="secondary"
-      aspectRatio="16:9"
-      imageSrc="https://placehold.co/800x450/059669/ffffff?text=Healthcare"
-      imageAlt="Healthcare services"
-      [imageWidth]="800"
-      [imageHeight]="450"
-    />
-  </div>
-
-  <div class="example-section">
-    <h3>Feature Header with Cover Image</h3>
-    <p>A feature header with cover-scaled image and no padding:</p>
-    <ngx-govscot-feature-header
-      title="Education and skills"
-      content="Empowering learners of all ages with the knowledge and skills needed for success."
-      background="tertiary"
-      imageScale="cover"
-      [noPadding]="true"
-      imageSrc="https://placehold.co/400x400/ea580c/ffffff?text=Education"
-      imageAlt="Education and skills development"
-      [imageWidth]="400"
-      [imageHeight]="400"
-    />
-  </div>
-
-  <div class="example-section">
-    <h3>Title Only Feature Header</h3>
-    <p>A minimal feature header with just a title:</p>
-    <ngx-govscot-feature-header title="Contact us" />
-  </div>
-
-  <h2>Error Summary Examples</h2>
-
-  <div class="example-section">
-    <h3>Single Error</h3>
-    <p>An error summary with a single error:</p>
-    <ngx-govscot-error-summary>
-      <ngx-govscot-error-summary-item
-        text="Enter your full name"
-        targetId="full-name-input"
-      />
-    </ngx-govscot-error-summary>
-  </div>
-
-  <div class="example-section">
-    <h3>Multiple Errors</h3>
-    <p>An error summary with multiple errors:</p>
-    <ngx-govscot-error-summary>
-      <ngx-govscot-error-summary-item
-        text="Are you a British citizen? Select one of the options"
-        targetId="answer-1"
-      />
-      <ngx-govscot-error-summary-item
-        text="How much is the first rent payment? Enter an amount"
-        targetId="unique-id"
-      />
-      <ngx-govscot-error-summary-item
-        text="When will your tenant make the first payment? Enter a date"
-        targetId="start-date"
-      />
-      <ngx-govscot-error-summary-item
-        text="The first payment covers rent from the start date of the tenancy until: Enter a date"
-        targetId="end-date"
-      />
-    </ngx-govscot-error-summary>
-  </div>
-
-  <div class="example-section">
-    <h3>Custom Title</h3>
-    <p>An error summary with a custom title:</p>
-    <ngx-govscot-error-summary title="Please fix the following errors">
-      <ngx-govscot-error-summary-item
-        text="Enter your full name"
-        targetId="full-name"
-      />
-      <ngx-govscot-error-summary-item
-        text="Select an option"
-        targetId="option-1"
-      />
-    </ngx-govscot-error-summary>
-  </div>
-
-  <div class="example-section">
-    <h3>Form with Error Summary</h3>
-    <p>Example showing how the error summary appears at the top of a form:</p>
-    <ngx-govscot-error-summary>
-      <ngx-govscot-error-summary-item
-        text="Enter your full name"
-        targetId="form-name-input"
-      />
-      <ngx-govscot-error-summary-item
-        text="Enter a valid email address"
-        targetId="form-email-input"
-      />
-    </ngx-govscot-error-summary>
-
-    <form class="ds_form">
-      <div class="ds_form__content">
-        <ngx-govscot-question
-          label="What is your full name?"
-          labelFor="form-name-input"
-          errorMessage="Enter your full name"
-        >
-          <input
-            type="text"
-            id="form-name-input"
-            name="form-name"
-            class="ds_input ds_input--error"
-            aria-invalid="true"
+    <div class="example-section">
+      <h3>Notification Banner with Icon</h3>
+      <p>A notification banner that includes an icon to draw attention:</p>
+      <div style="border: 1px solid #ddd; padding: 20px; margin-bottom: 20px">
+        @if (showIconNotification) {
+          <ngx-govscot-notification-banner
+            text="This notification includes an icon to draw attention to important information."
+            [showIcon]="true"
+            icon="info"
+            [showClose]="true"
+            (closed)="onCloseIconNotification()"
           />
-        </ngx-govscot-question>
+        } @else {
+          <p>
+            <em
+              >Notification was closed.
+              <button
+                type="button"
+                class="ds_button ds_button--secondary ds_button--small"
+                (click)="showIconNotification = true"
+              >
+                Show again
+              </button></em
+            >
+          </p>
+        }
+      </div>
+    </div>
 
-        <ngx-govscot-question
-          label="What is your email address?"
-          labelFor="form-email-input"
-          errorMessage="Enter a valid email address"
-        >
-          <input
-            type="email"
-            id="form-email-input"
-            name="form-email"
-            class="ds_input ds_input--error"
-            aria-invalid="true"
-            value="invalid-email"
+    <div class="example-section">
+      <h3>Reversed Notification Banner</h3>
+      <p>A notification banner with reversed styling (dark background):</p>
+      <div style="border: 1px solid #ddd; padding: 20px; margin-bottom: 20px">
+        @if (showReversedNotification) {
+          <ngx-govscot-notification-banner
+            text="This is a reversed notification banner with different styling for high-priority messages."
+            [reversed]="true"
+            [showClose]="true"
+            (closed)="onCloseReversedNotification()"
           />
-        </ngx-govscot-question>
+        } @else {
+          <p>
+            <em
+              >Notification was closed.
+              <button
+                type="button"
+                class="ds_button ds_button--secondary ds_button--small"
+                (click)="showReversedNotification = true"
+              >
+                Show again
+              </button></em
+            >
+          </p>
+        }
       </div>
+    </div>
 
-      <div class="ds_form__actions">
-        <button class="ds_button" type="submit">Continue</button>
+    <div class="example-section">
+      <h3>Notification Banner with Different Icons</h3>
+      <p>Examples of notification banners with different icon types:</p>
+      <div style="border: 1px solid #ddd; padding: 20px; margin-bottom: 20px">
+        <ngx-govscot-notification-banner
+          text="Information notification with info icon"
+          [showIcon]="true"
+          icon="info"
+          style="margin-bottom: 10px"
+        />
+        <ngx-govscot-notification-banner
+          text="Warning notification with warning icon"
+          [showIcon]="true"
+          icon="warning"
+          style="margin-bottom: 10px"
+        />
+        <ngx-govscot-notification-banner
+          text="Success notification with success icon"
+          [showIcon]="true"
+          icon="success"
+        />
       </div>
-    </form>
-  </div>
+    </div>
 
-  <h2>Phase Banner Example</h2>
+    <div class="example-section">
+      <h3>Notification Banner with Inverted Icon</h3>
+      <p>A notification banner with an inverted icon style:</p>
+      <div style="border: 1px solid #ddd; padding: 20px; margin-bottom: 20px">
+        <ngx-govscot-notification-banner
+          text="This notification has an inverted icon for different visual emphasis."
+          [showIcon]="true"
+          icon="info"
+          [iconInverse]="true"
+        />
+      </div>
+    </div>
 
-  <div class="example-section">
-    <h3>Beta Phase Banner</h3>
-    <p>
-      The phase banner above shows this service is in beta phase and being
-      improved.
-    </p>
+    <div class="example-section">
+      <h3>Notification Banner with Colored Icon</h3>
+      <p>A notification banner with a colored icon:</p>
+      <div style="border: 1px solid #ddd; padding: 20px; margin-bottom: 20px">
+        <ngx-govscot-notification-banner
+          text="This notification has a colored icon to match the message type."
+          [showIcon]="true"
+          icon="info"
+          [iconColour]="true"
+        />
+      </div>
+    </div>
 
-    <h4>Alpha Phase Example</h4>
-    <ngx-govscot-phase-banner phase="alpha">
-      This is a new Corporation Tax service. Your
-      <a href="/alpha-feedback">feedback</a> will help us to improve it.
-    </ngx-govscot-phase-banner>
-  </div>
+    <div class="example-section">
+      <h3>Page-top Notification Banners</h3>
+      <p>
+        The notification banners at the top of this page demonstrate how they
+        appear in a real-world scenario. They stretch across the full width and
+        can be dismissed by users.
+      </p>
+      <p>
+        These are controlled by the component state and will reappear when the
+        page is refreshed.
+      </p>
+    </div>
 
-  <h2>Breadcrumbs Examples</h2>
+    <h2>Feature Header Examples</h2>
 
-  <div class="example-section">
-    <h3>Default Breadcrumbs with Current Page</h3>
-    <p>
-      The breadcrumbs above show the current page location. Here's another
-      example:
-    </p>
-    <ngx-govscot-breadcrumbs>
-      <ngx-govscot-breadcrumb label="Home" link="/"></ngx-govscot-breadcrumb>
-      <ngx-govscot-breadcrumb
-        label="Justice and the law"
-        link="/justice"
-      ></ngx-govscot-breadcrumb>
-      <ngx-govscot-breadcrumb
-        label="Your rights and the law"
-        link="/justice/rights"
-      ></ngx-govscot-breadcrumb>
-      <ngx-govscot-breadcrumb
-        label="Data sharing of personal information"
-        [current]="true"
-      ></ngx-govscot-breadcrumb>
-    </ngx-govscot-breadcrumbs>
-  </div>
+    <div class="example-section">
+      <h3>Basic Feature Header</h3>
+      <p>A simple feature header with title and content:</p>
+      <ngx-govscot-feature-header
+        title="Design standards"
+        content="The patterns included here have been developed for use by government, public sector and third sector non-commercial organisations in Scotland."
+      />
+    </div>
 
-  <div class="example-section">
-    <h3>Breadcrumbs Without Current Page</h3>
-    <p>
-      You can omit the current page if there are issues with repetition or long
-      titles:
-    </p>
-    <ngx-govscot-breadcrumbs>
-      <ngx-govscot-breadcrumb label="Home" link="/"></ngx-govscot-breadcrumb>
-      <ngx-govscot-breadcrumb
-        label="Environment, farming and marine"
-        link="/environment"
-      ></ngx-govscot-breadcrumb>
-      <ngx-govscot-breadcrumb
-        label="Environment and countryside protection"
-        link="/environment/countryside"
-      ></ngx-govscot-breadcrumb>
-    </ngx-govscot-breadcrumbs>
-  </div>
+    <div class="example-section">
+      <h3>Feature Header with Image</h3>
+      <p>A feature header including an image:</p>
+      <ngx-govscot-feature-header
+        title="Scottish agriculture"
+        content="Ensuring a thriving agriculture sector for Scotland's farmers, crofters and growers."
+        imageSrc="https://placehold.co/400x300/0065bd/ffffff?text=Scottish+Agriculture"
+        imageAlt="Scottish agriculture illustration"
+        [imageWidth]="400"
+        [imageHeight]="300"
+      />
+    </div>
 
-  <div class="example-section">
-    <h3>Corporation Tax Service Navigation</h3>
-    <p>
-      Example showing breadcrumbs for navigating through a Corporation Tax
-      service:
-    </p>
-    <ngx-govscot-breadcrumbs>
-      <ngx-govscot-breadcrumb
-        label="Home"
-        [link]="['/']"
-      ></ngx-govscot-breadcrumb>
-      <ngx-govscot-breadcrumb
-        label="Business and economy"
-        [link]="['/business']"
-      ></ngx-govscot-breadcrumb>
-      <ngx-govscot-breadcrumb
-        label="Corporation Tax"
-        [link]="['/business', 'corporation-tax']"
-      ></ngx-govscot-breadcrumb>
-      <ngx-govscot-breadcrumb
-        label="Register your company"
-        [current]="true"
-      ></ngx-govscot-breadcrumb>
-    </ngx-govscot-breadcrumbs>
-  </div>
+    <div class="example-section">
+      <h3>Feature Header with Colored Background</h3>
+      <p>A feature header with a tertiary background color:</p>
+      <ngx-govscot-feature-header
+        title="Environmental initiatives"
+        content="Working together to protect Scotland's natural environment for future generations."
+        background="tertiary"
+        imageSrc="https://placehold.co/400x300/4d7c0f/ffffff?text=Environment"
+        imageAlt="Environmental initiatives"
+        [imageWidth]="400"
+        [imageHeight]="300"
+      />
+    </div>
 
-  <h2>Tabs Examples</h2>
+    <div class="example-section">
+      <h3>Full Width Feature Header</h3>
+      <p>A feature header that spans the full width with brand background:</p>
+      <ngx-govscot-feature-header
+        title="Innovation Scotland"
+        content="Supporting businesses and entrepreneurs to drive innovation and economic growth across Scotland."
+        background="brand"
+        [fullWidth]="true"
+        imageSrc="https://placehold.co/400x300/002d54/ffffff?text=Innovation"
+        imageAlt="Innovation Scotland"
+        [imageWidth]="400"
+        [imageHeight]="300"
+      />
+    </div>
 
-  <div class="example-section">
+    <div class="example-section">
+      <h3>Wide Text Feature Header</h3>
+      <p>
+        A feature header with wide text layout (text takes 2/3, image takes
+        1/3):
+      </p>
+      <ngx-govscot-feature-header
+        title="Public services transformation"
+        content="Modernizing public services to better serve the people of Scotland through digital innovation, improved accessibility, and user-centered design. Our commitment is to make government services more efficient, transparent, and responsive to citizen needs."
+        [wideText]="true"
+        imageSrc="https://placehold.co/300x300/5b21b6/ffffff?text=Digital+Services"
+        imageAlt="Digital services transformation"
+        [imageWidth]="300"
+        [imageHeight]="300"
+      />
+    </div>
+
+    <div class="example-section">
+      <h3>Top Aligned Feature Header</h3>
+      <p>A feature header with top-aligned content:</p>
+      <ngx-govscot-feature-header
+        title="Community engagement"
+        content="Building stronger communities through active participation and collaboration."
+        [topAligned]="true"
+        imageSrc="https://placehold.co/400x200/dc2626/ffffff?text=Community"
+        imageAlt="Community engagement"
+        [imageWidth]="400"
+        [imageHeight]="200"
+      />
+    </div>
+
+    <div class="example-section">
+      <h3>Feature Header with Aspect Ratio</h3>
+      <p>A feature header using aspect box for consistent image sizing:</p>
+      <ngx-govscot-feature-header
+        title="Healthcare excellence"
+        content="Delivering world-class healthcare services across Scotland."
+        background="secondary"
+        aspectRatio="16:9"
+        imageSrc="https://placehold.co/800x450/059669/ffffff?text=Healthcare"
+        imageAlt="Healthcare services"
+        [imageWidth]="800"
+        [imageHeight]="450"
+      />
+    </div>
+
+    <div class="example-section">
+      <h3>Feature Header with Cover Image</h3>
+      <p>A feature header with cover-scaled image and no padding:</p>
+      <ngx-govscot-feature-header
+        title="Education and skills"
+        content="Empowering learners of all ages with the knowledge and skills needed for success."
+        background="tertiary"
+        imageScale="cover"
+        [noPadding]="true"
+        imageSrc="https://placehold.co/400x400/ea580c/ffffff?text=Education"
+        imageAlt="Education and skills development"
+        [imageWidth]="400"
+        [imageHeight]="400"
+      />
+    </div>
+
+    <div class="example-section">
+      <h3>Title Only Feature Header</h3>
+      <p>A minimal feature header with just a title:</p>
+      <ngx-govscot-feature-header title="Contact us" />
+    </div>
+
+    <h2>Error Summary Examples</h2>
+
+    <div class="example-section">
+      <h3>Single Error</h3>
+      <p>An error summary with a single error:</p>
+      <ngx-govscot-error-summary>
+        <ngx-govscot-error-summary-item
+          text="Enter your full name"
+          targetId="full-name-input"
+        />
+      </ngx-govscot-error-summary>
+    </div>
+
+    <div class="example-section">
+      <h3>Multiple Errors</h3>
+      <p>An error summary with multiple errors:</p>
+      <ngx-govscot-error-summary>
+        <ngx-govscot-error-summary-item
+          text="Are you a British citizen? Select one of the options"
+          targetId="answer-1"
+        />
+        <ngx-govscot-error-summary-item
+          text="How much is the first rent payment? Enter an amount"
+          targetId="unique-id"
+        />
+        <ngx-govscot-error-summary-item
+          text="When will your tenant make the first payment? Enter a date"
+          targetId="start-date"
+        />
+        <ngx-govscot-error-summary-item
+          text="The first payment covers rent from the start date of the tenancy until: Enter a date"
+          targetId="end-date"
+        />
+      </ngx-govscot-error-summary>
+    </div>
+
+    <div class="example-section">
+      <h3>Custom Title</h3>
+      <p>An error summary with a custom title:</p>
+      <ngx-govscot-error-summary title="Please fix the following errors">
+        <ngx-govscot-error-summary-item
+          text="Enter your full name"
+          targetId="full-name"
+        />
+        <ngx-govscot-error-summary-item
+          text="Select an option"
+          targetId="option-1"
+        />
+      </ngx-govscot-error-summary>
+    </div>
+
+    <div class="example-section">
+      <h3>Form with Error Summary</h3>
+      <p>Example showing how the error summary appears at the top of a form:</p>
+      <ngx-govscot-error-summary>
+        <ngx-govscot-error-summary-item
+          text="Enter your full name"
+          targetId="form-name-input"
+        />
+        <ngx-govscot-error-summary-item
+          text="Enter a valid email address"
+          targetId="form-email-input"
+        />
+      </ngx-govscot-error-summary>
+
+      <form class="ds_form">
+        <div class="ds_form__content">
+          <ngx-govscot-question
+            label="What is your full name?"
+            labelFor="form-name-input"
+            errorMessage="Enter your full name"
+          >
+            <input
+              type="text"
+              id="form-name-input"
+              name="form-name"
+              class="ds_input ds_input--error"
+              aria-invalid="true"
+            />
+          </ngx-govscot-question>
+
+          <ngx-govscot-question
+            label="What is your email address?"
+            labelFor="form-email-input"
+            errorMessage="Enter a valid email address"
+          >
+            <input
+              type="email"
+              id="form-email-input"
+              name="form-email"
+              class="ds_input ds_input--error"
+              aria-invalid="true"
+              value="invalid-email"
+            />
+          </ngx-govscot-question>
+        </div>
+
+        <div class="ds_form__actions">
+          <button class="ds_button" type="submit">Continue</button>
+        </div>
+      </form>
+    </div>
+
+    <h2>Phase Banner Example</h2>
+
+    <div class="example-section">
+      <h3>Beta Phase Banner</h3>
+      <p>
+        The phase banner above shows this service is in beta phase and being
+        improved.
+      </p>
+
+      <h4>Alpha Phase Example</h4>
+      <ngx-govscot-phase-banner phase="alpha">
+        This is a new Corporation Tax service. Your
+        <a href="/alpha-feedback">feedback</a> will help us to improve it.
+      </ngx-govscot-phase-banner>
+    </div>
+
+    <h2>Breadcrumbs Examples</h2>
+
+    <div class="example-section">
+      <h3>Default Breadcrumbs with Current Page</h3>
+      <p>
+        The breadcrumbs above show the current page location. Here's another
+        example:
+      </p>
+      <ngx-govscot-breadcrumbs>
+        <ngx-govscot-breadcrumb label="Home" link="/"></ngx-govscot-breadcrumb>
+        <ngx-govscot-breadcrumb
+          label="Justice and the law"
+          link="/justice"
+        ></ngx-govscot-breadcrumb>
+        <ngx-govscot-breadcrumb
+          label="Your rights and the law"
+          link="/justice/rights"
+        ></ngx-govscot-breadcrumb>
+        <ngx-govscot-breadcrumb
+          label="Data sharing of personal information"
+          [current]="true"
+        ></ngx-govscot-breadcrumb>
+      </ngx-govscot-breadcrumbs>
+    </div>
+
+    <div class="example-section">
+      <h3>Breadcrumbs Without Current Page</h3>
+      <p>
+        You can omit the current page if there are issues with repetition or
+        long titles:
+      </p>
+      <ngx-govscot-breadcrumbs>
+        <ngx-govscot-breadcrumb label="Home" link="/"></ngx-govscot-breadcrumb>
+        <ngx-govscot-breadcrumb
+          label="Environment, farming and marine"
+          link="/environment"
+        ></ngx-govscot-breadcrumb>
+        <ngx-govscot-breadcrumb
+          label="Environment and countryside protection"
+          link="/environment/countryside"
+        ></ngx-govscot-breadcrumb>
+      </ngx-govscot-breadcrumbs>
+    </div>
+
+    <div class="example-section">
+      <h3>Corporation Tax Service Navigation</h3>
+      <p>
+        Example showing breadcrumbs for navigating through a Corporation Tax
+        service:
+      </p>
+      <ngx-govscot-breadcrumbs>
+        <ngx-govscot-breadcrumb
+          label="Home"
+          [link]="['/']"
+        ></ngx-govscot-breadcrumb>
+        <ngx-govscot-breadcrumb
+          label="Business and economy"
+          [link]="['/business']"
+        ></ngx-govscot-breadcrumb>
+        <ngx-govscot-breadcrumb
+          label="Corporation Tax"
+          [link]="['/business', 'corporation-tax']"
+        ></ngx-govscot-breadcrumb>
+        <ngx-govscot-breadcrumb
+          label="Register your company"
+          [current]="true"
+        ></ngx-govscot-breadcrumb>
+      </ngx-govscot-breadcrumbs>
+    </div>
+
+    <h2>Tabs Examples</h2>
+
+    <div class="example-section">
+      <h3>Corporation Tax Information</h3>
+      <p>
+        Tabs organize related content into distinct sections for easier
+        navigation:
+      </p>
+      <ngx-govscot-tabs title="Corporation Tax Guide">
+        <ngx-govscot-tab id="overview" title="Overview">
+          <h4>What is Corporation Tax?</h4>
+          <p>
+            Corporation Tax is charged on the 'chargeable profits' of limited
+            companies, members' clubs, societies, associations, co-operatives
+            and other unincorporated bodies.
+          </p>
+          <p>
+            The rate of Corporation Tax depends on the amount of profit your
+            company makes and when your accounting period ends.
+          </p>
+          <h5>Current rates</h5>
+          <ul>
+            <li>19% for companies with profits up to £250,000</li>
+            <li>25% for companies with profits over £250,000</li>
+          </ul>
+        </ngx-govscot-tab>
+        <ngx-govscot-tab id="registration" title="Registration">
+          <h4>Who must register?</h4>
+          <p>
+            You must register for Corporation Tax if your company or
+            organisation is based in the UK or has an office or branch here.
+          </p>
+          <p>This includes:</p>
+          <ul>
+            <li>Limited companies</li>
+            <li>Foreign companies with a UK branch or office</li>
+            <li>
+              Clubs, societies, associations and other unincorporated bodies
+            </li>
+            <li>Co-operatives</li>
+          </ul>
+          <h5>Registration deadline</h5>
+          <p>
+            You must register within 3 months of starting to do business. You
+            could be fined if you do not register in time.
+          </p>
+        </ngx-govscot-tab>
+        <ngx-govscot-tab id="deadlines" title="Important deadlines">
+          <h4>Key dates to remember</h4>
+          <p>
+            Make sure you're aware of these important Corporation Tax deadlines:
+          </p>
+          <dl>
+            <dt><strong>Registration</strong></dt>
+            <dd>Within 3 months of starting business</dd>
+            <dt><strong>Filing return</strong></dt>
+            <dd>12 months after the end of your accounting period</dd>
+            <dt><strong>Paying tax</strong></dt>
+            <dd>9 months and 1 day after the end of your accounting period</dd>
+          </dl>
+          <p>
+            Missing these deadlines can result in penalties and interest
+            charges.
+          </p>
+        </ngx-govscot-tab>
+      </ngx-govscot-tabs>
+    </div>
+
+    <div class="example-section">
+      <h3>Business Support Information</h3>
+      <p>
+        Example with different types of content including tables and structured
+        information:
+      </p>
+      <ngx-govscot-tabs title="Business Support">
+        <ngx-govscot-tab id="grants" title="Available grants">
+          <h4>Funding opportunities</h4>
+          <p>
+            Several grant schemes are available to support Scottish businesses:
+          </p>
+
+          <h5>Start-up grants</h5>
+          <table style="width: 100%; border-collapse: collapse; margin: 1em 0">
+            <thead>
+              <tr style="background: #f8f8f8">
+                <th
+                  style="border: 1px solid #ccc; padding: 8px; text-align: left"
+                >
+                  Grant name
+                </th>
+                <th
+                  style="border: 1px solid #ccc; padding: 8px; text-align: left"
+                >
+                  Amount
+                </th>
+                <th
+                  style="border: 1px solid #ccc; padding: 8px; text-align: left"
+                >
+                  Eligibility
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="border: 1px solid #ccc; padding: 8px">
+                  Business Gateway Start-up Grant
+                </td>
+                <td style="border: 1px solid #ccc; padding: 8px">
+                  Up to £2,000
+                </td>
+                <td style="border: 1px solid #ccc; padding: 8px">
+                  New businesses under 12 months
+                </td>
+              </tr>
+              <tr>
+                <td style="border: 1px solid #ccc; padding: 8px">
+                  Innovation Grant
+                </td>
+                <td style="border: 1px solid #ccc; padding: 8px">
+                  Up to £10,000
+                </td>
+                <td style="border: 1px solid #ccc; padding: 8px">
+                  Technology-focused startups
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>
+            <strong>Note:</strong> Grant availability and criteria may change.
+            Check the latest information before applying.
+          </p>
+        </ngx-govscot-tab>
+        <ngx-govscot-tab id="advice" title="Business advice">
+          <h4>Get expert guidance</h4>
+          <p>Free business advice is available from various sources:</p>
+
+          <div
+            style="
+              border: 1px solid #ccc;
+              padding: 1em;
+              margin: 1em 0;
+              background: #f9f9f9;
+            "
+          >
+            <h5>Business Gateway</h5>
+            <p>Scotland's national business support service offering:</p>
+            <ul>
+              <li>One-to-one advice sessions</li>
+              <li>Market research support</li>
+              <li>Financial planning guidance</li>
+              <li>Digital skills training</li>
+            </ul>
+            <p>
+              <strong>Contact:</strong> 0300 013 4753 or visit your local
+              Business Gateway office.
+            </p>
+          </div>
+
+          <div
+            style="
+              border: 1px solid #ccc;
+              padding: 1em;
+              margin: 1em 0;
+              background: #f9f9f9;
+            "
+          >
+            <h5>HMRC Business Support</h5>
+            <p>Tax and compliance guidance including:</p>
+            <ul>
+              <li>VAT registration support</li>
+              <li>PAYE setup assistance</li>
+              <li>Corporation Tax guidance</li>
+            </ul>
+            <p>
+              <strong>Contact:</strong> 0300 200 3410 for new business
+              enquiries.
+            </p>
+          </div>
+        </ngx-govscot-tab>
+      </ngx-govscot-tabs>
+    </div>
+
+    <h2>Button Examples</h2>
+
+    <div class="example-section">
+      <h3>Primary Actions</h3>
+      <p>Use primary buttons for the main action on a page.</p>
+      <ngx-govscot-button
+        color="primary"
+        size="default"
+        (click)="onStartApplication()"
+      >
+        Start your Corporation Tax application
+      </ngx-govscot-button>
+
+      <h3>Secondary Actions</h3>
+      <p>Use secondary buttons for less important actions.</p>
+      <ngx-govscot-button
+        color="secondary"
+        size="default"
+        (click)="onSaveProgress()"
+      >
+        Save and continue later
+      </ngx-govscot-button>
+
+      <h3>Cancel Actions</h3>
+      <p>Use cancel buttons for destructive or cancellation actions.</p>
+      <ngx-govscot-button
+        color="cancel"
+        size="default"
+        (click)="onCancelApplication()"
+      >
+        Cancel application
+      </ngx-govscot-button>
+    </div>
+
+    <h2>Warning Text Examples</h2>
+
+    <div class="example-section">
+      <h3>Registration Deadline Warning</h3>
+      <ngx-govscot-warning-text>
+        You must register for Corporation Tax within 3 months of starting
+        business. You could be fined if you do not register in time.
+      </ngx-govscot-warning-text>
+    </div>
+
+    <div class="example-section">
+      <h3>Payment Deadline Warning</h3>
+      <ngx-govscot-warning-text>
+        Corporation Tax is due 9 months and 1 day after the end of your
+        accounting period. Late payment results in interest charges.
+      </ngx-govscot-warning-text>
+    </div>
+
+    <div class="example-section">
+      <h3>Legal Requirement Warning</h3>
+      <ngx-govscot-warning-text>
+        It's a legal requirement to keep proper business records for at least 6
+        years. You could face penalties if you don't.
+      </ngx-govscot-warning-text>
+    </div>
+
+    <div class="example-section">
+      <h3>Emergency Contact Warning</h3>
+      <ngx-govscot-warning-text>
+        If you suspect tax fraud or evasion, call the HMRC fraud hotline on 0800
+        788 887 or report it online immediately.
+      </ngx-govscot-warning-text>
+    </div>
+
+    <h2>Accordion Examples</h2>
+
+    <h3>Basic Accordion Example</h3>
+    <ngx-govscot-accordion
+      id="example-accordion"
+      [initialExpanded]="['section-1']"
+    >
+      <ngx-govscot-accordion-item
+        itemId="section-1"
+        heading="Understanding the tax"
+      >
+        <p>
+          Corporation Tax is charged on the 'chargeable profits' of limited
+          companies, members' clubs, societies, associations, co-operatives and
+          other unincorporated bodies.
+        </p>
+        <p>
+          The rate of Corporation Tax depends on the amount of profit your
+          company makes and when your accounting period ends.
+        </p>
+
+        <ngx-govscot-button-group>
+          <ngx-govscot-button color="primary" size="small">
+            Calculate your tax
+          </ngx-govscot-button>
+          <ngx-govscot-button color="link" size="small">
+            Read full guidance
+          </ngx-govscot-button>
+        </ngx-govscot-button-group>
+      </ngx-govscot-accordion-item>
+
+      <ngx-govscot-accordion-item
+        itemId="section-2"
+        heading="Who must pay"
+        summary="Companies, clubs and societies"
+      >
+        <p>
+          You must pay Corporation Tax if your company or organisation is based
+          in the UK or has an office or branch here.
+        </p>
+        <ul>
+          <li>limited companies</li>
+          <li>foreign companies with a UK branch or office</li>
+          <li>
+            clubs, societies, associations and other unincorporated bodies
+          </li>
+          <li>co-operatives</li>
+        </ul>
+
+        <ngx-govscot-button color="secondary" size="small">
+          Check if you need to register
+        </ngx-govscot-button>
+      </ngx-govscot-accordion-item>
+
+      <ngx-govscot-accordion-item itemId="section-3" heading="When to register">
+        <p>
+          You must tell HM Revenue and Customs (HMRC) when you start doing
+          business as a limited company - this is usually when you:
+        </p>
+        <ul>
+          <li>sell goods or services</li>
+          <li>buy business stock or equipment</li>
+          <li>take on employees</li>
+          <li>rent or buy business premises</li>
+        </ul>
+        <p>
+          You have 3 months from when you start doing business to tell HMRC. You
+          could be fined if you do not register in time.
+        </p>
+
+        <ngx-govscot-warning-text>
+          Missing the 3-month deadline can result in penalties of up to £3,000.
+        </ngx-govscot-warning-text>
+
+        <ngx-govscot-button color="primary" size="small">
+          Register now
+        </ngx-govscot-button>
+      </ngx-govscot-accordion-item>
+
+      <ngx-govscot-accordion-item
+        itemId="section-4"
+        heading="How to register"
+        summary="Online registration process"
+      >
+        <p>
+          You can register your company for Corporation Tax online using the
+          Government Gateway.
+        </p>
+        <h4>What you'll need</h4>
+        <ul>
+          <li>your company registration number</li>
+          <li>the date you started doing business</li>
+          <li>your contact details</li>
+          <li>details of your business activities</li>
+        </ul>
+        <p>
+          Registration usually takes up to 10 working days, but it can take
+          longer during busy periods.
+        </p>
+
+        <ngx-govscot-button-group>
+          <ngx-govscot-button color="primary">
+            Start registration
+          </ngx-govscot-button>
+          <ngx-govscot-button color="link">
+            Get help with registration
+          </ngx-govscot-button>
+        </ngx-govscot-button-group>
+      </ngx-govscot-accordion-item>
+    </ngx-govscot-accordion>
+
+    <h2>Additional Examples</h2>
+
+    <ngx-govscot-details summary="This is a test">
+      GOVSCOT DETAILS
+    </ngx-govscot-details>
+
+    <h3>Accordion with All Sections Collapsed Initially</h3>
+    <ngx-govscot-accordion id="collapsed-accordion">
+      <ngx-govscot-accordion-item
+        itemId="help-1"
+        heading="Getting help and support"
+      >
+        <p>
+          If you need help with your Corporation Tax registration or have
+          questions about your obligations, you can:
+        </p>
+        <ul>
+          <li>call the HMRC helpline on 0300 200 3410</li>
+          <li>visit the GOV.UK website for guidance</li>
+          <li>speak to a qualified accountant or tax adviser</li>
+        </ul>
+
+        <ngx-govscot-button-group>
+          <ngx-govscot-button
+            color="secondary"
+            iconName="phone"
+            iconPosition="left"
+          >
+            Call helpline
+          </ngx-govscot-button>
+          <ngx-govscot-button
+            color="link"
+            iconName="external"
+            iconPosition="right"
+          >
+            Visit GOV.UK
+          </ngx-govscot-button>
+        </ngx-govscot-button-group>
+      </ngx-govscot-accordion-item>
+
+      <ngx-govscot-accordion-item
+        itemId="help-2"
+        heading="Important deadlines"
+        summary="Key dates to remember"
+      >
+        <p>
+          Make sure you're aware of these important Corporation Tax deadlines:
+        </p>
+        <ul>
+          <li>
+            <strong>Registration:</strong> Within 3 months of starting business
+          </li>
+          <li>
+            <strong>Filing return:</strong> 12 months after the end of your
+            accounting period
+          </li>
+          <li>
+            <strong>Paying tax:</strong> 9 months and 1 day after the end of
+            your accounting period
+          </li>
+        </ul>
+        <p>
+          Missing these deadlines can result in penalties and interest charges.
+        </p>
+
+        <ngx-govscot-button
+          color="primary"
+          iconName="calendar"
+          iconPosition="left"
+        >
+          Set up deadline reminders
+        </ngx-govscot-button>
+      </ngx-govscot-accordion-item>
+    </ngx-govscot-accordion>
+
+    <h2>Tabs Examples</h2>
+
     <h3>Corporation Tax Information</h3>
-    <p>
-      Tabs organize related content into distinct sections for easier
-      navigation:
-    </p>
     <ngx-govscot-tabs title="Corporation Tax Guide">
       <ngx-govscot-tab id="overview" title="Overview">
         <h4>What is Corporation Tax?</h4>
@@ -529,19 +1159,23 @@
           The rate of Corporation Tax depends on the amount of profit your
           company makes and when your accounting period ends.
         </p>
-        <h5>Current rates</h5>
-        <ul>
-          <li>19% for companies with profits up to £250,000</li>
-          <li>25% for companies with profits over £250,000</li>
-        </ul>
+
+        <ngx-govscot-button-group>
+          <ngx-govscot-button color="primary" size="small">
+            Calculate your tax
+          </ngx-govscot-button>
+          <ngx-govscot-button color="link" size="small">
+            Read full guidance
+          </ngx-govscot-button>
+        </ngx-govscot-button-group>
       </ngx-govscot-tab>
+
       <ngx-govscot-tab id="registration" title="Registration">
         <h4>Who must register?</h4>
         <p>
           You must register for Corporation Tax if your company or organisation
           is based in the UK or has an office or branch here.
         </p>
-        <p>This includes:</p>
         <ul>
           <li>Limited companies</li>
           <li>Foreign companies with a UK branch or office</li>
@@ -550,2375 +1184,1986 @@
           </li>
           <li>Co-operatives</li>
         </ul>
-        <h5>Registration deadline</h5>
-        <p>
-          You must register within 3 months of starting to do business. You
-          could be fined if you do not register in time.
-        </p>
+
+        <ngx-govscot-warning-text>
+          You must register within 3 months of starting business. You could be
+          fined if you do not register in time.
+        </ngx-govscot-warning-text>
+
+        <ngx-govscot-button color="primary">
+          Register for Corporation Tax
+        </ngx-govscot-button>
       </ngx-govscot-tab>
-      <ngx-govscot-tab id="deadlines" title="Important deadlines">
-        <h4>Key dates to remember</h4>
+
+      <ngx-govscot-tab id="deadlines" title="Deadlines">
+        <h4>Important dates</h4>
         <p>
           Make sure you're aware of these important Corporation Tax deadlines:
         </p>
-        <dl>
-          <dt><strong>Registration</strong></dt>
-          <dd>Within 3 months of starting business</dd>
-          <dt><strong>Filing return</strong></dt>
-          <dd>12 months after the end of your accounting period</dd>
-          <dt><strong>Paying tax</strong></dt>
-          <dd>9 months and 1 day after the end of your accounting period</dd>
-        </dl>
-        <p>
-          Missing these deadlines can result in penalties and interest charges.
-        </p>
-      </ngx-govscot-tab>
-    </ngx-govscot-tabs>
-  </div>
 
-  <div class="example-section">
-    <h3>Business Support Information</h3>
-    <p>
-      Example with different types of content including tables and structured
-      information:
-    </p>
-    <ngx-govscot-tabs title="Business Support">
-      <ngx-govscot-tab id="grants" title="Available grants">
-        <h4>Funding opportunities</h4>
-        <p>
-          Several grant schemes are available to support Scottish businesses:
-        </p>
-
-        <h5>Start-up grants</h5>
-        <table style="width: 100%; border-collapse: collapse; margin: 1em 0">
+        <table>
           <thead>
-            <tr style="background: #f8f8f8">
-              <th
-                style="border: 1px solid #ccc; padding: 8px; text-align: left"
-              >
-                Grant name
-              </th>
-              <th
-                style="border: 1px solid #ccc; padding: 8px; text-align: left"
-              >
-                Amount
-              </th>
-              <th
-                style="border: 1px solid #ccc; padding: 8px; text-align: left"
-              >
-                Eligibility
-              </th>
+            <tr>
+              <th>Deadline</th>
+              <th>Time limit</th>
+              <th>Penalty for missing</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td style="border: 1px solid #ccc; padding: 8px">
-                Business Gateway Start-up Grant
-              </td>
-              <td style="border: 1px solid #ccc; padding: 8px">Up to £2,000</td>
-              <td style="border: 1px solid #ccc; padding: 8px">
-                New businesses under 12 months
-              </td>
+              <td>Registration</td>
+              <td>Within 3 months of starting business</td>
+              <td>Up to £3,000 fine</td>
             </tr>
             <tr>
-              <td style="border: 1px solid #ccc; padding: 8px">
-                Innovation Grant
+              <td>Filing return</td>
+              <td>12 months after the end of your accounting period</td>
+              <td>£100 to £3,000 penalty</td>
+            </tr>
+            <tr>
+              <td>Paying tax</td>
+              <td>
+                9 months and 1 day after the end of your accounting period
               </td>
-              <td style="border: 1px solid #ccc; padding: 8px">
-                Up to £10,000
-              </td>
-              <td style="border: 1px solid #ccc; padding: 8px">
-                Technology-focused startups
-              </td>
+              <td>Interest charges</td>
             </tr>
           </tbody>
         </table>
 
-        <p>
-          <strong>Note:</strong> Grant availability and criteria may change.
-          Check the latest information before applying.
-        </p>
-      </ngx-govscot-tab>
-      <ngx-govscot-tab id="advice" title="Business advice">
-        <h4>Get expert guidance</h4>
-        <p>Free business advice is available from various sources:</p>
-
-        <div
-          style="
-            border: 1px solid #ccc;
-            padding: 1em;
-            margin: 1em 0;
-            background: #f9f9f9;
-          "
-        >
-          <h5>Business Gateway</h5>
-          <p>Scotland's national business support service offering:</p>
-          <ul>
-            <li>One-to-one advice sessions</li>
-            <li>Market research support</li>
-            <li>Financial planning guidance</li>
-            <li>Digital skills training</li>
-          </ul>
-          <p>
-            <strong>Contact:</strong> 0300 013 4753 or visit your local Business
-            Gateway office.
-          </p>
-        </div>
-
-        <div
-          style="
-            border: 1px solid #ccc;
-            padding: 1em;
-            margin: 1em 0;
-            background: #f9f9f9;
-          "
-        >
-          <h5>HMRC Business Support</h5>
-          <p>Tax and compliance guidance including:</p>
-          <ul>
-            <li>VAT registration support</li>
-            <li>PAYE setup assistance</li>
-            <li>Corporation Tax guidance</li>
-          </ul>
-          <p>
-            <strong>Contact:</strong> 0300 200 3410 for new business enquiries.
-          </p>
-        </div>
+        <ngx-govscot-button-group>
+          <ngx-govscot-button
+            color="primary"
+            iconName="calendar"
+            iconPosition="left"
+          >
+            Set up deadline reminders
+          </ngx-govscot-button>
+          <ngx-govscot-button color="secondary">
+            Calculate payment date
+          </ngx-govscot-button>
+        </ngx-govscot-button-group>
       </ngx-govscot-tab>
     </ngx-govscot-tabs>
-  </div>
 
-  <h2>Button Examples</h2>
-
-  <div class="example-section">
-    <h3>Primary Actions</h3>
-    <p>Use primary buttons for the main action on a page.</p>
-    <ngx-govscot-button
-      color="primary"
-      size="default"
-      (click)="onStartApplication()"
-    >
-      Start your Corporation Tax application
-    </ngx-govscot-button>
-
-    <h3>Secondary Actions</h3>
-    <p>Use secondary buttons for less important actions.</p>
-    <ngx-govscot-button
-      color="secondary"
-      size="default"
-      (click)="onSaveProgress()"
-    >
-      Save and continue later
-    </ngx-govscot-button>
-
-    <h3>Cancel Actions</h3>
-    <p>Use cancel buttons for destructive or cancellation actions.</p>
-    <ngx-govscot-button
-      color="cancel"
-      size="default"
-      (click)="onCancelApplication()"
-    >
-      Cancel application
-    </ngx-govscot-button>
-  </div>
-
-  <h2>Warning Text Examples</h2>
-
-  <div class="example-section">
-    <h3>Registration Deadline Warning</h3>
-    <ngx-govscot-warning-text>
-      You must register for Corporation Tax within 3 months of starting
-      business. You could be fined if you do not register in time.
-    </ngx-govscot-warning-text>
-  </div>
-
-  <div class="example-section">
-    <h3>Payment Deadline Warning</h3>
-    <ngx-govscot-warning-text>
-      Corporation Tax is due 9 months and 1 day after the end of your accounting
-      period. Late payment results in interest charges.
-    </ngx-govscot-warning-text>
-  </div>
-
-  <div class="example-section">
-    <h3>Legal Requirement Warning</h3>
-    <ngx-govscot-warning-text>
-      It's a legal requirement to keep proper business records for at least 6
-      years. You could face penalties if you don't.
-    </ngx-govscot-warning-text>
-  </div>
-
-  <div class="example-section">
-    <h3>Emergency Contact Warning</h3>
-    <ngx-govscot-warning-text>
-      If you suspect tax fraud or evasion, call the HMRC fraud hotline on 0800
-      788 887 or report it online immediately.
-    </ngx-govscot-warning-text>
-  </div>
-
-  <h2>Accordion Examples</h2>
-
-  <h3>Basic Accordion Example</h3>
-  <ngx-govscot-accordion
-    id="example-accordion"
-    [initialExpanded]="['section-1']"
-  >
-    <ngx-govscot-accordion-item
-      itemId="section-1"
-      heading="Understanding the tax"
-    >
-      <p>
-        Corporation Tax is charged on the 'chargeable profits' of limited
-        companies, members' clubs, societies, associations, co-operatives and
-        other unincorporated bodies.
-      </p>
-      <p>
-        The rate of Corporation Tax depends on the amount of profit your company
-        makes and when your accounting period ends.
-      </p>
-
-      <ngx-govscot-button-group>
-        <ngx-govscot-button color="primary" size="small">
-          Calculate your tax
-        </ngx-govscot-button>
-        <ngx-govscot-button color="link" size="small">
-          Read full guidance
-        </ngx-govscot-button>
-      </ngx-govscot-button-group>
-    </ngx-govscot-accordion-item>
-
-    <ngx-govscot-accordion-item
-      itemId="section-2"
-      heading="Who must pay"
-      summary="Companies, clubs and societies"
-    >
-      <p>
-        You must pay Corporation Tax if your company or organisation is based in
-        the UK or has an office or branch here.
-      </p>
-      <ul>
-        <li>limited companies</li>
-        <li>foreign companies with a UK branch or office</li>
-        <li>clubs, societies, associations and other unincorporated bodies</li>
-        <li>co-operatives</li>
-      </ul>
-
-      <ngx-govscot-button color="secondary" size="small">
-        Check if you need to register
-      </ngx-govscot-button>
-    </ngx-govscot-accordion-item>
-
-    <ngx-govscot-accordion-item itemId="section-3" heading="When to register">
-      <p>
-        You must tell HM Revenue and Customs (HMRC) when you start doing
-        business as a limited company - this is usually when you:
-      </p>
-      <ul>
-        <li>sell goods or services</li>
-        <li>buy business stock or equipment</li>
-        <li>take on employees</li>
-        <li>rent or buy business premises</li>
-      </ul>
-      <p>
-        You have 3 months from when you start doing business to tell HMRC. You
-        could be fined if you do not register in time.
-      </p>
-
-      <ngx-govscot-warning-text>
-        Missing the 3-month deadline can result in penalties of up to £3,000.
-      </ngx-govscot-warning-text>
-
-      <ngx-govscot-button color="primary" size="small">
-        Register now
-      </ngx-govscot-button>
-    </ngx-govscot-accordion-item>
-
-    <ngx-govscot-accordion-item
-      itemId="section-4"
-      heading="How to register"
-      summary="Online registration process"
-    >
-      <p>
-        You can register your company for Corporation Tax online using the
-        Government Gateway.
-      </p>
-      <h4>What you'll need</h4>
-      <ul>
-        <li>your company registration number</li>
-        <li>the date you started doing business</li>
-        <li>your contact details</li>
-        <li>details of your business activities</li>
-      </ul>
-      <p>
-        Registration usually takes up to 10 working days, but it can take longer
-        during busy periods.
-      </p>
-
-      <ngx-govscot-button-group>
-        <ngx-govscot-button color="primary">
-          Start registration
-        </ngx-govscot-button>
-        <ngx-govscot-button color="link">
-          Get help with registration
-        </ngx-govscot-button>
-      </ngx-govscot-button-group>
-    </ngx-govscot-accordion-item>
-  </ngx-govscot-accordion>
-
-  <h2>Additional Examples</h2>
-
-  <ngx-govscot-details summary="This is a test">
-    GOVSCOT DETAILS
-  </ngx-govscot-details>
-
-  <h3>Accordion with All Sections Collapsed Initially</h3>
-  <ngx-govscot-accordion id="collapsed-accordion">
-    <ngx-govscot-accordion-item
-      itemId="help-1"
-      heading="Getting help and support"
-    >
-      <p>
-        If you need help with your Corporation Tax registration or have
-        questions about your obligations, you can:
-      </p>
-      <ul>
-        <li>call the HMRC helpline on 0300 200 3410</li>
-        <li>visit the GOV.UK website for guidance</li>
-        <li>speak to a qualified accountant or tax adviser</li>
-      </ul>
-
-      <ngx-govscot-button-group>
-        <ngx-govscot-button
-          color="secondary"
-          iconName="phone"
-          iconPosition="left"
-        >
-          Call helpline
-        </ngx-govscot-button>
-        <ngx-govscot-button
-          color="link"
-          iconName="external"
-          iconPosition="right"
-        >
-          Visit GOV.UK
-        </ngx-govscot-button>
-      </ngx-govscot-button-group>
-    </ngx-govscot-accordion-item>
-
-    <ngx-govscot-accordion-item
-      itemId="help-2"
-      heading="Important deadlines"
-      summary="Key dates to remember"
-    >
-      <p>
-        Make sure you're aware of these important Corporation Tax deadlines:
-      </p>
-      <ul>
-        <li>
-          <strong>Registration:</strong> Within 3 months of starting business
-        </li>
-        <li>
-          <strong>Filing return:</strong> 12 months after the end of your
-          accounting period
-        </li>
-        <li>
-          <strong>Paying tax:</strong> 9 months and 1 day after the end of your
-          accounting period
-        </li>
-      </ul>
-      <p>
-        Missing these deadlines can result in penalties and interest charges.
-      </p>
-
-      <ngx-govscot-button
-        color="primary"
-        iconName="calendar"
-        iconPosition="left"
-      >
-        Set up deadline reminders
-      </ngx-govscot-button>
-    </ngx-govscot-accordion-item>
-  </ngx-govscot-accordion>
-
-  <h2>Tabs Examples</h2>
-
-  <h3>Corporation Tax Information</h3>
-  <ngx-govscot-tabs title="Corporation Tax Guide">
-    <ngx-govscot-tab id="overview" title="Overview">
-      <h4>What is Corporation Tax?</h4>
-      <p>
-        Corporation Tax is charged on the 'chargeable profits' of limited
-        companies, members' clubs, societies, associations, co-operatives and
-        other unincorporated bodies.
-      </p>
-      <p>
-        The rate of Corporation Tax depends on the amount of profit your company
-        makes and when your accounting period ends.
-      </p>
-
-      <ngx-govscot-button-group>
-        <ngx-govscot-button color="primary" size="small">
-          Calculate your tax
-        </ngx-govscot-button>
-        <ngx-govscot-button color="link" size="small">
-          Read full guidance
-        </ngx-govscot-button>
-      </ngx-govscot-button-group>
-    </ngx-govscot-tab>
-
-    <ngx-govscot-tab id="registration" title="Registration">
-      <h4>Who must register?</h4>
-      <p>
-        You must register for Corporation Tax if your company or organisation is
-        based in the UK or has an office or branch here.
-      </p>
-      <ul>
-        <li>Limited companies</li>
-        <li>Foreign companies with a UK branch or office</li>
-        <li>Clubs, societies, associations and other unincorporated bodies</li>
-        <li>Co-operatives</li>
-      </ul>
-
-      <ngx-govscot-warning-text>
-        You must register within 3 months of starting business. You could be
-        fined if you do not register in time.
-      </ngx-govscot-warning-text>
-
-      <ngx-govscot-button color="primary">
-        Register for Corporation Tax
-      </ngx-govscot-button>
-    </ngx-govscot-tab>
-
-    <ngx-govscot-tab id="deadlines" title="Deadlines">
-      <h4>Important dates</h4>
-      <p>
-        Make sure you're aware of these important Corporation Tax deadlines:
-      </p>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Deadline</th>
-            <th>Time limit</th>
-            <th>Penalty for missing</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Registration</td>
-            <td>Within 3 months of starting business</td>
-            <td>Up to £3,000 fine</td>
-          </tr>
-          <tr>
-            <td>Filing return</td>
-            <td>12 months after the end of your accounting period</td>
-            <td>£100 to £3,000 penalty</td>
-          </tr>
-          <tr>
-            <td>Paying tax</td>
-            <td>9 months and 1 day after the end of your accounting period</td>
-            <td>Interest charges</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <ngx-govscot-button-group>
-        <ngx-govscot-button
-          color="primary"
-          iconName="calendar"
-          iconPosition="left"
-        >
-          Set up deadline reminders
-        </ngx-govscot-button>
-        <ngx-govscot-button color="secondary">
-          Calculate payment date
-        </ngx-govscot-button>
-      </ngx-govscot-button-group>
-    </ngx-govscot-tab>
-  </ngx-govscot-tabs>
-
-  <h3>Business Support</h3>
-  <ngx-govscot-tabs title="Business Support Services">
-    <ngx-govscot-tab id="grants" title="Grants and Funding">
-      <h4>Available grants</h4>
-      <p>
-        Various grants and funding options are available to help Scottish
-        businesses grow and develop.
-      </p>
-
-      <div style="background: #f8f8f8; padding: 1rem; margin: 1rem 0">
-        <h5>Small Business Boost Grant</h5>
+    <h3>Business Support</h3>
+    <ngx-govscot-tabs title="Business Support Services">
+      <ngx-govscot-tab id="grants" title="Grants and Funding">
+        <h4>Available grants</h4>
         <p>
-          Up to £5,000 for small businesses to purchase equipment or training.
+          Various grants and funding options are available to help Scottish
+          businesses grow and develop.
         </p>
-        <ngx-govscot-button color="link" size="small">
-          Check eligibility
-        </ngx-govscot-button>
-      </div>
 
-      <div style="background: #f8f8f8; padding: 1rem; margin: 1rem 0">
-        <h5>Innovation Fund</h5>
-        <p>
-          Funding for businesses developing innovative products or services.
-        </p>
-        <ngx-govscot-button color="link" size="small">
-          Apply now
-        </ngx-govscot-button>
-      </div>
+        <div style="background: #f8f8f8; padding: 1rem; margin: 1rem 0">
+          <h5>Small Business Boost Grant</h5>
+          <p>
+            Up to £5,000 for small businesses to purchase equipment or training.
+          </p>
+          <ngx-govscot-button color="link" size="small">
+            Check eligibility
+          </ngx-govscot-button>
+        </div>
 
-      <ngx-govscot-button color="primary"> View all grants </ngx-govscot-button>
-    </ngx-govscot-tab>
+        <div style="background: #f8f8f8; padding: 1rem; margin: 1rem 0">
+          <h5>Innovation Fund</h5>
+          <p>
+            Funding for businesses developing innovative products or services.
+          </p>
+          <ngx-govscot-button color="link" size="small">
+            Apply now
+          </ngx-govscot-button>
+        </div>
 
-    <ngx-govscot-tab id="advice" title="Business Advice">
-      <h4>Get expert support</h4>
-      <p>Access free business advice and support from qualified advisors.</p>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Service</th>
-            <th>Type</th>
-            <th>Cost</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Business Gateway</td>
-            <td>General business advice</td>
-            <td>Free</td>
-          </tr>
-          <tr>
-            <td>Specialist advice</td>
-            <td>Sector-specific guidance</td>
-            <td>Free initial consultation</td>
-          </tr>
-          <tr>
-            <td>Growth workshops</td>
-            <td>Skills development</td>
-            <td>Free for eligible businesses</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <ngx-govscot-button-group>
         <ngx-govscot-button color="primary">
-          Book free consultation
+          View all grants
         </ngx-govscot-button>
-        <ngx-govscot-button color="secondary">
-          Find local advisor
-        </ngx-govscot-button>
-      </ngx-govscot-button-group>
-    </ngx-govscot-tab>
-  </ngx-govscot-tabs>
+      </ngx-govscot-tab>
 
-  <h2>Status Tag Examples</h2>
+      <ngx-govscot-tab id="advice" title="Business Advice">
+        <h4>Get expert support</h4>
+        <p>Access free business advice and support from qualified advisors.</p>
 
-  <div class="example-section">
-    <h3>All Color Variants</h3>
-    <p>
-      Status tags are available in multiple colors to convey different meanings:
-    </p>
-    <div
-      style="
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-        align-items: center;
-        margin: 1rem 0;
-      "
-    >
-      <ngx-govscot-status-tag color="grey">Not started</ngx-govscot-status-tag>
-      <ngx-govscot-status-tag color="green">Complete</ngx-govscot-status-tag>
-      <ngx-govscot-status-tag color="teal">Information</ngx-govscot-status-tag>
-      <ngx-govscot-status-tag color="blue">In progress</ngx-govscot-status-tag>
-      <ngx-govscot-status-tag color="purple">Priority</ngx-govscot-status-tag>
-      <ngx-govscot-status-tag color="pink">Featured</ngx-govscot-status-tag>
-      <ngx-govscot-status-tag color="red">Failed</ngx-govscot-status-tag>
-      <ngx-govscot-status-tag color="orange">Pending</ngx-govscot-status-tag>
-      <ngx-govscot-status-tag color="yellow"
-        >Under review</ngx-govscot-status-tag
-      >
-    </div>
-  </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Type</th>
+              <th>Cost</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Business Gateway</td>
+              <td>General business advice</td>
+              <td>Free</td>
+            </tr>
+            <tr>
+              <td>Specialist advice</td>
+              <td>Sector-specific guidance</td>
+              <td>Free initial consultation</td>
+            </tr>
+            <tr>
+              <td>Growth workshops</td>
+              <td>Skills development</td>
+              <td>Free for eligible businesses</td>
+            </tr>
+          </tbody>
+        </table>
 
-  <div class="example-section">
-    <h3>Corporation Tax Task List</h3>
-    <p>Track your progress through the Corporation Tax registration process:</p>
-    <div style="border: 1px solid #ccc; border-radius: 4px; max-width: 600px">
+        <ngx-govscot-button-group>
+          <ngx-govscot-button color="primary">
+            Book free consultation
+          </ngx-govscot-button>
+          <ngx-govscot-button color="secondary">
+            Find local advisor
+          </ngx-govscot-button>
+        </ngx-govscot-button-group>
+      </ngx-govscot-tab>
+    </ngx-govscot-tabs>
+
+    <h2>Status Tag Examples</h2>
+
+    <div class="example-section">
+      <h3>All Color Variants</h3>
+      <p>
+        Status tags are available in multiple colors to convey different
+        meanings:
+      </p>
       <div
         style="
-          padding: 1rem;
-          border-bottom: 1px solid #eee;
           display: flex;
-          justify-content: space-between;
+          flex-wrap: wrap;
+          gap: 1rem;
           align-items: center;
+          margin: 1rem 0;
         "
       >
-        <span>1. Check if you need to register</span>
+        <ngx-govscot-status-tag color="grey"
+          >Not started</ngx-govscot-status-tag
+        >
         <ngx-govscot-status-tag color="green">Complete</ngx-govscot-status-tag>
-      </div>
-      <div
-        style="
-          padding: 1rem;
-          border-bottom: 1px solid #eee;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        "
-      >
-        <span>2. Gather required documents</span>
+        <ngx-govscot-status-tag color="teal"
+          >Information</ngx-govscot-status-tag
+        >
         <ngx-govscot-status-tag color="blue"
           >In progress</ngx-govscot-status-tag
         >
-      </div>
-      <div
-        style="
-          padding: 1rem;
-          border-bottom: 1px solid #eee;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        "
-      >
-        <span>3. Submit registration form</span>
-        <ngx-govscot-status-tag color="grey"
-          >Not started</ngx-govscot-status-tag
-        >
-      </div>
-      <div
-        style="
-          padding: 1rem;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        "
-      >
-        <span>4. Set up payment method</span>
-        <ngx-govscot-status-tag color="grey"
-          >Not started</ngx-govscot-status-tag
+        <ngx-govscot-status-tag color="purple">Priority</ngx-govscot-status-tag>
+        <ngx-govscot-status-tag color="pink">Featured</ngx-govscot-status-tag>
+        <ngx-govscot-status-tag color="red">Failed</ngx-govscot-status-tag>
+        <ngx-govscot-status-tag color="orange">Pending</ngx-govscot-status-tag>
+        <ngx-govscot-status-tag color="yellow"
+          >Under review</ngx-govscot-status-tag
         >
       </div>
     </div>
-  </div>
 
-  <div class="example-section">
-    <h3>Application Status Table</h3>
-    <p>Monitor the status of your business applications:</p>
-    <table
-      style="
-        width: 100%;
-        max-width: 800px;
-        border-collapse: collapse;
-        border: 1px solid #ccc;
-      "
-    >
-      <thead>
-        <tr style="background-color: #f5f5f5">
-          <th
-            style="
-              padding: 0.75rem;
-              text-align: left;
-              border-bottom: 1px solid #ccc;
-            "
-          >
-            Application
-          </th>
-          <th
-            style="
-              padding: 0.75rem;
-              text-align: left;
-              border-bottom: 1px solid #ccc;
-            "
-          >
-            Reference
-          </th>
-          <th
-            style="
-              padding: 0.75rem;
-              text-align: left;
-              border-bottom: 1px solid #ccc;
-            "
-          >
-            Status
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="padding: 0.75rem; border-bottom: 1px solid #eee">
-            Corporation Tax Registration
-          </td>
-          <td style="padding: 0.75rem; border-bottom: 1px solid #eee">
-            CTR-2024-001
-          </td>
-          <td style="padding: 0.75rem; border-bottom: 1px solid #eee">
-            <ngx-govscot-status-tag color="green"
-              >Approved</ngx-govscot-status-tag
-            >
-          </td>
-        </tr>
-        <tr>
-          <td style="padding: 0.75rem; border-bottom: 1px solid #eee">
-            VAT Registration
-          </td>
-          <td style="padding: 0.75rem; border-bottom: 1px solid #eee">
-            VAT-2024-005
-          </td>
-          <td style="padding: 0.75rem; border-bottom: 1px solid #eee">
-            <ngx-govscot-status-tag color="orange"
-              >Under review</ngx-govscot-status-tag
-            >
-          </td>
-        </tr>
-        <tr>
-          <td style="padding: 0.75rem; border-bottom: 1px solid #eee">
-            Business Rate Relief
-          </td>
-          <td style="padding: 0.75rem; border-bottom: 1px solid #eee">
-            BRR-2024-003
-          </td>
-          <td style="padding: 0.75rem; border-bottom: 1px solid #eee">
-            <ngx-govscot-status-tag color="red"
-              >Rejected</ngx-govscot-status-tag
-            >
-          </td>
-        </tr>
-        <tr>
-          <td style="padding: 0.75rem">Export Licence</td>
-          <td style="padding: 0.75rem">EXP-2024-012</td>
-          <td style="padding: 0.75rem">
-            <ngx-govscot-status-tag color="yellow"
-              >Awaiting documents</ngx-govscot-status-tag
-            >
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="example-section">
-    <h3>Service Status Dashboard</h3>
-    <p>Check the current status of government services:</p>
-    <div style="display: grid; gap: 1rem; max-width: 600px">
-      <div
-        style="
-          padding: 1rem;
-          border: 1px solid #ccc;
-          border-radius: 4px;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        "
-      >
-        <div>
-          <strong>Corporation Tax Portal</strong>
-          <p style="margin: 0.25rem 0 0 0; color: #666; font-size: 0.9rem">
-            Online tax filing and payments
-          </p>
-        </div>
-        <ngx-govscot-status-tag color="green"
-          >Operational</ngx-govscot-status-tag
-        >
-      </div>
-      <div
-        style="
-          padding: 1rem;
-          border: 1px solid #ccc;
-          border-radius: 4px;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        "
-      >
-        <div>
-          <strong>PAYE System</strong>
-          <p style="margin: 0.25rem 0 0 0; color: #666; font-size: 0.9rem">
-            Employee tax and National Insurance
-          </p>
-        </div>
-        <ngx-govscot-status-tag color="orange"
-          >Scheduled maintenance</ngx-govscot-status-tag
-        >
-      </div>
-      <div
-        style="
-          padding: 1rem;
-          border: 1px solid #ccc;
-          border-radius: 4px;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        "
-      >
-        <div>
-          <strong>VAT Services</strong>
-          <p style="margin: 0.25rem 0 0 0; color: #666; font-size: 0.9rem">
-            VAT registration and returns
-          </p>
-        </div>
-        <ngx-govscot-status-tag color="red"
-          >Service outage</ngx-govscot-status-tag
-        >
-      </div>
-      <div
-        style="
-          padding: 1rem;
-          border: 1px solid #ccc;
-          border-radius: 4px;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        "
-      >
-        <div>
-          <strong>Business Gateway</strong>
-          <p style="margin: 0.25rem 0 0 0; color: #666; font-size: 0.9rem">
-            Business support and advice
-          </p>
-        </div>
-        <ngx-govscot-status-tag color="green"
-          >Operational</ngx-govscot-status-tag
-        >
-      </div>
-    </div>
-  </div>
-
-  <div class="example-section">
-    <h3>Priority Classification</h3>
-    <p>Use status tags to indicate priority levels in work queues:</p>
-    <div style="display: grid; gap: 0.5rem; max-width: 400px">
-      <div
-        style="
-          padding: 0.75rem;
-          border: 1px solid #eee;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        "
-      >
-        <span>System security update</span>
-        <ngx-govscot-status-tag color="red">Urgent</ngx-govscot-status-tag>
-      </div>
-      <div
-        style="
-          padding: 0.75rem;
-          border: 1px solid #eee;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        "
-      >
-        <span>Database optimization</span>
-        <ngx-govscot-status-tag color="orange">High</ngx-govscot-status-tag>
-      </div>
-      <div
-        style="
-          padding: 0.75rem;
-          border: 1px solid #eee;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        "
-      >
-        <span>User interface enhancement</span>
-        <ngx-govscot-status-tag color="blue">Medium</ngx-govscot-status-tag>
-      </div>
-      <div
-        style="
-          padding: 0.75rem;
-          border: 1px solid #eee;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        "
-      >
-        <span>Documentation update</span>
-        <ngx-govscot-status-tag color="grey">Low</ngx-govscot-status-tag>
-      </div>
-    </div>
-  </div>
-
-  <h2>Notification Panel Examples</h2>
-
-  <div class="example-section">
-    <h3>Basic Notification Panels</h3>
-    <p>
-      Use notification panels to show users important information after
-      completing a task:
-    </p>
-
-    <h4>Form Submission Success</h4>
-    <ngx-govscot-notification-panel title="Thank you">
-      <p>Your Corporation Tax registration has been successfully submitted.</p>
-    </ngx-govscot-notification-panel>
-  </div>
-
-  <div class="example-section">
-    <h4>Application Complete with Reference</h4>
-    <ngx-govscot-notification-panel title="Application complete">
+    <div class="example-section">
+      <h3>Corporation Tax Task List</h3>
       <p>
-        Your reference number is <br /><strong class="beta"
-          >CT-2024-001234</strong
+        Track your progress through the Corporation Tax registration process:
+      </p>
+      <div style="border: 1px solid #ccc; border-radius: 4px; max-width: 600px">
+        <div
+          style="
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          "
         >
-      </p>
-    </ngx-govscot-notification-panel>
-  </div>
+          <span>1. Check if you need to register</span>
+          <ngx-govscot-status-tag color="green"
+            >Complete</ngx-govscot-status-tag
+          >
+        </div>
+        <div
+          style="
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          "
+        >
+          <span>2. Gather required documents</span>
+          <ngx-govscot-status-tag color="blue"
+            >In progress</ngx-govscot-status-tag
+          >
+        </div>
+        <div
+          style="
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          "
+        >
+          <span>3. Submit registration form</span>
+          <ngx-govscot-status-tag color="grey"
+            >Not started</ngx-govscot-status-tag
+          >
+        </div>
+        <div
+          style="
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          "
+        >
+          <span>4. Set up payment method</span>
+          <ngx-govscot-status-tag color="grey"
+            >Not started</ngx-govscot-status-tag
+          >
+        </div>
+      </div>
+    </div>
 
-  <div class="example-section">
-    <h3>Government Service Examples</h3>
+    <div class="example-section">
+      <h3>Application Status Table</h3>
+      <p>Monitor the status of your business applications:</p>
+      <table
+        style="
+          width: 100%;
+          max-width: 800px;
+          border-collapse: collapse;
+          border: 1px solid #ccc;
+        "
+      >
+        <thead>
+          <tr style="background-color: #f5f5f5">
+            <th
+              style="
+                padding: 0.75rem;
+                text-align: left;
+                border-bottom: 1px solid #ccc;
+              "
+            >
+              Application
+            </th>
+            <th
+              style="
+                padding: 0.75rem;
+                text-align: left;
+                border-bottom: 1px solid #ccc;
+              "
+            >
+              Reference
+            </th>
+            <th
+              style="
+                padding: 0.75rem;
+                text-align: left;
+                border-bottom: 1px solid #ccc;
+              "
+            >
+              Status
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding: 0.75rem; border-bottom: 1px solid #eee">
+              Corporation Tax Registration
+            </td>
+            <td style="padding: 0.75rem; border-bottom: 1px solid #eee">
+              CTR-2024-001
+            </td>
+            <td style="padding: 0.75rem; border-bottom: 1px solid #eee">
+              <ngx-govscot-status-tag color="green"
+                >Approved</ngx-govscot-status-tag
+              >
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border-bottom: 1px solid #eee">
+              VAT Registration
+            </td>
+            <td style="padding: 0.75rem; border-bottom: 1px solid #eee">
+              VAT-2024-005
+            </td>
+            <td style="padding: 0.75rem; border-bottom: 1px solid #eee">
+              <ngx-govscot-status-tag color="orange"
+                >Under review</ngx-govscot-status-tag
+              >
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border-bottom: 1px solid #eee">
+              Business Rate Relief
+            </td>
+            <td style="padding: 0.75rem; border-bottom: 1px solid #eee">
+              BRR-2024-003
+            </td>
+            <td style="padding: 0.75rem; border-bottom: 1px solid #eee">
+              <ngx-govscot-status-tag color="red"
+                >Rejected</ngx-govscot-status-tag
+              >
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem">Export Licence</td>
+            <td style="padding: 0.75rem">EXP-2024-012</td>
+            <td style="padding: 0.75rem">
+              <ngx-govscot-status-tag color="yellow"
+                >Awaiting documents</ngx-govscot-status-tag
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-    <h4>VAT Registration</h4>
-    <ngx-govscot-notification-panel title="VAT registration complete">
-      <p>Your VAT registration has been completed successfully.</p>
-      <p>VAT number: <strong>GB 123 4567 89</strong></p>
-      <p>You can now charge VAT on your goods and services.</p>
-    </ngx-govscot-notification-panel>
-  </div>
+    <div class="example-section">
+      <h3>Service Status Dashboard</h3>
+      <p>Check the current status of government services:</p>
+      <div style="display: grid; gap: 1rem; max-width: 600px">
+        <div
+          style="
+            padding: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          "
+        >
+          <div>
+            <strong>Corporation Tax Portal</strong>
+            <p style="margin: 0.25rem 0 0 0; color: #666; font-size: 0.9rem">
+              Online tax filing and payments
+            </p>
+          </div>
+          <ngx-govscot-status-tag color="green"
+            >Operational</ngx-govscot-status-tag
+          >
+        </div>
+        <div
+          style="
+            padding: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          "
+        >
+          <div>
+            <strong>PAYE System</strong>
+            <p style="margin: 0.25rem 0 0 0; color: #666; font-size: 0.9rem">
+              Employee tax and National Insurance
+            </p>
+          </div>
+          <ngx-govscot-status-tag color="orange"
+            >Scheduled maintenance</ngx-govscot-status-tag
+          >
+        </div>
+        <div
+          style="
+            padding: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          "
+        >
+          <div>
+            <strong>VAT Services</strong>
+            <p style="margin: 0.25rem 0 0 0; color: #666; font-size: 0.9rem">
+              VAT registration and returns
+            </p>
+          </div>
+          <ngx-govscot-status-tag color="red"
+            >Service outage</ngx-govscot-status-tag
+          >
+        </div>
+        <div
+          style="
+            padding: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          "
+        >
+          <div>
+            <strong>Business Gateway</strong>
+            <p style="margin: 0.25rem 0 0 0; color: #666; font-size: 0.9rem">
+              Business support and advice
+            </p>
+          </div>
+          <ngx-govscot-status-tag color="green"
+            >Operational</ngx-govscot-status-tag
+          >
+        </div>
+      </div>
+    </div>
 
-  <div class="example-section">
-    <h4>Business Licence Approval</h4>
-    <ngx-govscot-notification-panel title="Business licence approved">
-      <p>Your business licence application has been approved.</p>
-      <p>Licence number: <strong>BL-2024-SCT-7891</strong></p>
-      <p>Your licence is valid from today until 31 March 2025.</p>
-    </ngx-govscot-notification-panel>
-  </div>
+    <div class="example-section">
+      <h3>Priority Classification</h3>
+      <p>Use status tags to indicate priority levels in work queues:</p>
+      <div style="display: grid; gap: 0.5rem; max-width: 400px">
+        <div
+          style="
+            padding: 0.75rem;
+            border: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          "
+        >
+          <span>System security update</span>
+          <ngx-govscot-status-tag color="red">Urgent</ngx-govscot-status-tag>
+        </div>
+        <div
+          style="
+            padding: 0.75rem;
+            border: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          "
+        >
+          <span>Database optimization</span>
+          <ngx-govscot-status-tag color="orange">High</ngx-govscot-status-tag>
+        </div>
+        <div
+          style="
+            padding: 0.75rem;
+            border: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          "
+        >
+          <span>User interface enhancement</span>
+          <ngx-govscot-status-tag color="blue">Medium</ngx-govscot-status-tag>
+        </div>
+        <div
+          style="
+            padding: 0.75rem;
+            border: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          "
+        >
+          <span>Documentation update</span>
+          <ngx-govscot-status-tag color="grey">Low</ngx-govscot-status-tag>
+        </div>
+      </div>
+    </div>
 
-  <div class="example-section">
-    <h4>Payment Confirmation</h4>
-    <ngx-govscot-notification-panel title="Payment successful">
-      <p>Your payment of £150.00 has been processed successfully.</p>
-      <p>Transaction ID: <strong>TXN-789456123</strong></p>
-      <p>You will receive a confirmation email within 24 hours.</p>
-    </ngx-govscot-notification-panel>
-  </div>
+    <h2>Notification Panel Examples</h2>
 
-  <div class="example-section">
-    <h3>Business Support Examples</h3>
-
-    <h4>Grant Application</h4>
-    <ngx-govscot-notification-panel title="Grant application submitted">
-      <p>Your Small Business Support Grant application has been submitted.</p>
-      <p>Application reference: <strong>SBSG-2024-0987</strong></p>
-      <p>You will receive a decision within 28 working days.</p>
-    </ngx-govscot-notification-panel>
-  </div>
-
-  <div class="example-section">
-    <h4>Permit Renewal</h4>
-    <ngx-govscot-notification-panel title="Permit renewed successfully">
-      <p>Your environmental permit has been renewed.</p>
-      <p>New permit number: <strong>EP-2024-REN-456</strong></p>
-      <p>Valid until: <strong>15 December 2027</strong></p>
-      <p>A confirmation letter will be posted to your registered address.</p>
-    </ngx-govscot-notification-panel>
-  </div>
-
-  <div class="example-section">
-    <h4>Appeal Submission</h4>
-    <ngx-govscot-notification-panel title="Appeal submitted">
+    <div class="example-section">
+      <h3>Basic Notification Panels</h3>
       <p>
-        Your planning decision appeal has been submitted to the Scottish
-        Government.
+        Use notification panels to show users important information after
+        completing a task:
       </p>
-      <p>Appeal reference: <strong>PL-APP-2024-3456</strong></p>
-      <p>The appeal process typically takes 12-16 weeks.</p>
-    </ngx-govscot-notification-panel>
-  </div>
 
-  <h2>Summary List Examples</h2>
+      <h4>Form Submission Success</h4>
+      <ngx-govscot-notification-panel title="Thank you">
+        <p>
+          Your Corporation Tax registration has been successfully submitted.
+        </p>
+      </ngx-govscot-notification-panel>
+    </div>
 
-  <div class="example-section">
-    <h3>Basic Summary List</h3>
-    <p>
-      Summary lists display a user's answers and allow them to change their
-      responses:
-    </p>
-    <ngx-govscot-summary-list>
-      <ngx-govscot-summary-list-item key="Name" value="Jane Smith">
-        <ngx-govscot-summary-list-actions>
-          <ngx-govscot-summary-list-action href="/change-name">
-            Change
-          </ngx-govscot-summary-list-action>
-        </ngx-govscot-summary-list-actions>
-      </ngx-govscot-summary-list-item>
-      <ngx-govscot-summary-list-item key="Date of birth" value="13 April 2001">
-        <ngx-govscot-summary-list-actions>
-          <ngx-govscot-summary-list-action href="/change-dob">
-            Change
-          </ngx-govscot-summary-list-action>
-        </ngx-govscot-summary-list-actions>
-      </ngx-govscot-summary-list-item>
-      <ngx-govscot-summary-list-item key="Address">
-        <ng-template ngxGovScotSummaryListValue>
-          Scottish Government<br />
-          St Andrew's House<br />
-          Regent Road<br />
-          Edinburgh<br />
-          EH1 3DG
-        </ng-template>
-        <ngx-govscot-summary-list-actions>
-          <ngx-govscot-summary-list-action href="/change-address">
-            Change
-          </ngx-govscot-summary-list-action>
-        </ngx-govscot-summary-list-actions>
-      </ngx-govscot-summary-list-item>
-      <ngx-govscot-summary-list-item key="Contact details">
-        <ng-template ngxGovScotSummaryListValue>
-          <ul class="ds_no-bullets">
-            <li>email&#64;gov.scot</li>
-            <li>0123 456 7000</li>
-          </ul>
-        </ng-template>
-        <ngx-govscot-summary-list-actions>
-          <ngx-govscot-summary-list-action href="/add-contact">
-            Add
-          </ngx-govscot-summary-list-action>
-          <ngx-govscot-summary-list-action href="/change-contact">
-            Change
-          </ngx-govscot-summary-list-action>
-        </ngx-govscot-summary-list-actions>
-      </ngx-govscot-summary-list-item>
-    </ngx-govscot-summary-list>
-  </div>
+    <div class="example-section">
+      <h4>Application Complete with Reference</h4>
+      <ngx-govscot-notification-panel title="Application complete">
+        <p>
+          Your reference number is <br /><strong class="beta"
+            >CT-2024-001234</strong
+          >
+        </p>
+      </ngx-govscot-notification-panel>
+    </div>
 
-  <div class="example-section">
-    <h3>Summary List Without Borders</h3>
-    <p>
-      When no actions are provided, you can remove borders for a cleaner look:
-    </p>
-    <ngx-govscot-summary-list [noBorder]="true">
-      <ngx-govscot-summary-list-item
-        key="Have you had the grant 3 times or more since 1 May 2022?"
-        value="No"
-      />
-      <ngx-govscot-summary-list-item
-        key="Which council area do you live in?"
-        value="City of Edinburgh"
-      />
-      <ngx-govscot-summary-list-item key="Do you work?" value="Yes" />
-      <ngx-govscot-summary-list-item
-        key="Will you lose earnings because you need to self-isolate?"
-        value="Yes"
-      />
-      <ngx-govscot-summary-list-item
-        key="Have you tested positive for Covid?"
-        value="No - I need a PCR test or to rebook a PCR test"
-      />
-    </ngx-govscot-summary-list>
-  </div>
+    <div class="example-section">
+      <h3>Government Service Examples</h3>
 
-  <div class="example-section">
-    <h3>Summary Cards</h3>
-    <p>
-      Use summary cards when you have multiple groups of related information:
-    </p>
+      <h4>VAT Registration</h4>
+      <ngx-govscot-notification-panel title="VAT registration complete">
+        <p>Your VAT registration has been completed successfully.</p>
+        <p>VAT number: <strong>GB 123 4567 89</strong></p>
+        <p>You can now charge VAT on your goods and services.</p>
+      </ngx-govscot-notification-panel>
+    </div>
 
-    <ngx-govscot-summary-list-card title="Joe Bloggs">
-      <ngx-govscot-summary-list-card-actions>
-        <ngx-govscot-summary-list-action href="/change-joe">
-          Change
-        </ngx-govscot-summary-list-action>
-        <ngx-govscot-summary-list-action href="/delete-joe">
-          Delete
-        </ngx-govscot-summary-list-action>
-      </ngx-govscot-summary-list-card-actions>
+    <div class="example-section">
+      <h4>Business Licence Approval</h4>
+      <ngx-govscot-notification-panel title="Business licence approved">
+        <p>Your business licence application has been approved.</p>
+        <p>Licence number: <strong>BL-2024-SCT-7891</strong></p>
+        <p>Your licence is valid from today until 31 March 2025.</p>
+      </ngx-govscot-notification-panel>
+    </div>
+
+    <div class="example-section">
+      <h4>Payment Confirmation</h4>
+      <ngx-govscot-notification-panel title="Payment successful">
+        <p>Your payment of £150.00 has been processed successfully.</p>
+        <p>Transaction ID: <strong>TXN-789456123</strong></p>
+        <p>You will receive a confirmation email within 24 hours.</p>
+      </ngx-govscot-notification-panel>
+    </div>
+
+    <div class="example-section">
+      <h3>Business Support Examples</h3>
+
+      <h4>Grant Application</h4>
+      <ngx-govscot-notification-panel title="Grant application submitted">
+        <p>Your Small Business Support Grant application has been submitted.</p>
+        <p>Application reference: <strong>SBSG-2024-0987</strong></p>
+        <p>You will receive a decision within 28 working days.</p>
+      </ngx-govscot-notification-panel>
+    </div>
+
+    <div class="example-section">
+      <h4>Permit Renewal</h4>
+      <ngx-govscot-notification-panel title="Permit renewed successfully">
+        <p>Your environmental permit has been renewed.</p>
+        <p>New permit number: <strong>EP-2024-REN-456</strong></p>
+        <p>Valid until: <strong>15 December 2027</strong></p>
+        <p>A confirmation letter will be posted to your registered address.</p>
+      </ngx-govscot-notification-panel>
+    </div>
+
+    <div class="example-section">
+      <h4>Appeal Submission</h4>
+      <ngx-govscot-notification-panel title="Appeal submitted">
+        <p>
+          Your planning decision appeal has been submitted to the Scottish
+          Government.
+        </p>
+        <p>Appeal reference: <strong>PL-APP-2024-3456</strong></p>
+        <p>The appeal process typically takes 12-16 weeks.</p>
+      </ngx-govscot-notification-panel>
+    </div>
+
+    <h2>Summary List Examples</h2>
+
+    <div class="example-section">
+      <h3>Basic Summary List</h3>
+      <p>
+        Summary lists display a user's answers and allow them to change their
+        responses:
+      </p>
       <ngx-govscot-summary-list>
-        <ngx-govscot-summary-list-item
-          key="Phone number"
-          value="01234 567 890"
-        />
-        <ngx-govscot-summary-list-item key="Address">
-          <ng-template ngxGovScotSummaryListValue>
-            Victoria Quay<br />
-            Edinburgh<br />
-            EH6 6QQ
-          </ng-template>
+        <ngx-govscot-summary-list-item key="Name" value="Jane Smith">
+          <ngx-govscot-summary-list-actions>
+            <ngx-govscot-summary-list-action href="/change-name">
+              Change
+            </ngx-govscot-summary-list-action>
+          </ngx-govscot-summary-list-actions>
         </ngx-govscot-summary-list-item>
-      </ngx-govscot-summary-list>
-    </ngx-govscot-summary-list-card>
-
-    <br />
-
-    <ngx-govscot-summary-list-card title="Mary Smith">
-      <ngx-govscot-summary-list-card-actions>
-        <ngx-govscot-summary-list-action href="/change-mary">
-          Change
-        </ngx-govscot-summary-list-action>
-        <ngx-govscot-summary-list-action href="/delete-mary">
-          Delete
-        </ngx-govscot-summary-list-action>
-      </ngx-govscot-summary-list-card-actions>
-      <ngx-govscot-summary-list>
         <ngx-govscot-summary-list-item
-          key="Phone number"
-          value="01234 098 765"
-        />
+          key="Date of birth"
+          value="13 April 2001"
+        >
+          <ngx-govscot-summary-list-actions>
+            <ngx-govscot-summary-list-action href="/change-dob">
+              Change
+            </ngx-govscot-summary-list-action>
+          </ngx-govscot-summary-list-actions>
+        </ngx-govscot-summary-list-item>
         <ngx-govscot-summary-list-item key="Address">
           <ng-template ngxGovScotSummaryListValue>
-            St. Andrew's House<br />
+            Scottish Government<br />
+            St Andrew's House<br />
             Regent Road<br />
             Edinburgh<br />
             EH1 3DG
           </ng-template>
+          <ngx-govscot-summary-list-actions>
+            <ngx-govscot-summary-list-action href="/change-address">
+              Change
+            </ngx-govscot-summary-list-action>
+          </ngx-govscot-summary-list-actions>
+        </ngx-govscot-summary-list-item>
+        <ngx-govscot-summary-list-item key="Contact details">
+          <ng-template ngxGovScotSummaryListValue>
+            <ul class="ds_no-bullets">
+              <li>email&#64;gov.scot</li>
+              <li>0123 456 7000</li>
+            </ul>
+          </ng-template>
+          <ngx-govscot-summary-list-actions>
+            <ngx-govscot-summary-list-action href="/add-contact">
+              Add
+            </ngx-govscot-summary-list-action>
+            <ngx-govscot-summary-list-action href="/change-contact">
+              Change
+            </ngx-govscot-summary-list-action>
+          </ngx-govscot-summary-list-actions>
         </ngx-govscot-summary-list-item>
       </ngx-govscot-summary-list>
-    </ngx-govscot-summary-list-card>
-  </div>
+    </div>
 
-  <div class="example-section">
-    <h3>Corporation Tax Application Summary</h3>
-    <p>
-      Example showing how summary lists can be used in a tax application
-      process:
-    </p>
-    <ngx-govscot-summary-list>
-      <ngx-govscot-summary-list-item key="Company name" value="ABC Limited">
-        <ngx-govscot-summary-list-actions>
-          <ngx-govscot-summary-list-action href="/change-company-name">
+    <div class="example-section">
+      <h3>Summary List Without Borders</h3>
+      <p>
+        When no actions are provided, you can remove borders for a cleaner look:
+      </p>
+      <ngx-govscot-summary-list [noBorder]="true">
+        <ngx-govscot-summary-list-item
+          key="Have you had the grant 3 times or more since 1 May 2022?"
+          value="No"
+        />
+        <ngx-govscot-summary-list-item
+          key="Which council area do you live in?"
+          value="City of Edinburgh"
+        />
+        <ngx-govscot-summary-list-item key="Do you work?" value="Yes" />
+        <ngx-govscot-summary-list-item
+          key="Will you lose earnings because you need to self-isolate?"
+          value="Yes"
+        />
+        <ngx-govscot-summary-list-item
+          key="Have you tested positive for Covid?"
+          value="No - I need a PCR test or to rebook a PCR test"
+        />
+      </ngx-govscot-summary-list>
+    </div>
+
+    <div class="example-section">
+      <h3>Summary Cards</h3>
+      <p>
+        Use summary cards when you have multiple groups of related information:
+      </p>
+
+      <ngx-govscot-summary-list-card title="Joe Bloggs">
+        <ngx-govscot-summary-list-card-actions>
+          <ngx-govscot-summary-list-action href="/change-joe">
             Change
           </ngx-govscot-summary-list-action>
-        </ngx-govscot-summary-list-actions>
-      </ngx-govscot-summary-list-item>
-      <ngx-govscot-summary-list-item
-        key="Company registration number"
-        value="12345678"
-      >
-        <ngx-govscot-summary-list-actions>
-          <ngx-govscot-summary-list-action href="/change-company-number">
-            Change
+          <ngx-govscot-summary-list-action href="/delete-joe">
+            Delete
           </ngx-govscot-summary-list-action>
-        </ngx-govscot-summary-list-actions>
-      </ngx-govscot-summary-list-item>
-      <ngx-govscot-summary-list-item
-        key="Accounting period start"
-        value="1 April 2024"
-      >
-        <ngx-govscot-summary-list-actions>
-          <ngx-govscot-summary-list-action href="/change-accounting-start">
-            Change
-          </ngx-govscot-summary-list-action>
-        </ngx-govscot-summary-list-actions>
-      </ngx-govscot-summary-list-item>
-      <ngx-govscot-summary-list-item
-        key="Accounting period end"
-        value="31 March 2025"
-      >
-        <ngx-govscot-summary-list-actions>
-          <ngx-govscot-summary-list-action href="/change-accounting-end">
-            Change
-          </ngx-govscot-summary-list-action>
-        </ngx-govscot-summary-list-actions>
-      </ngx-govscot-summary-list-item>
-      <ngx-govscot-summary-list-item
-        key="Expected annual turnover"
-        value="£500,000"
-      >
-        <ngx-govscot-summary-list-actions>
-          <ngx-govscot-summary-list-action href="/change-turnover">
-            Change
-          </ngx-govscot-summary-list-action>
-        </ngx-govscot-summary-list-actions>
-      </ngx-govscot-summary-list-item>
-    </ngx-govscot-summary-list>
-  </div>
-
-  <h2>Table Examples</h2>
-
-  <div class="example-section">
-    <h3>Basic Table</h3>
-    <p>A simple table displaying public holidays:</p>
-    <ngx-govscot-table caption="Public holidays in 2020">
-      <thead>
-        <tr>
-          <th scope="col">Date</th>
-          <th scope="col">Day</th>
-          <th scope="col">Holiday</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>10 April</td>
-          <td>Friday</td>
-          <td>Good Friday</td>
-        </tr>
-        <tr>
-          <td>8 May</td>
-          <td>Friday</td>
-          <td>Early May Bank Holiday</td>
-        </tr>
-        <tr>
-          <td>25 May</td>
-          <td>Monday</td>
-          <td>Spring Bank Holiday</td>
-        </tr>
-        <tr>
-          <td>3 August</td>
-          <td>Monday</td>
-          <td>Summer Bank Holiday</td>
-        </tr>
-      </tbody>
-    </ngx-govscot-table>
-  </div>
-
-  <div class="example-section">
-    <h3>Scrolling Table (Mobile)</h3>
-    <p>
-      A table that scrolls horizontally on small screens with the first column
-      sticky:
-    </p>
-    <ngx-govscot-table
-      caption="Corporation Tax rates by company size"
-      smallScreenBehavior="scrolling"
-    >
-      <thead>
-        <tr>
-          <th scope="col">Company Size</th>
-          <th scope="col">Annual Profit</th>
-          <th scope="col">Tax Rate</th>
-          <th scope="col">Marginal Relief</th>
-          <th scope="col">Effective Rate</th>
-          <th scope="col">Example Tax Due</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Small</td>
-          <td align="right">£50,000</td>
-          <td align="right">19%</td>
-          <td align="right">N/A</td>
-          <td align="right">19%</td>
-          <td align="right">£9,500</td>
-        </tr>
-        <tr>
-          <td>Medium</td>
-          <td align="right">£150,000</td>
-          <td align="right">19%</td>
-          <td align="right">N/A</td>
-          <td align="right">19%</td>
-          <td align="right">£28,500</td>
-        </tr>
-        <tr>
-          <td>Large</td>
-          <td align="right">£300,000</td>
-          <td align="right">25%</td>
-          <td align="right">Yes</td>
-          <td align="right">21.25%</td>
-          <td align="right">£63,750</td>
-        </tr>
-        <tr>
-          <td>Very Large</td>
-          <td align="right">£500,000</td>
-          <td align="right">25%</td>
-          <td align="right">N/A</td>
-          <td align="right">25%</td>
-          <td align="right">£125,000</td>
-        </tr>
-      </tbody>
-    </ngx-govscot-table>
-  </div>
-
-  <div class="example-section">
-    <h3>Boxes Table (Mobile)</h3>
-    <p>A table that collapses into individual boxes on small screens:</p>
-    <ngx-govscot-table
-      caption="Corporation Tax deadlines by business type"
-      smallScreenBehavior="boxes"
-    >
-      <thead>
-        <tr>
-          <th scope="col">Business Type</th>
-          <th scope="col">Registration Deadline</th>
-          <th scope="col">Return Filing</th>
-          <th scope="col">Payment Due</th>
-          <th scope="col">Late Filing Penalty</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Limited Company</td>
-          <td>3 months from start</td>
-          <td>12 months after period end</td>
-          <td>9 months 1 day after period end</td>
-          <td>£100 minimum</td>
-        </tr>
-        <tr>
-          <td>Dormant Company</td>
-          <td>3 months from start</td>
-          <td>12 months after period end</td>
-          <td>No payment required</td>
-          <td>£100 minimum</td>
-        </tr>
-        <tr>
-          <td>Close Company</td>
-          <td>3 months from start</td>
-          <td>12 months after period end</td>
-          <td>9 months 1 day after period end</td>
-          <td>£100 minimum</td>
-        </tr>
-        <tr>
-          <td>Investment Company</td>
-          <td>3 months from start</td>
-          <td>12 months after period end</td>
-          <td>9 months 1 day after period end</td>
-          <td>£100 minimum</td>
-        </tr>
-      </tbody>
-    </ngx-govscot-table>
-  </div>
-
-  <div class="example-section">
-    <h3>Table Without Caption</h3>
-    <p>A simple table without a caption for less formal data:</p>
-    <ngx-govscot-table>
-      <thead>
-        <tr>
-          <th scope="col">Service</th>
-          <th scope="col">Status</th>
-          <th scope="col">Last Updated</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Corporation Tax Online</td>
-          <td>
-            <ngx-govscot-status-tag status="success"
-              >Available</ngx-govscot-status-tag
-            >
-          </td>
-          <td>2 minutes ago</td>
-        </tr>
-        <tr>
-          <td>VAT Registration</td>
-          <td>
-            <ngx-govscot-status-tag status="warning"
-              >Limited</ngx-govscot-status-tag
-            >
-          </td>
-          <td>15 minutes ago</td>
-        </tr>
-        <tr>
-          <td>PAYE Services</td>
-          <td>
-            <ngx-govscot-status-tag status="error"
-              >Unavailable</ngx-govscot-status-tag
-            >
-          </td>
-          <td>1 hour ago</td>
-        </tr>
-      </tbody>
-    </ngx-govscot-table>
-  </div>
-
-  <h2>Text Input Examples</h2>
-
-  <div class="example-section">
-    <h3>Basic Text Input</h3>
-    <p>Simple text input for collecting user information:</p>
-    <div class="ds_form-group">
-      <label class="ds_label" for="company-name">Company name</label>
-      <ngx-govscot-text-input
-        [formControl]="companyNameControl"
-        inputId="company-name"
-      />
-    </div>
-  </div>
-
-  <div class="example-section">
-    <h3>Text Input with Hint</h3>
-    <p>Text input with helpful hint text:</p>
-    <div class="ds_form-group">
-      <label class="ds_label" for="email-address">Email address</label>
-      <div class="ds_hint-text">
-        We'll use this to send you updates about your application
-      </div>
-      <ngx-govscot-text-input
-        [formControl]="emailControl"
-        type="email"
-        inputId="email-address"
-      />
-    </div>
-  </div>
-
-  <div class="example-section">
-    <h3>Fixed Width Inputs</h3>
-    <p>Different fixed width options for specific content types:</p>
-
-    <div class="ds_form-group">
-      <label class="ds_label" for="postcode">Postcode</label>
-      <ngx-govscot-text-input
-        [formControl]="postcodeControl"
-        [fixedWidth]="10"
-        inputId="postcode"
-      />
-    </div>
-
-    <div class="ds_form-group">
-      <label class="ds_label" for="phone">Phone number</label>
-      <ngx-govscot-text-input
-        [formControl]="phoneControl"
-        type="tel"
-        [fixedWidth]="20"
-        inputId="phone"
-      />
-    </div>
-
-    <div class="ds_form-group">
-      <label class="ds_label" for="year">Year</label>
-      <ngx-govscot-text-input
-        [formControl]="yearControl"
-        [fixedWidth]="4"
-        inputId="year"
-      />
-    </div>
-  </div>
-
-  <div class="example-section">
-    <h3>Fluid Width Inputs</h3>
-    <p>Responsive width inputs that adapt to container size:</p>
-
-    <div class="ds_form-group">
-      <label class="ds_label" for="address-1">Address line 1</label>
-      <ngx-govscot-text-input
-        [formControl]="address1Control"
-        width="two-thirds"
-        inputId="address-1"
-      />
-    </div>
-
-    <div class="ds_form-group">
-      <label class="ds_label" for="address-2">Address line 2 (optional)</label>
-      <ngx-govscot-text-input
-        [formControl]="address2Control"
-        width="one-half"
-        inputId="address-2"
-      />
-    </div>
-
-    <div class="ds_form-group">
-      <label class="ds_label" for="city">City</label>
-      <ngx-govscot-text-input
-        [formControl]="cityControl"
-        width="one-third"
-        inputId="city"
-      />
-    </div>
-  </div>
-
-  <div class="example-section">
-    <h3>Currency Input</h3>
-    <p>Special currency input with symbol that cannot be deleted:</p>
-
-    <div class="ds_form-group">
-      <label class="ds_label" for="price-gbp">Price per month (GBP)</label>
-      <ngx-govscot-text-input
-        [formControl]="priceGbpControl"
-        [currency]="true"
-        currencySymbol="£"
-        [fixedWidth]="4"
-        inputId="price-gbp"
-      />
-    </div>
-
-    <div class="ds_form-group">
-      <label class="ds_label" for="price-usd">Price per month (USD)</label>
-      <ngx-govscot-text-input
-        [formControl]="priceUsdControl"
-        [currency]="true"
-        currencySymbol="$"
-        [fixedWidth]="4"
-        inputId="price-usd"
-      />
-    </div>
-  </div>
-
-  <div class="example-section">
-    <h3>Search Input with Button</h3>
-    <p>Text input with associated search button:</p>
-
-    <div class="ds_form-group">
-      <label class="ds_label" for="search">Search documents</label>
-      <ngx-govscot-text-input
-        [formControl]="searchControl"
-        [hasButton]="true"
-        buttonText="Search"
-        buttonIcon="search"
-        [fixedWidth]="20"
-        inputId="search"
-      />
-    </div>
-  </div>
-
-  <div class="example-section">
-    <h3>Inline Date Inputs</h3>
-    <p>Multiple related inputs displayed inline:</p>
-
-    <fieldset>
-      <legend>What is your date of birth?</legend>
-      <div class="ds_hint-text">For example, 31 3 1980</div>
-
-      <div class="ds_field-group ds_field-group--inline">
-        <div>
-          <label class="ds_label" for="day">Day</label>
-          <ngx-govscot-text-input
-            [formControl]="dayControl"
-            [fixedWidth]="2"
-            inputId="day"
+        </ngx-govscot-summary-list-card-actions>
+        <ngx-govscot-summary-list>
+          <ngx-govscot-summary-list-item
+            key="Phone number"
+            value="01234 567 890"
           />
-        </div>
+          <ngx-govscot-summary-list-item key="Address">
+            <ng-template ngxGovScotSummaryListValue>
+              Victoria Quay<br />
+              Edinburgh<br />
+              EH6 6QQ
+            </ng-template>
+          </ngx-govscot-summary-list-item>
+        </ngx-govscot-summary-list>
+      </ngx-govscot-summary-list-card>
 
-        <div>
-          <label class="ds_label" for="month">Month</label>
-          <ngx-govscot-text-input
-            [formControl]="monthControl"
-            [fixedWidth]="2"
-            inputId="month"
+      <br />
+
+      <ngx-govscot-summary-list-card title="Mary Smith">
+        <ngx-govscot-summary-list-card-actions>
+          <ngx-govscot-summary-list-action href="/change-mary">
+            Change
+          </ngx-govscot-summary-list-action>
+          <ngx-govscot-summary-list-action href="/delete-mary">
+            Delete
+          </ngx-govscot-summary-list-action>
+        </ngx-govscot-summary-list-card-actions>
+        <ngx-govscot-summary-list>
+          <ngx-govscot-summary-list-item
+            key="Phone number"
+            value="01234 098 765"
           />
-        </div>
-
-        <div>
-          <label class="ds_label" for="year-birth">Year</label>
-          <ngx-govscot-text-input
-            [formControl]="yearBirthControl"
-            [fixedWidth]="4"
-            inputId="year-birth"
-          />
-        </div>
-      </div>
-    </fieldset>
-  </div>
-
-  <h2>Textarea Examples</h2>
-
-  <div class="example-section">
-    <h3>Basic Textarea</h3>
-    <p>A simple textarea for multi-line text input:</p>
-
-    <div class="ds_form-group">
-      <label class="ds_label" for="description">Description</label>
-      <div class="ds_hint-text">
-        Provide a brief description of your enquiry
-      </div>
-      <ngx-govscot-textarea
-        [formControl]="descriptionControl"
-        [rows]="3"
-        placeholder="Enter your description here"
-        inputId="description"
-      />
+          <ngx-govscot-summary-list-item key="Address">
+            <ng-template ngxGovScotSummaryListValue>
+              St. Andrew's House<br />
+              Regent Road<br />
+              Edinburgh<br />
+              EH1 3DG
+            </ng-template>
+          </ngx-govscot-summary-list-item>
+        </ngx-govscot-summary-list>
+      </ngx-govscot-summary-list-card>
     </div>
-  </div>
 
-  <div class="example-section">
-    <h3>Large Textarea</h3>
-    <p>A larger textarea for detailed feedback or comments:</p>
-
-    <div class="ds_form-group">
-      <label class="ds_label" for="feedback">Detailed feedback</label>
-      <div class="ds_hint-text">
-        Please provide detailed feedback about your experience with this service
-      </div>
-      <ngx-govscot-textarea
-        [formControl]="feedbackControl"
-        [rows]="8"
-        placeholder="Enter your detailed feedback here..."
-        inputId="feedback"
-      />
+    <div class="example-section">
+      <h3>Corporation Tax Application Summary</h3>
+      <p>
+        Example showing how summary lists can be used in a tax application
+        process:
+      </p>
+      <ngx-govscot-summary-list>
+        <ngx-govscot-summary-list-item key="Company name" value="ABC Limited">
+          <ngx-govscot-summary-list-actions>
+            <ngx-govscot-summary-list-action href="/change-company-name">
+              Change
+            </ngx-govscot-summary-list-action>
+          </ngx-govscot-summary-list-actions>
+        </ngx-govscot-summary-list-item>
+        <ngx-govscot-summary-list-item
+          key="Company registration number"
+          value="12345678"
+        >
+          <ngx-govscot-summary-list-actions>
+            <ngx-govscot-summary-list-action href="/change-company-number">
+              Change
+            </ngx-govscot-summary-list-action>
+          </ngx-govscot-summary-list-actions>
+        </ngx-govscot-summary-list-item>
+        <ngx-govscot-summary-list-item
+          key="Accounting period start"
+          value="1 April 2024"
+        >
+          <ngx-govscot-summary-list-actions>
+            <ngx-govscot-summary-list-action href="/change-accounting-start">
+              Change
+            </ngx-govscot-summary-list-action>
+          </ngx-govscot-summary-list-actions>
+        </ngx-govscot-summary-list-item>
+        <ngx-govscot-summary-list-item
+          key="Accounting period end"
+          value="31 March 2025"
+        >
+          <ngx-govscot-summary-list-actions>
+            <ngx-govscot-summary-list-action href="/change-accounting-end">
+              Change
+            </ngx-govscot-summary-list-action>
+          </ngx-govscot-summary-list-actions>
+        </ngx-govscot-summary-list-item>
+        <ngx-govscot-summary-list-item
+          key="Expected annual turnover"
+          value="£500,000"
+        >
+          <ngx-govscot-summary-list-actions>
+            <ngx-govscot-summary-list-action href="/change-turnover">
+              Change
+            </ngx-govscot-summary-list-action>
+          </ngx-govscot-summary-list-actions>
+        </ngx-govscot-summary-list-item>
+      </ngx-govscot-summary-list>
     </div>
-  </div>
 
-  <div class="example-section">
-    <h3>Textarea with Character Limit</h3>
-    <p>Textarea with maximum character limit:</p>
+    <h2>Table Examples</h2>
 
-    <div class="ds_form-group">
-      <label class="ds_label" for="comments">Additional comments</label>
-      <div class="ds_hint-text">
-        Maximum 500 characters. Please keep your comments concise.
-      </div>
-      <ngx-govscot-textarea
-        [formControl]="commentsControl"
-        [rows]="4"
-        [maxlength]="500"
-        placeholder="Enter additional comments (max 500 characters)"
-        inputId="comments"
-      />
+    <div class="example-section">
+      <h3>Basic Table</h3>
+      <p>A simple table displaying public holidays:</p>
+      <ngx-govscot-table caption="Public holidays in 2020">
+        <thead>
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Day</th>
+            <th scope="col">Holiday</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>10 April</td>
+            <td>Friday</td>
+            <td>Good Friday</td>
+          </tr>
+          <tr>
+            <td>8 May</td>
+            <td>Friday</td>
+            <td>Early May Bank Holiday</td>
+          </tr>
+          <tr>
+            <td>25 May</td>
+            <td>Monday</td>
+            <td>Spring Bank Holiday</td>
+          </tr>
+          <tr>
+            <td>3 August</td>
+            <td>Monday</td>
+            <td>Summer Bank Holiday</td>
+          </tr>
+        </tbody>
+      </ngx-govscot-table>
     </div>
-  </div>
 
-  <div class="example-section">
-    <h3>Contact Form Message</h3>
-    <p>Textarea for contact form messages with proper accessibility:</p>
-
-    <div class="ds_form-group">
-      <label class="ds_label" for="message">Your message</label>
-      <div class="ds_hint-text">
-        Please describe your enquiry in detail. Do not include personal
-        information like National Insurance numbers or bank details.
-      </div>
-      <ngx-govscot-textarea
-        [formControl]="messageControl"
-        [rows]="6"
-        [maxlength]="2000"
-        [spellcheck]="true"
-        autocapitalize="sentences"
-        placeholder="Enter your message here..."
-        inputId="message"
-      />
+    <div class="example-section">
+      <h3>Scrolling Table (Mobile)</h3>
+      <p>
+        A table that scrolls horizontally on small screens with the first column
+        sticky:
+      </p>
+      <ngx-govscot-table
+        caption="Corporation Tax rates by company size"
+        smallScreenBehavior="scrolling"
+      >
+        <thead>
+          <tr>
+            <th scope="col">Company Size</th>
+            <th scope="col">Annual Profit</th>
+            <th scope="col">Tax Rate</th>
+            <th scope="col">Marginal Relief</th>
+            <th scope="col">Effective Rate</th>
+            <th scope="col">Example Tax Due</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Small</td>
+            <td align="right">£50,000</td>
+            <td align="right">19%</td>
+            <td align="right">N/A</td>
+            <td align="right">19%</td>
+            <td align="right">£9,500</td>
+          </tr>
+          <tr>
+            <td>Medium</td>
+            <td align="right">£150,000</td>
+            <td align="right">19%</td>
+            <td align="right">N/A</td>
+            <td align="right">19%</td>
+            <td align="right">£28,500</td>
+          </tr>
+          <tr>
+            <td>Large</td>
+            <td align="right">£300,000</td>
+            <td align="right">25%</td>
+            <td align="right">Yes</td>
+            <td align="right">21.25%</td>
+            <td align="right">£63,750</td>
+          </tr>
+          <tr>
+            <td>Very Large</td>
+            <td align="right">£500,000</td>
+            <td align="right">25%</td>
+            <td align="right">N/A</td>
+            <td align="right">25%</td>
+            <td align="right">£125,000</td>
+          </tr>
+        </tbody>
+      </ngx-govscot-table>
     </div>
-  </div>
 
-  <div class="example-section">
-    <h3>Corporation Tax Application - Business Description</h3>
-    <p>Example textarea for Corporation Tax business description:</p>
-
-    <div class="ds_form-group">
-      <label class="ds_label" for="business-description">
-        Describe your business activities
-      </label>
-      <div class="ds_hint-text">
-        Provide a clear description of what your company does. This helps us
-        process your Corporation Tax application.
-      </div>
-      <ngx-govscot-textarea
-        [formControl]="descriptionControl"
-        [rows]="5"
-        [maxlength]="1000"
-        placeholder="Describe your main business activities, products, or services..."
-        inputId="business-description"
-        [spellcheck]="true"
-        autocapitalize="sentences"
-      />
+    <div class="example-section">
+      <h3>Boxes Table (Mobile)</h3>
+      <p>A table that collapses into individual boxes on small screens:</p>
+      <ngx-govscot-table
+        caption="Corporation Tax deadlines by business type"
+        smallScreenBehavior="boxes"
+      >
+        <thead>
+          <tr>
+            <th scope="col">Business Type</th>
+            <th scope="col">Registration Deadline</th>
+            <th scope="col">Return Filing</th>
+            <th scope="col">Payment Due</th>
+            <th scope="col">Late Filing Penalty</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Limited Company</td>
+            <td>3 months from start</td>
+            <td>12 months after period end</td>
+            <td>9 months 1 day after period end</td>
+            <td>£100 minimum</td>
+          </tr>
+          <tr>
+            <td>Dormant Company</td>
+            <td>3 months from start</td>
+            <td>12 months after period end</td>
+            <td>No payment required</td>
+            <td>£100 minimum</td>
+          </tr>
+          <tr>
+            <td>Close Company</td>
+            <td>3 months from start</td>
+            <td>12 months after period end</td>
+            <td>9 months 1 day after period end</td>
+            <td>£100 minimum</td>
+          </tr>
+          <tr>
+            <td>Investment Company</td>
+            <td>3 months from start</td>
+            <td>12 months after period end</td>
+            <td>9 months 1 day after period end</td>
+            <td>£100 minimum</td>
+          </tr>
+        </tbody>
+      </ngx-govscot-table>
     </div>
-  </div>
 
-  <h2>Textarea with Character Count Examples</h2>
-
-  <div class="example-section">
-    <h3>Basic Character Count</h3>
-    <p>Textarea with character count showing remaining characters:</p>
-
-    <div class="ds_form-group">
-      <label class="ds_label" for="basic-char-count">Brief description</label>
-      <div class="ds_hint-text">
-        Provide a brief description of your enquiry
-      </div>
-      <ngx-govscot-textarea
-        [formControl]="basicCharCountControl"
-        [rows]="3"
-        [maxlength]="200"
-        [showCharacterCount]="true"
-        placeholder="Enter your description here"
-        inputId="basic-char-count"
-      />
+    <div class="example-section">
+      <h3>Table Without Caption</h3>
+      <p>A simple table without a caption for less formal data:</p>
+      <ngx-govscot-table>
+        <thead>
+          <tr>
+            <th scope="col">Service</th>
+            <th scope="col">Status</th>
+            <th scope="col">Last Updated</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Corporation Tax Online</td>
+            <td>
+              <ngx-govscot-status-tag status="success"
+                >Available</ngx-govscot-status-tag
+              >
+            </td>
+            <td>2 minutes ago</td>
+          </tr>
+          <tr>
+            <td>VAT Registration</td>
+            <td>
+              <ngx-govscot-status-tag status="warning"
+                >Limited</ngx-govscot-status-tag
+              >
+            </td>
+            <td>15 minutes ago</td>
+          </tr>
+          <tr>
+            <td>PAYE Services</td>
+            <td>
+              <ngx-govscot-status-tag status="error"
+                >Unavailable</ngx-govscot-status-tag
+              >
+            </td>
+            <td>1 hour ago</td>
+          </tr>
+        </tbody>
+      </ngx-govscot-table>
     </div>
-  </div>
 
-  <div class="example-section">
-    <h3>Corporation Tax - Business Activities (Character Count)</h3>
-    <p>Example with character count for Corporation Tax business activities:</p>
+    <h2>Text Input Examples</h2>
 
-    <div class="ds_form-group">
-      <label class="ds_label" for="business-activities-char">
-        Describe your business activities
-      </label>
-      <div class="ds_hint-text">
-        Provide a clear description of what your company does. This helps us
-        process your Corporation Tax application.
-      </div>
-      <ngx-govscot-textarea
-        [formControl]="businessActivitiesControl"
-        [rows]="5"
-        [maxlength]="500"
-        [showCharacterCount]="true"
-        placeholder="Describe your main business activities, products, or services..."
-        inputId="business-activities-char"
-        [spellcheck]="true"
-        autocapitalize="sentences"
-      />
-    </div>
-  </div>
-
-  <h2>Checkbox Examples</h2>
-
-  <div class="example-section">
-    <h3>Single Checkbox</h3>
-    <p>A single checkbox for accepting terms and conditions:</p>
-
-    <div class="ds_form-group">
-      <div class="ds_checkboxes">
-        <ngx-govscot-checkbox
-          [formControl]="termsControl"
-          inputId="terms"
-          label="I accept the terms and conditions"
-          hint="You must accept to continue with your application"
+    <div class="example-section">
+      <h3>Basic Text Input</h3>
+      <p>Simple text input for collecting user information:</p>
+      <div class="ds_form-group">
+        <label class="ds_label" for="company-name">Company name</label>
+        <ngx-govscot-text-input
+          [formControl]="companyNameControl"
+          inputId="company-name"
         />
       </div>
     </div>
-  </div>
 
-  <div class="example-section">
-    <h3>Multiple Checkbox Options</h3>
-    <p>Multiple checkboxes for selecting waste types:</p>
-
-    <div class="ds_form-group">
-      <fieldset class="ds_fieldset">
-        <legend class="ds_legend">
-          Which types of waste do you transport?
-        </legend>
-        <div class="ds_hint-text">Select all that apply</div>
-        <div class="ds_checkboxes">
-          <ngx-govscot-checkbox
-            [formControl]="wasteControl1"
-            inputId="waste-1"
-            label="Waste from animal carcasses"
-          />
-          <ngx-govscot-checkbox
-            [formControl]="wasteControl2"
-            inputId="waste-2"
-            label="Waste from mines or quarries"
-          />
-          <ngx-govscot-checkbox
-            [formControl]="wasteControl3"
-            inputId="waste-3"
-            label="Farm or agricultural waste"
-          />
+    <div class="example-section">
+      <h3>Text Input with Hint</h3>
+      <p>Text input with helpful hint text:</p>
+      <div class="ds_form-group">
+        <label class="ds_label" for="email-address">Email address</label>
+        <div class="ds_hint-text">
+          We'll use this to send you updates about your application
         </div>
-      </fieldset>
-    </div>
-  </div>
-
-  <div class="example-section">
-    <h3>Checkbox with Error State</h3>
-    <p>A required checkbox showing error state when not selected:</p>
-
-    <div
-      class="ds_form-group"
-      [class.ds_form-group--error]="
-        requiredCheckboxControl.touched && requiredCheckboxControl.errors
-      "
-    >
-      @if (requiredCheckboxControl.touched && requiredCheckboxControl.errors) {
-        <div class="ds_error-message">
-          <strong>Error:</strong> You must accept the privacy policy to continue
-        </div>
-      }
-      <div class="ds_checkboxes">
-        <ngx-govscot-checkbox
-          [formControl]="requiredCheckboxControl"
-          inputId="privacy-policy"
-          label="I accept the privacy policy"
-          hint="Required to process your application"
+        <ngx-govscot-text-input
+          [formControl]="emailControl"
+          type="email"
+          inputId="email-address"
         />
       </div>
     </div>
-  </div>
 
-  <div class="example-section">
-    <h3>Marketing Preferences</h3>
-    <p>Checkboxes for marketing communication preferences:</p>
+    <div class="example-section">
+      <h3>Fixed Width Inputs</h3>
+      <p>Different fixed width options for specific content types:</p>
 
-    <div class="ds_form-group">
-      <fieldset class="ds_fieldset">
-        <legend class="ds_legend">How would you like to hear from us?</legend>
-        <div class="ds_hint-text">
-          Select all that apply. You can change these preferences later.
+      <div class="ds_form-group">
+        <label class="ds_label" for="postcode">Postcode</label>
+        <ngx-govscot-text-input
+          [formControl]="postcodeControl"
+          [fixedWidth]="10"
+          inputId="postcode"
+        />
+      </div>
+
+      <div class="ds_form-group">
+        <label class="ds_label" for="phone">Phone number</label>
+        <ngx-govscot-text-input
+          [formControl]="phoneControl"
+          type="tel"
+          [fixedWidth]="20"
+          inputId="phone"
+        />
+      </div>
+
+      <div class="ds_form-group">
+        <label class="ds_label" for="year">Year</label>
+        <ngx-govscot-text-input
+          [formControl]="yearControl"
+          [fixedWidth]="4"
+          inputId="year"
+        />
+      </div>
+    </div>
+
+    <div class="example-section">
+      <h3>Fluid Width Inputs</h3>
+      <p>Responsive width inputs that adapt to container size:</p>
+
+      <div class="ds_form-group">
+        <label class="ds_label" for="address-1">Address line 1</label>
+        <ngx-govscot-text-input
+          [formControl]="address1Control"
+          width="two-thirds"
+          inputId="address-1"
+        />
+      </div>
+
+      <div class="ds_form-group">
+        <label class="ds_label" for="address-2"
+          >Address line 2 (optional)</label
+        >
+        <ngx-govscot-text-input
+          [formControl]="address2Control"
+          width="one-half"
+          inputId="address-2"
+        />
+      </div>
+
+      <div class="ds_form-group">
+        <label class="ds_label" for="city">City</label>
+        <ngx-govscot-text-input
+          [formControl]="cityControl"
+          width="one-third"
+          inputId="city"
+        />
+      </div>
+    </div>
+
+    <div class="example-section">
+      <h3>Currency Input</h3>
+      <p>Special currency input with symbol that cannot be deleted:</p>
+
+      <div class="ds_form-group">
+        <label class="ds_label" for="price-gbp">Price per month (GBP)</label>
+        <ngx-govscot-text-input
+          [formControl]="priceGbpControl"
+          [currency]="true"
+          currencySymbol="£"
+          [fixedWidth]="4"
+          inputId="price-gbp"
+        />
+      </div>
+
+      <div class="ds_form-group">
+        <label class="ds_label" for="price-usd">Price per month (USD)</label>
+        <ngx-govscot-text-input
+          [formControl]="priceUsdControl"
+          [currency]="true"
+          currencySymbol="$"
+          [fixedWidth]="4"
+          inputId="price-usd"
+        />
+      </div>
+    </div>
+
+    <div class="example-section">
+      <h3>Search Input with Button</h3>
+      <p>Text input with associated search button:</p>
+
+      <div class="ds_form-group">
+        <label class="ds_label" for="search">Search documents</label>
+        <ngx-govscot-text-input
+          [formControl]="searchControl"
+          [hasButton]="true"
+          buttonText="Search"
+          buttonIcon="search"
+          [fixedWidth]="20"
+          inputId="search"
+        />
+      </div>
+    </div>
+
+    <div class="example-section">
+      <h3>Inline Date Inputs</h3>
+      <p>Multiple related inputs displayed inline:</p>
+
+      <fieldset>
+        <legend>What is your date of birth?</legend>
+        <div class="ds_hint-text">For example, 31 3 1980</div>
+
+        <div class="ds_field-group ds_field-group--inline">
+          <div>
+            <label class="ds_label" for="day">Day</label>
+            <ngx-govscot-text-input
+              [formControl]="dayControl"
+              [fixedWidth]="2"
+              inputId="day"
+            />
+          </div>
+
+          <div>
+            <label class="ds_label" for="month">Month</label>
+            <ngx-govscot-text-input
+              [formControl]="monthControl"
+              [fixedWidth]="2"
+              inputId="month"
+            />
+          </div>
+
+          <div>
+            <label class="ds_label" for="year-birth">Year</label>
+            <ngx-govscot-text-input
+              [formControl]="yearBirthControl"
+              [fixedWidth]="4"
+              inputId="year-birth"
+            />
+          </div>
         </div>
+      </fieldset>
+    </div>
+
+    <h2>Textarea Examples</h2>
+
+    <div class="example-section">
+      <h3>Basic Textarea</h3>
+      <p>A simple textarea for multi-line text input:</p>
+
+      <div class="ds_form-group">
+        <label class="ds_label" for="description">Description</label>
+        <div class="ds_hint-text">
+          Provide a brief description of your enquiry
+        </div>
+        <ngx-govscot-textarea
+          [formControl]="descriptionControl"
+          [rows]="3"
+          placeholder="Enter your description here"
+          inputId="description"
+        />
+      </div>
+    </div>
+
+    <div class="example-section">
+      <h3>Large Textarea</h3>
+      <p>A larger textarea for detailed feedback or comments:</p>
+
+      <div class="ds_form-group">
+        <label class="ds_label" for="feedback">Detailed feedback</label>
+        <div class="ds_hint-text">
+          Please provide detailed feedback about your experience with this
+          service
+        </div>
+        <ngx-govscot-textarea
+          [formControl]="feedbackControl"
+          [rows]="8"
+          placeholder="Enter your detailed feedback here..."
+          inputId="feedback"
+        />
+      </div>
+    </div>
+
+    <div class="example-section">
+      <h3>Textarea with Character Limit</h3>
+      <p>Textarea with maximum character limit:</p>
+
+      <div class="ds_form-group">
+        <label class="ds_label" for="comments">Additional comments</label>
+        <div class="ds_hint-text">
+          Maximum 500 characters. Please keep your comments concise.
+        </div>
+        <ngx-govscot-textarea
+          [formControl]="commentsControl"
+          [rows]="4"
+          [maxlength]="500"
+          placeholder="Enter additional comments (max 500 characters)"
+          inputId="comments"
+        />
+      </div>
+    </div>
+
+    <div class="example-section">
+      <h3>Contact Form Message</h3>
+      <p>Textarea for contact form messages with proper accessibility:</p>
+
+      <div class="ds_form-group">
+        <label class="ds_label" for="message">Your message</label>
+        <div class="ds_hint-text">
+          Please describe your enquiry in detail. Do not include personal
+          information like National Insurance numbers or bank details.
+        </div>
+        <ngx-govscot-textarea
+          [formControl]="messageControl"
+          [rows]="6"
+          [maxlength]="2000"
+          [spellcheck]="true"
+          autocapitalize="sentences"
+          placeholder="Enter your message here..."
+          inputId="message"
+        />
+      </div>
+    </div>
+
+    <div class="example-section">
+      <h3>Corporation Tax Application - Business Description</h3>
+      <p>Example textarea for Corporation Tax business description:</p>
+
+      <div class="ds_form-group">
+        <label class="ds_label" for="business-description">
+          Describe your business activities
+        </label>
+        <div class="ds_hint-text">
+          Provide a clear description of what your company does. This helps us
+          process your Corporation Tax application.
+        </div>
+        <ngx-govscot-textarea
+          [formControl]="descriptionControl"
+          [rows]="5"
+          [maxlength]="1000"
+          placeholder="Describe your main business activities, products, or services..."
+          inputId="business-description"
+          [spellcheck]="true"
+          autocapitalize="sentences"
+        />
+      </div>
+    </div>
+
+    <h2>Textarea with Character Count Examples</h2>
+
+    <div class="example-section">
+      <h3>Basic Character Count</h3>
+      <p>Textarea with character count showing remaining characters:</p>
+
+      <div class="ds_form-group">
+        <label class="ds_label" for="basic-char-count">Brief description</label>
+        <div class="ds_hint-text">
+          Provide a brief description of your enquiry
+        </div>
+        <ngx-govscot-textarea
+          [formControl]="basicCharCountControl"
+          [rows]="3"
+          [maxlength]="200"
+          [showCharacterCount]="true"
+          placeholder="Enter your description here"
+          inputId="basic-char-count"
+        />
+      </div>
+    </div>
+
+    <div class="example-section">
+      <h3>Corporation Tax - Business Activities (Character Count)</h3>
+      <p>
+        Example with character count for Corporation Tax business activities:
+      </p>
+
+      <div class="ds_form-group">
+        <label class="ds_label" for="business-activities-char">
+          Describe your business activities
+        </label>
+        <div class="ds_hint-text">
+          Provide a clear description of what your company does. This helps us
+          process your Corporation Tax application.
+        </div>
+        <ngx-govscot-textarea
+          [formControl]="businessActivitiesControl"
+          [rows]="5"
+          [maxlength]="500"
+          [showCharacterCount]="true"
+          placeholder="Describe your main business activities, products, or services..."
+          inputId="business-activities-char"
+          [spellcheck]="true"
+          autocapitalize="sentences"
+        />
+      </div>
+    </div>
+
+    <h2>Checkbox Examples</h2>
+
+    <div class="example-section">
+      <h3>Single Checkbox</h3>
+      <p>A single checkbox for accepting terms and conditions:</p>
+
+      <div class="ds_form-group">
         <div class="ds_checkboxes">
           <ngx-govscot-checkbox
-            [formControl]="emailUpdatesControl"
-            inputId="email-updates"
-            label="Email updates"
-            hint="Important updates about your application and services"
-          />
-          <ngx-govscot-checkbox
-            [formControl]="smsUpdatesControl"
-            inputId="sms-updates"
-            label="Text message updates"
-            hint="Urgent notifications and reminders"
-          />
-          <ngx-govscot-checkbox
-            [formControl]="postalUpdatesControl"
-            inputId="postal-updates"
-            label="Postal updates"
-            hint="Annual reports and service information"
+            [formControl]="termsControl"
+            inputId="terms"
+            label="I accept the terms and conditions"
+            hint="You must accept to continue with your application"
           />
         </div>
-      </fieldset>
-    </div>
-  </div>
-
-  <div class="example-section">
-    <h3>Corporation Tax Checkboxes</h3>
-    <p>Example checkboxes for Corporation Tax service:</p>
-
-    <div class="ds_form-group">
-      <fieldset class="ds_fieldset">
-        <legend class="ds_legend">
-          Which corporation tax services do you need?
-        </legend>
-        <div class="ds_hint-text">Select all that apply to your business</div>
-        <div class="ds_checkboxes">
-          <ngx-govscot-checkbox
-            [formControl]="ctRegisterControl"
-            inputId="ct-register"
-            label="Register for Corporation Tax"
-            hint="For new companies starting business in Scotland"
-          />
-          <ngx-govscot-checkbox
-            [formControl]="ctReturnControl"
-            inputId="ct-return"
-            label="File Corporation Tax return"
-            hint="Submit your annual Corporation Tax return"
-          />
-          <ngx-govscot-checkbox
-            [formControl]="ctPaymentControl"
-            inputId="ct-payment"
-            label="Make Corporation Tax payment"
-            hint="Pay your Corporation Tax liability"
-          />
-        </div>
-      </fieldset>
-    </div>
-  </div>
-
-  <h2>Radio Examples</h2>
-
-  <div class="example-section">
-    <h3>Business Type Selection</h3>
-    <p>Radio buttons for selecting business type:</p>
-
-    <div class="ds_form-group">
-      <fieldset class="ds_fieldset">
-        <legend class="ds_legend">
-          What type of business are you registering?
-        </legend>
-        <div class="ds_hint-text">Select one option</div>
-        <ngx-govscot-radio-group [formControl]="businessTypeControl">
-          <ngx-govscot-radio-option
-            value="limited-company"
-            label="Limited company"
-            hint="A company that's legally separate from the people who run it"
-          />
-          <ngx-govscot-radio-option
-            value="sole-trader"
-            label="Sole trader"
-            hint="You run your own business as an individual"
-          />
-          <ngx-govscot-radio-option
-            value="partnership"
-            label="Partnership"
-            hint="A business owned by 2 or more people"
-          />
-          <ngx-govscot-radio-option
-            value="limited-partnership"
-            label="Limited partnership"
-            hint="A partnership with some partners having limited liability"
-          />
-        </ngx-govscot-radio-group>
-      </fieldset>
-    </div>
-  </div>
-
-  <div class="example-section">
-    <h3>Contact Method Preference</h3>
-    <p>Radio buttons with divider option:</p>
-
-    <div class="ds_form-group">
-      <fieldset class="ds_fieldset">
-        <legend class="ds_legend">How would you like us to contact you?</legend>
-        <ngx-govscot-radio-group [formControl]="contactMethodControl">
-          <ngx-govscot-radio-option
-            value="email"
-            label="Email"
-            hint="We'll send updates to your email address"
-          />
-          <ngx-govscot-radio-option
-            value="phone"
-            label="Phone"
-            hint="We'll call you during business hours"
-          />
-          <ngx-govscot-radio-option
-            value="post"
-            label="Post"
-            hint="We'll send letters to your registered address"
-          />
-          <ngx-govscot-radio-option
-            value="none"
-            label="Do not contact me"
-            hint="You will not receive any updates"
-            [isDivided]="true"
-          />
-        </ngx-govscot-radio-group>
-      </fieldset>
-    </div>
-  </div>
-
-  <div class="example-section">
-    <h3>Experience Level</h3>
-    <p>Simple radio button selection for experience:</p>
-
-    <div class="ds_form-group">
-      <fieldset class="ds_fieldset">
-        <legend class="ds_legend">
-          How familiar are you with Corporation Tax?
-        </legend>
-        <ngx-govscot-radio-group [formControl]="experienceControl">
-          <ngx-govscot-radio-option value="new" label="This is my first time" />
-          <ngx-govscot-radio-option
-            value="some"
-            label="I have some experience"
-          />
-          <ngx-govscot-radio-option
-            value="experienced"
-            label="I'm very experienced"
-          />
-        </ngx-govscot-radio-group>
-      </fieldset>
-    </div>
-  </div>
-
-  <div class="example-section">
-    <h3>Support Requirements</h3>
-    <p>Radio buttons for support needs with detailed hints:</p>
-
-    <div class="ds_form-group">
-      <fieldset class="ds_fieldset">
-        <legend class="ds_legend">
-          Do you need additional support with your application?
-        </legend>
-        <div class="ds_hint-text">
-          This helps us provide the right level of assistance
-        </div>
-        <ngx-govscot-radio-group [formControl]="supportControl">
-          <ngx-govscot-radio-option
-            value="no-support"
-            label="No, I can complete this myself"
-            hint="You're confident using online services"
-          />
-          <ngx-govscot-radio-option
-            value="some-support"
-            label="Yes, I need some help"
-            hint="You might need guidance with some sections"
-          />
-          <ngx-govscot-radio-option
-            value="full-support"
-            label="Yes, I need full support"
-            hint="You'd like someone to help you through the entire process"
-          />
-          <ngx-govscot-radio-option
-            value="phone-support"
-            label="I prefer to complete this over the phone"
-            hint="We can take your details over the phone instead"
-            [isDivided]="true"
-          />
-        </ngx-govscot-radio-group>
-      </fieldset>
-    </div>
-  </div>
-
-  <h2>Select Examples</h2>
-
-  <div class="example-section">
-    <h3>Country Selection</h3>
-    <p>A select dropdown for choosing a country:</p>
-
-    <div class="ds_form-group">
-      <label class="ds_label" for="country-select">Country</label>
-      <div class="ds_hint-text">
-        Select the country where your business is based
       </div>
-      <ngx-govscot-select
-        [formControl]="countryControl"
-        [options]="countryOptions"
-        inputId="country-select"
-      />
     </div>
-  </div>
 
-  <div class="example-section">
-    <h3>Industry Classification</h3>
-    <p>A select dropdown with many options for industry classification:</p>
+    <div class="example-section">
+      <h3>Multiple Checkbox Options</h3>
+      <p>Multiple checkboxes for selecting waste types:</p>
 
-    <div class="ds_form-group">
-      <label class="ds_label" for="industry-select">Industry sector</label>
-      <div class="ds_hint-text">
-        Choose the sector that best describes your business activity
+      <div class="ds_form-group">
+        <fieldset class="ds_fieldset">
+          <legend class="ds_legend">
+            Which types of waste do you transport?
+          </legend>
+          <div class="ds_hint-text">Select all that apply</div>
+          <div class="ds_checkboxes">
+            <ngx-govscot-checkbox
+              [formControl]="wasteControl1"
+              inputId="waste-1"
+              label="Waste from animal carcasses"
+            />
+            <ngx-govscot-checkbox
+              [formControl]="wasteControl2"
+              inputId="waste-2"
+              label="Waste from mines or quarries"
+            />
+            <ngx-govscot-checkbox
+              [formControl]="wasteControl3"
+              inputId="waste-3"
+              label="Farm or agricultural waste"
+            />
+          </div>
+        </fieldset>
       </div>
-      <ngx-govscot-select
-        [formControl]="industryControl"
-        [options]="industryOptions"
-        inputId="industry-select"
-      />
     </div>
-  </div>
 
-  <div class="example-section">
-    <h3>Accounting Period End</h3>
-    <p>Select dropdown for choosing accounting period end date:</p>
+    <div class="example-section">
+      <h3>Checkbox with Error State</h3>
+      <p>A required checkbox showing error state when not selected:</p>
 
-    <div class="ds_form-group">
-      <label class="ds_label" for="year-end-select"
-        >Accounting period end</label
+      <div
+        class="ds_form-group"
+        [class.ds_form-group--error]="
+          requiredCheckboxControl.touched && requiredCheckboxControl.errors
+        "
       >
-      <div class="ds_hint-text">
-        When does your company's accounting period end?
+        @if (
+          requiredCheckboxControl.touched && requiredCheckboxControl.errors
+        ) {
+          <div class="ds_error-message">
+            <strong>Error:</strong> You must accept the privacy policy to
+            continue
+          </div>
+        }
+        <div class="ds_checkboxes">
+          <ngx-govscot-checkbox
+            [formControl]="requiredCheckboxControl"
+            inputId="privacy-policy"
+            label="I accept the privacy policy"
+            hint="Required to process your application"
+          />
+        </div>
       </div>
-      <ngx-govscot-select
-        [formControl]="companyYearControl"
-        [options]="companyYearOptions"
-        inputId="year-end-select"
+    </div>
+
+    <div class="example-section">
+      <h3>Marketing Preferences</h3>
+      <p>Checkboxes for marketing communication preferences:</p>
+
+      <div class="ds_form-group">
+        <fieldset class="ds_fieldset">
+          <legend class="ds_legend">How would you like to hear from us?</legend>
+          <div class="ds_hint-text">
+            Select all that apply. You can change these preferences later.
+          </div>
+          <div class="ds_checkboxes">
+            <ngx-govscot-checkbox
+              [formControl]="emailUpdatesControl"
+              inputId="email-updates"
+              label="Email updates"
+              hint="Important updates about your application and services"
+            />
+            <ngx-govscot-checkbox
+              [formControl]="smsUpdatesControl"
+              inputId="sms-updates"
+              label="Text message updates"
+              hint="Urgent notifications and reminders"
+            />
+            <ngx-govscot-checkbox
+              [formControl]="postalUpdatesControl"
+              inputId="postal-updates"
+              label="Postal updates"
+              hint="Annual reports and service information"
+            />
+          </div>
+        </fieldset>
+      </div>
+    </div>
+
+    <div class="example-section">
+      <h3>Corporation Tax Checkboxes</h3>
+      <p>Example checkboxes for Corporation Tax service:</p>
+
+      <div class="ds_form-group">
+        <fieldset class="ds_fieldset">
+          <legend class="ds_legend">
+            Which corporation tax services do you need?
+          </legend>
+          <div class="ds_hint-text">Select all that apply to your business</div>
+          <div class="ds_checkboxes">
+            <ngx-govscot-checkbox
+              [formControl]="ctRegisterControl"
+              inputId="ct-register"
+              label="Register for Corporation Tax"
+              hint="For new companies starting business in Scotland"
+            />
+            <ngx-govscot-checkbox
+              [formControl]="ctReturnControl"
+              inputId="ct-return"
+              label="File Corporation Tax return"
+              hint="Submit your annual Corporation Tax return"
+            />
+            <ngx-govscot-checkbox
+              [formControl]="ctPaymentControl"
+              inputId="ct-payment"
+              label="Make Corporation Tax payment"
+              hint="Pay your Corporation Tax liability"
+            />
+          </div>
+        </fieldset>
+      </div>
+    </div>
+
+    <h2>Radio Examples</h2>
+
+    <div class="example-section">
+      <h3>Business Type Selection</h3>
+      <p>Radio buttons for selecting business type:</p>
+
+      <div class="ds_form-group">
+        <fieldset class="ds_fieldset">
+          <legend class="ds_legend">
+            What type of business are you registering?
+          </legend>
+          <div class="ds_hint-text">Select one option</div>
+          <ngx-govscot-radio-group [formControl]="businessTypeControl">
+            <ngx-govscot-radio-option
+              value="limited-company"
+              label="Limited company"
+              hint="A company that's legally separate from the people who run it"
+            />
+            <ngx-govscot-radio-option
+              value="sole-trader"
+              label="Sole trader"
+              hint="You run your own business as an individual"
+            />
+            <ngx-govscot-radio-option
+              value="partnership"
+              label="Partnership"
+              hint="A business owned by 2 or more people"
+            />
+            <ngx-govscot-radio-option
+              value="limited-partnership"
+              label="Limited partnership"
+              hint="A partnership with some partners having limited liability"
+            />
+          </ngx-govscot-radio-group>
+        </fieldset>
+      </div>
+    </div>
+
+    <div class="example-section">
+      <h3>Contact Method Preference</h3>
+      <p>Radio buttons with divider option:</p>
+
+      <div class="ds_form-group">
+        <fieldset class="ds_fieldset">
+          <legend class="ds_legend">
+            How would you like us to contact you?
+          </legend>
+          <ngx-govscot-radio-group [formControl]="contactMethodControl">
+            <ngx-govscot-radio-option
+              value="email"
+              label="Email"
+              hint="We'll send updates to your email address"
+            />
+            <ngx-govscot-radio-option
+              value="phone"
+              label="Phone"
+              hint="We'll call you during business hours"
+            />
+            <ngx-govscot-radio-option
+              value="post"
+              label="Post"
+              hint="We'll send letters to your registered address"
+            />
+            <ngx-govscot-radio-option
+              value="none"
+              label="Do not contact me"
+              hint="You will not receive any updates"
+              [isDivided]="true"
+            />
+          </ngx-govscot-radio-group>
+        </fieldset>
+      </div>
+    </div>
+
+    <div class="example-section">
+      <h3>Experience Level</h3>
+      <p>Simple radio button selection for experience:</p>
+
+      <div class="ds_form-group">
+        <fieldset class="ds_fieldset">
+          <legend class="ds_legend">
+            How familiar are you with Corporation Tax?
+          </legend>
+          <ngx-govscot-radio-group [formControl]="experienceControl">
+            <ngx-govscot-radio-option
+              value="new"
+              label="This is my first time"
+            />
+            <ngx-govscot-radio-option
+              value="some"
+              label="I have some experience"
+            />
+            <ngx-govscot-radio-option
+              value="experienced"
+              label="I'm very experienced"
+            />
+          </ngx-govscot-radio-group>
+        </fieldset>
+      </div>
+    </div>
+
+    <div class="example-section">
+      <h3>Support Requirements</h3>
+      <p>Radio buttons for support needs with detailed hints:</p>
+
+      <div class="ds_form-group">
+        <fieldset class="ds_fieldset">
+          <legend class="ds_legend">
+            Do you need additional support with your application?
+          </legend>
+          <div class="ds_hint-text">
+            This helps us provide the right level of assistance
+          </div>
+          <ngx-govscot-radio-group [formControl]="supportControl">
+            <ngx-govscot-radio-option
+              value="no-support"
+              label="No, I can complete this myself"
+              hint="You're confident using online services"
+            />
+            <ngx-govscot-radio-option
+              value="some-support"
+              label="Yes, I need some help"
+              hint="You might need guidance with some sections"
+            />
+            <ngx-govscot-radio-option
+              value="full-support"
+              label="Yes, I need full support"
+              hint="You'd like someone to help you through the entire process"
+            />
+            <ngx-govscot-radio-option
+              value="phone-support"
+              label="I prefer to complete this over the phone"
+              hint="We can take your details over the phone instead"
+              [isDivided]="true"
+            />
+          </ngx-govscot-radio-group>
+        </fieldset>
+      </div>
+    </div>
+
+    <h2>Select Examples</h2>
+
+    <div class="example-section">
+      <h3>Country Selection</h3>
+      <p>A select dropdown for choosing a country:</p>
+
+      <div class="ds_form-group">
+        <label class="ds_label" for="country-select">Country</label>
+        <div class="ds_hint-text">
+          Select the country where your business is based
+        </div>
+        <ngx-govscot-select
+          [formControl]="countryControl"
+          [options]="countryOptions"
+          inputId="country-select"
+        />
+      </div>
+    </div>
+
+    <div class="example-section">
+      <h3>Industry Classification</h3>
+      <p>A select dropdown with many options for industry classification:</p>
+
+      <div class="ds_form-group">
+        <label class="ds_label" for="industry-select">Industry sector</label>
+        <div class="ds_hint-text">
+          Choose the sector that best describes your business activity
+        </div>
+        <ngx-govscot-select
+          [formControl]="industryControl"
+          [options]="industryOptions"
+          inputId="industry-select"
+        />
+      </div>
+    </div>
+
+    <div class="example-section">
+      <h3>Accounting Period End</h3>
+      <p>Select dropdown for choosing accounting period end date:</p>
+
+      <div class="ds_form-group">
+        <label class="ds_label" for="year-end-select"
+          >Accounting period end</label
+        >
+        <div class="ds_hint-text">
+          When does your company's accounting period end?
+        </div>
+        <ngx-govscot-select
+          [formControl]="companyYearControl"
+          [options]="companyYearOptions"
+          inputId="year-end-select"
+        />
+      </div>
+    </div>
+
+    <div class="example-section">
+      <h3>Priority Level with Error State</h3>
+      <p>Select dropdown showing error state when required field is empty:</p>
+
+      <div
+        class="ds_form-group"
+        [class.ds_form-group--error]="
+          priorityControl.touched && !priorityControl.value
+        "
+      >
+        <label class="ds_label" for="priority-select">
+          Priority level
+          <span class="ds_required">*</span>
+        </label>
+        <div class="ds_hint-text">How urgent is your enquiry?</div>
+        @if (priorityControl.touched && !priorityControl.value) {
+          <div class="ds_error-message">
+            <strong>Error:</strong> Please select a priority level
+          </div>
+        }
+        <ngx-govscot-select
+          [formControl]="priorityControl"
+          [options]="priorityOptions"
+          inputId="priority-select"
+        />
+      </div>
+    </div>
+
+    <div class="example-section">
+      <h3>Corporation Tax Service Selection</h3>
+      <p>
+        Example showing how select components can be used in a Corporation Tax
+        service:
+      </p>
+
+      <div class="ds_form-group">
+        <fieldset class="ds_fieldset">
+          <legend class="ds_legend">Corporation Tax Service Request</legend>
+          <div class="ds_hint-text">
+            Tell us about your business and enquiry
+          </div>
+
+          <div style="margin-bottom: 1.5rem">
+            <label class="ds_label" for="ct-country">Business location</label>
+            <ngx-govscot-select
+              [formControl]="countryControl"
+              [options]="countryOptions"
+              inputId="ct-country"
+            />
+          </div>
+
+          <div style="margin-bottom: 1.5rem">
+            <label class="ds_label" for="ct-industry">Business sector</label>
+            <ngx-govscot-select
+              [formControl]="industryControl"
+              [options]="industryOptions"
+              inputId="ct-industry"
+            />
+          </div>
+
+          <div>
+            <label class="ds_label" for="ct-priority">Enquiry priority</label>
+            <ngx-govscot-select
+              [formControl]="priorityControl"
+              [options]="priorityOptions"
+              inputId="ct-priority"
+            />
+          </div>
+        </fieldset>
+      </div>
+    </div>
+
+    <h2>Pagination Examples</h2>
+
+    <div class="example-section">
+      <h3>Search Results Pagination</h3>
+      <p>
+        Pagination for search results showing 247 total items with 20 items per
+        page:
+      </p>
+      <ngx-govscot-pagination
+        [itemCount]="searchResults.total"
+        [itemsPerPage]="searchResults.itemsPerPage"
+        [currentPage]="searchResults.currentPage"
+        (pageChange)="onSearchPageChange($event)"
+        (previousClick)="onSearchPreviousClick()"
+        (nextClick)="onSearchNextClick()"
+      />
+      <p class="example-info">
+        <strong>Current page:</strong> {{ searchResults.currentPage }} of
+        {{ searchTotalPages }}
+        <br />
+        <strong>Showing items:</strong> {{ searchStartItem }} -
+        {{ searchEndItem }} of {{ searchResults.total }}
+      </p>
+    </div>
+
+    <div class="example-section">
+      <h3>Document Archive Pagination</h3>
+      <p>
+        Pagination for a large document archive with 1,543 documents, showing 25
+        per page:
+      </p>
+      <ngx-govscot-pagination
+        [itemCount]="documentArchive.total"
+        [itemsPerPage]="documentArchive.itemsPerPage"
+        [currentPage]="documentArchive.currentPage"
+        (pageChange)="onArchivePageChange($event)"
+        (previousClick)="onArchivePreviousClick()"
+        (nextClick)="onArchiveNextClick()"
+      />
+      <p class="example-info">
+        <strong>Current page:</strong> {{ documentArchive.currentPage }} of
+        {{ archiveTotalPages }}
+        <br />
+        <strong>Showing documents:</strong> {{ archiveStartItem }} -
+        {{ archiveEndItem }} of {{ documentArchive.total }}
+      </p>
+    </div>
+
+    <div class="example-section">
+      <h3>Few Pages Example</h3>
+      <p>
+        When there are only a few pages (7 or fewer), all page numbers are
+        shown:
+      </p>
+      <ngx-govscot-pagination
+        [itemCount]="50"
+        [itemsPerPage]="10"
+        [currentPage]="3"
       />
     </div>
-  </div>
 
-  <div class="example-section">
-    <h3>Priority Level with Error State</h3>
-    <p>Select dropdown showing error state when required field is empty:</p>
-
-    <div
-      class="ds_form-group"
-      [class.ds_form-group--error]="
-        priorityControl.touched && !priorityControl.value
-      "
-    >
-      <label class="ds_label" for="priority-select">
-        Priority level
-        <span class="ds_required">*</span>
-      </label>
-      <div class="ds_hint-text">How urgent is your enquiry?</div>
-      @if (priorityControl.touched && !priorityControl.value) {
-        <div class="ds_error-message">
-          <strong>Error:</strong> Please select a priority level
-        </div>
-      }
-      <ngx-govscot-select
-        [formControl]="priorityControl"
-        [options]="priorityOptions"
-        inputId="priority-select"
+    <div class="example-section">
+      <h3>Single Page Example</h3>
+      <p>
+        When there's only one page of content, only the page number is shown:
+      </p>
+      <ngx-govscot-pagination
+        [itemCount]="8"
+        [itemsPerPage]="10"
+        [currentPage]="1"
       />
     </div>
-  </div>
 
-  <div class="example-section">
-    <h3>Corporation Tax Service Selection</h3>
-    <p>
-      Example showing how select components can be used in a Corporation Tax
-      service:
-    </p>
-
-    <div class="ds_form-group">
-      <fieldset class="ds_fieldset">
-        <legend class="ds_legend">Corporation Tax Service Request</legend>
-        <div class="ds_hint-text">Tell us about your business and enquiry</div>
-
-        <div style="margin-bottom: 1.5rem">
-          <label class="ds_label" for="ct-country">Business location</label>
-          <ngx-govscot-select
-            [formControl]="countryControl"
-            [options]="countryOptions"
-            inputId="ct-country"
-          />
-        </div>
-
-        <div style="margin-bottom: 1.5rem">
-          <label class="ds_label" for="ct-industry">Business sector</label>
-          <ngx-govscot-select
-            [formControl]="industryControl"
-            [options]="industryOptions"
-            inputId="ct-industry"
-          />
-        </div>
-
-        <div>
-          <label class="ds_label" for="ct-priority">Enquiry priority</label>
-          <ngx-govscot-select
-            [formControl]="priorityControl"
-            [options]="priorityOptions"
-            inputId="ct-priority"
-          />
-        </div>
-      </fieldset>
+    <div class="example-section">
+      <h3>Custom Labels (Gaelic)</h3>
+      <p>Pagination with custom labels in Scottish Gaelic:</p>
+      <ngx-govscot-pagination
+        [itemCount]="200"
+        [itemsPerPage]="20"
+        [currentPage]="5"
+        previousTitle="Roimhe"
+        nextTitle="Air adhart"
+      />
     </div>
-  </div>
 
-  <h2>Pagination Examples</h2>
+    <div class="example-section">
+      <h3>Corporation Tax Records Pagination</h3>
+      <p>
+        Example showing pagination for Corporation Tax records in a government
+        service:
+      </p>
+      <ngx-govscot-pagination
+        [itemCount]="892"
+        [itemsPerPage]="15"
+        [currentPage]="12"
+        previousTitle="Previous records"
+        nextTitle="Next records"
+      />
+      <p class="example-info">
+        This example shows how pagination can be used in a Corporation Tax
+        service to navigate through large sets of tax records or applications.
+      </p>
+    </div>
 
-  <div class="example-section">
-    <h3>Search Results Pagination</h3>
-    <p>
-      Pagination for search results showing 247 total items with 20 items per
-      page:
-    </p>
-    <ngx-govscot-pagination
-      [itemCount]="searchResults.total"
-      [itemsPerPage]="searchResults.itemsPerPage"
-      [currentPage]="searchResults.currentPage"
-      (pageChange)="onSearchPageChange($event)"
-      (previousClick)="onSearchPreviousClick()"
-      (nextClick)="onSearchNextClick()"
+    <h2>File Download Examples</h2>
+
+    <div class="example-section">
+      <h3>Basic File Download</h3>
+      <p>A simple file download with title and metadata:</p>
+      <ngx-govscot-file-download
+        title="Corporation Tax Guide for Small Businesses"
+        href="/downloads/corporation-tax-guide.pdf"
+        [metadata]="[
+          { key: 'File type', value: '24 page PDF' },
+          { key: 'File size', value: '2.1 MB' },
+        ]"
+      />
+    </div>
+
+    <div class="example-section">
+      <h3>File Download with Thumbnail</h3>
+      <p>A file download with a custom thumbnail image:</p>
+      <ngx-govscot-file-download
+        title="Scotland's Artificial Intelligence Strategy - Trustworthy, Ethical and Inclusive"
+        href="/downloads/ai-strategy.pdf"
+        thumbnailSrc="https://placehold.co/200x260/0065bd/ffffff?text=AI+Strategy"
+        thumbnailAlt="AI Strategy document cover"
+        [thumbnailWidth]="200"
+        [thumbnailHeight]="260"
+        [metadata]="[
+          { key: 'File type', value: '44 page PDF' },
+          { key: 'File size', value: '7.2 MB' },
+        ]"
+      />
+    </div>
+
+    <div class="example-section">
+      <h3>Highlighted File Download</h3>
+      <p>A highlighted file download to give it prominence:</p>
+      <ngx-govscot-file-download
+        title="Essential Tax Return Forms 2024"
+        href="/downloads/tax-forms-2024.pdf"
+        [highlighted]="true"
+        thumbnailSrc="https://placehold.co/200x260/dc2626/ffffff?text=Tax+Forms"
+        thumbnailAlt="Tax forms document cover"
+        [thumbnailWidth]="200"
+        [thumbnailHeight]="260"
+        [metadata]="[
+          { key: 'File type', value: '8 page PDF' },
+          { key: 'File size', value: '1.4 MB' },
+          { key: 'Updated', value: 'January 2024' },
+        ]"
+      />
+    </div>
+
+    <div class="example-section">
+      <h3>File Download with Category Links</h3>
+      <p>A file download with metadata containing links:</p>
+      <ngx-govscot-file-download
+        title="Environmental Impact Assessment Guidelines"
+        href="/downloads/environmental-guidelines.pdf"
+        thumbnailSrc="https://placehold.co/200x260/4d7c0f/ffffff?text=Environment"
+        thumbnailAlt="Environmental guidelines document"
+        [thumbnailWidth]="200"
+        [thumbnailHeight]="260"
+        [metadata]="[
+          { key: 'Category', value: 'Environment', link: '/environment' },
+          { key: 'File type', value: '32 page PDF' },
+          { key: 'File size', value: '4.8 MB' },
+          {
+            key: 'Department',
+            value: 'Environment & Climate Change',
+            link: '/departments/environment',
+          },
+        ]"
+      />
+    </div>
+
+    <div class="example-section">
+      <h3>File Download without Thumbnail</h3>
+      <p>A file download with just text content and metadata:</p>
+      <ngx-govscot-file-download
+        title="Privacy Policy and Data Protection Notice"
+        href="/downloads/privacy-policy.pdf"
+        [metadata]="[
+          { key: 'File type', value: '12 page PDF' },
+          { key: 'File size', value: '892 KB' },
+          { key: 'Last updated', value: 'March 2024' },
+        ]"
+      />
+    </div>
+
+    <!-- Feature Header Examples -->
+    <h2>Feature Header Component</h2>
+
+    <!-- Basic feature header -->
+    <ngx-govscot-feature-header
+      title="Scottish Agriculture"
+      content="Supporting sustainable farming practices across Scotland's diverse landscapes and communities."
     />
-    <p class="example-info">
-      <strong>Current page:</strong> {{ searchResults.currentPage }} of
-      {{ searchTotalPages }}
-      <br />
-      <strong>Showing items:</strong> {{ searchStartItem }} -
-      {{ searchEndItem }} of {{ searchResults.total }}
-    </p>
-  </div>
 
-  <div class="example-section">
-    <h3>Document Archive Pagination</h3>
-    <p>
-      Pagination for a large document archive with 1,543 documents, showing 25
-      per page:
-    </p>
-    <ngx-govscot-pagination
-      [itemCount]="documentArchive.total"
-      [itemsPerPage]="documentArchive.itemsPerPage"
-      [currentPage]="documentArchive.currentPage"
-      (pageChange)="onArchivePageChange($event)"
-      (previousClick)="onArchivePreviousClick()"
-      (nextClick)="onArchiveNextClick()"
+    <!-- Feature header with image -->
+    <ngx-govscot-feature-header
+      title="Environment & Climate"
+      content="Leading Scotland's response to climate change through innovative policies and community action."
+      imageSrc="https://placehold.co/400x300/0065bd/ffffff?text=Scottish+Agriculture"
+      imageAlt="Scottish agricultural landscape"
+      [imageWidth]="400"
+      [imageHeight]="300"
     />
-    <p class="example-info">
-      <strong>Current page:</strong> {{ documentArchive.currentPage }} of
-      {{ archiveTotalPages }}
-      <br />
-      <strong>Showing documents:</strong> {{ archiveStartItem }} -
-      {{ archiveEndItem }} of {{ documentArchive.total }}
-    </p>
-  </div>
 
-  <div class="example-section">
-    <h3>Few Pages Example</h3>
-    <p>
-      When there are only a few pages (7 or fewer), all page numbers are shown:
-    </p>
-    <ngx-govscot-pagination
-      [itemCount]="50"
-      [itemsPerPage]="10"
-      [currentPage]="3"
+    <!-- Colored background variant -->
+    <ngx-govscot-feature-header
+      title="Innovation Hub"
+      content="Driving technological advancement and entrepreneurship across Scotland."
+      imageSrc="https://placehold.co/400x300/4d7c0f/ffffff?text=Environment"
+      imageAlt="Environmental technology"
+      [imageWidth]="400"
+      [imageHeight]="300"
+      background="tertiary"
     />
-  </div>
 
-  <div class="example-section">
-    <h3>Single Page Example</h3>
-    <p>When there's only one page of content, only the page number is shown:</p>
-    <ngx-govscot-pagination
-      [itemCount]="8"
-      [itemsPerPage]="10"
-      [currentPage]="1"
+    <!-- Full width with brand background -->
+    <ngx-govscot-feature-header
+      title="Digital Services"
+      content="Transforming public services through digital innovation and user-centered design."
+      imageSrc="https://placehold.co/400x300/002d54/ffffff?text=Innovation"
+      imageAlt="Digital innovation"
+      [imageWidth]="400"
+      [imageHeight]="300"
+      background="brand"
+      [fullWidth]="true"
     />
-  </div>
 
-  <div class="example-section">
-    <h3>Custom Labels (Gaelic)</h3>
-    <p>Pagination with custom labels in Scottish Gaelic:</p>
-    <ngx-govscot-pagination
-      [itemCount]="200"
-      [itemsPerPage]="20"
-      [currentPage]="5"
-      previousTitle="Roimhe"
-      nextTitle="Air adhart"
+    <!-- Wide text layout -->
+    <ngx-govscot-feature-header
+      title="Community Engagement"
+      content="Building stronger communities through participation, collaboration, and shared decision-making processes."
+      imageSrc="https://placehold.co/300x300/5b21b6/ffffff?text=Digital+Services"
+      imageAlt="Community meeting"
+      [imageWidth]="300"
+      [imageHeight]="300"
+      [wideText]="true"
     />
-  </div>
 
-  <div class="example-section">
-    <h3>Corporation Tax Records Pagination</h3>
-    <p>
-      Example showing pagination for Corporation Tax records in a government
-      service:
-    </p>
-    <ngx-govscot-pagination
-      [itemCount]="892"
-      [itemsPerPage]="15"
-      [currentPage]="12"
-      previousTitle="Previous records"
-      nextTitle="Next records"
+    <!-- Top-aligned layout -->
+    <ngx-govscot-feature-header
+      title="Healthcare Innovation"
+      content="Advancing medical research and healthcare delivery for better outcomes across Scotland."
+      imageSrc="https://placehold.co/400x200/dc2626/ffffff?text=Community"
+      imageAlt="Healthcare technology"
+      [imageWidth]="400"
+      [imageHeight]="200"
+      [topAligned]="true"
     />
-    <p class="example-info">
-      This example shows how pagination can be used in a Corporation Tax service
-      to navigate through large sets of tax records or applications.
-    </p>
-  </div>
 
-  <h2>File Download Examples</h2>
-
-  <div class="example-section">
-    <h3>Basic File Download</h3>
-    <p>A simple file download with title and metadata:</p>
-    <ngx-govscot-file-download
-      title="Corporation Tax Guide for Small Businesses"
-      href="/downloads/corporation-tax-guide.pdf"
-      [metadata]="[
-        { key: 'File type', value: '24 page PDF' },
-        { key: 'File size', value: '2.1 MB' },
-      ]"
+    <!-- 16:9 aspect ratio -->
+    <ngx-govscot-feature-header
+      title="Education Excellence"
+      content="Empowering learners of all ages through quality education and lifelong learning opportunities."
+      imageSrc="https://placehold.co/800x450/059669/ffffff?text=Healthcare"
+      imageAlt="Educational technology"
+      [imageWidth]="800"
+      [imageHeight]="450"
+      aspectRatio="16:9"
     />
-  </div>
 
-  <div class="example-section">
-    <h3>File Download with Thumbnail</h3>
-    <p>A file download with a custom thumbnail image:</p>
-    <ngx-govscot-file-download
-      title="Scotland's Artificial Intelligence Strategy - Trustworthy, Ethical and Inclusive"
-      href="/downloads/ai-strategy.pdf"
-      thumbnailSrc="https://placehold.co/200x260/0065bd/ffffff?text=AI+Strategy"
-      thumbnailAlt="AI Strategy document cover"
-      [thumbnailWidth]="200"
-      [thumbnailHeight]="260"
-      [metadata]="[
-        { key: 'File type', value: '44 page PDF' },
-        { key: 'File size', value: '7.2 MB' },
-      ]"
+    <!-- Cover image with no padding -->
+    <ngx-govscot-feature-header
+      title="Cultural Heritage"
+      content="Preserving and celebrating Scotland's rich cultural heritage for future generations."
+      imageSrc="https://placehold.co/400x400/ea580c/ffffff?text=Education"
+      imageAlt="Scottish heritage site"
+      [imageWidth]="400"
+      [imageHeight]="400"
+      imageScale="cover"
+      [noPadding]="true"
     />
-  </div>
 
-  <div class="example-section">
-    <h3>Highlighted File Download</h3>
-    <p>A highlighted file download to give it prominence:</p>
-    <ngx-govscot-file-download
-      title="Essential Tax Return Forms 2024"
-      href="/downloads/tax-forms-2024.pdf"
-      [highlighted]="true"
-      thumbnailSrc="https://placehold.co/200x260/dc2626/ffffff?text=Tax+Forms"
-      thumbnailAlt="Tax forms document cover"
-      [thumbnailWidth]="200"
-      [thumbnailHeight]="260"
-      [metadata]="[
-        { key: 'File type', value: '8 page PDF' },
-        { key: 'File size', value: '1.4 MB' },
-        { key: 'Updated', value: 'January 2024' },
-      ]"
-    />
-  </div>
+    <!-- Title only -->
+    <ngx-govscot-feature-header title="Get Involved" />
+  </main>
 
-  <div class="example-section">
-    <h3>File Download with Category Links</h3>
-    <p>A file download with metadata containing links:</p>
-    <ngx-govscot-file-download
-      title="Environmental Impact Assessment Guidelines"
-      href="/downloads/environmental-guidelines.pdf"
-      thumbnailSrc="https://placehold.co/200x260/4d7c0f/ffffff?text=Environment"
-      thumbnailAlt="Environmental guidelines document"
-      [thumbnailWidth]="200"
-      [thumbnailHeight]="260"
-      [metadata]="[
-        { key: 'Category', value: 'Environment', link: '/environment' },
-        { key: 'File type', value: '32 page PDF' },
-        { key: 'File size', value: '4.8 MB' },
-        {
-          key: 'Department',
-          value: 'Environment & Climate Change',
-          link: '/departments/environment',
-        },
-      ]"
-    />
-  </div>
-
-  <div class="example-section">
-    <h3>File Download without Thumbnail</h3>
-    <p>A file download with just text content and metadata:</p>
-    <ngx-govscot-file-download
-      title="Privacy Policy and Data Protection Notice"
-      href="/downloads/privacy-policy.pdf"
-      [metadata]="[
-        { key: 'File type', value: '12 page PDF' },
-        { key: 'File size', value: '892 KB' },
-        { key: 'Last updated', value: 'March 2024' },
-      ]"
-    />
-  </div>
-
-  <!-- Feature Header Examples -->
-  <h2>Feature Header Component</h2>
-
-  <!-- Basic feature header -->
-  <ngx-govscot-feature-header
-    title="Scottish Agriculture"
-    content="Supporting sustainable farming practices across Scotland's diverse landscapes and communities."
-  />
-
-  <!-- Feature header with image -->
-  <ngx-govscot-feature-header
-    title="Environment & Climate"
-    content="Leading Scotland's response to climate change through innovative policies and community action."
-    imageSrc="https://placehold.co/400x300/0065bd/ffffff?text=Scottish+Agriculture"
-    imageAlt="Scottish agricultural landscape"
-    [imageWidth]="400"
-    [imageHeight]="300"
-  />
-
-  <!-- Colored background variant -->
-  <ngx-govscot-feature-header
-    title="Innovation Hub"
-    content="Driving technological advancement and entrepreneurship across Scotland."
-    imageSrc="https://placehold.co/400x300/4d7c0f/ffffff?text=Environment"
-    imageAlt="Environmental technology"
-    [imageWidth]="400"
-    [imageHeight]="300"
-    background="tertiary"
-  />
-
-  <!-- Full width with brand background -->
-  <ngx-govscot-feature-header
-    title="Digital Services"
-    content="Transforming public services through digital innovation and user-centered design."
-    imageSrc="https://placehold.co/400x300/002d54/ffffff?text=Innovation"
-    imageAlt="Digital innovation"
-    [imageWidth]="400"
-    [imageHeight]="300"
-    background="brand"
-    [fullWidth]="true"
-  />
-
-  <!-- Wide text layout -->
-  <ngx-govscot-feature-header
-    title="Community Engagement"
-    content="Building stronger communities through participation, collaboration, and shared decision-making processes."
-    imageSrc="https://placehold.co/300x300/5b21b6/ffffff?text=Digital+Services"
-    imageAlt="Community meeting"
-    [imageWidth]="300"
-    [imageHeight]="300"
-    [wideText]="true"
-  />
-
-  <!-- Top-aligned layout -->
-  <ngx-govscot-feature-header
-    title="Healthcare Innovation"
-    content="Advancing medical research and healthcare delivery for better outcomes across Scotland."
-    imageSrc="https://placehold.co/400x200/dc2626/ffffff?text=Community"
-    imageAlt="Healthcare technology"
-    [imageWidth]="400"
-    [imageHeight]="200"
-    [topAligned]="true"
-  />
-
-  <!-- 16:9 aspect ratio -->
-  <ngx-govscot-feature-header
-    title="Education Excellence"
-    content="Empowering learners of all ages through quality education and lifelong learning opportunities."
-    imageSrc="https://placehold.co/800x450/059669/ffffff?text=Healthcare"
-    imageAlt="Educational technology"
-    [imageWidth]="800"
-    [imageHeight]="450"
-    aspectRatio="16:9"
-  />
-
-  <!-- Cover image with no padding -->
-  <ngx-govscot-feature-header
-    title="Cultural Heritage"
-    content="Preserving and celebrating Scotland's rich cultural heritage for future generations."
-    imageSrc="https://placehold.co/400x400/ea580c/ffffff?text=Education"
-    imageAlt="Scottish heritage site"
-    [imageWidth]="400"
-    [imageHeight]="400"
-    imageScale="cover"
-    [noPadding]="true"
-  />
-
-  <!-- Title only -->
-  <ngx-govscot-feature-header title="Get Involved" />
-</main>
-
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
+</div>
