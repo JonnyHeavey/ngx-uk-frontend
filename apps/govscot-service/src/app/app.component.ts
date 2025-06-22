@@ -21,6 +21,7 @@ import {
   GovScotErrorSummaryComponent,
   GovScotErrorSummaryItemDirective,
 } from 'ngx-govscot-frontend/error-summary';
+import { GovScotFeatureHeaderComponent } from 'ngx-govscot-frontend/feature-header';
 import { GovScotNotificationPanelComponent } from 'ngx-govscot-frontend/notification-panel';
 import { GovScotPaginationComponent } from 'ngx-govscot-frontend/pagination';
 import { GovScotPhaseBannerComponent } from 'ngx-govscot-frontend/phase-banner';
@@ -64,6 +65,7 @@ import { GovScotWarningTextComponent } from 'ngx-govscot-frontend/warning-text';
     GovScotCheckboxComponent,
     GovScotConfirmationMessageComponent,
     GovScotCookieBannerComponent,
+    GovScotFeatureHeaderComponent,
     GovScotNotificationPanelComponent,
     GovScotPaginationComponent,
     GovScotPhaseBannerComponent,

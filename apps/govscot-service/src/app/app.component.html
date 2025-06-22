@@ -200,6 +200,126 @@
     />
   </div>
 
+  <h2>Feature Header Examples</h2>
+
+  <div class="example-section">
+    <h3>Basic Feature Header</h3>
+    <p>A simple feature header with title and content:</p>
+    <ngx-govscot-feature-header
+      title="Design standards"
+      content="The patterns included here have been developed for use by government, public sector and third sector non-commercial organisations in Scotland."
+    />
+  </div>
+
+  <div class="example-section">
+    <h3>Feature Header with Image</h3>
+    <p>A feature header including an image:</p>
+    <ngx-govscot-feature-header
+      title="Scottish agriculture"
+      content="Ensuring a thriving agriculture sector for Scotland's farmers, crofters and growers."
+      imageSrc="https://placehold.co/400x300/0065bd/ffffff?text=Scottish+Agriculture"
+      imageAlt="Scottish agriculture illustration"
+      [imageWidth]="400"
+      [imageHeight]="300"
+    />
+  </div>
+
+  <div class="example-section">
+    <h3>Feature Header with Colored Background</h3>
+    <p>A feature header with a tertiary background color:</p>
+    <ngx-govscot-feature-header
+      title="Environmental initiatives"
+      content="Working together to protect Scotland's natural environment for future generations."
+      background="tertiary"
+      imageSrc="https://placehold.co/400x300/4d7c0f/ffffff?text=Environment"
+      imageAlt="Environmental initiatives"
+      [imageWidth]="400"
+      [imageHeight]="300"
+    />
+  </div>
+
+  <div class="example-section">
+    <h3>Full Width Feature Header</h3>
+    <p>A feature header that spans the full width with brand background:</p>
+    <ngx-govscot-feature-header
+      title="Innovation Scotland"
+      content="Supporting businesses and entrepreneurs to drive innovation and economic growth across Scotland."
+      background="brand"
+      [fullWidth]="true"
+      imageSrc="https://placehold.co/400x300/002d54/ffffff?text=Innovation"
+      imageAlt="Innovation Scotland"
+      [imageWidth]="400"
+      [imageHeight]="300"
+    />
+  </div>
+
+  <div class="example-section">
+    <h3>Wide Text Feature Header</h3>
+    <p>
+      A feature header with wide text layout (text takes 2/3, image takes 1/3):
+    </p>
+    <ngx-govscot-feature-header
+      title="Public services transformation"
+      content="Modernizing public services to better serve the people of Scotland through digital innovation, improved accessibility, and user-centered design. Our commitment is to make government services more efficient, transparent, and responsive to citizen needs."
+      [wideText]="true"
+      imageSrc="https://placehold.co/300x300/5b21b6/ffffff?text=Digital+Services"
+      imageAlt="Digital services transformation"
+      [imageWidth]="300"
+      [imageHeight]="300"
+    />
+  </div>
+
+  <div class="example-section">
+    <h3>Top Aligned Feature Header</h3>
+    <p>A feature header with top-aligned content:</p>
+    <ngx-govscot-feature-header
+      title="Community engagement"
+      content="Building stronger communities through active participation and collaboration."
+      [topAligned]="true"
+      imageSrc="https://placehold.co/400x200/dc2626/ffffff?text=Community"
+      imageAlt="Community engagement"
+      [imageWidth]="400"
+      [imageHeight]="200"
+    />
+  </div>
+
+  <div class="example-section">
+    <h3>Feature Header with Aspect Ratio</h3>
+    <p>A feature header using aspect box for consistent image sizing:</p>
+    <ngx-govscot-feature-header
+      title="Healthcare excellence"
+      content="Delivering world-class healthcare services across Scotland."
+      background="secondary"
+      aspectRatio="16:9"
+      imageSrc="https://placehold.co/800x450/059669/ffffff?text=Healthcare"
+      imageAlt="Healthcare services"
+      [imageWidth]="800"
+      [imageHeight]="450"
+    />
+  </div>
+
+  <div class="example-section">
+    <h3>Feature Header with Cover Image</h3>
+    <p>A feature header with cover-scaled image and no padding:</p>
+    <ngx-govscot-feature-header
+      title="Education and skills"
+      content="Empowering learners of all ages with the knowledge and skills needed for success."
+      background="tertiary"
+      imageScale="cover"
+      [noPadding]="true"
+      imageSrc="https://placehold.co/400x400/ea580c/ffffff?text=Education"
+      imageAlt="Education and skills development"
+      [imageWidth]="400"
+      [imageHeight]="400"
+    />
+  </div>
+
+  <div class="example-section">
+    <h3>Title Only Feature Header</h3>
+    <p>A minimal feature header with just a title:</p>
+    <ngx-govscot-feature-header title="Contact us" />
+  </div>
+
   <h2>Error Summary Examples</h2>
 
   <div class="example-section">
@@ -2621,6 +2741,96 @@
       to navigate through large sets of tax records or applications.
     </p>
   </div>
+
+  <!-- Feature Header Examples -->
+  <h2>Feature Header Component</h2>
+
+  <!-- Basic feature header -->
+  <ngx-govscot-feature-header
+    title="Scottish Agriculture"
+    content="Supporting sustainable farming practices across Scotland's diverse landscapes and communities."
+  />
+
+  <!-- Feature header with image -->
+  <ngx-govscot-feature-header
+    title="Environment & Climate"
+    content="Leading Scotland's response to climate change through innovative policies and community action."
+    imageSrc="https://placehold.co/400x300/0065bd/ffffff?text=Scottish+Agriculture"
+    imageAlt="Scottish agricultural landscape"
+    [imageWidth]="400"
+    [imageHeight]="300"
+  />
+
+  <!-- Colored background variant -->
+  <ngx-govscot-feature-header
+    title="Innovation Hub"
+    content="Driving technological advancement and entrepreneurship across Scotland."
+    imageSrc="https://placehold.co/400x300/4d7c0f/ffffff?text=Environment"
+    imageAlt="Environmental technology"
+    [imageWidth]="400"
+    [imageHeight]="300"
+    background="tertiary"
+  />
+
+  <!-- Full width with brand background -->
+  <ngx-govscot-feature-header
+    title="Digital Services"
+    content="Transforming public services through digital innovation and user-centered design."
+    imageSrc="https://placehold.co/400x300/002d54/ffffff?text=Innovation"
+    imageAlt="Digital innovation"
+    [imageWidth]="400"
+    [imageHeight]="300"
+    background="brand"
+    [fullWidth]="true"
+  />
+
+  <!-- Wide text layout -->
+  <ngx-govscot-feature-header
+    title="Community Engagement"
+    content="Building stronger communities through participation, collaboration, and shared decision-making processes."
+    imageSrc="https://placehold.co/300x300/5b21b6/ffffff?text=Digital+Services"
+    imageAlt="Community meeting"
+    [imageWidth]="300"
+    [imageHeight]="300"
+    [wideText]="true"
+  />
+
+  <!-- Top-aligned layout -->
+  <ngx-govscot-feature-header
+    title="Healthcare Innovation"
+    content="Advancing medical research and healthcare delivery for better outcomes across Scotland."
+    imageSrc="https://placehold.co/400x200/dc2626/ffffff?text=Community"
+    imageAlt="Healthcare technology"
+    [imageWidth]="400"
+    [imageHeight]="200"
+    [topAligned]="true"
+  />
+
+  <!-- 16:9 aspect ratio -->
+  <ngx-govscot-feature-header
+    title="Education Excellence"
+    content="Empowering learners of all ages through quality education and lifelong learning opportunities."
+    imageSrc="https://placehold.co/800x450/059669/ffffff?text=Healthcare"
+    imageAlt="Educational technology"
+    [imageWidth]="800"
+    [imageHeight]="450"
+    aspectRatio="16:9"
+  />
+
+  <!-- Cover image with no padding -->
+  <ngx-govscot-feature-header
+    title="Cultural Heritage"
+    content="Preserving and celebrating Scotland's rich cultural heritage for future generations."
+    imageSrc="https://placehold.co/400x400/ea580c/ffffff?text=Education"
+    imageAlt="Scottish heritage site"
+    [imageWidth]="400"
+    [imageHeight]="400"
+    imageScale="cover"
+    [noPadding]="true"
+  />
+
+  <!-- Title only -->
+  <ngx-govscot-feature-header title="Get Involved" />
 </main>
 
 <router-outlet></router-outlet>

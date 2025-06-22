@@ -69,6 +69,9 @@
       "ngx-govscot-frontend/error-summary": [
         "libs/ngx-govscot-frontend/error-summary/src/index.ts"
       ],
+      "ngx-govscot-frontend/feature-header": [
+        "libs/ngx-govscot-frontend/feature-header/src/index.ts"
+      ],
       "ngx-govscot-frontend/inset-text": [
         "libs/ngx-govscot-frontend/inset-text/src/index.ts"
       ],
