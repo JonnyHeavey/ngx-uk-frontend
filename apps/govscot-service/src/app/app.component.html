@@ -3352,6 +3352,82 @@
       </ngx-govscot-page-header>
     </div>
 
+    <h2>Sequential Navigation Examples</h2>
+
+    <div class="example-section">
+      <h3>Basic Sequential Navigation</h3>
+      <p>Standard navigation with both previous and next buttons:</p>
+      <ngx-govscot-sequential-navigation
+        [previous]="basicSequentialNavigation.previous"
+        [next]="basicSequentialNavigation.next"
+      />
+    </div>
+
+    <div class="example-section">
+      <h3>Previous Only (Last Page)</h3>
+      <p>Navigation for the last page in a sequence:</p>
+      <ngx-govscot-sequential-navigation
+        [previous]="lastPageSequentialNavigation.previous"
+      />
+    </div>
+
+    <div class="example-section">
+      <h3>Next Only (First Page)</h3>
+      <p>Navigation for the first page in a sequence:</p>
+      <ngx-govscot-sequential-navigation
+        [next]="firstPageSequentialNavigation.next"
+      />
+    </div>
+
+    <div class="example-section">
+      <h3>Guidance Navigation</h3>
+      <p>Sequential navigation for guidance content with custom aria label:</p>
+      <ngx-govscot-sequential-navigation
+        [previous]="guidanceSequentialNavigation.previous"
+        [next]="guidanceSequentialNavigation.next"
+        ariaLabel="Guidance navigation"
+      />
+    </div>
+
+    <div class="example-section">
+      <h3>Service Navigation</h3>
+      <p>Sequential navigation for service content:</p>
+      <ngx-govscot-sequential-navigation
+        [previous]="serviceSequentialNavigation.previous"
+        [next]="serviceSequentialNavigation.next"
+        ariaLabel="Service navigation"
+      />
+    </div>
+
+    <div class="example-section">
+      <h3>Policy Document Navigation</h3>
+      <p>Sequential navigation for policy documents:</p>
+      <ngx-govscot-sequential-navigation
+        [previous]="policySequentialNavigation.previous"
+        [next]="policySequentialNavigation.next"
+        ariaLabel="Policy document navigation"
+      />
+    </div>
+
+    <div class="example-section">
+      <h3>Long Titles Navigation</h3>
+      <p>Sequential navigation with longer descriptive titles:</p>
+      <ngx-govscot-sequential-navigation
+        [previous]="longTitlesSequentialNavigation.previous"
+        [next]="longTitlesSequentialNavigation.next"
+      />
+    </div>
+
+    <div class="example-section">
+      <h3>Sequential Navigation with Custom Classes</h3>
+      <p>Sequential navigation with additional CSS classes applied:</p>
+      <ngx-govscot-sequential-navigation
+        [previous]="basicSequentialNavigation.previous"
+        [next]="basicSequentialNavigation.next"
+        classes="custom-sequential-nav"
+      />
+    </div>
+
     <h2>File Download Examples</h2>
   </main>
 

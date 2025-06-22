@@ -105,6 +105,9 @@
       "ngx-govscot-frontend/select": [
         "libs/ngx-govscot-frontend/select/src/index.ts"
       ],
+      "ngx-govscot-frontend/sequential-navigation": [
+        "libs/ngx-govscot-frontend/sequential-navigation/src/index.ts"
+      ],
       "ngx-govscot-frontend/skip-link": [
         "libs/ngx-govscot-frontend/skip-link/src/index.ts"
       ],

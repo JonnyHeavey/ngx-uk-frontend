@@ -35,6 +35,10 @@ import {
   GovScotRadioOptionDirective,
 } from 'ngx-govscot-frontend/radio';
 import { GovScotSelectComponent } from 'ngx-govscot-frontend/select';
+import {
+  GovScotSequentialNavigationComponent,
+  SequentialNavigationItem,
+} from 'ngx-govscot-frontend/sequential-navigation';
 import { GovScotSkipLinkComponent } from 'ngx-govscot-frontend/skip-link';
 import { GovScotStatusTagComponent } from 'ngx-govscot-frontend/status-tag';
 import {
@@ -96,6 +100,7 @@ import { GovScotWarningTextComponent } from 'ngx-govscot-frontend/warning-text';
     GovScotRadioGroupComponent,
     GovScotRadioOptionDirective,
     GovScotSelectComponent,
+    GovScotSequentialNavigationComponent,
     GovScotErrorSummaryComponent,
     GovScotErrorSummaryItemDirective,
   ],
@@ -222,9 +227,79 @@ export class AppComponent {
   ];
 
   inlineWithLinksMetadata = [
-    { key: 'Type', value: 'Policy document', href: '#' },
-    { key: 'Date', value: '18 March 2024' },
+    { key: 'Category', value: 'Health and social care', href: '#' },
+    { key: 'Date', value: '22 April 2024' },
   ];
+
+  // Sequential navigation examples data
+  basicSequentialNavigation = {
+    previous: {
+      text: 'Apply for or renew a Blue Badge',
+      link: '/blue-badge/apply',
+    } as SequentialNavigationItem,
+    next: {
+      text: 'Eligibility: who can have one?',
+      link: '/blue-badge/eligibility',
+    } as SequentialNavigationItem,
+  };
+
+  guidanceSequentialNavigation = {
+    previous: {
+      text: 'What you need to know before applying',
+      link: '/guidance/before-applying',
+    } as SequentialNavigationItem,
+    next: {
+      text: 'How to complete your application',
+      link: '/guidance/completing-application',
+    } as SequentialNavigationItem,
+  };
+
+  serviceSequentialNavigation = {
+    previous: {
+      text: 'Check if you need a licence',
+      link: '/licence/check',
+    } as SequentialNavigationItem,
+    next: {
+      text: 'Apply for your licence online',
+      link: '/licence/apply',
+    } as SequentialNavigationItem,
+  };
+
+  policySequentialNavigation = {
+    previous: {
+      text: 'Policy background and context',
+      link: '/policy/background',
+    } as SequentialNavigationItem,
+    next: {
+      text: 'Implementation timeline and next steps',
+      link: '/policy/timeline',
+    } as SequentialNavigationItem,
+  };
+
+  firstPageSequentialNavigation = {
+    next: {
+      text: 'Understanding the eligibility criteria',
+      link: '/eligibility/criteria',
+    } as SequentialNavigationItem,
+  };
+
+  lastPageSequentialNavigation = {
+    previous: {
+      text: 'Completing your application form',
+      link: '/application/form',
+    } as SequentialNavigationItem,
+  };
+
+  longTitlesSequentialNavigation = {
+    previous: {
+      text: 'How to apply for a Blue Badge if you have a permanent disability or health condition that affects your mobility',
+      link: '/blue-badge/apply-permanent-disability',
+    } as SequentialNavigationItem,
+    next: {
+      text: 'Understanding the detailed eligibility criteria and requirements for Blue Badge applications in Scotland',
+      link: '/blue-badge/eligibility-criteria',
+    } as SequentialNavigationItem,
+  };
 
   // Select options data
   countryOptions = [
