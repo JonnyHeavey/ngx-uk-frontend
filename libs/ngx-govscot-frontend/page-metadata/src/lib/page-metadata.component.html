@@ -1,0 +1,23 @@
+<dl
+  class="ds_metadata"
+  [class.ds_metadata--inline]="inline()"
+  [class]="classes()"
+>
+  @for (item of items(); track item.key) {
+    <div class="ds_metadata__item">
+      <dt class="ds_metadata__key" [class.visually-hidden]="inline()">
+        {{ item.key }}
+      </dt>
+      <dd class="ds_metadata__value">
+        @if (item.href) {
+          <a [href]="item.href">{{ item.value }}</a>
+        } @else {
+          {{ item.value }}
+        }
+        @if (inline() && !$last) {
+          <span class="visually-hidden">,</span>
+        }
+      </dd>
+    </div>
+  }
+</dl>

@@ -26,6 +26,7 @@ import { GovScotFileDownloadComponent } from 'ngx-govscot-frontend/file-download
 import { GovScotNotificationBannerComponent } from 'ngx-govscot-frontend/notification-banner';
 import { GovScotNotificationPanelComponent } from 'ngx-govscot-frontend/notification-panel';
 import { GovScotPageHeaderComponent } from 'ngx-govscot-frontend/page-header';
+import { GovScotPageMetadataComponent } from 'ngx-govscot-frontend/page-metadata';
 import { GovScotPaginationComponent } from 'ngx-govscot-frontend/pagination';
 import { GovScotPhaseBannerComponent } from 'ngx-govscot-frontend/phase-banner';
 import { GovScotQuestionComponent } from 'ngx-govscot-frontend/question';
@@ -73,6 +74,7 @@ import { GovScotWarningTextComponent } from 'ngx-govscot-frontend/warning-text';
     GovScotNotificationBannerComponent,
     GovScotNotificationPanelComponent,
     GovScotPageHeaderComponent,
+    GovScotPageMetadataComponent,
     GovScotPaginationComponent,
     GovScotPhaseBannerComponent,
     GovScotQuestionComponent,
@@ -178,6 +180,50 @@ export class AppComponent {
   serviceMetadata = [
     { key: 'Service type', value: 'Online application' },
     { key: 'Processing time', value: '10 working days' },
+  ];
+
+  // Page metadata examples data
+  basicMetadata = [
+    { key: 'Published', value: '16 April 2024' },
+    {
+      key: 'Directorate',
+      value: 'Equality, Inclusion and Human Rights Directorate',
+      href: '#',
+    },
+  ];
+
+  publicationMetadata = [
+    { key: 'Published', value: '22 November 2023' },
+    { key: 'Last updated', value: '15 January 2024' },
+    { key: 'ISBN', value: '978-1-80525-123-4' },
+    { key: 'Reference', value: 'GOV/2024/001' },
+  ];
+
+  newsArticleMetadata = [
+    { key: 'Published', value: '10 December 2024' },
+    { key: 'Category', value: 'Health and social care', href: '#' },
+    { key: 'Author', value: 'Scottish Government Communications' },
+  ];
+
+  consultationMetadata = [
+    { key: 'Published', value: '5 November 2024' },
+    { key: 'Consultation closes', value: '7 February 2025' },
+    {
+      key: 'Directorate',
+      value: 'Environment and Climate Change Directorate',
+      href: '#',
+    },
+    { key: 'Topic', value: 'Climate change', href: '#' },
+  ];
+
+  inlineMetadata = [
+    { key: 'Type', value: 'Advice and guidance' },
+    { key: 'Date', value: '22 April 2024' },
+  ];
+
+  inlineWithLinksMetadata = [
+    { key: 'Type', value: 'Policy document', href: '#' },
+    { key: 'Date', value: '18 March 2024' },
   ];
 
   // Select options data

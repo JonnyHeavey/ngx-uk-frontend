@@ -3285,6 +3285,74 @@
 
     <!-- Title only -->
     <ngx-govscot-feature-header title="Get Involved" />
+
+    <h2>Page Metadata Examples</h2>
+
+    <div class="example-section">
+      <h3>Basic Page Metadata</h3>
+      <p>Standard page metadata showing publication information:</p>
+      <ngx-govscot-page-metadata [items]="basicMetadata" />
+    </div>
+
+    <div class="example-section">
+      <h3>Publication Metadata</h3>
+      <p>Comprehensive metadata for a published document:</p>
+      <ngx-govscot-page-metadata [items]="publicationMetadata" />
+    </div>
+
+    <div class="example-section">
+      <h3>News Article Metadata</h3>
+      <p>Metadata for a news article or press release:</p>
+      <ngx-govscot-page-metadata [items]="newsArticleMetadata" />
+    </div>
+
+    <div class="example-section">
+      <h3>Consultation Document Metadata</h3>
+      <p>Metadata for a consultation with multiple linked categories:</p>
+      <ngx-govscot-page-metadata [items]="consultationMetadata" />
+    </div>
+
+    <div class="example-section">
+      <h3>Inline Page Metadata</h3>
+      <p>
+        Shortened metadata displayed on a single line for use in cards or search
+        results:
+      </p>
+      <ngx-govscot-page-metadata [items]="inlineMetadata" [inline]="true" />
+    </div>
+
+    <div class="example-section">
+      <h3>Inline Metadata with Links</h3>
+      <p>Inline metadata with linked categories:</p>
+      <ngx-govscot-page-metadata
+        [items]="inlineWithLinksMetadata"
+        [inline]="true"
+      />
+    </div>
+
+    <div class="example-section">
+      <h3>Page Metadata with Custom Classes</h3>
+      <p>Page metadata with additional CSS classes applied:</p>
+      <ngx-govscot-page-metadata
+        [items]="basicMetadata"
+        classes="custom-metadata-styling"
+      />
+    </div>
+
+    <div class="example-section">
+      <h3>Page Metadata in Context</h3>
+      <p>
+        Example of how page metadata appears within a page header structure:
+      </p>
+      <ngx-govscot-page-header
+        title="Environmental Impact Assessment Guidelines"
+        label="Guidance"
+      >
+        <ngx-govscot-page-metadata [items]="consultationMetadata" />
+      </ngx-govscot-page-header>
+    </div>
+
+    <h2>File Download Examples</h2>
   </main>
 
   <router-outlet></router-outlet>
