@@ -2742,6 +2742,94 @@
     </p>
   </div>
 
+  <h2>File Download Examples</h2>
+
+  <div class="example-section">
+    <h3>Basic File Download</h3>
+    <p>A simple file download with title and metadata:</p>
+    <ngx-govscot-file-download
+      title="Corporation Tax Guide for Small Businesses"
+      href="/downloads/corporation-tax-guide.pdf"
+      [metadata]="[
+        { key: 'File type', value: '24 page PDF' },
+        { key: 'File size', value: '2.1 MB' },
+      ]"
+    />
+  </div>
+
+  <div class="example-section">
+    <h3>File Download with Thumbnail</h3>
+    <p>A file download with a custom thumbnail image:</p>
+    <ngx-govscot-file-download
+      title="Scotland's Artificial Intelligence Strategy - Trustworthy, Ethical and Inclusive"
+      href="/downloads/ai-strategy.pdf"
+      thumbnailSrc="https://placehold.co/200x260/0065bd/ffffff?text=AI+Strategy"
+      thumbnailAlt="AI Strategy document cover"
+      [thumbnailWidth]="200"
+      [thumbnailHeight]="260"
+      [metadata]="[
+        { key: 'File type', value: '44 page PDF' },
+        { key: 'File size', value: '7.2 MB' },
+      ]"
+    />
+  </div>
+
+  <div class="example-section">
+    <h3>Highlighted File Download</h3>
+    <p>A highlighted file download to give it prominence:</p>
+    <ngx-govscot-file-download
+      title="Essential Tax Return Forms 2024"
+      href="/downloads/tax-forms-2024.pdf"
+      [highlighted]="true"
+      thumbnailSrc="https://placehold.co/200x260/dc2626/ffffff?text=Tax+Forms"
+      thumbnailAlt="Tax forms document cover"
+      [thumbnailWidth]="200"
+      [thumbnailHeight]="260"
+      [metadata]="[
+        { key: 'File type', value: '8 page PDF' },
+        { key: 'File size', value: '1.4 MB' },
+        { key: 'Updated', value: 'January 2024' },
+      ]"
+    />
+  </div>
+
+  <div class="example-section">
+    <h3>File Download with Category Links</h3>
+    <p>A file download with metadata containing links:</p>
+    <ngx-govscot-file-download
+      title="Environmental Impact Assessment Guidelines"
+      href="/downloads/environmental-guidelines.pdf"
+      thumbnailSrc="https://placehold.co/200x260/4d7c0f/ffffff?text=Environment"
+      thumbnailAlt="Environmental guidelines document"
+      [thumbnailWidth]="200"
+      [thumbnailHeight]="260"
+      [metadata]="[
+        { key: 'Category', value: 'Environment', link: '/environment' },
+        { key: 'File type', value: '32 page PDF' },
+        { key: 'File size', value: '4.8 MB' },
+        {
+          key: 'Department',
+          value: 'Environment & Climate Change',
+          link: '/departments/environment',
+        },
+      ]"
+    />
+  </div>
+
+  <div class="example-section">
+    <h3>File Download without Thumbnail</h3>
+    <p>A file download with just text content and metadata:</p>
+    <ngx-govscot-file-download
+      title="Privacy Policy and Data Protection Notice"
+      href="/downloads/privacy-policy.pdf"
+      [metadata]="[
+        { key: 'File type', value: '12 page PDF' },
+        { key: 'File size', value: '892 KB' },
+        { key: 'Last updated', value: 'March 2024' },
+      ]"
+    />
+  </div>
+
   <!-- Feature Header Examples -->
   <h2>Feature Header Component</h2>
 

@@ -1,0 +1,52 @@
+<div [class]="fileDownloadClasses()">
+  @if (showThumbnail()) {
+    <div class="ds_file-download__thumbnail">
+      <a
+        class="ds_file-download__thumbnail-link"
+        aria-hidden="true"
+        tabindex="-1"
+        [href]="href()"
+      >
+        <img
+          class="ds_file-download__thumbnail-image"
+          [ngSrc]="thumbnailSrc()!"
+          [alt]="thumbnailAlt()"
+          [width]="thumbnailWidth()!"
+          [height]="thumbnailHeight()!"
+        />
+      </a>
+    </div>
+  }
+
+  <div class="ds_file-download__content">
+    <a
+      [href]="href()"
+      class="ds_file-download__title"
+      [attr.aria-describedby]="metadata().length > 0 ? metadataId : null"
+    >
+      {{ title() }}
+    </a>
+
+    @if (metadata().length > 0) {
+      <div [id]="metadataId" class="ds_file-download__details">
+        <dl class="ds_metadata ds_metadata--inline">
+          @for (item of metadata(); track item.key) {
+            <div class="ds_metadata__item">
+              <dt class="ds_metadata__key visually-hidden">{{ item.key }}</dt>
+              <dd class="ds_metadata__value">
+                @if (item.link) {
+                  <a [href]="item.link">{{ item.value }}</a>
+                } @else {
+                  {{ item.value }}
+                }
+              </dd>
+              @if (!$last) {
+                <span class="visually-hidden">,</span>
+              }
+            </div>
+          }
+        </dl>
+      </div>
+    }
+  </div>
+</div>
