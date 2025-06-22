@@ -5,6 +5,7 @@ import {
   GovScotAccordionComponent,
   GovScotAccordionItemComponent,
 } from 'ngx-govscot-frontend/accordion';
+import { GovScotAspectBoxComponent } from 'ngx-govscot-frontend/aspect-box';
 import {
   GovScotBreadcrumbDirective,
   GovScotBreadcrumbsComponent,
@@ -66,6 +67,7 @@ import { GovScotWarningTextComponent } from 'ngx-govscot-frontend/warning-text';
     GovScotDetailsComponent,
     GovScotAccordionComponent,
     GovScotAccordionItemComponent,
+    GovScotAspectBoxComponent,
     GovScotBreadcrumbDirective,
     GovScotBreadcrumbsComponent,
     GovScotButtonComponent,

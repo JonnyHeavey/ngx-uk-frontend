@@ -3428,6 +3428,177 @@
       />
     </div>
 
+    <h2>Aspect Box Examples</h2>
+
+    <div class="example-section">
+      <h3>1:1 Aspect Ratio (Square)</h3>
+      <p>Perfect for profile images, logos, and square content:</p>
+      <ngx-govscot-aspect-box aspectRatio="1:1">
+        <img
+          src="https://placehold.co/400x400/0065bd/ffffff?text=Square+Image"
+          alt="Square aspect ratio example"
+          style="width: 100%; height: 100%; object-fit: cover"
+        />
+      </ngx-govscot-aspect-box>
+    </div>
+
+    <div class="example-section">
+      <h3>4:3 Aspect Ratio (Traditional)</h3>
+      <p>Classic aspect ratio ideal for traditional photography and content:</p>
+      <ngx-govscot-aspect-box aspectRatio="4:3">
+        <img
+          src="https://placehold.co/800x600/4d7c0f/ffffff?text=Traditional+Photo"
+          alt="4:3 aspect ratio example"
+          style="width: 100%; height: 100%; object-fit: cover"
+        />
+      </ngx-govscot-aspect-box>
+    </div>
+
+    <div class="example-section">
+      <h3>16:9 Aspect Ratio (Widescreen)</h3>
+      <p>Modern widescreen format perfect for hero images and video content:</p>
+      <ngx-govscot-aspect-box aspectRatio="16:9">
+        <img
+          src="https://placehold.co/1920x1080/002d54/ffffff?text=Widescreen+Hero"
+          alt="16:9 aspect ratio example"
+          style="width: 100%; height: 100%; object-fit: cover"
+        />
+      </ngx-govscot-aspect-box>
+    </div>
+
+    <div class="example-section">
+      <h3>21:9 Aspect Ratio (Ultra-wide)</h3>
+      <p>Ultra-wide format for cinematic banners and panoramic content:</p>
+      <ngx-govscot-aspect-box aspectRatio="21:9">
+        <img
+          src="https://placehold.co/2100x900/5b21b6/ffffff?text=Ultra-wide+Banner"
+          alt="21:9 aspect ratio example"
+          style="width: 100%; height: 100%; object-fit: cover"
+        />
+      </ngx-govscot-aspect-box>
+    </div>
+
+    <div class="example-section">
+      <h3>Aspect Box with Text Content</h3>
+      <p>Aspect boxes can contain any content, not just images:</p>
+      <ngx-govscot-aspect-box aspectRatio="16:9">
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0065bd, #002d54);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            height: 100%;
+          "
+        >
+          <div>
+            <h3 style="margin: 0 0 1rem 0; font-size: 1.5rem">
+              Scottish Government
+            </h3>
+            <p style="margin: 0; font-size: 1rem">
+              Building a better Scotland for everyone
+            </p>
+          </div>
+        </div>
+      </ngx-govscot-aspect-box>
+    </div>
+
+    <div class="example-section">
+      <h3>Aspect Box with Video Placeholder</h3>
+      <p>Example showing how aspect boxes work with video content:</p>
+      <ngx-govscot-aspect-box aspectRatio="16:9">
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #000;
+            color: white;
+            height: 100%;
+            position: relative;
+          "
+        >
+          <div style="text-align: center">
+            <div
+              style="
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                background-color: rgba(255, 255, 255, 0.2);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto 1rem;
+                cursor: pointer;
+              "
+            >
+              <div
+                style="
+                  width: 0;
+                  height: 0;
+                  border-left: 25px solid white;
+                  border-top: 15px solid transparent;
+                  border-bottom: 15px solid transparent;
+                  margin-left: 5px;
+                "
+              ></div>
+            </div>
+            <p style="margin: 0">Click to play video</p>
+          </div>
+        </div>
+      </ngx-govscot-aspect-box>
+    </div>
+
+    <div class="example-section">
+      <h3>Aspect Box with Custom Classes</h3>
+      <p>Aspect box with additional CSS classes applied:</p>
+      <ngx-govscot-aspect-box aspectRatio="4:3" classes="custom-aspect-box">
+        <img
+          src="https://placehold.co/800x600/dc2626/ffffff?text=Custom+Styled"
+          alt="Custom styled aspect box"
+          style="width: 100%; height: 100%; object-fit: cover"
+        />
+      </ngx-govscot-aspect-box>
+    </div>
+
+    <div class="example-section">
+      <h3>Multiple Aspect Boxes in Grid</h3>
+      <p>Example showing multiple aspect boxes in a responsive grid layout:</p>
+      <div
+        style="
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 1rem;
+          margin-top: 1rem;
+        "
+      >
+        <ngx-govscot-aspect-box aspectRatio="1:1">
+          <img
+            src="https://placehold.co/400x400/059669/ffffff?text=Card+1"
+            alt="Grid card 1"
+            style="width: 100%; height: 100%; object-fit: cover"
+          />
+        </ngx-govscot-aspect-box>
+        <ngx-govscot-aspect-box aspectRatio="1:1">
+          <img
+            src="https://placehold.co/400x400/ea580c/ffffff?text=Card+2"
+            alt="Grid card 2"
+            style="width: 100%; height: 100%; object-fit: cover"
+          />
+        </ngx-govscot-aspect-box>
+        <ngx-govscot-aspect-box aspectRatio="1:1">
+          <img
+            src="https://placehold.co/400x400/7c3aed/ffffff?text=Card+3"
+            alt="Grid card 3"
+            style="width: 100%; height: 100%; object-fit: cover"
+          />
+        </ngx-govscot-aspect-box>
+      </div>
+    </div>
+
     <h2>File Download Examples</h2>
   </main>
 
