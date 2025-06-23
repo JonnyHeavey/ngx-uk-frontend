@@ -3599,6 +3599,337 @@
       </div>
     </div>
 
+    <h2>Contact Details Examples</h2>
+
+    <div class="example-section">
+      <h3>Basic Contact Details</h3>
+      <p>Standard contact details with address, email, and phone:</p>
+      <ngx-govscot-contact-details title="Contact">
+        <ngx-govscot-contact-item label="Address" type="address">
+          Scottish Government<br />
+          St Andrew's House<br />
+          Regent Road<br />
+          Edinburgh<br />
+          EH1 3DG
+        </ngx-govscot-contact-item>
+        <ngx-govscot-contact-item
+          label="Email"
+          type="email"
+          href="email&#64;gov.scot"
+        >
+          email&#64;gov.scot
+        </ngx-govscot-contact-item>
+        <ngx-govscot-contact-item
+          label="Phone"
+          type="phone"
+          additionalInfo="Main line is open 8am to 5pm"
+        >
+          0123 456 7000
+        </ngx-govscot-contact-item>
+      </ngx-govscot-contact-details>
+    </div>
+
+    <div class="example-section">
+      <h3>Full Contact Details</h3>
+      <p>
+        Complete contact details including fax, website, and additional
+        information:
+      </p>
+      <ngx-govscot-contact-details title="Contact">
+        <ngx-govscot-contact-item label="Address" type="address">
+          Scottish Government<br />
+          St Andrew's House<br />
+          Regent Road<br />
+          Edinburgh<br />
+          EH1 3DG
+        </ngx-govscot-contact-item>
+        <ngx-govscot-contact-item
+          label="Email"
+          type="email"
+          href="email&#64;gov.scot"
+        >
+          email&#64;gov.scot
+        </ngx-govscot-contact-item>
+        <ngx-govscot-contact-item
+          label="Phone"
+          type="phone"
+          additionalInfo="Main line is open 8am to 5pm<br />Find out about call charges on GOV.UK"
+        >
+          0123 456 7000
+        </ngx-govscot-contact-item>
+        <ngx-govscot-contact-item label="Out of hours" type="phone">
+          0123 456 7001
+        </ngx-govscot-contact-item>
+        <ngx-govscot-contact-item label="Fax" type="fax">
+          0123 456 7002
+        </ngx-govscot-contact-item>
+        <ngx-govscot-contact-item
+          label="Website"
+          type="website"
+          href="https://www.gov.scot"
+        >
+          www.gov.scot
+        </ngx-govscot-contact-item>
+      </ngx-govscot-contact-details>
+    </div>
+
+    <div class="example-section">
+      <h3>Contact Details with Social Media</h3>
+      <p>Contact details including social media links with icons:</p>
+      <ngx-govscot-contact-details title="Contact">
+        <ngx-govscot-contact-item label="Address" type="address">
+          Scottish Government<br />
+          St Andrew's House<br />
+          Regent Road<br />
+          Edinburgh<br />
+          EH1 3DG
+        </ngx-govscot-contact-item>
+        <ngx-govscot-contact-item
+          label="Email"
+          type="email"
+          href="email&#64;gov.scot"
+        >
+          email&#64;gov.scot
+        </ngx-govscot-contact-item>
+        <ngx-govscot-contact-item
+          label="Phone"
+          type="phone"
+          additionalInfo="Main line is open 8am to 5pm"
+        >
+          0123 456 7000
+        </ngx-govscot-contact-item>
+        <ngx-govscot-contact-item
+          label="Follow"
+          type="social"
+          href="https://facebook.com/scottishgovernment"
+          icon="https://placehold.co/24x24/1877f2/ffffff?text=f"
+        >
+          Facebook
+        </ngx-govscot-contact-item>
+        <ngx-govscot-contact-item
+          label="Follow"
+          type="social"
+          href="https://x.com/scotgov"
+          icon="https://placehold.co/24x24/000000/ffffff?text=X"
+        >
+          X
+        </ngx-govscot-contact-item>
+        <ngx-govscot-contact-item
+          label="Follow"
+          type="social"
+          href="https://linkedin.com/company/scottish-government"
+          icon="https://placehold.co/24x24/0a66c2/ffffff?text=in"
+        >
+          LinkedIn
+        </ngx-govscot-contact-item>
+      </ngx-govscot-contact-details>
+    </div>
+
+    <div class="example-section">
+      <h3>Two-Column Layout</h3>
+      <p>
+        Contact details displayed in a two-column layout for wider containers:
+      </p>
+      <ngx-govscot-contact-details title="Contact" [twoColumn]="true">
+        <ngx-govscot-contact-item label="Address" type="address">
+          First Minister<br />
+          Scottish Government<br />
+          St Andrew's House<br />
+          Regent Road<br />
+          Edinburgh<br />
+          EH1 3DG
+        </ngx-govscot-contact-item>
+        <ngx-govscot-contact-item
+          label="Email"
+          type="email"
+          href="firstminister&#64;gov.scot"
+        >
+          firstminister&#64;gov.scot
+        </ngx-govscot-contact-item>
+        <ngx-govscot-contact-item
+          label="Follow"
+          type="social"
+          href="https://x.com/scotgovfm"
+          icon="https://placehold.co/24x24/000000/ffffff?text=X"
+          additionalInfo="on X"
+        >
+          &#64;ScotGovFM
+        </ngx-govscot-contact-item>
+        <ngx-govscot-contact-item
+          label="Follow"
+          type="social"
+          href="https://x.com/johnswinney"
+          additionalInfo="on X"
+        >
+          &#64;JohnSwinney
+        </ngx-govscot-contact-item>
+      </ngx-govscot-contact-details>
+    </div>
+
+    <div class="example-section">
+      <h3>Department Contact Details</h3>
+      <p>Example contact details for a specific government department:</p>
+      <ngx-govscot-contact-details title="Department Contact">
+        <ngx-govscot-contact-item label="Address" type="address">
+          Education Department<br />
+          Scottish Government<br />
+          2A-South Victoria Quay<br />
+          Edinburgh<br />
+          EH6 6QQ
+        </ngx-govscot-contact-item>
+        <ngx-govscot-contact-item
+          label="General enquiries"
+          type="email"
+          href="education.enquiries&#64;gov.scot"
+        >
+          education.enquiries&#64;gov.scot
+        </ngx-govscot-contact-item>
+        <ngx-govscot-contact-item
+          label="Phone"
+          type="phone"
+          additionalInfo="Monday to Friday, 9am to 5pm"
+        >
+          0131 244 0330
+        </ngx-govscot-contact-item>
+        <ngx-govscot-contact-item
+          label="Website"
+          type="website"
+          href="https://education.gov.scot"
+        >
+          Education Scotland
+        </ngx-govscot-contact-item>
+      </ngx-govscot-contact-details>
+    </div>
+
+    <div class="example-section">
+      <h3>Emergency Contact Details</h3>
+      <p>Emergency and important contact numbers:</p>
+      <ngx-govscot-contact-details title="Emergency Contacts">
+        <ngx-govscot-contact-item label="Emergency services" type="phone">
+          999
+        </ngx-govscot-contact-item>
+        <ngx-govscot-contact-item
+          label="NHS 24"
+          type="phone"
+          additionalInfo="24 hour health advice"
+        >
+          111
+        </ngx-govscot-contact-item>
+        <ngx-govscot-contact-item
+          label="Samaritans"
+          type="phone"
+          additionalInfo="Free 24 hour support"
+        >
+          116 123
+        </ngx-govscot-contact-item>
+        <ngx-govscot-contact-item
+          label="Childline"
+          type="phone"
+          additionalInfo="Free support for children"
+        >
+          0800 1111
+        </ngx-govscot-contact-item>
+      </ngx-govscot-contact-details>
+    </div>
+
+    <div class="example-section">
+      <h3>Custom Title</h3>
+      <p>Contact details with a custom title:</p>
+      <ngx-govscot-contact-details title="Get in Touch">
+        <ngx-govscot-contact-item label="Address" type="address">
+          Scottish Government<br />
+          St Andrew's House<br />
+          Regent Road<br />
+          Edinburgh<br />
+          EH1 3DG
+        </ngx-govscot-contact-item>
+        <ngx-govscot-contact-item
+          label="Email"
+          type="email"
+          href="email&#64;gov.scot"
+        >
+          email&#64;gov.scot
+        </ngx-govscot-contact-item>
+        <ngx-govscot-contact-item
+          label="Phone"
+          type="phone"
+          additionalInfo="Main line is open 8am to 5pm"
+        >
+          0123 456 7000
+        </ngx-govscot-contact-item>
+      </ngx-govscot-contact-details>
+    </div>
+
+    <div class="example-section">
+      <h3>Contact Details with Custom Classes</h3>
+      <p>Contact details with additional CSS classes applied:</p>
+      <ngx-govscot-contact-details
+        title="Contact"
+        classes="custom-contact-details"
+      >
+        <ngx-govscot-contact-item label="Address" type="address">
+          Scottish Government<br />
+          St Andrew's House<br />
+          Regent Road<br />
+          Edinburgh<br />
+          EH1 3DG
+        </ngx-govscot-contact-item>
+        <ngx-govscot-contact-item
+          label="Email"
+          type="email"
+          href="email&#64;gov.scot"
+        >
+          email&#64;gov.scot
+        </ngx-govscot-contact-item>
+        <ngx-govscot-contact-item
+          label="Phone"
+          type="phone"
+          additionalInfo="Main line is open 8am to 5pm"
+        >
+          0123 456 7000
+        </ngx-govscot-contact-item>
+      </ngx-govscot-contact-details>
+    </div>
+
+    <div class="example-section">
+      <h3>Social Media Only</h3>
+      <p>Contact details showing only social media links:</p>
+      <ngx-govscot-contact-details title="Follow Us">
+        <ngx-govscot-contact-item
+          label="Follow"
+          type="social"
+          href="https://facebook.com/scottishgovernment"
+          icon="https://placehold.co/24x24/1877f2/ffffff?text=f"
+        >
+          Facebook
+        </ngx-govscot-contact-item>
+        <ngx-govscot-contact-item
+          label="Follow"
+          type="social"
+          href="https://x.com/scotgov"
+          icon="https://placehold.co/24x24/000000/ffffff?text=X"
+        >
+          X
+        </ngx-govscot-contact-item>
+        <ngx-govscot-contact-item
+          label="Follow"
+          type="social"
+          href="https://linkedin.com/company/scottish-government"
+          icon="https://placehold.co/24x24/0a66c2/ffffff?text=in"
+        >
+          LinkedIn
+        </ngx-govscot-contact-item>
+        <ngx-govscot-contact-item
+          label="Follow"
+          type="social"
+          href="https://instagram.com/scotgov"
+          icon="https://placehold.co/24x24/e4405f/ffffff?text=IG"
+        >
+          Instagram
+        </ngx-govscot-contact-item>
+      </ngx-govscot-contact-details>
+    </div>
+
     <h2>File Download Examples</h2>
   </main>
 

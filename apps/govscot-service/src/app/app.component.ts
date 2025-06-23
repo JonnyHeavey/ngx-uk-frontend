@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import {
   GovScotAccordionComponent,
   GovScotAccordionItemComponent,
@@ -16,6 +16,10 @@ import {
 } from 'ngx-govscot-frontend/button';
 import { GovScotCheckboxComponent } from 'ngx-govscot-frontend/checkbox';
 import { GovScotConfirmationMessageComponent } from 'ngx-govscot-frontend/confirmation-message';
+import {
+  GovScotContactDetailsComponent,
+  GovScotContactItemDirective,
+} from 'ngx-govscot-frontend/contact-details';
 import { GovScotCookieBannerComponent } from 'ngx-govscot-frontend/cookie-banner';
 import { GovScotDetailsComponent } from 'ngx-govscot-frontend/details';
 import {
@@ -27,7 +31,10 @@ import { GovScotFileDownloadComponent } from 'ngx-govscot-frontend/file-download
 import { GovScotNotificationBannerComponent } from 'ngx-govscot-frontend/notification-banner';
 import { GovScotNotificationPanelComponent } from 'ngx-govscot-frontend/notification-panel';
 import { GovScotPageHeaderComponent } from 'ngx-govscot-frontend/page-header';
-import { GovScotPageMetadataComponent } from 'ngx-govscot-frontend/page-metadata';
+import {
+  GovScotPageMetadataComponent,
+  MetadataItem,
+} from 'ngx-govscot-frontend/page-metadata';
 import { GovScotPaginationComponent } from 'ngx-govscot-frontend/pagination';
 import { GovScotPhaseBannerComponent } from 'ngx-govscot-frontend/phase-banner';
 import { GovScotQuestionComponent } from 'ngx-govscot-frontend/question';
@@ -74,6 +81,7 @@ import { GovScotWarningTextComponent } from 'ngx-govscot-frontend/warning-text';
     GovScotButtonGroupComponent,
     GovScotCheckboxComponent,
     GovScotConfirmationMessageComponent,
+    GovScotContactDetailsComponent,
     GovScotCookieBannerComponent,
     GovScotFeatureHeaderComponent,
     GovScotFileDownloadComponent,
@@ -105,6 +113,8 @@ import { GovScotWarningTextComponent } from 'ngx-govscot-frontend/warning-text';
     GovScotSequentialNavigationComponent,
     GovScotErrorSummaryComponent,
     GovScotErrorSummaryItemDirective,
+    GovScotContactItemDirective,
+    RouterOutlet,
   ],
   selector: 'ngx-govscot-frontend-root',
   templateUrl: './app.component.html',
@@ -190,13 +200,10 @@ export class AppComponent {
   ];
 
   // Page metadata examples data
-  basicMetadata = [
-    { key: 'Published', value: '16 April 2024' },
-    {
-      key: 'Directorate',
-      value: 'Equality, Inclusion and Human Rights Directorate',
-      href: '#',
-    },
+  basicMetadata: MetadataItem[] = [
+    { key: 'Published', value: '15 December 2023' },
+    { key: 'Last updated', value: '20 December 2023' },
+    { key: 'Directorate', value: 'Digital Directorate' },
   ];
 
   publicationMetadata = [
@@ -223,9 +230,24 @@ export class AppComponent {
     { key: 'Topic', value: 'Climate change', href: '#' },
   ];
 
-  inlineMetadata = [
-    { key: 'Type', value: 'Advice and guidance' },
-    { key: 'Date', value: '22 April 2024' },
+  metadataWithLinks: MetadataItem[] = [
+    { key: 'Published', value: '15 December 2023' },
+    { key: 'Last updated', value: '20 December 2023' },
+    {
+      key: 'Directorate',
+      value: 'Digital Directorate',
+      href: '/directorates/digital',
+    },
+    {
+      key: 'Part of',
+      value: 'Digital Scotland',
+      href: '/topics/digital-scotland',
+    },
+  ];
+
+  inlineMetadata: MetadataItem[] = [
+    { key: 'Published', value: '15 December 2023' },
+    { key: 'Last updated', value: '20 December 2023' },
   ];
 
   inlineWithLinksMetadata = [
