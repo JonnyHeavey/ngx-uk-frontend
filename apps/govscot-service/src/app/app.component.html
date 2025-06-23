@@ -4103,3 +4103,181 @@
 
   <router-outlet></router-outlet>
 </div>
+
+<!-- Back to Top Component Examples -->
+<div id="page-top">
+  <main style="padding: 2rem">
+    <h1>Back to Top Component Examples</h1>
+    <p>
+      The back to top component helps users navigate back to the top of long
+      pages with a single click.
+    </p>
+
+    <!-- Simulate long content to demonstrate scroll functionality -->
+    <div style="margin: 2rem 0">
+      <h2>Long Content Section 1</h2>
+      <p>
+        This is a long page demonstrating the back to top component
+        functionality.
+      </p>
+      @for (i of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; track i) {
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      }
+    </div>
+
+    <div style="margin: 2rem 0">
+      <h2>Long Content Section 2</h2>
+      <p>
+        Additional content to ensure the page is long enough for scroll
+        detection.
+      </p>
+      @for (i of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; track i) {
+        <p>
+          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
+          ab illo inventore veritatis et quasi architecto beatae vitae dicta
+          sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
+          aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos
+          qui ratione voluptatem sequi nesciunt.
+        </p>
+      }
+    </div>
+
+    <div style="margin: 2rem 0">
+      <h2>Long Content Section 3</h2>
+      <p>More content to demonstrate the scroll-to-top functionality.</p>
+      @for (i of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; track i) {
+        <p>
+          Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+          consectetur, adipisci velit, sed quia non numquam eius modi tempora
+          incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut
+          enim ad minima veniam, quis nostrum exercitationem ullam corporis
+          suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
+        </p>
+      }
+    </div>
+
+    <h2>Back to Top Component Configuration Examples</h2>
+
+    <div class="example-section">
+      <h3>Example 1: Basic Back to Top</h3>
+      <p>Default back to top button with standard configuration:</p>
+      <code>&lt;ngx-govscot-back-to-top /&gt;</code>
+    </div>
+
+    <div class="example-section">
+      <h3>Example 2: Custom Target Element</h3>
+      <p>Back to top button that scrolls to a specific element (page-top):</p>
+      <code>&lt;ngx-govscot-back-to-top targetElementId="page-top" /&gt;</code>
+    </div>
+
+    <div class="example-section">
+      <h3>Example 3: Custom Scroll Threshold</h3>
+      <p>Back to top button that appears after scrolling 500 pixels:</p>
+      <code>&lt;ngx-govscot-back-to-top [scrollThreshold]="500" /&gt;</code>
+    </div>
+
+    <div class="example-section">
+      <h3>Example 4: Custom Button Text</h3>
+      <p>Back to top button with custom text:</p>
+      <code>&lt;ngx-govscot-back-to-top buttonText="Return to top" /&gt;</code>
+    </div>
+
+    <div class="example-section">
+      <h3>Example 5: Custom Aria Label</h3>
+      <p>Back to top button with custom accessibility label:</p>
+      <code
+        >&lt;ngx-govscot-back-to-top ariaLabel="Scroll to the top of the page"
+        /&gt;</code
+      >
+    </div>
+
+    <div class="example-section">
+      <h3>Example 6: Custom Footer Selector</h3>
+      <p>Back to top button with custom footer positioning:</p>
+      <code
+        >&lt;ngx-govscot-back-to-top footerSelector=".custom-footer" /&gt;</code
+      >
+    </div>
+
+    <div class="example-section">
+      <h3>Example 7: With Custom Classes</h3>
+      <p>Back to top button with additional CSS classes:</p>
+      <code
+        >&lt;ngx-govscot-back-to-top classes="my-custom-class priority-button"
+        /&gt;</code
+      >
+    </div>
+
+    <div class="example-section">
+      <h3>Example 8: Complete Configuration</h3>
+      <p>Back to top button with all available options configured:</p>
+      <code
+        >&lt;ngx-govscot-back-to-top targetElementId="page-top"
+        footerSelector=".ds_site-footer" [scrollThreshold]="300"
+        buttonText="Back to top" ariaLabel="Return to the beginning of the page"
+        classes="enhanced-back-to-top" /&gt;</code
+      >
+    </div>
+
+    <!-- More filler content -->
+    <div style="margin: 2rem 0">
+      <h2>Additional Content Section</h2>
+      <p>
+        More content to ensure sufficient page length for testing the back to
+        top functionality.
+      </p>
+      @for (i of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; track i) {
+        <p>
+          At vero eos et accusamus et iusto odio dignissimos ducimus qui
+          blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
+          et quas molestias excepturi sint occaecati cupiditate non provident,
+          similique sunt in culpa qui officia deserunt mollitia animi, id est
+          laborum et dolorum fuga.
+        </p>
+      }
+    </div>
+
+    <div style="margin: 2rem 0">
+      <h2>Final Content Section</h2>
+      <p>Final section of content to demonstrate the scroll behavior.</p>
+      @for (i of [1, 2, 3, 4, 5, 6, 7, 8]; track i) {
+        <p>
+          Et harum quidem rerum facilis est et expedita distinctio. Nam libero
+          tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo
+          minus id quod maxime placeat facere possimus, omnis voluptas assumenda
+          est, omnis dolor repellendus.
+        </p>
+      }
+    </div>
+  </main>
+
+  <!-- Footer for positioning -->
+  <footer
+    class="ds_site-footer"
+    style="
+      background: #f8f8f8;
+      padding: 2rem;
+      margin-top: 2rem;
+      border-top: 1px solid #ddd;
+    "
+  >
+    <div style="text-align: center">
+      <p>
+        © 2024 Scottish Government. This is a demo footer for testing back to
+        top positioning.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Back to Top Component - placed at the end for proper functionality -->
+  <ngx-govscot-back-to-top />
+</div>

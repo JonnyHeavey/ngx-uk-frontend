@@ -6,6 +6,7 @@ import {
   GovScotAccordionItemComponent,
 } from 'ngx-govscot-frontend/accordion';
 import { GovScotAspectBoxComponent } from 'ngx-govscot-frontend/aspect-box';
+import { GovScotBackToTopComponent } from 'ngx-govscot-frontend/back-to-top';
 import {
   GovScotBreadcrumbDirective,
   GovScotBreadcrumbsComponent,
@@ -76,6 +77,7 @@ import { GovScotWarningTextComponent } from 'ngx-govscot-frontend/warning-text';
     GovScotAccordionComponent,
     GovScotAccordionItemComponent,
     GovScotAspectBoxComponent,
+    GovScotBackToTopComponent,
     GovScotBreadcrumbDirective,
     GovScotBreadcrumbsComponent,
     GovScotButtonComponent,
