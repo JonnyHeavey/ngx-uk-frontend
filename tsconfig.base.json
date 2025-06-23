@@ -81,6 +81,9 @@
       "ngx-govscot-frontend/file-download": [
         "libs/ngx-govscot-frontend/file-download/src/index.ts"
       ],
+      "ngx-govscot-frontend/hide-page": [
+        "libs/ngx-govscot-frontend/hide-page/src/index.ts"
+      ],
       "ngx-govscot-frontend/inset-text": [
         "libs/ngx-govscot-frontend/inset-text/src/index.ts"
       ],

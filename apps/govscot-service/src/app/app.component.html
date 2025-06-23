@@ -3931,6 +3931,174 @@
     </div>
 
     <h2>File Download Examples</h2>
+
+    <div class="example-section">
+      <h3>Basic File Download</h3>
+      <p>A simple file download with title and metadata:</p>
+      <ngx-govscot-file-download
+        title="Corporation Tax Guide for Small Businesses"
+        href="/downloads/corporation-tax-guide.pdf"
+        [metadata]="[
+          { key: 'File type', value: '24 page PDF' },
+          { key: 'File size', value: '2.1 MB' },
+        ]"
+      />
+    </div>
+
+    <div class="example-section">
+      <h3>File Download with Thumbnail</h3>
+      <p>A file download with a custom thumbnail image:</p>
+      <ngx-govscot-file-download
+        title="Scotland's Artificial Intelligence Strategy - Trustworthy, Ethical and Inclusive"
+        href="/downloads/ai-strategy.pdf"
+        thumbnailSrc="https://placehold.co/200x260/0065bd/ffffff?text=AI+Strategy"
+        thumbnailAlt="AI Strategy document cover"
+        [thumbnailWidth]="200"
+        [thumbnailHeight]="260"
+        [metadata]="[
+          { key: 'File type', value: '44 page PDF' },
+          { key: 'File size', value: '7.2 MB' },
+        ]"
+      />
+    </div>
+
+    <div class="example-section">
+      <h3>Highlighted File Download</h3>
+      <p>A highlighted file download to give it prominence:</p>
+      <ngx-govscot-file-download
+        title="Essential Tax Return Forms 2024"
+        href="/downloads/tax-forms-2024.pdf"
+        [highlighted]="true"
+        thumbnailSrc="https://placehold.co/200x260/dc2626/ffffff?text=Tax+Forms"
+        thumbnailAlt="Tax forms document cover"
+        [thumbnailWidth]="200"
+        [thumbnailHeight]="260"
+        [metadata]="[
+          { key: 'File type', value: '8 page PDF' },
+          { key: 'File size', value: '1.4 MB' },
+          { key: 'Updated', value: 'January 2024' },
+        ]"
+      />
+    </div>
+
+    <div class="example-section">
+      <h3>File Download with Category Links</h3>
+      <p>A file download with metadata containing links:</p>
+      <ngx-govscot-file-download
+        title="Environmental Impact Assessment Guidelines"
+        href="/downloads/environmental-guidelines.pdf"
+        thumbnailSrc="https://placehold.co/200x260/4d7c0f/ffffff?text=Environment"
+        thumbnailAlt="Environmental guidelines document"
+        [thumbnailWidth]="200"
+        [thumbnailHeight]="260"
+        [metadata]="[
+          { key: 'Category', value: 'Environment', link: '/environment' },
+          { key: 'File type', value: '32 page PDF' },
+          { key: 'File size', value: '4.8 MB' },
+          {
+            key: 'Department',
+            value: 'Environment & Climate Change',
+            link: '/departments/environment',
+          },
+        ]"
+      />
+    </div>
+
+    <div class="example-section">
+      <h3>File Download without Thumbnail</h3>
+      <p>A file download with just text content and metadata:</p>
+      <ngx-govscot-file-download
+        title="Privacy Policy and Data Protection Notice"
+        href="/downloads/privacy-policy.pdf"
+        [metadata]="[
+          { key: 'File type', value: '12 page PDF' },
+          { key: 'File size', value: '892 KB' },
+          { key: 'Last updated', value: 'March 2024' },
+        ]"
+      />
+    </div>
+
+    <h2>Hide Page Examples</h2>
+
+    <div class="example-section">
+      <h3>Default Hide Page</h3>
+      <p>
+        Basic hide page button with default settings (redirects to Google, opens
+        BBC Weather):
+      </p>
+      <ngx-govscot-hide-page />
+    </div>
+
+    <div class="example-section">
+      <h3>Domestic Violence Support</h3>
+      <p>
+        Hide page button for a domestic violence support service with
+        descriptive aria label:
+      </p>
+      <ngx-govscot-hide-page
+        ariaLabel="Quickly and safely leave this domestic violence support page"
+        redirectUrl="https://www.google.com"
+        newTabUrl="https://www.bbc.co.uk/news"
+      />
+    </div>
+
+    <div class="example-section">
+      <h3>Mental Health Support</h3>
+      <p>Hide page button for a mental health support service:</p>
+      <ngx-govscot-hide-page
+        ariaLabel="Exit mental health support page safely"
+        redirectUrl="https://www.google.com"
+        newTabUrl="https://www.bbc.co.uk/weather"
+      />
+    </div>
+
+    <div class="example-section">
+      <h3>Custom URLs</h3>
+      <p>Hide page button with custom redirect and new tab URLs:</p>
+      <ngx-govscot-hide-page
+        redirectUrl="https://www.bbc.co.uk"
+        newTabUrl="https://www.gov.uk"
+      />
+    </div>
+
+    <div class="example-section">
+      <h3>With Custom Aria Label</h3>
+      <p>Hide page button with custom aria label for better accessibility:</p>
+      <ngx-govscot-hide-page
+        ariaLabel="Emergency exit - leave this page immediately"
+      />
+    </div>
+
+    <div class="example-section">
+      <h3>With Custom Classes</h3>
+      <p>Hide page button with additional CSS classes for custom styling:</p>
+      <ngx-govscot-hide-page classes="urgent-exit priority-button" />
+    </div>
+
+    <div class="example-section">
+      <h3>Without Escape Text</h3>
+      <p>
+        Hide page button without the escape key instruction text (not
+        recommended for accessibility):
+      </p>
+      <ngx-govscot-hide-page [showEscText]="false" />
+    </div>
+
+    <div class="example-section">
+      <h3>Complete Configuration</h3>
+      <p>
+        Hide page button showcasing all available options and customizations:
+      </p>
+      <ngx-govscot-hide-page
+        redirectUrl="https://www.nhs.uk"
+        newTabUrl="https://www.bbc.co.uk/sport"
+        classes="urgent-exit"
+        ariaLabel="Emergency exit from sensitive content"
+        [showEscText]="true"
+      />
+    </div>
+
+    <h2>File Download Examples</h2>
   </main>
 
   <router-outlet></router-outlet>
