@@ -2,16 +2,13 @@
 
 Secondary entry point of `ngx-govuk-frontend`. It can be used by importing from `ngx-govuk-frontend/breadcrumbs`.
 
-## Overview
+## GOV.UK Design System
 
-The breadcrumbs component helps users understand where they are in a website's structure and navigate back to previous pages. This is an Angular implementation of the [GOV.UK Design System Breadcrumbs component](https://design-system.service.gov.uk/components/breadcrumbs/).
-
-## Components and Directives
-
-- `GovUKBreadcrumbsComponent` - The main container component for breadcrumbs
-- `GovUKBreadcrumbDirective` - Applied to individual breadcrumb items
+This component follows the [GOV.UK Design System Breadcrumbs component](https://design-system.service.gov.uk/components/breadcrumbs/).
 
 ## Usage
+
+### Import
 
 ```typescript
 import {
@@ -28,7 +25,7 @@ import {
 })
 ```
 
-### Basic example
+### Example
 
 ```html
 <ngx-govuk-breadcrumbs>
