@@ -1,7 +1,5 @@
 # ngx-govuk-frontend/form-group
 
-Secondary entry point of `ngx-govuk-frontend`. It can be used by importing from `ngx-govuk-frontend/form-group`.
-
 ## Overview
 
 The form group component is a container for form controls with styling for labels, hint text, and error messages. This is an Angular implementation of the [GOV.UK Design System Form Group pattern](https://design-system.service.gov.uk/components/text-input/#using-hint-text).

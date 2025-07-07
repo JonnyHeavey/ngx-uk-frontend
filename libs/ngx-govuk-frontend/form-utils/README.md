@@ -1,7 +1,5 @@
 # ngx-govuk-frontend/form-utils
 
-Secondary entry point of `ngx-govuk-frontend`. It can be used by importing from `ngx-govuk-frontend/form-utils`.
-
 ## Overview
 
 The form-utils package provides utility directives and functions for working with forms in Angular. These utilities are used internally by other form-related components in the library but can also be used directly in your applications.

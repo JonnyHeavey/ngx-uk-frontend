@@ -1,7 +1,5 @@
 # ngx-govuk-frontend/warning-text
 
-Secondary entry point of `ngx-govuk-frontend`. It can be used by importing from `ngx-govuk-frontend/warning-text`.
-
 ## Overview
 
 The warning text component helps make users aware of important information that could affect their application or journey. This is an Angular implementation of the [GOV.UK Design System Warning Text component](https://design-system.service.gov.uk/components/warning-text/).

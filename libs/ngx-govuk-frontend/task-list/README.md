@@ -1,7 +1,5 @@
 # ngx-govuk-frontend/task-list
 
-Secondary entry point of `ngx-govuk-frontend`. It can be used by importing from `ngx-govuk-frontend/task-list`.
-
 ## Overview
 
 The task list component helps users understand the tasks they need to complete, the order they need to complete tasks in, and when they have completed a task. This is an Angular implementation of the [GOV.UK Design System Task List pattern](https://design-system.service.gov.uk/patterns/task-list-pages/).

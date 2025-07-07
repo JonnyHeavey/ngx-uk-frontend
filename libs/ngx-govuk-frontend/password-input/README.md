@@ -1,7 +1,5 @@
 # ngx-govuk-frontend/password-input
 
-Secondary entry point of `ngx-govuk-frontend`. It can be used by importing from `ngx-govuk-frontend/password-input`.
-
 ## Overview
 
 The password input component allows users to enter passwords with a show/hide toggle button. This is an Angular implementation of the [GOV.UK Design System password input pattern](https://design-system.service.gov.uk/components/password-input/).

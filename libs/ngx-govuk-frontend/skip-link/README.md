@@ -1,7 +1,5 @@
 # ngx-govuk-frontend/skip-link
 
-Secondary entry point of `ngx-govuk-frontend`. It can be used by importing from `ngx-govuk-frontend/skip-link`.
-
 ## Overview
 
 The skip link component allows keyboard users to bypass navigation elements and jump straight to the main content on a page. It is visually hidden until it receives keyboard focus. This is an Angular implementation of the [GOV.UK Design System Skip Link component](https://design-system.service.gov.uk/components/skip-link/).

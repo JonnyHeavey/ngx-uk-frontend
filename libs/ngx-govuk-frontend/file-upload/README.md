@@ -1,7 +1,5 @@
 # ngx-govuk-frontend/file-upload
 
-Secondary entry point of `ngx-govuk-frontend`. It can be used by importing from `ngx-govuk-frontend/file-upload`.
-
 ## Overview
 
 The file upload component allows users to select and upload files. This is an Angular implementation of the [GOV.UK Design System File Upload component](https://design-system.service.gov.uk/components/file-upload/).

@@ -1,7 +1,5 @@
 # ngx-govuk-frontend/details
 
-Secondary entry point of `ngx-govuk-frontend`. It can be used by importing from `ngx-govuk-frontend/details`.
-
 ## Overview
 
 The details component creates a disclosure widget that can be opened and closed by the user to reveal hidden content. This is an Angular implementation of the [GOV.UK Design System Details component](https://design-system.service.gov.uk/components/details/).
