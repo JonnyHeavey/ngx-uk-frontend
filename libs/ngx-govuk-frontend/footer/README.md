@@ -1,7 +1,5 @@
 # ngx-govuk-frontend/footer
 
-Secondary entry point of `ngx-govuk-frontend`. It can be used by importing from `ngx-govuk-frontend/footer`.
-
 ## Overview
 
 The footer component shows users copyright information, links to other pages, and information about the website. This is an Angular implementation of the [GOV.UK Design System Footer component](https://design-system.service.gov.uk/components/footer/).

@@ -1,7 +1,5 @@
 # ngx-govuk-frontend/radio
 
-Secondary entry point of `ngx-govuk-frontend`. It can be used by importing from `ngx-govuk-frontend/radio`.
-
 ## Overview
 
 The radio component lets users select a single option from a list. This is an Angular implementation of the [GOV.UK Design System Radio component](https://design-system.service.gov.uk/components/radios/).

@@ -1,7 +1,5 @@
 # ngx-govuk-frontend/fieldset
 
-Secondary entry point of `ngx-govuk-frontend`. It can be used by importing from `ngx-govuk-frontend/fieldset`.
-
 ## Overview
 
 The fieldset component is used to group related form inputs. This is an Angular implementation of the [GOV.UK Design System Fieldset component](https://design-system.service.gov.uk/components/fieldset/).

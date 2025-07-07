@@ -1,7 +1,5 @@
 # ngx-govuk-frontend/select
 
-Secondary entry point of `ngx-govuk-frontend`. It can be used by importing from `ngx-govuk-frontend/select`.
-
 ## Overview
 
 The select component allows users to choose an option from a dropdown list. This is an Angular implementation of the [GOV.UK Design System Select component](https://design-system.service.gov.uk/components/select/).

@@ -1,7 +1,5 @@
 # ngx-govuk-frontend/textarea
 
-Secondary entry point of `ngx-govuk-frontend`. It can be used by importing from `ngx-govuk-frontend/textarea`.
-
 ## Overview
 
 The textarea component allows users to enter multiple lines of text. This is an Angular implementation of the [GOV.UK Design System Textarea component](https://design-system.service.gov.uk/components/textarea/).

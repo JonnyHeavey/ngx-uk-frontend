@@ -1,7 +1,5 @@
 # ngx-govuk-frontend/table
 
-Secondary entry point of `ngx-govuk-frontend`. It can be used by importing from `ngx-govuk-frontend/table`.
-
 ## Overview
 
 The table component makes information easier to compare and scan for users. This is an Angular implementation of the [GOV.UK Design System Table component](https://design-system.service.gov.uk/components/table/), built on top of Angular CDK's table capabilities.

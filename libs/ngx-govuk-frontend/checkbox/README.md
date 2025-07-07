@@ -1,7 +1,5 @@
 # ngx-govuk-frontend/checkbox
 
-Secondary entry point of `ngx-govuk-frontend`. It can be used by importing from `ngx-govuk-frontend/checkbox`.
-
 ## Overview
 
 The checkbox component allows users to select one or more options by ticking a box. This is an Angular implementation of the [GOV.UK Design System Checkbox component](https://design-system.service.gov.uk/components/checkboxes/).

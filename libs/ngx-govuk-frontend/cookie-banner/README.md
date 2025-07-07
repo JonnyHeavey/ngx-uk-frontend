@@ -1,7 +1,5 @@
 # ngx-govuk-frontend/cookie-banner
 
-Secondary entry point of `ngx-govuk-frontend`. It can be used by importing from `ngx-govuk-frontend/cookie-banner`.
-
 ## Overview
 
 The cookie banner component lets users know that your service uses cookies and allows them to accept or reject them. This is an Angular implementation of the [GOV.UK Design System Cookie Banner component](https://design-system.service.gov.uk/components/cookie-banner/).

@@ -1,7 +1,5 @@
 # ngx-govuk-frontend/notification-banner
 
-Secondary entry point of `ngx-govuk-frontend`. It can be used by importing from `ngx-govuk-frontend/notification-banner`.
-
 ## Overview
 
 The notification banner component provides a way to display important information or updates that users need to know about. This is an Angular implementation of the [GOV.UK Design System Notification Banner component](https://design-system.service.gov.uk/components/notification-banner/).

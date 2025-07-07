@@ -1,7 +1,5 @@
 # ngx-govuk-frontend/phase-banner
 
-Secondary entry point of `ngx-govuk-frontend`. It can be used by importing from `ngx-govuk-frontend/phase-banner`.
-
 ## Overview
 
 The phase banner component helps users understand when a service is new and still being worked on, typically in alpha or beta phase. This is an Angular implementation of the [GOV.UK Design System Phase Banner component](https://design-system.service.gov.uk/components/phase-banner/).

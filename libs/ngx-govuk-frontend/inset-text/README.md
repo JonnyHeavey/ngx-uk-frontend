@@ -1,7 +1,5 @@
 # ngx-govuk-frontend/inset-text
 
-Secondary entry point of `ngx-govuk-frontend`. It can be used by importing from `ngx-govuk-frontend/inset-text`.
-
 ## Overview
 
 The inset text component provides a way to visually distinguish certain text from the content that surrounds it. It's typically used for quotes, examples, or additional information that supplement the main content. This is an Angular implementation of the [GOV.UK Design System Inset Text component](https://design-system.service.gov.uk/components/inset-text/).

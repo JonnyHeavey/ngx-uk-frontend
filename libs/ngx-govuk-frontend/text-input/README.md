@@ -1,7 +1,5 @@
 # ngx-govuk-frontend/text-input
 
-Secondary entry point of `ngx-govuk-frontend`. It can be used by importing from `ngx-govuk-frontend/text-input`.
-
 ## Overview
 
 The text input component allows users to enter text that's a single line. This is an Angular implementation of the [GOV.UK Design System Text Input component](https://design-system.service.gov.uk/components/text-input/).

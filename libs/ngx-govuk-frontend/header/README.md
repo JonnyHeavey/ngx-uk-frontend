@@ -1,7 +1,5 @@
 # ngx-govuk-frontend/header
 
-Secondary entry point of `ngx-govuk-frontend`. It can be used by importing from `ngx-govuk-frontend/header`.
-
 ## Overview
 
 The header component helps users identify what service they are using and navigate between pages. This is an Angular implementation of the [GOV.UK Design System Header component](https://design-system.service.gov.uk/components/header/).
