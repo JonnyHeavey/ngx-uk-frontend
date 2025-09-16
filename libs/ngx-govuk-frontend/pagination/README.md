@@ -1,7 +1,5 @@
 # ngx-govuk-frontend/pagination
 
-Secondary entry point of `ngx-govuk-frontend`. It can be used by importing from `ngx-govuk-frontend/pagination`.
-
 ## Overview
 
 The pagination component helps users navigate through a series of pages of search results or documents. This is an Angular implementation of the [GOV.UK Design System Pagination component](https://design-system.service.gov.uk/components/pagination/).

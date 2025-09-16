@@ -1,7 +1,5 @@
 # ngx-govuk-frontend/service-navigation
 
-Secondary entry point of `ngx-govuk-frontend`. It can be used by importing from `ngx-govuk-frontend/service-navigation`.
-
 ## Overview
 
 The service navigation component provides a consistent way for users to navigate between different sections of a service. This is an Angular implementation of the [GOV.UK Design System Service Navigation component](https://design-system.service.gov.uk/components/service-navigation/).

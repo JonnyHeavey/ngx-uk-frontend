@@ -1,7 +1,5 @@
 # ngx-govuk-frontend/tabs
 
-Secondary entry point of `ngx-govuk-frontend`. It can be used by importing from `ngx-govuk-frontend/tabs`.
-
 ## Overview
 
 The tabs component lets users navigate between related sections of content on the same page. This is an Angular implementation of the [GOV.UK Design System Tabs component](https://design-system.service.gov.uk/components/tabs/).
