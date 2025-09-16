@@ -60,7 +60,7 @@ export const WithCharacterCount: Story = {
     inputId: 'with-character-count',
     autocomplete: 'off',
     rows: 5,
-    maxLength: 200,
+    maxlength: 200,
     showCharacterCount: true,
   },
   parameters: {
