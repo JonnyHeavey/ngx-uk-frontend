@@ -14,8 +14,8 @@ import {
   ValidatorFn,
   Validators,
 } from '@angular/forms';
+import { CommonFormInputDirective } from '@ngx-uk-frontend/core/form-utils';
 import {
-  GovUKCommonFormInputDirective,
   ValueAccessorDirective,
   injectNgControl,
   inputCommonInputs,
@@ -40,12 +40,12 @@ interface DateInputParts {
   changeDetection: ChangeDetectionStrategy.OnPush,
   hostDirectives: [
     ValueAccessorDirective,
-    { directive: GovUKCommonFormInputDirective, inputs: inputCommonInputs },
+    { directive: CommonFormInputDirective, inputs: inputCommonInputs },
   ],
 })
 export class GovUKDateInputComponent {
   readonly ngControl = injectNgControl();
-  readonly commonFormInput = inject(GovUKCommonFormInputDirective);
+  readonly commonFormInput = inject(CommonFormInputDirective);
 
   /**
    * The minimum valid date in ISO format (YYYY-MM-DD).

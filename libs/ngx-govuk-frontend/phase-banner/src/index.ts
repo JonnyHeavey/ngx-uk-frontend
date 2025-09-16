@@ -1,4 +1,1 @@
-export {
-  GovUKPhase,
-  GovUKPhaseBannerComponent,
-} from './lib/phase-banner.component';
+export { GovUKPhaseBannerComponent } from './lib/phase-banner.component';

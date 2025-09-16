@@ -1,0 +1,40 @@
+<div class="ds_tabs js-initialised">
+  <nav class="ds_tabs__navigation" [attr.aria-labelledby]="getTitleId()">
+    <h2 [id]="getTitleId()" class="ds_tabs__title">
+      {{ title() }}
+    </h2>
+    <ul class="ds_tabs__list" role="tablist">
+      @for (tab of tabs(); track tab.id()) {
+        <li
+          class="ds_tabs__tab"
+          [class.ds_current]="$index === activeTab()"
+          role="presentation"
+        >
+          <a
+            class="ds_tabs__tab-link"
+            (click)="selectTab($index, $event)"
+            [href]="'#' + tab.id()"
+            role="tab"
+            [attr.aria-selected]="$index === activeTab()"
+            [attr.aria-controls]="tab.id()"
+            [attr.tabindex]="$index === activeTab() ? 0 : -1"
+          >
+            {{ tab.title() }}
+          </a>
+        </li>
+      }
+    </ul>
+  </nav>
+
+  @for (tab of tabs(); track tab.id()) {
+    <div
+      class="ds_tabs__content ds_tabs__content--bordered"
+      [id]="tab.id()"
+      role="tabpanel"
+      [attr.aria-labelledby]="getTitleId()"
+      [attr.hidden]="$index !== activeTab() ? true : null"
+    >
+      <ng-container [ngTemplateOutlet]="tab.tabContent()" />
+    </div>
+  }
+</div>

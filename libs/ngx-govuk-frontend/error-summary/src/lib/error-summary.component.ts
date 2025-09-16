@@ -1,13 +1,10 @@
 import {
-  afterNextRender,
   ChangeDetectionStrategy,
   Component,
   contentChildren,
-  ElementRef,
-  inject,
-  input,
 } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { ErrorSummaryDirective } from '@ngx-uk-frontend/core/error-summary';
 import { GovUKErrorSummaryItemDirective } from './error-summary-item.directive';
 
 /**
@@ -34,25 +31,11 @@ import { GovUKErrorSummaryItemDirective } from './error-summary-item.directive';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [RouterLink],
 })
-export class GovUKErrorSummaryComponent {
-  private elementRef = inject(ElementRef);
-
+export class GovUKErrorSummaryComponent extends ErrorSummaryDirective {
   /**
-   * Query for all error summary item directives using signal-based query
-   * This allows the component to iterate through the child error items
+   * Override the base errorItems query to use GovUK-specific directive
    */
-  readonly errorItems = contentChildren(GovUKErrorSummaryItemDirective);
-
-  /**
-   * Text to use for the heading of the error summary block
-   */
-  readonly title = input<string>('There is a problem');
-
-  constructor() {
-    // Focus on the error summary when it's rendered
-    afterNextRender(() => {
-      const element = this.elementRef.nativeElement as HTMLElement;
-      element.focus();
-    });
-  }
+  override readonly errorItems = contentChildren(
+    GovUKErrorSummaryItemDirective,
+  );
 }

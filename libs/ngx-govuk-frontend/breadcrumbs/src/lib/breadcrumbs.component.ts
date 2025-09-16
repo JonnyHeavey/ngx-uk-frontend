@@ -4,6 +4,7 @@ import {
   contentChildren,
 } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { BreadcrumbsDirective } from '@ngx-uk-frontend/core/breadcrumbs';
 import { GovUKBreadcrumbDirective } from './breadcrumb/breadcrumb.directive';
 
 /**
@@ -17,8 +18,9 @@ import { GovUKBreadcrumbDirective } from './breadcrumb/breadcrumb.directive';
   imports: [RouterLink],
   templateUrl: './breadcrumbs.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
 })
-export class GovUKBreadcrumbsComponent {
-  /** Collection of breadcrumb items that are children of this component. */
-  readonly items = contentChildren(GovUKBreadcrumbDirective);
+export class GovUKBreadcrumbsComponent extends BreadcrumbsDirective {
+  /** Collection of GOV.UK breadcrumb items that are children of this component. */
+  override readonly items = contentChildren(GovUKBreadcrumbDirective);
 }

@@ -20,6 +20,11 @@
           {
             "glob": "**/*",
             "input": "apps/govscot-service/public"
+          },
+          {
+            "glob": "icons.stack.svg",
+            "input": "node_modules/@scottish-government/design-system/dist/images/icons",
+            "output": "assets/images/icons"
           }
         ],
         "styles": [

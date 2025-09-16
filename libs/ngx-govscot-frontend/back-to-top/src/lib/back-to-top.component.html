@@ -1,0 +1,26 @@
+<div
+  class="ds_back-to-top"
+  [class.active]="isVisible()"
+  data-module="ds-back-to-top"
+>
+  <button
+    type="button"
+    class="ds_back-to-top__button"
+    [attr.aria-label]="ariaLabel()"
+    (click)="scrollToTop()"
+  >
+    {{ buttonText() }}
+    <svg
+      class="ds_icon ds_back-to-top__icon"
+      aria-hidden="true"
+      role="img"
+      focusable="false"
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+    >
+      <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z" />
+    </svg>
+  </button>
+</div>

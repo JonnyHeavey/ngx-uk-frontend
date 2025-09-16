@@ -1,8 +1,7 @@
 import { TitleCasePipe } from '@angular/common';
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { PhaseBannerDirective } from '@ngx-uk-frontend/core/phase-banner';
 import { GovUKTagComponent } from 'ngx-govuk-frontend/tag';
-
-export type GovUKPhase = 'alpha' | 'beta';
 
 /**
  * This component implements the GOV.UK Design System phase banner component.
@@ -16,7 +15,4 @@ export type GovUKPhase = 'alpha' | 'beta';
   templateUrl: './phase-banner.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class GovUKPhaseBannerComponent {
-  /** The phase of the service. Can be 'alpha' or 'beta'. Defaults to 'beta'. */
-  readonly phase = input<GovUKPhase>('beta');
-}
+export class GovUKPhaseBannerComponent extends PhaseBannerDirective {}

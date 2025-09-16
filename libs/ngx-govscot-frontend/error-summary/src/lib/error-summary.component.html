@@ -1,0 +1,21 @@
+<div
+  class="ds_error-summary"
+  id="error-summary"
+  aria-labelledby="error-summary-title"
+  role="alert"
+  [attr.tabindex]="-1"
+>
+  <h2 class="ds_error-summary__title" id="error-summary-title">
+    {{ title() }}
+  </h2>
+
+  <ul class="ds_error-summary__list">
+    @for (item of errorItems(); track item) {
+      <li>
+        <a routerLink="." [fragment]="item.targetId()">
+          {{ item.text() }}
+        </a>
+      </li>
+    }
+  </ul>
+</div>

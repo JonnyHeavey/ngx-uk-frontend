@@ -1,0 +1,82 @@
+@if (!showConfirmation()) {
+  <!-- Main cookie banner -->
+  <div
+    id="cookie-notice"
+    class="ds_notification ds_notification--large ds_notification--cookie js-initial-cookie-content"
+    data-module="ds-cookie-notification"
+  >
+    <div class="ds_wrapper">
+      <div class="ds_notification__content">
+        <h2 class="visually-hidden">Information</h2>
+
+        <div class="ds_notification__text">
+          <p>{{ text() }}</p>
+          <p>{{ description() }}</p>
+        </div>
+
+        <div class="ds_button-group">
+          <ngx-govscot-button
+            color="secondary"
+            size="small"
+            class="js-accept-all-cookies"
+            (click)="onAcceptAll()"
+          >
+            {{ acceptAllText() }}
+          </ngx-govscot-button>
+          <ngx-govscot-button
+            color="secondary"
+            size="small"
+            class="js-accept-essential-cookies"
+            (click)="onEssentialOnly()"
+          >
+            {{ essentialOnlyText() }}
+          </ngx-govscot-button>
+          <ngx-govscot-button
+            color="link"
+            size="small"
+            (click)="onViewPreferences()"
+          >
+            {{ preferencesText() }}
+          </ngx-govscot-button>
+        </div>
+      </div>
+    </div>
+  </div>
+} @else {
+  <!-- Confirmation message -->
+  <div
+    id="cookie-confirm"
+    class="ds_notification ds_notification--cookie-success ds_reversed js-confirm-cookie-content"
+    data-module="ds-notification"
+  >
+    <div class="ds_wrapper">
+      <div class="ds_notification__content">
+        <h2 class="visually-hidden">Information</h2>
+
+        <div class="ds_notification__text">
+          <p>
+            {{ confirmationText() }}
+            <ngx-govscot-button
+              color="link"
+              size="small"
+              (click)="onChangeSettings()"
+            >
+              {{ settingsText() }}
+            </ngx-govscot-button>
+          </p>
+        </div>
+
+        <button
+          class="ds_notification__close js-close-notification"
+          type="button"
+          (click)="onCloseConfirmation()"
+        >
+          <span class="visually-hidden">Close this notification</span>
+          <svg class="ds_icon ds_icon--fill" aria-hidden="true" role="img">
+            <use href="/assets/images/icons/icons.stack.svg#close"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+}

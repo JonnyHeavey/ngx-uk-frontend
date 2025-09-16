@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { NotificationPanelDirective } from '@ngx-uk-frontend/core/notification-panel';
 
 /**
  * This component implements the GOV.UK Design System panel component.
@@ -11,7 +12,4 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
   templateUrl: './panel.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class GovUKPanelComponent {
-  /** The title text displayed in the panel. This input is required. */
-  readonly title = input.required<string>();
-}
+export class GovUKPanelComponent extends NotificationPanelDirective {}

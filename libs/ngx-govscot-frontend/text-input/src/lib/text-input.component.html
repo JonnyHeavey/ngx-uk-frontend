@@ -1,0 +1,77 @@
+@if (currency()) {
+  <div class="ds_currency-wrapper" [attr.data-symbol]="currencySymbol()">
+    <input
+      class="ds_input"
+      [ngClass]="inputClasses()"
+      [class.ds_input--error]="ngControl.touched && ngControl.errors"
+      [attr.id]="commonFormInput.inputId() ? commonFormInput.inputId() : null"
+      [attr.type]="type()"
+      [attr.inputmode]="inputmode() ? inputmode() : null"
+      [attr.pattern]="pattern() ? pattern() : null"
+      [attr.autocomplete]="autocomplete() ? autocomplete() : null"
+      [attr.spellcheck]="spellcheck() ? spellcheck() : null"
+      [attr.autocapitalize]="autocapitalize() ? autocapitalize() : null"
+      [attr.placeholder]="placeholder() ? placeholder() : null"
+      [attr.maxlength]="maxlength() ? maxlength() : null"
+      [attr.minlength]="minlength() ? minlength() : null"
+      [attr.disabled]="disabled() ? '' : null"
+      [attr.readonly]="readonly() ? '' : null"
+      [formControl]="ngControl.control"
+    />
+  </div>
+} @else if (hasButton()) {
+  <div class="ds_input__wrapper ds_input__wrapper--has-icon">
+    <input
+      class="ds_input"
+      [ngClass]="inputClasses()"
+      [class.ds_input--error]="ngControl.touched && ngControl.errors"
+      [attr.id]="commonFormInput.inputId() ? commonFormInput.inputId() : null"
+      [attr.type]="type()"
+      [attr.inputmode]="inputmode() ? inputmode() : null"
+      [attr.pattern]="pattern() ? pattern() : null"
+      [attr.autocomplete]="autocomplete() ? autocomplete() : null"
+      [attr.spellcheck]="spellcheck() ? spellcheck() : null"
+      [attr.autocapitalize]="autocapitalize() ? autocapitalize() : null"
+      [attr.placeholder]="placeholder() ? placeholder() : null"
+      [attr.maxlength]="maxlength() ? maxlength() : null"
+      [attr.minlength]="minlength() ? minlength() : null"
+      [attr.disabled]="disabled() ? '' : null"
+      [attr.readonly]="readonly() ? '' : null"
+      [formControl]="ngControl.control"
+    />
+
+    <button type="button" class="ds_button">
+      @if (buttonText()) {
+        <span class="visually-hidden">{{ buttonText() }}</span>
+      }
+      @if (buttonIcon()) {
+        <svg class="ds_icon" aria-hidden="true" role="img">
+          <use
+            [attr.href]="'/assets/images/icons/icons.stack.svg#' + buttonIcon()"
+          ></use>
+        </svg>
+      }
+    </button>
+  </div>
+} @else {
+  <div class="ds_input__wrapper">
+    <input
+      class="ds_input"
+      [ngClass]="inputClasses()"
+      [class.ds_input--error]="ngControl.touched && ngControl.errors"
+      [attr.id]="commonFormInput.inputId() ? commonFormInput.inputId() : null"
+      [attr.type]="type()"
+      [attr.inputmode]="inputmode() ? inputmode() : null"
+      [attr.pattern]="pattern() ? pattern() : null"
+      [attr.autocomplete]="autocomplete() ? autocomplete() : null"
+      [attr.spellcheck]="spellcheck() ? spellcheck() : null"
+      [attr.autocapitalize]="autocapitalize() ? autocapitalize() : null"
+      [attr.placeholder]="placeholder() ? placeholder() : null"
+      [attr.maxlength]="maxlength() ? maxlength() : null"
+      [attr.minlength]="minlength() ? minlength() : null"
+      [attr.disabled]="disabled() ? '' : null"
+      [attr.readonly]="readonly() ? '' : null"
+      [formControl]="ngControl.control"
+    />
+  </div>
+}

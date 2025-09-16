@@ -1,0 +1,22 @@
+<ng-template #itemTemplate>
+  <li class="ds_summary-list__item">
+    <span class="ds_summary-list__key" [id]="'q' + key()">{{ key() }}</span>
+    <span class="ds_summary-list__value">
+      @let valueTpl = valueTemplate();
+      @if (valueTpl) {
+        @if (valueTpl.templateRef) {
+          <q class="ds_summary-list__answer">
+            <ng-template [ngTemplateOutlet]="valueTpl.templateRef" />
+          </q>
+        }
+      } @else {
+        <q class="ds_summary-list__answer">{{ value() }}</q>
+      }
+    </span>
+    @if (actions()) {
+      <div class="ds_summary-list__actions">
+        <ng-content select="ngx-govscot-summary-list-actions" />
+      </div>
+    }
+  </li>
+</ng-template>

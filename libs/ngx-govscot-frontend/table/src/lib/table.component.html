@@ -1,0 +1,11 @@
+<table class="ds_table" [attr.data-smallscreen]="smallScreenBehavior()">
+  @if (caption()) {
+    <caption>
+      {{
+        caption()
+      }}
+    </caption>
+  }
+
+  <ng-content></ng-content>
+</table>

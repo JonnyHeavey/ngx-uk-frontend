@@ -1,0 +1,16 @@
+<div class="ds_summary-card">
+  <div class="ds_summary-card__header">
+    <h3
+      class="ds_summary-card__header-title"
+      [id]="'card-' + title() + '-title'"
+    >
+      {{ title() }}
+    </h3>
+    @if (actions()) {
+      <ng-content select="ngx-govscot-summary-list-card-actions" />
+    }
+  </div>
+  <div class="ds_summary-card__content">
+    <ng-content />
+  </div>
+</div>

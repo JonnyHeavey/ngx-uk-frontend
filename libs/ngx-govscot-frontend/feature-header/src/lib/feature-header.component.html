@@ -1,0 +1,69 @@
+@if (fullWidth()) {
+  <header [ngClass]="featureHeaderClasses()">
+    <div class="ds_wrapper">
+      <div class="ds_feature-header__primary">
+        <h1 class="ds_feature-header__title">{{ title() }}</h1>
+        @if (content()) {
+          <p>{{ content() }}</p>
+        }
+      </div>
+
+      @if (showImage() && imageSrc() && imageWidth() && imageHeight()) {
+        <div [ngClass]="secondaryClasses()">
+          @if (useAspectBox()) {
+            <div [ngClass]="aspectBoxClasses()">
+              <img
+                class="ds_aspect-box__inner"
+                [ngSrc]="imageSrc()!"
+                [alt]="imageAlt()"
+                [width]="imageWidth()!"
+                [height]="imageHeight()!"
+              />
+            </div>
+          } @else {
+            <img
+              class="ds_feature-header__image"
+              [ngSrc]="imageSrc()!"
+              [alt]="imageAlt()"
+              [width]="imageWidth()!"
+              [height]="imageHeight()!"
+            />
+          }
+        </div>
+      }
+    </div>
+  </header>
+} @else {
+  <header [ngClass]="featureHeaderClasses()">
+    <div class="ds_feature-header__primary">
+      <h1 class="ds_feature-header__title">{{ title() }}</h1>
+      @if (content()) {
+        <p>{{ content() }}</p>
+      }
+    </div>
+
+    @if (showImage() && imageSrc() && imageWidth() && imageHeight()) {
+      <div [ngClass]="secondaryClasses()">
+        @if (useAspectBox()) {
+          <div [ngClass]="aspectBoxClasses()">
+            <img
+              class="ds_aspect-box__inner"
+              [ngSrc]="imageSrc()!"
+              [alt]="imageAlt()"
+              [width]="imageWidth()!"
+              [height]="imageHeight()!"
+            />
+          </div>
+        } @else {
+          <img
+            class="ds_feature-header__image"
+            [ngSrc]="imageSrc()!"
+            [alt]="imageAlt()"
+            [width]="imageWidth()!"
+            [height]="imageHeight()!"
+          />
+        }
+      </div>
+    }
+  </header>
+}

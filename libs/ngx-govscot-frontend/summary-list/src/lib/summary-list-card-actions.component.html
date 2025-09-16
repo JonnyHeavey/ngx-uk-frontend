@@ -1,0 +1,7 @@
+<ul class="ds_summary-card__actions-list">
+  @for (action of actions(); track action) {
+    <li class="ds_summary-card__actions-list-item">
+      <ng-template [ngTemplateOutlet]="action.actionTemplate()" />
+    </li>
+  }
+</ul>

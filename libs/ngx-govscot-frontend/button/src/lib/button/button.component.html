@@ -1,4 +1,33 @@
-<button [disabled]="disabled()">
-  GOVSCOTHARDOCDED
-  <ng-content />
-</button>
+@if (color() === 'link') {
+  <button type="button" class="ds_link" [disabled]="disabled()">
+    @if (hasIcon() && iconLeft()) {
+      <ng-content select="[slot=icon-left]" />
+    }
+    <ng-content></ng-content>
+    @if (hasIcon() && !iconLeft()) {
+      <ng-content select="[slot=icon-right]" />
+    }
+  </button>
+} @else {
+  <button
+    class="ds_button"
+    [ngClass]="{
+      'ds_button--secondary': color() === 'secondary',
+      'ds_button--cancel': color() === 'cancel',
+      'ds_button--small': size() === 'small',
+      'ds_button--fixed': width() === 'fixed',
+      'ds_button--max': width() === 'max',
+      'ds_button--has-icon': hasIcon(),
+      'ds_button--has-icon--left': hasIcon() && iconLeft(),
+    }"
+    [disabled]="disabled()"
+  >
+    @if (hasIcon() && iconLeft()) {
+      <ng-content select="[slot=icon-left]" />
+    }
+    <ng-content />
+    @if (hasIcon() && !iconLeft()) {
+      <ng-content select="[slot=icon-right]" />
+    }
+  </button>
+}

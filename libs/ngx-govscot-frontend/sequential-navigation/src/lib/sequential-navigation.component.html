@@ -1,0 +1,31 @@
+<nav
+  class="ds_sequential-nav"
+  [class]="classes()"
+  [attr.aria-label]="ariaLabel()"
+>
+  @if (previous()) {
+    <div class="ds_sequential-nav__item ds_sequential-nav__item--prev">
+      <a
+        class="ds_sequential-nav__button ds_sequential-nav__button--left"
+        [routerLink]="previous()!.link"
+      >
+        <span class="ds_sequential-nav__text" data-label="previous">
+          {{ previous()!.text }}
+        </span>
+      </a>
+    </div>
+  }
+
+  @if (next()) {
+    <div class="ds_sequential-nav__item ds_sequential-nav__item--next">
+      <a
+        class="ds_sequential-nav__button ds_sequential-nav__button--right"
+        [routerLink]="next()!.link"
+      >
+        <span class="ds_sequential-nav__text" data-label="next">
+          {{ next()!.text }}
+        </span>
+      </a>
+    </div>
+  }
+</nav>

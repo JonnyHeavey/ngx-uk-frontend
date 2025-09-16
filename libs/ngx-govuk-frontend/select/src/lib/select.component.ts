@@ -1,26 +1,16 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  inject,
-  input,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CommonFormInputDirective } from '@ngx-uk-frontend/core/form-utils';
+import { SelectDirective, SelectOption } from '@ngx-uk-frontend/core/select';
 import {
-  GovUKCommonFormInputDirective,
   ValueAccessorDirective,
-  injectNgControl,
   inputCommonInputs,
 } from 'ngx-govuk-frontend/form-utils';
 
 /**
  * Interface defining an option in the select dropdown.
  */
-export interface GovUKSelectOption {
-  /** The displayed text for the option */
-  label: string;
-  /** The value that will be submitted when the option is selected */
-  value: string;
-}
+export type GovUKSelectOption = SelectOption;
 
 /**
  * This component implements the GOV.UK Design System select component.
@@ -35,16 +25,7 @@ export interface GovUKSelectOption {
   changeDetection: ChangeDetectionStrategy.OnPush,
   hostDirectives: [
     ValueAccessorDirective,
-    { directive: GovUKCommonFormInputDirective, inputs: inputCommonInputs },
+    { directive: CommonFormInputDirective, inputs: inputCommonInputs },
   ],
 })
-export class GovUKSelectComponent {
-  /** The Angular form control associated with this select input. */
-  readonly ngControl = injectNgControl();
-
-  /** Reference to the common form input directive that provides shared functionality. */
-  readonly commonFormInput = inject(GovUKCommonFormInputDirective);
-
-  /** The list of options to display in the select dropdown. This input is required. */
-  readonly options = input.required<GovUKSelectOption[]>();
-}
+export class GovUKSelectComponent extends SelectDirective {}

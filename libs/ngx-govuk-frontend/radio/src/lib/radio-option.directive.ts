@@ -1,13 +1,12 @@
 /* eslint-disable @angular-eslint/directive-selector */
-import { booleanAttribute, Directive, input } from '@angular/core';
+import { Directive } from '@angular/core';
+import { RadioOptionDirective } from '@ngx-uk-frontend/core/radio';
 
+/**
+ * GovUK-specific radio option directive that extends the common radio option functionality.
+ * This directive provides the GovUK selector while inheriting all common radio option behavior.
+ */
 @Directive({
   selector: 'ngx-govuk-radio-option',
-  })
-export class GovUKRadioOptionDirective {
-  readonly label = input.required<string>();
-  readonly value = input.required<string>();
-
-  readonly hint = input<string>();
-  readonly isDivided = input(false, { transform: booleanAttribute });
-}
+})
+export class GovUKRadioOptionDirective extends RadioOptionDirective {}

@@ -1,4 +1,5 @@
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { CommonFormInputDirective } from '@ngx-uk-frontend/core/form-utils';
 import {
   argsToTemplate,
   moduleMetadata,
@@ -6,7 +7,6 @@ import {
   type StoryFn,
   type StoryObj,
 } from '@storybook/angular';
-import { GovUKCommonFormInputDirective } from 'ngx-govuk-frontend/form-utils';
 import { GovUKPasswordInputComponent } from './password-input.component';
 
 const meta: Meta<GovUKPasswordInputComponent> = {
@@ -20,9 +20,7 @@ const meta: Meta<GovUKPasswordInputComponent> = {
 };
 
 export default meta;
-type Story = StoryObj<
-  GovUKCommonFormInputDirective & GovUKPasswordInputComponent
->;
+type Story = StoryObj<CommonFormInputDirective & GovUKPasswordInputComponent>;
 
 const Template: StoryFn<GovUKPasswordInputComponent> = (args) => ({
   props: { ...args, form: new FormGroup({ input: new FormControl('') }) },

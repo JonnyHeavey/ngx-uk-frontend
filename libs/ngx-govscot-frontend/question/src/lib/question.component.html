@@ -1,0 +1,32 @@
+<div class="ds_question" [class.ds_question--error]="errorMessage()">
+  @if (label()) {
+    @if (isPageTitle()) {
+      <h1 class="ds_page-header">
+        <span class="ds_page-header__label ds_content-label">Question</span>
+        <span class="ds_page-header__title">
+          <label class="ds_label" [attr.for]="labelFor() ? labelFor() : null">
+            {{ label() }}
+          </label>
+        </span>
+      </h1>
+    } @else {
+      <label class="ds_label" [attr.for]="labelFor() ? labelFor() : null">
+        {{ label() }}
+      </label>
+    }
+
+    @if (hint()) {
+      <p class="ds_hint-text">
+        {{ hint() }}
+      </p>
+    }
+
+    @if (errorMessage()) {
+      <p class="ds_question__error-message">
+        {{ errorMessage() }}
+      </p>
+    }
+  }
+
+  <ng-content />
+</div>

@@ -1,0 +1,17 @@
+<div class="ds_select-wrapper">
+  <select
+    class="ds_select"
+    [class.ds_select--error]="ngControl.touched && ngControl.errors"
+    [ngClass]="commonFormInput.extraClasses()"
+    [formControl]="ngControl.control"
+    [attr.id]="commonFormInput.inputId() ? commonFormInput.inputId() : null"
+    [attr.name]="commonFormInput.inputId() ? commonFormInput.inputId() : null"
+  >
+    @for (option of options(); track option.value) {
+      <option [value]="option.value">
+        {{ option.label }}
+      </option>
+    }
+  </select>
+  <span class="ds_select-arrow" aria-hidden="true"></span>
+</div>

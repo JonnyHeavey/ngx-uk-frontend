@@ -8,10 +8,17 @@
     [ngClass]="commonFormInput.extraClasses()"
     [class.govuk-input--error]="ngControl.touched && ngControl.errors"
     [attr.id]="commonFormInput.inputId() ? commonFormInput.inputId() : null"
-    [attr.autocomplete]="
-      commonFormInput.autocomplete() ? commonFormInput.autocomplete() : null
-    "
-    type="text"
+    [attr.type]="type()"
+    [attr.inputmode]="inputmode() ? inputmode() : null"
+    [attr.pattern]="pattern() ? pattern() : null"
+    [attr.autocomplete]="autocomplete() ? autocomplete() : null"
+    [attr.spellcheck]="spellcheck() ? spellcheck() : null"
+    [attr.autocapitalize]="autocapitalize() ? autocapitalize() : null"
+    [attr.placeholder]="placeholder() ? placeholder() : null"
+    [attr.maxlength]="maxlength() ? maxlength() : null"
+    [attr.minlength]="minlength() ? minlength() : null"
+    [attr.disabled]="disabled() ? disabled() : null"
+    [attr.readonly]="readonly() ? readonly() : null"
     [formControl]="ngControl.control"
   />
 

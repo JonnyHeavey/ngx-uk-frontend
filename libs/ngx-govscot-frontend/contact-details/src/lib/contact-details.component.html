@@ -1,0 +1,194 @@
+<div [class]="contactDetailsClasses()">
+  <h2 class="ds_contact-details__title">{{ title() }}</h2>
+  <address>
+    @if (twoColumn()) {
+      <div [class]="gridClasses()">
+        <div class="ds_contact-details__list">
+          <dl>
+            @for (item of contactItems(); track item.label()) {
+              <div class="ds_contact-details__item">
+                <dt>{{ item.label() }}</dt>
+                @if (item.type() === 'social') {
+                  @if (item.hasIcon()) {
+                    <dd class="ds_contact-details__social-item" translate="no">
+                      <img
+                        [src]="item.icon()!"
+                        [alt]="item.label()"
+                        class="ds_contact-details__social-icon"
+                      />
+                      @if (item.hasLink()) {
+                        <a
+                          [href]="item.contactHref()"
+                          class="ds_contact-details__social-link"
+                        >
+                          @if (item.itemContent()) {
+                            <ng-container
+                              [ngTemplateOutlet]="item.itemContent()!"
+                            />
+                          }
+                        </a>
+                      } @else {
+                        @if (item.itemContent()) {
+                          <ng-container
+                            [ngTemplateOutlet]="item.itemContent()!"
+                          />
+                        }
+                      }
+                      @if (item.additionalInfo()) {
+                        <span class="ds_contact-details__social-context">
+                          {{ item.additionalInfo() }}
+                        </span>
+                      }
+                    </dd>
+                  } @else {
+                    <dd class="ds_contact-details__social-item" translate="no">
+                      @if (item.hasLink()) {
+                        <a
+                          [href]="item.contactHref()"
+                          class="ds_contact-details__social-link"
+                        >
+                          @if (item.itemContent()) {
+                            <ng-container
+                              [ngTemplateOutlet]="item.itemContent()!"
+                            />
+                          }
+                        </a>
+                      } @else {
+                        @if (item.itemContent()) {
+                          <ng-container
+                            [ngTemplateOutlet]="item.itemContent()!"
+                          />
+                        }
+                      }
+                      @if (item.additionalInfo()) {
+                        <span class="ds_contact-details__social-context">
+                          {{ item.additionalInfo() }}
+                        </span>
+                      }
+                    </dd>
+                  }
+                } @else {
+                  @if (item.hasLink()) {
+                    <dd>
+                      <a [href]="item.contactHref()" class="ds_break-word">
+                        @if (item.itemContent()) {
+                          <ng-container
+                            [ngTemplateOutlet]="item.itemContent()!"
+                          />
+                        }
+                      </a>
+                      @if (item.additionalInfo()) {
+                        <br />
+                        <span>{{ item.additionalInfo() }}</span>
+                      }
+                    </dd>
+                  } @else {
+                    <dd>
+                      @if (item.itemContent()) {
+                        <ng-container
+                          [ngTemplateOutlet]="item.itemContent()!"
+                        />
+                      }
+                      @if (item.additionalInfo()) {
+                        <br />
+                        <span>{{ item.additionalInfo() }}</span>
+                      }
+                    </dd>
+                  }
+                }
+              </div>
+            }
+          </dl>
+        </div>
+      </div>
+    } @else {
+      <dl>
+        @for (item of contactItems(); track item.label()) {
+          <div class="ds_contact-details__item">
+            <dt>{{ item.label() }}</dt>
+            @if (item.type() === 'social') {
+              @if (item.hasIcon()) {
+                <dd class="ds_contact-details__social-item" translate="no">
+                  <img
+                    [src]="item.icon()!"
+                    [alt]="item.label()"
+                    class="ds_contact-details__social-icon"
+                  />
+                  @if (item.hasLink()) {
+                    <a
+                      [href]="item.contactHref()"
+                      class="ds_contact-details__social-link"
+                    >
+                      @if (item.itemContent()) {
+                        <ng-container
+                          [ngTemplateOutlet]="item.itemContent()!"
+                        />
+                      }
+                    </a>
+                  } @else {
+                    @if (item.itemContent()) {
+                      <ng-container [ngTemplateOutlet]="item.itemContent()!" />
+                    }
+                  }
+                  @if (item.additionalInfo()) {
+                    <span class="ds_contact-details__social-context">
+                      {{ item.additionalInfo() }}
+                    </span>
+                  }
+                </dd>
+              } @else {
+                <dd class="ds_contact-details__social-item" translate="no">
+                  @if (item.hasLink()) {
+                    <a
+                      [href]="item.contactHref()"
+                      class="ds_contact-details__social-link"
+                    >
+                      @if (item.itemContent()) {
+                        <ng-container
+                          [ngTemplateOutlet]="item.itemContent()!"
+                        />
+                      }
+                    </a>
+                  } @else {
+                    @if (item.itemContent()) {
+                      <ng-container [ngTemplateOutlet]="item.itemContent()!" />
+                    }
+                  }
+                  @if (item.additionalInfo()) {
+                    <span class="ds_contact-details__social-context">
+                      {{ item.additionalInfo() }}
+                    </span>
+                  }
+                </dd>
+              }
+            } @else {
+              @if (item.hasLink()) {
+                <dd>
+                  <a [href]="item.contactHref()" class="ds_break-word">
+                    @if (item.itemContent()) {
+                      <ng-container [ngTemplateOutlet]="item.itemContent()!" />
+                    }
+                  </a>
+                  @if (item.additionalInfo()) {
+                    <br />
+                    <span>{{ item.additionalInfo() }}</span>
+                  }
+                </dd>
+              } @else {
+                <dd>
+                  @if (item.itemContent()) {
+                    <ng-container [ngTemplateOutlet]="item.itemContent()!" />
+                  }
+                  @if (item.additionalInfo()) {
+                    <br />
+                    <span>{{ item.additionalInfo() }}</span>
+                  }
+                </dd>
+              }
+            }
+          </div>
+        }
+      </dl>
+    }
+  </address>
+</div>

@@ -1,8 +1,10 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CheckboxDirective } from '@ngx-uk-frontend/core/checkbox';
+import { CommonFormInputDirective } from '@ngx-uk-frontend/core/form-utils';
 import {
+  inputCommonInputs,
   ValueAccessorDirective,
-  injectNgControl,
 } from 'ngx-govuk-frontend/form-utils';
 
 /**
@@ -16,22 +18,9 @@ import {
   imports: [ReactiveFormsModule],
   templateUrl: './checkbox.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  hostDirectives: [ValueAccessorDirective],
+  hostDirectives: [
+    ValueAccessorDirective,
+    { directive: CommonFormInputDirective, inputs: inputCommonInputs },
+  ],
 })
-export class GovUKCheckboxComponent {
-  /** The Angular form control associated with this checkbox. */
-  readonly ngControl = injectNgControl();
-
-  /** The unique ID for the checkbox input element. This input is required. */
-  readonly inputId = input.required<string>();
-
-  /** The text label displayed next to the checkbox. This input is required. */
-  readonly label = input.required<string>();
-
-  /**
-   * Toggles the checkbox state between checked and unchecked.
-   */
-  toggle() {
-    this.ngControl.control?.setValue(!this.ngControl.control?.value);
-  }
-}
+export class GovUKCheckboxComponent extends CheckboxDirective {}

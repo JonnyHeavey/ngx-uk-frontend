@@ -1,0 +1,27 @@
+<div class="ds_field-group" [class.ds_field-group--inline]="inline()">
+  @for (option of options(); track option.value()) {
+    @if ($index > 0 && option.isDivided()) {
+      <div class="ds_radio__divider">Or</div>
+    }
+    <div
+      class="ds_radio"
+      [class.ds_radio--small]="small()"
+      (click)="setValue(option.value())"
+    >
+      <input
+        class="ds_radio__input"
+        type="radio"
+        [formControl]="ngControl.control"
+        [value]="option.value()"
+      />
+      <label class="ds_radio__label">
+        {{ option.label() }}
+      </label>
+      @if (option.hint()) {
+        <p class="ds_hint-text">
+          {{ option.hint() }}
+        </p>
+      }
+    </div>
+  }
+</div>

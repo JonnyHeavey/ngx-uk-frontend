@@ -1,15 +1,10 @@
 import { NgClass } from '@angular/common';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  inject,
-  input,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CommonFormInputDirective } from '@ngx-uk-frontend/core/form-utils';
+import { TextInputDirective } from '@ngx-uk-frontend/core/text-input';
 import {
-  GovUKCommonFormInputDirective,
   ValueAccessorDirective,
-  injectNgControl,
   inputCommonInputs,
 } from 'ngx-govuk-frontend/form-utils';
 
@@ -26,13 +21,10 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
   hostDirectives: [
     ValueAccessorDirective,
-    { directive: GovUKCommonFormInputDirective, inputs: inputCommonInputs },
+    { directive: CommonFormInputDirective, inputs: inputCommonInputs },
   ],
 })
-export class GovUKTextInputComponent {
-  readonly ngControl = injectNgControl();
-  readonly commonFormInput = inject(GovUKCommonFormInputDirective);
-
+export class GovUKTextInputComponent extends TextInputDirective {
   readonly prefix = input<string>();
   readonly suffix = input<string>();
 }

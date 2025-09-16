@@ -1,0 +1,5 @@
+<ol class="ds_summary-list" [class.ds_summary-list--no-border]="noBorder()">
+  @for (item of listItems(); track item) {
+    <ng-template [ngTemplateOutlet]="item.itemTemplate()" />
+  }
+</ol>

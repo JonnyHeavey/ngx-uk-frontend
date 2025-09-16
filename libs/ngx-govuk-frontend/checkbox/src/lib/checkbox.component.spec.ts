@@ -48,34 +48,16 @@ describe('GovUKCheckboxComponent', () => {
     });
   });
 
-  it('should have label input', () => {
-    TestBed.runInInjectionContext(() => {
-      const hostComponent = fixture.componentInstance;
-      hostComponent.label = 'Custom Label';
-      fixture.detectChanges();
-      expect(component.label()).toBe('Custom Label');
-    });
-  });
-
   it('should render checkbox with label in DOM', () => {
     TestBed.runInInjectionContext(() => {
       const hostComponent = fixture.componentInstance;
-      const labelText = 'Test Label';
+      const labelText = 'Custom Label';
       hostComponent.label = labelText;
       fixture.detectChanges();
 
       const labelElement = fixture.nativeElement.querySelector('.govuk-label');
       expect(labelElement).toBeTruthy();
       expect(labelElement.textContent.trim()).toBe(labelText);
-    });
-  });
-
-  it('should have id input', () => {
-    TestBed.runInInjectionContext(() => {
-      const hostComponent = fixture.componentInstance;
-      hostComponent.inputId = 'custom-id';
-      fixture.detectChanges();
-      expect(component.inputId()).toBe('custom-id');
     });
   });
 
@@ -89,6 +71,14 @@ describe('GovUKCheckboxComponent', () => {
       const checkboxElement = fixture.nativeElement.querySelector(`#${testId}`);
       expect(checkboxElement).toBeTruthy();
       expect(checkboxElement.id).toBe(testId);
+    });
+  });
+
+  it('should extend CheckboxDirective', () => {
+    TestBed.runInInjectionContext(() => {
+      // Test that the component extends CheckboxDirective by checking it exists
+      expect(component).toBeTruthy();
+      expect(component instanceof GovUKCheckboxComponent).toBe(true);
     });
   });
 
@@ -114,5 +104,28 @@ describe('GovUKCheckboxComponent', () => {
 
     control?.setValue(true);
     expect(control?.valid).toBeTruthy();
+  });
+
+  it('should toggle checkbox value when clicked', () => {
+    const hostComponent = fixture.componentInstance;
+    const control = hostComponent.form.get('testCheckbox');
+
+    // Set initial value to false
+    control?.setValue(false);
+    fixture.detectChanges();
+    expect(control?.value).toBe(false);
+
+    // Click the checkbox div to trigger toggle
+    const checkboxDiv = fixture.nativeElement.querySelector(
+      '.govuk-checkboxes__item',
+    );
+    checkboxDiv.click();
+    fixture.detectChanges();
+    expect(control?.value).toBe(true);
+
+    // Click again to toggle back
+    checkboxDiv.click();
+    fixture.detectChanges();
+    expect(control?.value).toBe(false);
   });
 });

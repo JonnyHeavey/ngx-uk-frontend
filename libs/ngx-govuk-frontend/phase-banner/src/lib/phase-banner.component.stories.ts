@@ -1,13 +1,11 @@
+import { Phase } from '@ngx-uk-frontend/core/phase-banner';
 import {
   argsToTemplate,
   type Meta,
   type StoryFn,
   type StoryObj,
 } from '@storybook/angular';
-import {
-  GovUKPhase,
-  GovUKPhaseBannerComponent,
-} from './phase-banner.component';
+import { GovUKPhaseBannerComponent } from './phase-banner.component';
 
 const meta: Meta<GovUKPhaseBannerComponent> = {
   component: GovUKPhaseBannerComponent,
@@ -34,6 +32,6 @@ const Template: StoryFn<GovUKPhaseBannerComponent> = (args) => ({
 export const Primary: Story = {
   render: Template,
   args: {
-    phase: 'beta' as GovUKPhase,
+    phase: 'beta' as Phase,
   },
 };

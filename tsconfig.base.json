@@ -16,14 +16,133 @@
     "baseUrl": ".",
     "paths": {
       "@ngx-uk-frontend/core": ["libs/core/src/index.ts"],
+      "@ngx-uk-frontend/core/accordion": ["libs/core/accordion/src/index.ts"],
+      "@ngx-uk-frontend/core/breadcrumbs": [
+        "libs/core/breadcrumbs/src/index.ts"
+      ],
       "@ngx-uk-frontend/core/button": ["libs/core/button/src/index.ts"],
+      "@ngx-uk-frontend/core/checkbox": ["libs/core/checkbox/src/index.ts"],
       "@ngx-uk-frontend/core/details": ["libs/core/details/src/index.ts"],
+      "@ngx-uk-frontend/core/error-summary": [
+        "libs/core/error-summary/src/index.ts"
+      ],
+      "@ngx-uk-frontend/core/form-group": ["libs/core/form-group/src/index.ts"],
+      "@ngx-uk-frontend/core/form-utils": ["libs/core/form-utils/src/index.ts"],
+      "@ngx-uk-frontend/core/notification-panel": [
+        "libs/core/notification-panel/src/index.ts"
+      ],
+      "@ngx-uk-frontend/core/pagination": ["libs/core/pagination/src/index.ts"],
+      "@ngx-uk-frontend/core/phase-banner": [
+        "libs/core/phase-banner/src/index.ts"
+      ],
+      "@ngx-uk-frontend/core/radio": ["libs/core/radio/src/index.ts"],
+      "@ngx-uk-frontend/core/select": ["libs/core/select/src/index.ts"],
+      "@ngx-uk-frontend/core/summary-list": [
+        "libs/core/summary-list/src/index.ts"
+      ],
+      "@ngx-uk-frontend/core/table": ["libs/core/table/src/index.ts"],
+      "@ngx-uk-frontend/core/tabs": ["libs/core/tabs/src/index.ts"],
+      "@ngx-uk-frontend/core/text-input": ["libs/core/text-input/src/index.ts"],
+      "@ngx-uk-frontend/core/textarea": ["libs/core/textarea/src/index.ts"],
       "ngx-govscot-frontend": ["libs/ngx-govscot-frontend/src/index.ts"],
+      "ngx-govscot-frontend/accordion": [
+        "libs/ngx-govscot-frontend/accordion/src/index.ts"
+      ],
+      "ngx-govscot-frontend/aspect-box": [
+        "libs/ngx-govscot-frontend/aspect-box/src/index.ts"
+      ],
+      "ngx-govscot-frontend/back-to-top": [
+        "libs/ngx-govscot-frontend/back-to-top/src/index.ts"
+      ],
+      "ngx-govscot-frontend/breadcrumbs": [
+        "libs/ngx-govscot-frontend/breadcrumbs/src/index.ts"
+      ],
       "ngx-govscot-frontend/button": [
         "libs/ngx-govscot-frontend/button/src/index.ts"
       ],
+      "ngx-govscot-frontend/checkbox": [
+        "libs/ngx-govscot-frontend/checkbox/src/index.ts"
+      ],
+      "ngx-govscot-frontend/confirmation-message": [
+        "libs/ngx-govscot-frontend/confirmation-message/src/index.ts"
+      ],
+      "ngx-govscot-frontend/contact-details": [
+        "libs/ngx-govscot-frontend/contact-details/src/index.ts"
+      ],
+      "ngx-govscot-frontend/cookie-banner": [
+        "libs/ngx-govscot-frontend/cookie-banner/src/index.ts"
+      ],
       "ngx-govscot-frontend/details": [
         "libs/ngx-govscot-frontend/details/src/index.ts"
+      ],
+      "ngx-govscot-frontend/error-summary": [
+        "libs/ngx-govscot-frontend/error-summary/src/index.ts"
+      ],
+      "ngx-govscot-frontend/feature-header": [
+        "libs/ngx-govscot-frontend/feature-header/src/index.ts"
+      ],
+      "ngx-govscot-frontend/file-download": [
+        "libs/ngx-govscot-frontend/file-download/src/index.ts"
+      ],
+      "ngx-govscot-frontend/hide-page": [
+        "libs/ngx-govscot-frontend/hide-page/src/index.ts"
+      ],
+      "ngx-govscot-frontend/inset-text": [
+        "libs/ngx-govscot-frontend/inset-text/src/index.ts"
+      ],
+      "ngx-govscot-frontend/notification-banner": [
+        "libs/ngx-govscot-frontend/notification-banner/src/index.ts"
+      ],
+      "ngx-govscot-frontend/notification-panel": [
+        "libs/ngx-govscot-frontend/notification-panel/src/index.ts"
+      ],
+      "ngx-govscot-frontend/page-header": [
+        "libs/ngx-govscot-frontend/page-header/src/index.ts"
+      ],
+      "ngx-govscot-frontend/page-metadata": [
+        "libs/ngx-govscot-frontend/page-metadata/src/index.ts"
+      ],
+      "ngx-govscot-frontend/pagination": [
+        "libs/ngx-govscot-frontend/pagination/src/index.ts"
+      ],
+      "ngx-govscot-frontend/phase-banner": [
+        "libs/ngx-govscot-frontend/phase-banner/src/index.ts"
+      ],
+      "ngx-govscot-frontend/question": [
+        "libs/ngx-govscot-frontend/question/src/index.ts"
+      ],
+      "ngx-govscot-frontend/radio": [
+        "libs/ngx-govscot-frontend/radio/src/index.ts"
+      ],
+      "ngx-govscot-frontend/select": [
+        "libs/ngx-govscot-frontend/select/src/index.ts"
+      ],
+      "ngx-govscot-frontend/sequential-navigation": [
+        "libs/ngx-govscot-frontend/sequential-navigation/src/index.ts"
+      ],
+      "ngx-govscot-frontend/skip-link": [
+        "libs/ngx-govscot-frontend/skip-link/src/index.ts"
+      ],
+      "ngx-govscot-frontend/status-tag": [
+        "libs/ngx-govscot-frontend/status-tag/src/index.ts"
+      ],
+      "ngx-govscot-frontend/summary-list": [
+        "libs/ngx-govscot-frontend/summary-list/src/index.ts"
+      ],
+      "ngx-govscot-frontend/table": [
+        "libs/ngx-govscot-frontend/table/src/index.ts"
+      ],
+      "ngx-govscot-frontend/tabs": [
+        "libs/ngx-govscot-frontend/tabs/src/index.ts"
+      ],
+      "ngx-govscot-frontend/text-input": [
+        "libs/ngx-govscot-frontend/text-input/src/index.ts"
+      ],
+      "ngx-govscot-frontend/textarea": [
+        "libs/ngx-govscot-frontend/textarea/src/index.ts"
+      ],
+      "ngx-govscot-frontend/warning-text": [
+        "libs/ngx-govscot-frontend/warning-text/src/index.ts"
       ],
       "ngx-govuk-frontend": ["libs/ngx-govuk-frontend/src/index.ts"],
       "ngx-govuk-frontend/accordion": [

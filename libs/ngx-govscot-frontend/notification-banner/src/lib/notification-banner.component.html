@@ -1,0 +1,50 @@
+<div
+  class="ds_notification"
+  [class.ds_reversed]="reversed"
+  data-module="ds-notification"
+>
+  <div class="ds_wrapper">
+    <div
+      class="ds_notification__content"
+      [class.ds_notification__content--has-close]="showClose"
+    >
+      <h2 class="visually-hidden">Information</h2>
+
+      @if (showIcon) {
+        <span
+          class="ds_notification__icon"
+          [class.ds_notification__icon--inverse]="iconInverse"
+          [class.ds_notification__icon--colour]="iconColour"
+          aria-hidden="true"
+        >
+          <svg class="ds_icon ds_icon--fill" aria-hidden="true" role="img">
+            <use
+              [attr.href]="'/assets/images/icons/icons.stack.svg#' + icon"
+            ></use>
+          </svg>
+        </span>
+      }
+
+      <div class="ds_notification__text">
+        @if (text) {
+          <p [innerHTML]="text"></p>
+        } @else {
+          <ng-content></ng-content>
+        }
+      </div>
+
+      @if (showClose) {
+        <button
+          class="ds_notification__close js-close-notification"
+          type="button"
+          (click)="onClose()"
+        >
+          <span class="visually-hidden">Close this notification</span>
+          <svg class="ds_icon ds_icon--fill" aria-hidden="true" role="img">
+            <use href="/assets/images/icons/icons.stack.svg#close"></use>
+          </svg>
+        </button>
+      }
+    </div>
+  </div>
+</div>

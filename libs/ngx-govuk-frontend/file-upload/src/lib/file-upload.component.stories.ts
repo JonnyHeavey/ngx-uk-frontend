@@ -1,4 +1,5 @@
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { CommonFormInputDirective } from '@ngx-uk-frontend/core/form-utils';
 import {
   argsToTemplate,
   moduleMetadata,
@@ -6,7 +7,6 @@ import {
   type StoryFn,
   type StoryObj,
 } from '@storybook/angular';
-import { GovUKCommonFormInputDirective } from 'ngx-govuk-frontend/form-utils';
 import { GovUKFileUploadComponent } from './file-upload.component';
 
 const meta: Meta<GovUKFileUploadComponent> = {
@@ -20,7 +20,7 @@ const meta: Meta<GovUKFileUploadComponent> = {
 };
 
 export default meta;
-type Story = StoryObj<GovUKCommonFormInputDirective & GovUKFileUploadComponent>;
+type Story = StoryObj<CommonFormInputDirective & GovUKFileUploadComponent>;
 
 const Template: StoryFn<GovUKFileUploadComponent> = (args) => ({
   props: { ...args, form: new FormGroup({ input: new FormControl('') }) },
