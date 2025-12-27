@@ -8,18 +8,18 @@ This monorepo contains a collection of libraries which implement/wrap existing U
 
 ## Available Libraries
 
-| Library                  | Description                                                  | Status             | NPM Link                                                       |
-| ------------------------ | ------------------------------------------------------------ | ------------------ | -------------------------------------------------------------- |
-| `ngx-govuk-frontend`     | Angular components for the GOV.UK Design System              | Published          | [ngx-govuk-frontend](https://www.npmjs.com/package/ngx-govuk-frontend) |
-| `ngx-govscot-frontend`   | Angular components for the Scottish Government Design System | Under Construction | -                                                              |
-| `ngx-nhsuk-frontend`     | Angular components for the NHS.UK Design System              | Under Construction | -                                                              |
+| Library                | Description                                                  | Status             | NPM Link                                                               |
+| ---------------------- | ------------------------------------------------------------ | ------------------ | ---------------------------------------------------------------------- |
+| `ngx-govuk-frontend`   | Angular components for the GOV.UK Design System              | Published          | [ngx-govuk-frontend](https://www.npmjs.com/package/ngx-govuk-frontend) |
+| `ngx-govscot-frontend` | Angular components for the Scottish Government Design System | Under Construction | -                                                                      |
+| `ngx-nhsuk-frontend`   | Angular components for the NHS.UK Design System              | Under Construction | -                                                                      |
 
 ## Development
 
 ### Prerequisites
 
 - Node.js (LTS version recommended)
-- Angular 20+
+- Angular 21+
 - Nx CLI
 
 ### Getting Started

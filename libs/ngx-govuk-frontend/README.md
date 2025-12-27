@@ -21,6 +21,7 @@ The following table shows which versions of NgxGovUKFrontend are compatible with
 | ------------------------ | ----------------------- |
 | 1.x                      | 19, 20                  |
 | 2.x                      | 20, 21                  |
+| 3.x                      | 21, 22                  |
 
 **Note:** We recommend using the latest version of NgxGovUKFrontend that supports your Angular version for the best experience and latest features.
 
