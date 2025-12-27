@@ -1,6 +1,6 @@
 {
   "name": "ngx-govscot-frontend",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Angular components for the Scottish Government Design System",
   "keywords": [
     "angular",
@@ -16,7 +16,7 @@
     "url": "https://github.com/JonnyHeavey/ngx-uk-frontend.git"
   },
   "peerDependencies": {
-    "@ngx-uk-frontend/core": "^0.0.4",
+    "@ngx-uk-frontend/core": "^1.0.0",
     "@angular/common": "^20.0.0 || ^21.0.0",
     "@angular/core": "^20.0.0 || ^21.0.0",
     "@angular/forms": "^20.0.0 || ^21.0.0",

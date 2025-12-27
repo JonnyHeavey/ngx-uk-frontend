@@ -1,6 +1,6 @@
 {
   "name": "ngx-govuk-frontend",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Angular components for the GOV.UK Design System",
   "keywords": [
     "angular",
@@ -15,7 +15,7 @@
     "url": "https://github.com/JonnyHeavey/ngx-uk-frontend.git"
   },
   "peerDependencies": {
-    "@ngx-uk-frontend/core": "^0.0.4",
+    "@ngx-uk-frontend/core": "^1.0.0",
     "@angular/common": "^20.0.0 || ^21.0.0",
     "@angular/core": "^20.0.0 || ^21.0.0",
     "@angular/forms": "^20.0.0 || ^21.0.0",

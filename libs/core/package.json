@@ -1,6 +1,6 @@
 {
   "name": "@ngx-uk-frontend/core",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "description": "Core utilities and shared functionality for ngx-uk-frontend libraries",
   "keywords": [
     "angular",
