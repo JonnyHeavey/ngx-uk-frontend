@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
@@ -21,7 +21,7 @@ export interface SequentialNavigationItem {
  */
 @Component({
   selector: 'ngx-govscot-sequential-navigation',
-  imports: [CommonModule, RouterLink],
+  imports: [RouterLink],
   templateUrl: './sequential-navigation.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

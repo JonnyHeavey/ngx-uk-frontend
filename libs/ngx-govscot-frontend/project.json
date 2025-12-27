@@ -11,21 +11,28 @@
       "fallbackCurrentVersionResolver": "disk"
     }
   },
-  "tags": ["npm:public", "npm:angular", "npm:govscot", "npm:scotland", "npm:design-system", "npm:components", "ui"],
+  "tags": [
+    "npm:public",
+    "npm:angular",
+    "npm:govscot",
+    "npm:scotland",
+    "npm:design-system",
+    "npm:components",
+    "ui"
+  ],
   "targets": {
     "build": {
       "executor": "@nx/angular:package",
       "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
       "options": {
-        "project": "libs/ngx-govscot-frontend/ng-package.json"
+        "project": "libs/ngx-govscot-frontend/ng-package.json",
+        "tsConfig": "libs/ngx-govscot-frontend/tsconfig.lib.json"
       },
       "configurations": {
         "production": {
           "tsConfig": "libs/ngx-govscot-frontend/tsconfig.lib.prod.json"
         },
-        "development": {
-          "tsConfig": "libs/ngx-govscot-frontend/tsconfig.lib.json"
-        }
+        "development": {}
       },
       "defaultConfiguration": "production"
     },
@@ -38,7 +45,8 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "libs/ngx-govscot-frontend/jest.config.ts"
+        "jestConfig": "libs/ngx-govscot-frontend/jest.config.ts",
+        "tsConfig": "libs/ngx-govscot-frontend/tsconfig.spec.json"
       }
     },
     "lint": {
