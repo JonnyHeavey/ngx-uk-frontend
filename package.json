@@ -5,7 +5,9 @@
   "scripts": {
     "build": "nx run-many --target=build --all",
     "lint": "nx run-many --target=lint --all",
-    "test": "nx run-many --target=test --all"
+    "test": "nx run-many --target=test --all",
+    "release:core": "nx release --projects=core --skip-publish && nx run core:build && nx release publish --projects=core",
+    "release:govuk": "nx release --projects=ngx-govuk-frontend --skip-publish && nx run ngx-govuk-frontend:build && nx release publish --projects=ngx-govuk-frontend"
   },
   "private": true,
   "dependencies": {

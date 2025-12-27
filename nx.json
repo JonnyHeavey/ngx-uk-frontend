@@ -40,7 +40,6 @@
       "inputs": ["production", "^production"]
     },
     "@nx/angular:package": {
-      "cache": true,
       "dependsOn": ["^build"],
       "inputs": ["production", "^production"]
     },
@@ -154,21 +153,20 @@
   "nxCloudId": "677ecd1b56a1a452bf34e66d",
   "release": {
     "projectsRelationship": "independent",
+    "git": {
+      "push": true
+    },
+    "version": {
+      "manifestRootsToUpdate": [
+        "{projectRoot}"
+      ],
+      "preserveMatchingDependencyRanges": false
+    },
     "changelog": {
       "projectChangelogs": {
         "file": false,
         "createRelease": "github"
       }
-    },
-    "version": {
-      "preVersionCommand": "npx nx run-many -t build",
-      "manifestRootsToUpdate": [
-        "{projectRoot}",
-        {
-          "path": "dist/libs/{projectName}",
-          "preserveLocalDependencyProtocols": false
-        }
-      ]
     }
   }
 }

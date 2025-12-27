@@ -4,13 +4,6 @@
   "sourceRoot": "libs/ngx-govscot-frontend/src",
   "prefix": "ngx-govscot-frontend",
   "projectType": "library",
-  "release": {
-    "version": {
-      "manifestRootsToUpdate": ["dist/{projectRoot}"],
-      "currentVersionResolver": "git-tag",
-      "fallbackCurrentVersionResolver": "disk"
-    }
-  },
   "tags": [
     "npm:public",
     "npm:angular",
