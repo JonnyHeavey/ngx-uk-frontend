@@ -79,8 +79,9 @@ export class GovScotHidePageComponent {
    * Listen for Escape key presses to trigger hide page functionality
    */
   @HostListener('document:keydown.escape', ['$event'])
-  onEscapeKey(event: KeyboardEvent): void {
-    event.preventDefault();
+  onEscapeKey(event: Event): void {
+    const keyboardEvent = event as KeyboardEvent;
+    keyboardEvent.preventDefault();
     this.hidePage();
   }
 

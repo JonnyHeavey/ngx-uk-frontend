@@ -1,4 +1,4 @@
-import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { NgOptimizedImage } from '@angular/common';
 import { Component, computed, input } from '@angular/core';
 
 export type GovScotFileDownloadMetadataItem = {
@@ -9,7 +9,7 @@ export type GovScotFileDownloadMetadataItem = {
 
 @Component({
   selector: 'ngx-govscot-file-download',
-  imports: [CommonModule, NgOptimizedImage],
+  imports: [NgOptimizedImage],
   templateUrl: './file-download.component.html',
   standalone: true,
 })

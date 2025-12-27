@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
 /**
@@ -9,7 +9,7 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
  */
 @Component({
   selector: 'ngx-govscot-page-header',
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './page-header.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

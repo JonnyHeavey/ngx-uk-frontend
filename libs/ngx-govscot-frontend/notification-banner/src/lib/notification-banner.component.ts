@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import {
   ChangeDetectionStrategy,
   Component,
@@ -15,7 +15,7 @@ import {
  */
 @Component({
   selector: 'ngx-govscot-notification-banner',
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './notification-banner.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

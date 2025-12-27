@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
 export interface MetadataItem {
@@ -9,7 +9,7 @@ export interface MetadataItem {
 
 @Component({
   selector: 'ngx-govscot-page-metadata',
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './page-metadata.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
