@@ -4051,21 +4051,21 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "libs/ngx-govuk-frontend/radio/src/lib/radio-group.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<GovUKRadioGroupComponent>",
-                "defaultValue": "{\n  component: GovUKRadioGroupComponent,\n  title: 'Forms/GovUKRadioGroupComponent',\n  decorators: [\n    moduleMetadata({\n      imports: [ReactiveFormsModule, GovUKRadioOptionDirective],\n    }),\n  ],\n  argTypes: {\n    small: {\n      control: {\n        type: 'boolean',\n      },\n    },\n    inline: {\n      control: {\n        type: 'boolean',\n      },\n    },\n  },\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "libs/ngx-govuk-frontend/select/src/lib/select.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<GovUKSelectComponent>",
                 "defaultValue": "{\n  component: GovUKSelectComponent,\n  title: 'Forms/GovUKSelectComponent',\n  decorators: [\n    moduleMetadata({\n      imports: [ReactiveFormsModule],\n    }),\n  ],\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/ngx-govuk-frontend/radio/src/lib/radio-group.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<GovUKRadioGroupComponent>",
+                "defaultValue": "{\n  component: GovUKRadioGroupComponent,\n  title: 'Forms/GovUKRadioGroupComponent',\n  decorators: [\n    moduleMetadata({\n      imports: [ReactiveFormsModule, GovUKRadioOptionDirective],\n    }),\n  ],\n  argTypes: {\n    small: {\n      control: {\n        type: 'boolean',\n      },\n    },\n    inline: {\n      control: {\n        type: 'boolean',\n      },\n    },\n  },\n}"
             },
             {
                 "name": "meta",
@@ -4081,21 +4081,21 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "libs/ngx-govuk-frontend/skip-link/src/lib/skip-link.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<GovUKSkipLinkComponent>",
-                "defaultValue": "{\n  title: 'Skip Link/GovUKSkipLinkComponent',\n  component: GovUKSkipLinkComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [GovUKSkipLinkComponent],\n    }),\n  ],\n  parameters: {\n    layout: 'padded',\n  },\n  argTypes: {\n    href: {\n      control: 'text',\n      description: 'The target ID to skip to',\n      table: {\n        type: { summary: 'string' },\n        defaultValue: { summary: '#content' },\n      },\n    },\n  },\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "libs/ngx-govuk-frontend/summary-list/src/lib/summary-list.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<GovUKSummaryListComponent>",
                 "defaultValue": "{\n  title: 'Summary List/GovUKSummaryListComponent',\n  component: GovUKSummaryListComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [\n        GovUKSummaryListComponent,\n        GovUKSummaryListItemComponent,\n        GovUKSummaryListActionComponent,\n        GovUKSummaryListActionsComponent,\n        GovUKSummaryListCardComponent,\n        GovUKSummaryListCardActionsComponent,\n        GovUKSummaryListValueDirective,\n        RouterModule.forChild([]),\n      ],\n      providers: [{ provide: ActivatedRoute, useValue: {} }],\n    }),\n  ],\n  render: (args) => ({\n    props: args,\n    template: `\n      <ngx-govuk-summary-list [noBorder]=\"noBorder\">\n        <ngx-govuk-summary-list-item key=\"Name\">\n          <ng-template ngxGovUkSummaryListValue>\n            Sarah Philips\n          </ng-template>\n          <ngx-govuk-summary-list-actions>\n            <ngx-govuk-summary-list-action href=\"#\" visuallyHiddenText=\"name\">Change</ngx-govuk-summary-list-action>\n          </ngx-govuk-summary-list-actions>\n        </ngx-govuk-summary-list-item>\n        <ngx-govuk-summary-list-item key=\"Date of birth\" value=\"5 January 1978\">\n          <ngx-govuk-summary-list-actions>\n            <ngx-govuk-summary-list-action href=\"#\" visuallyHiddenText=\"date of birth\">Change</ngx-govuk-summary-list-action>\n          </ngx-govuk-summary-list-actions>\n        </ngx-govuk-summary-list-item>\n        <ngx-govuk-summary-list-item key=\"Address\">\n          <ng-template ngxGovUkSummaryListValue>\n            <p>72 Guild Street<br>London<br>SE23 6FH</p>\n          </ng-template>\n          <ngx-govuk-summary-list-actions>\n            <ngx-govuk-summary-list-action href=\"#\" visuallyHiddenText=\"address\">Change</ngx-govuk-summary-list-action>\n          </ngx-govuk-summary-list-actions>\n        </ngx-govuk-summary-list-item>\n      </ngx-govuk-summary-list>\n    `,\n  }),\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/ngx-govuk-frontend/skip-link/src/lib/skip-link.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<GovUKSkipLinkComponent>",
+                "defaultValue": "{\n  title: 'Skip Link/GovUKSkipLinkComponent',\n  component: GovUKSkipLinkComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [GovUKSkipLinkComponent],\n    }),\n  ],\n  parameters: {\n    layout: 'padded',\n  },\n  argTypes: {\n    href: {\n      control: 'text',\n      description: 'The target ID to skip to',\n      table: {\n        type: { summary: 'string' },\n        defaultValue: { summary: '#content' },\n      },\n    },\n  },\n}"
             },
             {
                 "name": "meta",
@@ -4141,11 +4141,11 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "libs/ngx-govuk-frontend/textarea/src/lib/textarea.component.stories.ts",
+                "file": "libs/ngx-govuk-frontend/accordion/src/lib/accordion/accordion.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<GovUKTextareaComponent>",
-                "defaultValue": "{\n  component: GovUKTextareaComponent,\n  title: 'Forms/GovUKTextareaComponent',\n  decorators: [\n    moduleMetadata({\n      imports: [ReactiveFormsModule, GovUKFormGroupComponent],\n    }),\n  ],\n}"
+                "type": "Meta<GovUKAccordionComponent>",
+                "defaultValue": "{\n  title: 'Accordion/GovUKAccordionComponent',\n  component: GovUKAccordionComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [GovUKAccordionComponent, GovUKAccordionItemComponent],\n    }),\n  ],\n  tags: ['autodocs'],\n  argTypes: {\n    id: { control: 'text' },\n  },\n  args: {\n    id: 'accordion-example',\n  },\n}"
             },
             {
                 "name": "meta",
@@ -4161,11 +4161,11 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "libs/ngx-govuk-frontend/accordion/src/lib/accordion/accordion.component.stories.ts",
+                "file": "libs/ngx-govuk-frontend/textarea/src/lib/textarea.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<GovUKAccordionComponent>",
-                "defaultValue": "{\n  title: 'Accordion/GovUKAccordionComponent',\n  component: GovUKAccordionComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [GovUKAccordionComponent, GovUKAccordionItemComponent],\n    }),\n  ],\n  tags: ['autodocs'],\n  argTypes: {\n    id: { control: 'text' },\n  },\n  args: {\n    id: 'accordion-example',\n  },\n}"
+                "type": "Meta<GovUKTextareaComponent>",
+                "defaultValue": "{\n  component: GovUKTextareaComponent,\n  title: 'Forms/GovUKTextareaComponent',\n  decorators: [\n    moduleMetadata({\n      imports: [ReactiveFormsModule, GovUKFormGroupComponent],\n    }),\n  ],\n}"
             },
             {
                 "name": "meta",
@@ -4431,21 +4431,21 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "libs/ngx-govuk-frontend/radio/src/lib/radio-group.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  render: Template,\n  args: {\n    small: false,\n    inline: false,\n  },\n}"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "libs/ngx-govuk-frontend/select/src/lib/select.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  render: Template,\n  args: {\n    options: [\n      {\n        value: 'a',\n        label: 'Option A',\n      },\n      { value: 'b', label: 'Option B' },\n      { value: 'c', label: 'Option C' },\n    ],\n  },\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/ngx-govuk-frontend/radio/src/lib/radio-group.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  render: Template,\n  args: {\n    small: false,\n    inline: false,\n  },\n}"
             },
             {
                 "name": "Primary",
@@ -4461,21 +4461,21 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "libs/ngx-govuk-frontend/skip-link/src/lib/skip-link.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {},\n  parameters: {\n    docs: {\n      description: {\n        story:\n          'The default skip link component. Tab to this example to see the skip link.',\n      },\n    },\n  },\n}"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "libs/ngx-govuk-frontend/summary-list/src/lib/summary-list.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {},\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/ngx-govuk-frontend/skip-link/src/lib/skip-link.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {},\n  parameters: {\n    docs: {\n      description: {\n        story:\n          'The default skip link component. Tab to this example to see the skip link.',\n      },\n    },\n  },\n}"
             },
             {
                 "name": "Primary",
@@ -4511,21 +4511,21 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "libs/ngx-govuk-frontend/warning-text/src/lib/warning-text.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  render: Template,\n}"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "libs/ngx-govuk-frontend/accordion/src/lib/accordion/accordion.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  render: (args) => ({\n    props: args,\n    template: `\n      <div class=\"govuk-frontend-supported\">\n        <ngx-govuk-accordion [id]=\"id\">\n          <ngx-govuk-accordion-item itemId=\"1\" heading=\"Writing well for the web\">\n            <p class=\"govuk-body\">This is the content for Writing well for the web.</p>\n          </ngx-govuk-accordion-item>\n          <ngx-govuk-accordion-item itemId=\"2\" heading=\"Writing well for specialists\">\n            <p class=\"govuk-body\">This is the content for Writing well for specialists.</p>\n          </ngx-govuk-accordion-item>\n          <ngx-govuk-accordion-item itemId=\"3\" heading=\"Know your audience\">\n            <p class=\"govuk-body\">This is the content for Know your audience.</p>\n          </ngx-govuk-accordion-item>\n          <ngx-govuk-accordion-item itemId=\"4\" heading=\"How people read\">\n            <p class=\"govuk-body\">This is the content for How people read.</p>\n          </ngx-govuk-accordion-item>\n        </ngx-govuk-accordion>\n      </div>\n    `,\n  }),\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/ngx-govuk-frontend/warning-text/src/lib/warning-text.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  render: Template,\n}"
             },
             {
                 "name": "Primary",
@@ -4841,21 +4841,21 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "libs/ngx-govuk-frontend/radio/src/lib/radio-group.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "StoryFn<GovUKRadioGroupComponent>",
-                "defaultValue": "(args) => ({\n  props: { ...args, form: new FormGroup({ input: new FormControl(false) }) },\n  template: `<form [formGroup]=\"form\">\n      <ngx-govuk-radio-group\n        formControlName=\"input\"\n         ${argsToTemplate(args)}\n      >\n        <ngx-govuk-radio-option value=\"red\" label=\"Red\" />\n        <ngx-govuk-radio-option\n          value=\"blue\"\n          label=\"Blue\"\n          hint=\"This is the colour of the sky\"\n        />\n        <ngx-govuk-radio-option value=\"green\" label=\"Green\" isDivided=\"true\" />\n      </ngx-govuk-radio-group>\n    </form>`,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "libs/ngx-govuk-frontend/select/src/lib/select.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "StoryFn<GovUKSelectComponent>",
                 "defaultValue": "(args) => ({\n  props: { ...args, form: new FormGroup({ input: new FormControl(false) }) },\n  template: `<form [formGroup]=\"form\">\n      <ngx-govuk-select\n        formControlName=\"input\"\n         ${argsToTemplate(args)}\n      ></ngx-govuk-select>\n    </form>`,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/ngx-govuk-frontend/radio/src/lib/radio-group.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryFn<GovUKRadioGroupComponent>",
+                "defaultValue": "(args) => ({\n  props: { ...args, form: new FormGroup({ input: new FormControl(false) }) },\n  template: `<form [formGroup]=\"form\">\n      <ngx-govuk-radio-group\n        formControlName=\"input\"\n         ${argsToTemplate(args)}\n      >\n        <ngx-govuk-radio-option value=\"red\" label=\"Red\" />\n        <ngx-govuk-radio-option\n          value=\"blue\"\n          label=\"Blue\"\n          hint=\"This is the colour of the sky\"\n        />\n        <ngx-govuk-radio-option value=\"green\" label=\"Green\" isDivided=\"true\" />\n      </ngx-govuk-radio-group>\n    </form>`,\n})"
             },
             {
                 "name": "Template",
@@ -4891,21 +4891,21 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "libs/ngx-govuk-frontend/textarea/src/lib/textarea.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "StoryFn<GovUKTextareaComponent>",
-                "defaultValue": "(args) => ({\n  props: { ...args, form: new FormGroup({ input: new FormControl('') }) },\n  template: `<form [formGroup]=\"form\">\n      <ngx-govuk-textarea\n        formControlName=\"input\"\n         ${argsToTemplate(args)}\n      ></ngx-govuk-textarea>\n    </form>`,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "libs/ngx-govuk-frontend/warning-text/src/lib/warning-text.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "StoryFn<GovUKWarningTextComponent>",
                 "defaultValue": "(\n  args: GovUKWarningTextComponent\n) => ({\n  props: { ...args },\n  template: `<ngx-govuk-warning-text>\n    You can be fined up to £5,000 if you do not register.\n  </ngx-govuk-warning-text>`,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "libs/ngx-govuk-frontend/textarea/src/lib/textarea.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryFn<GovUKTextareaComponent>",
+                "defaultValue": "(args) => ({\n  props: { ...args, form: new FormGroup({ input: new FormControl('') }) },\n  template: `<form [formGroup]=\"form\">\n      <ngx-govuk-textarea\n        formControlName=\"input\"\n         ${argsToTemplate(args)}\n      ></ngx-govuk-textarea>\n    </form>`,\n})"
             },
             {
                 "name": "Template",
@@ -5556,8 +5556,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<GovUKRadioGroupComponent>",
-                "file": "libs/ngx-govuk-frontend/radio/src/lib/radio-group.component.stories.ts",
+                "rawtype": "StoryObj<GovUKSelectComponent>",
+                "file": "libs/ngx-govuk-frontend/select/src/lib/select.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -5567,8 +5567,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<GovUKSelectComponent>",
-                "file": "libs/ngx-govuk-frontend/select/src/lib/select.component.stories.ts",
+                "rawtype": "StoryObj<GovUKRadioGroupComponent>",
+                "file": "libs/ngx-govuk-frontend/radio/src/lib/radio-group.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -5589,8 +5589,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<GovUKSkipLinkComponent>",
-                "file": "libs/ngx-govuk-frontend/skip-link/src/lib/skip-link.component.stories.ts",
+                "rawtype": "StoryObj<GovUKSummaryListComponent>",
+                "file": "libs/ngx-govuk-frontend/summary-list/src/lib/summary-list.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -5600,8 +5600,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<GovUKSummaryListComponent>",
-                "file": "libs/ngx-govuk-frontend/summary-list/src/lib/summary-list.component.stories.ts",
+                "rawtype": "StoryObj<GovUKSkipLinkComponent>",
+                "file": "libs/ngx-govuk-frontend/skip-link/src/lib/skip-link.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -5655,8 +5655,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<unknown>",
-                "file": "libs/ngx-govuk-frontend/textarea/src/lib/textarea.component.stories.ts",
+                "rawtype": "StoryObj<GovUKAccordionComponent>",
+                "file": "libs/ngx-govuk-frontend/accordion/src/lib/accordion/accordion.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -5677,8 +5677,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<GovUKAccordionComponent>",
-                "file": "libs/ngx-govuk-frontend/accordion/src/lib/accordion/accordion.component.stories.ts",
+                "rawtype": "StoryObj<unknown>",
+                "file": "libs/ngx-govuk-frontend/textarea/src/lib/textarea.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -6928,38 +6928,6 @@
                     "defaultValue": "(args) => ({\n  props: { ...args },\n  template: `<ngx-govuk-phase-banner ${argsToTemplate(args)}>\n    <span class=\"govuk-phase-banner__text\">\n      This is a new service - your <a class=\"govuk-link\" href=\"#\">feedback</a> will help us to improve it.\n    </span>\n  </ngx-govuk-phase-banner>`,\n})"
                 }
             ],
-            "libs/ngx-govuk-frontend/radio/src/lib/radio-group.component.stories.ts": [
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "libs/ngx-govuk-frontend/radio/src/lib/radio-group.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<GovUKRadioGroupComponent>",
-                    "defaultValue": "{\n  component: GovUKRadioGroupComponent,\n  title: 'Forms/GovUKRadioGroupComponent',\n  decorators: [\n    moduleMetadata({\n      imports: [ReactiveFormsModule, GovUKRadioOptionDirective],\n    }),\n  ],\n  argTypes: {\n    small: {\n      control: {\n        type: 'boolean',\n      },\n    },\n    inline: {\n      control: {\n        type: 'boolean',\n      },\n    },\n  },\n}"
-                },
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "libs/ngx-govuk-frontend/radio/src/lib/radio-group.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  render: Template,\n  args: {\n    small: false,\n    inline: false,\n  },\n}"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "libs/ngx-govuk-frontend/radio/src/lib/radio-group.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "StoryFn<GovUKRadioGroupComponent>",
-                    "defaultValue": "(args) => ({\n  props: { ...args, form: new FormGroup({ input: new FormControl(false) }) },\n  template: `<form [formGroup]=\"form\">\n      <ngx-govuk-radio-group\n        formControlName=\"input\"\n         ${argsToTemplate(args)}\n      >\n        <ngx-govuk-radio-option value=\"red\" label=\"Red\" />\n        <ngx-govuk-radio-option\n          value=\"blue\"\n          label=\"Blue\"\n          hint=\"This is the colour of the sky\"\n        />\n        <ngx-govuk-radio-option value=\"green\" label=\"Green\" isDivided=\"true\" />\n      </ngx-govuk-radio-group>\n    </form>`,\n})"
-                }
-            ],
             "libs/ngx-govuk-frontend/select/src/lib/select.component.stories.ts": [
                 {
                     "name": "meta",
@@ -6990,6 +6958,38 @@
                     "deprecationMessage": "",
                     "type": "StoryFn<GovUKSelectComponent>",
                     "defaultValue": "(args) => ({\n  props: { ...args, form: new FormGroup({ input: new FormControl(false) }) },\n  template: `<form [formGroup]=\"form\">\n      <ngx-govuk-select\n        formControlName=\"input\"\n         ${argsToTemplate(args)}\n      ></ngx-govuk-select>\n    </form>`,\n})"
+                }
+            ],
+            "libs/ngx-govuk-frontend/radio/src/lib/radio-group.component.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/ngx-govuk-frontend/radio/src/lib/radio-group.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<GovUKRadioGroupComponent>",
+                    "defaultValue": "{\n  component: GovUKRadioGroupComponent,\n  title: 'Forms/GovUKRadioGroupComponent',\n  decorators: [\n    moduleMetadata({\n      imports: [ReactiveFormsModule, GovUKRadioOptionDirective],\n    }),\n  ],\n  argTypes: {\n    small: {\n      control: {\n        type: 'boolean',\n      },\n    },\n    inline: {\n      control: {\n        type: 'boolean',\n      },\n    },\n  },\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/ngx-govuk-frontend/radio/src/lib/radio-group.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  render: Template,\n  args: {\n    small: false,\n    inline: false,\n  },\n}"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/ngx-govuk-frontend/radio/src/lib/radio-group.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryFn<GovUKRadioGroupComponent>",
+                    "defaultValue": "(args) => ({\n  props: { ...args, form: new FormGroup({ input: new FormControl(false) }) },\n  template: `<form [formGroup]=\"form\">\n      <ngx-govuk-radio-group\n        formControlName=\"input\"\n         ${argsToTemplate(args)}\n      >\n        <ngx-govuk-radio-option value=\"red\" label=\"Red\" />\n        <ngx-govuk-radio-option\n          value=\"blue\"\n          label=\"Blue\"\n          hint=\"This is the colour of the sky\"\n        />\n        <ngx-govuk-radio-option value=\"green\" label=\"Green\" isDivided=\"true\" />\n      </ngx-govuk-radio-group>\n    </form>`,\n})"
                 }
             ],
             "libs/ngx-govuk-frontend/service-navigation/src/lib/navigation.component.stories.ts": [
@@ -7160,38 +7160,6 @@
                     "defaultValue": "{\n  render: () => ({\n    component: GovUKTaskListComponent,\n    props: {},\n    template: `\n      <ngx-govuk-task-list>\n        <ngx-govuk-task-list-item\n          [title]=\"'Personal details'\"\n          [statusText]=\"'Completed'\"\n        ></ngx-govuk-task-list-item>\n        <ngx-govuk-task-list-item\n          [title]=\"'Contact information'\"\n          [statusText]=\"'In progress'\"\n          [tagColor]=\"'light-blue'\"\n        ></ngx-govuk-task-list-item>\n        <ngx-govuk-task-list-item\n          [title]=\"'Upload documents'\"\n          [hint]=\"'Upload identity documents and proof of address'\"\n          [statusText]=\"'Cannot start yet'\"\n          [tagColor]=\"'grey'\"\n        ></ngx-govuk-task-list-item>\n      </ngx-govuk-task-list>\n    `,\n  }),\n}"
                 }
             ],
-            "libs/ngx-govuk-frontend/warning-text/src/lib/warning-text.component.stories.ts": [
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "libs/ngx-govuk-frontend/warning-text/src/lib/warning-text.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<GovUKWarningTextComponent>",
-                    "defaultValue": "{\n  component: GovUKWarningTextComponent,\n  title: 'Warning Text/GovUKWarningTextComponent',\n}"
-                },
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "libs/ngx-govuk-frontend/warning-text/src/lib/warning-text.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  render: Template,\n}"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "libs/ngx-govuk-frontend/warning-text/src/lib/warning-text.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "StoryFn<GovUKWarningTextComponent>",
-                    "defaultValue": "(\n  args: GovUKWarningTextComponent\n) => ({\n  props: { ...args },\n  template: `<ngx-govuk-warning-text>\n    You can be fined up to £5,000 if you do not register.\n  </ngx-govuk-warning-text>`,\n})"
-                }
-            ],
             "libs/ngx-govuk-frontend/accordion/src/lib/accordion/accordion.component.stories.ts": [
                 {
                     "name": "meta",
@@ -7232,6 +7200,38 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\n  render: (args) => ({\n    props: args,\n    template: `\n      <div class=\"govuk-frontend-supported\">\n        <ngx-govuk-accordion [id]=\"id\">\n          <ngx-govuk-accordion-item \n            itemId=\"1\" \n            heading=\"Understanding agile project management\"\n            summary=\"Introductions, methods, core features.\"\n          >\n            <ul class=\"govuk-list\">\n              <li>\n                <a class=\"govuk-link\" href=\"#\">Agile and government services: an introduction</a>\n              </li>\n              <li>\n                <a class=\"govuk-link\" href=\"#\">Agile methods: an introduction</a>\n              </li>\n              <li>\n                <a class=\"govuk-link\" href=\"#\">Core principles of agile</a>\n              </li>\n            </ul>\n          </ngx-govuk-accordion-item>\n          <ngx-govuk-accordion-item \n            itemId=\"2\" \n            heading=\"Working with agile methods\"\n            summary=\"Workspaces, tools and techniques, user stories, planning.\"\n          >\n            <ul class=\"govuk-list\">\n              <li>\n                <a class=\"govuk-link\" href=\"#\">Creating an agile working environment</a>\n              </li>\n              <li>\n                <a class=\"govuk-link\" href=\"#\">Agile tools and techniques</a>\n              </li>\n              <li>\n                <a class=\"govuk-link\" href=\"#\">Set up a team wall</a>\n              </li>\n              <li>\n                <a class=\"govuk-link\" href=\"#\">Writing user stories</a>\n              </li>\n              <li>\n                <a class=\"govuk-link\" href=\"#\">Planning in agile</a>\n              </li>\n              <li>\n                <a class=\"govuk-link\" href=\"#\">Deciding on priorities</a>\n              </li>\n              <li>\n                <a class=\"govuk-link\" href=\"#\">Developing a roadmap</a>\n              </li>\n            </ul>\n          </ngx-govuk-accordion-item>\n        </ngx-govuk-accordion>\n      </div>\n    `,\n  }),\n}"
+                }
+            ],
+            "libs/ngx-govuk-frontend/warning-text/src/lib/warning-text.component.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/ngx-govuk-frontend/warning-text/src/lib/warning-text.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<GovUKWarningTextComponent>",
+                    "defaultValue": "{\n  component: GovUKWarningTextComponent,\n  title: 'Warning Text/GovUKWarningTextComponent',\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/ngx-govuk-frontend/warning-text/src/lib/warning-text.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  render: Template,\n}"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "libs/ngx-govuk-frontend/warning-text/src/lib/warning-text.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryFn<GovUKWarningTextComponent>",
+                    "defaultValue": "(\n  args: GovUKWarningTextComponent\n) => ({\n  props: { ...args },\n  template: `<ngx-govuk-warning-text>\n    You can be fined up to £5,000 if you do not register.\n  </ngx-govuk-warning-text>`,\n})"
                 }
             ],
             "libs/ngx-govuk-frontend/button/src/lib/button-group/button-group.component.stories.ts": [
@@ -7736,19 +7736,6 @@
                     "kind": 184
                 }
             ],
-            "libs/ngx-govuk-frontend/radio/src/lib/radio-group.component.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<GovUKRadioGroupComponent>",
-                    "file": "libs/ngx-govuk-frontend/radio/src/lib/radio-group.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 184
-                }
-            ],
             "libs/ngx-govuk-frontend/select/src/lib/select.component.stories.ts": [
                 {
                     "name": "Story",
@@ -7756,6 +7743,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<GovUKSelectComponent>",
                     "file": "libs/ngx-govuk-frontend/select/src/lib/select.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
+            "libs/ngx-govuk-frontend/radio/src/lib/radio-group.component.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<GovUKRadioGroupComponent>",
+                    "file": "libs/ngx-govuk-frontend/radio/src/lib/radio-group.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -7775,19 +7775,6 @@
                     "kind": 184
                 }
             ],
-            "libs/ngx-govuk-frontend/skip-link/src/lib/skip-link.component.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<GovUKSkipLinkComponent>",
-                    "file": "libs/ngx-govuk-frontend/skip-link/src/lib/skip-link.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 184
-                }
-            ],
             "libs/ngx-govuk-frontend/summary-list/src/lib/summary-list.component.stories.ts": [
                 {
                     "name": "Story",
@@ -7795,6 +7782,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<GovUKSummaryListComponent>",
                     "file": "libs/ngx-govuk-frontend/summary-list/src/lib/summary-list.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                }
+            ],
+            "libs/ngx-govuk-frontend/skip-link/src/lib/skip-link.component.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<GovUKSkipLinkComponent>",
+                    "file": "libs/ngx-govuk-frontend/skip-link/src/lib/skip-link.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -7853,13 +7853,13 @@
                     "kind": 184
                 }
             ],
-            "libs/ngx-govuk-frontend/textarea/src/lib/textarea.component.stories.ts": [
+            "libs/ngx-govuk-frontend/accordion/src/lib/accordion/accordion.component.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "StoryObj<unknown>",
-                    "file": "libs/ngx-govuk-frontend/textarea/src/lib/textarea.component.stories.ts",
+                    "rawtype": "StoryObj<GovUKAccordionComponent>",
+                    "file": "libs/ngx-govuk-frontend/accordion/src/lib/accordion/accordion.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -7879,13 +7879,13 @@
                     "kind": 184
                 }
             ],
-            "libs/ngx-govuk-frontend/accordion/src/lib/accordion/accordion.component.stories.ts": [
+            "libs/ngx-govuk-frontend/textarea/src/lib/textarea.component.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "StoryObj<GovUKAccordionComponent>",
-                    "file": "libs/ngx-govuk-frontend/accordion/src/lib/accordion/accordion.component.stories.ts",
+                    "rawtype": "StoryObj<unknown>",
+                    "file": "libs/ngx-govuk-frontend/textarea/src/lib/textarea.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",

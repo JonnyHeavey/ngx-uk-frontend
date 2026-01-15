@@ -51,7 +51,7 @@
     "@storybook/addon-docs": "10.1.10",
     "@storybook/angular": "10.1.10",
     "@swc-node/register": "~1.9.1",
-    "@swc/core": "~1.5.7",
+    "@swc/core": "^1.15.8",
     "@swc/helpers": "~0.5.11",
     "@types/jest": "30.0.0",
     "@types/node": "18.19.9",
